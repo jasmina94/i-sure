@@ -28,6 +28,13 @@ public class UserController {
     }
 
     @Transactional
+    @GetMapping(value = "/demoProxy")
+    public String demoProxy() {
+    	System.out.println("Poruka iz i-sure-data-center");
+        return "Proxy demonstrated!";
+    }
+    
+    @Transactional
     @GetMapping
     public ResponseEntity read() {
         return new ResponseEntity<>(userService.readAll(), HttpStatus.OK);
