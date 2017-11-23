@@ -1,22 +1,27 @@
 package com.ftn.model.dto;
 
-import java.util.Collection;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-public class HomeInsuranceDTO {
+public class HomeInsuranceDTO extends BaseDTO{
 	
-	private Long id;
-	
+	@NotNull
 	private String ownerFirstName;
+	@NotNull
 	private String ownerLastName;
+	@NotNull
 	private String address;
+	@NotNull
 	private String ucn;
+	@NotNull
 	private double price;
 	
-	private Collection<InsurancePolicyDTO> policies;
+	//private List<RiskDTO> risks;
 
 }
