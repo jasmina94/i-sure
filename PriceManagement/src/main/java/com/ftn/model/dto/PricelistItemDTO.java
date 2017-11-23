@@ -11,5 +11,4 @@ public class PricelistItemDTO {
 	private Long id;
 	private double coefficient;
 	private double price;
-	private PricelistDTO pricelist;
 }

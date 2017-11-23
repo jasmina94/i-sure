@@ -1,41 +1,67 @@
 package com.ftn.service.implementation;
 
+import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.ftn.model.dto.PricelistDTO;
 import com.ftn.service.PricelistService;
 
 @Service
 public class PricelistServiceImplementation implements PricelistService{
-
+	
+	private static String DATA_CENTER_PRICELIST_URI = "http://localhost:8080/api/pricelists";
+	
 	@Override
 	public List<PricelistDTO> findAll() {
-		System.out.println("find all");
-		return null;
+        String uri = DATA_CENTER_PRICELIST_URI;
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<PricelistDTO[]> response = restTemplate.getForEntity(uri, PricelistDTO[].class);
+
+        return Arrays.asList(response.getBody());
 	}
 
 	@Override
 	public PricelistDTO findById(Long id) {
-		System.out.println("find one");
-		return null;
+        String uri = DATA_CENTER_PRICELIST_URI + "/" + id;
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<PricelistDTO> response = restTemplate.getForEntity(uri, PricelistDTO.class);
+
+        return response.getBody();
 	}
 
 	@Override
 	public PricelistDTO create(PricelistDTO pricelistDTO) {
-		System.out.println("create");
-		return null;
+        String uri = DATA_CENTER_PRICELIST_URI;
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<PricelistDTO> response = restTemplate.postForEntity(uri, new HttpEntity<>(pricelistDTO), PricelistDTO.class);
+
+        return response.getBody();
 	}
 
 	@Override
-	public PricelistDTO update(PricelistDTO pricelistDTO) {
-		System.out.println("update");
-		return null;
+	public PricelistDTO update(Long id, PricelistDTO pricelistDTO) {
+        String uri = DATA_CENTER_PRICELIST_URI + "/" + id;
+        RestTemplate restTemplate = new RestTemplate();
+        HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
+
+        restTemplate.setRequestFactory(requestFactory);
+        
+        ResponseEntity<PricelistDTO> response = restTemplate.exchange(uri, HttpMethod.PATCH, new HttpEntity<>(pricelistDTO), PricelistDTO.class);
+
+        return response.getBody();
 	}
 
 	@Override
 	public void delete(Long id) {
-		System.out.println("delete");
+		String uri = DATA_CENTER_PRICELIST_URI + "/" + id;
+	    RestTemplate restTemplate = new RestTemplate();
+	    restTemplate.delete(uri);
 	}
 }

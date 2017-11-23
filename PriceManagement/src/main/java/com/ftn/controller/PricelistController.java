@@ -16,7 +16,7 @@ import com.ftn.model.dto.PricelistDTO;
 import com.ftn.service.PricelistService;
 
 @RestController
-@RequestMapping("/api/pricelist")
+@RequestMapping("/api/pricelists")
 public class PricelistController {
 	
 	private final PricelistService pricelistService;
@@ -43,7 +43,7 @@ public class PricelistController {
 	
 	@PatchMapping(value = "/{id}")
 	public ResponseEntity update(@PathVariable Long id, @RequestBody PricelistDTO pricelistDTO) {
-		return new ResponseEntity<>(pricelistService.update(pricelistDTO), HttpStatus.OK);
+		return new ResponseEntity<>(pricelistService.update(id, pricelistDTO), HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value = "/{id}")
