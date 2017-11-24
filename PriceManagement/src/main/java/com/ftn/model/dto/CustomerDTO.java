@@ -28,4 +28,6 @@ public class CustomerDTO{
 	@NotNull
 	private String address;
 	private String telephoneNumber;
+	private boolean carrier;
+	private String email;
 }

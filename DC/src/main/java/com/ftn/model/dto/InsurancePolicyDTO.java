@@ -9,10 +9,10 @@ import java.util.stream.Collectors;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ftn.model.Customer;
 import com.ftn.model.HomeInsurance;
 import com.ftn.model.InsurancePolicy;
 import com.ftn.model.InternationalTravelInsurance;
-import com.ftn.model.Participant;
 import com.ftn.model.RoadsideAssistanceInsurance;
 
 import lombok.Data;
@@ -38,7 +38,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateBecomeEffective;
 
-	private List<ParticipantDTO> participants = new ArrayList<>();
+	private List<CustomerDTO> customers = new ArrayList<>();
 
 	@NotNull
 	private InternationalTravelInsuranceDTO iti;
@@ -66,7 +66,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 			 this.iti = itiDTO;
 			 this.homeInsurance = hiDTO;
 			 this.roadsideAssistanceInsurance = raiDTO;
-			 this.participants = insurancePolicy.getParticipants().stream().map(ParticipantDTO::new).collect(Collectors.toList());
+			 this.customers = insurancePolicy.getCustomers().stream().map(CustomerDTO::new).collect(Collectors.toList());
 		}
 	}
 
@@ -84,7 +84,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 		insurancePolicy.setRoadsideAssistanceInsurance(raiIntern);
 		insurancePolicy.setHomeInsurance(hiIntern);
 		
-		insurancePolicy.setParticipants(this.participants.stream().map(Participant::new).collect(Collectors.toList()));
+		insurancePolicy.setCustomers(this.customers.stream().map(Customer::new).collect(Collectors.toList()));
 		
 		/*
 		 * fali preslikavanje za Ucesnike, Osiguranje kuce, Pomoc na putu i

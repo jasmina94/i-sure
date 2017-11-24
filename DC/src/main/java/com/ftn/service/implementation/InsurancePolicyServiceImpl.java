@@ -1,22 +1,24 @@
 package com.ftn.service.implementation;
 
-import com.ftn.exception.NotFoundException;
-import com.ftn.model.InsurancePolicy;
-import com.ftn.model.dto.InsurancePolicyDTO;
-
-import com.ftn.repository.HomeInsuranceRepository;
-import com.ftn.repository.InsurancePolicyRepository;
-import com.ftn.repository.InternationalTravelInsuranceRepository;
-import com.ftn.repository.RoadsideAssistanceInsuranceRepository;
-import com.ftn.service.HomeInsuranceService;
-
-import com.ftn.service.InsurancePolicyService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ftn.exception.NotFoundException;
+import com.ftn.model.Customer;
+import com.ftn.model.InsurancePolicy;
+
+import com.ftn.model.dto.InsurancePolicyDTO;
+import com.ftn.repository.CustomerRepository;
+import com.ftn.repository.HomeInsuranceRepository;
+import com.ftn.repository.InsurancePolicyRepository;
+import com.ftn.repository.InternationalTravelInsuranceRepository;
+
+import com.ftn.repository.RoadsideAssistanceInsuranceRepository;
+import com.ftn.service.InsurancePolicyService;
 
 /**
  * Created by Jasmina on 21/11/2017.
@@ -28,15 +30,21 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
     private final HomeInsuranceRepository homeInsuranceRepository;
     private final RoadsideAssistanceInsuranceRepository raiRepository;
     private final InternationalTravelInsuranceRepository itiRepository;
+    private final CustomerRepository customerRepository;
+    
+    
     
 
     @Autowired
     public InsurancePolicyServiceImpl(InsurancePolicyRepository insurancePolicyRepository, HomeInsuranceRepository homeInsuranceRepository,
-    		RoadsideAssistanceInsuranceRepository raiRepository, InternationalTravelInsuranceRepository itiRepository){
+    		RoadsideAssistanceInsuranceRepository raiRepository, InternationalTravelInsuranceRepository itiRepository,
+    		CustomerRepository customerRepository){
         this.insurancePolicyRepository = insurancePolicyRepository;
         this.homeInsuranceRepository = homeInsuranceRepository;
         this.raiRepository = raiRepository;
         this.itiRepository = itiRepository;
+        this.customerRepository = customerRepository;
+        
     }
     
 
@@ -49,8 +57,7 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
     public InsurancePolicyDTO create(InsurancePolicyDTO insurancePolicyDTO) {
 
         final InsurancePolicy insurancePolicy = insurancePolicyDTO.construct();
-        
-
+    
         insurancePolicyRepository.save(insurancePolicy);
         return new InsurancePolicyDTO(insurancePolicy);
     }
@@ -59,6 +66,7 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
     public InsurancePolicyDTO update(Long id, InsurancePolicyDTO insurancePolicyDTO) {
         final InsurancePolicy insurancePolicy = insurancePolicyRepository.findById(id).orElseThrow(NotFoundException::new);
         insurancePolicy.merge(insurancePolicyDTO);
+       
         insurancePolicyRepository.save(insurancePolicy);
         return new InsurancePolicyDTO(insurancePolicy);
     }

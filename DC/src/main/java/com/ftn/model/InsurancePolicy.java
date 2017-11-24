@@ -16,7 +16,7 @@ import org.hibernate.annotations.Where;
 
 import com.ftn.model.dto.BaseDTO;
 import com.ftn.model.dto.InsurancePolicyDTO;
-import com.ftn.model.dto.ParticipantDTO;
+
 import com.ftn.util.SqlConstants;
 
 import lombok.Data;
@@ -44,7 +44,7 @@ public class InsurancePolicy extends Base {
 	private Date dateBecomeEffective;
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
-	private List<Participant> participants = new ArrayList<>();
+	private List<Customer> customers = new ArrayList<>();
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private InternationalTravelInsurance iti;
@@ -77,7 +77,8 @@ public class InsurancePolicy extends Base {
 		this.iti = itiIntern;
 		this.roadsideAssistanceInsurance = raiIntern;
 		this.homeInsurance = hiIntern;
-		this.participants = insurancePolicyDTO.getParticipants().stream().map(Participant::new).collect(Collectors.toList());
+		this.customers = insurancePolicyDTO.getCustomers().stream().map(Customer::new).collect(Collectors.toList());
+		
 		/*
 		 * fali preslikavanje za Ucesnike, Osiguranje kuce, Pomoc na putu i
 		 * glavno osiguranje i za rizike

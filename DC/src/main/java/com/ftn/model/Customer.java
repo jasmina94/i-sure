@@ -47,9 +47,13 @@ public class Customer extends Base{
     @Column
     private String telephoneNumber;
 
-    @OneToMany(mappedBy="customer", orphanRemoval = true)
-    @JsonIgnore
-    private List<Participant> participants;
+    @Column(nullable = false)
+    private boolean carrier;
+
+    @Column(nullable = false)
+    private String email;
+    
+    
     
     public Customer(BaseDTO baseDTO){
         super(baseDTO);

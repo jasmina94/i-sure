@@ -41,6 +41,11 @@ public class CustomerDTO extends BaseDTO{
 
     private String telephoneNumber;
     
+    @NotNull
+    private boolean carrier;
+
+    private String email;
+    
     public CustomerDTO(Customer customer){
         super(customer);
         this.firstName = customer.getFirstName();
