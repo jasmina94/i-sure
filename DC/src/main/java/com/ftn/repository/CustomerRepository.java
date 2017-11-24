@@ -13,5 +13,5 @@ public interface CustomerRepository extends JpaRepository<Customer, Long>{
 
     Optional<Customer> findById(Long id);
 
-    Optional<Customer> findByBirthId(String birthId);
+    Optional<Customer> findByUcn(String ucn);
 }

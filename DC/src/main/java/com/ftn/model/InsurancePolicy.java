@@ -42,7 +42,7 @@ public class InsurancePolicy extends Base {
     private double totalPrice;
 
     @OneToMany(mappedBy = "insuredByPolicy", cascade = CascadeType.ALL)
-    private List<Insured> insureds = new ArrayList<>();
+    private List<Participant> insureds = new ArrayList<>();
 
     public InsurancePolicy(BaseDTO baseDTO){
         super(baseDTO);

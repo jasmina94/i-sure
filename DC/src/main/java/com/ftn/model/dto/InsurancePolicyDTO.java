@@ -34,7 +34,7 @@ public class InsurancePolicyDTO extends BaseDTO {
     @NotNull
     private double totalPrice;
 
-    private List<InsuredDTO> insureds = new ArrayList<>();
+    private List<ParticipantDTO> insureds = new ArrayList<>();
 
     public InsurancePolicyDTO(InsurancePolicy insurancePolicy){
         this(insurancePolicy, true);
@@ -47,7 +47,7 @@ public class InsurancePolicyDTO extends BaseDTO {
         this.dateBecomeEffective = insurancePolicy.getDateBecomeEffective();
         this.totalPrice = insurancePolicy.getTotalPrice();
         if(casscade){
-            this.insureds = insurancePolicy.getInsureds().stream().map(insured -> new InsuredDTO(insured, false)).collect(Collectors.toList());
+            this.insureds = insurancePolicy.getInsureds().stream().map(insured -> new ParticipantDTO(insured)).collect(Collectors.toList());
         }
     }
 

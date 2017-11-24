@@ -21,15 +21,15 @@ import java.util.stream.Collectors;
 public class CustomerDTO extends BaseDTO{
 
     @NotNull
-    private String firstname;
+    private String firstName;
 
     @NotNull
-    private String lastname;
+    private String lastName;
 
     @NotNull
     @Size(min = 13, max = 13)
     @Pattern(regexp = "[0-9]*")
-    private String birthId;
+    private String ucn;
 
     @NotNull
     @Size(min = 9, max = 9)
@@ -39,38 +39,26 @@ public class CustomerDTO extends BaseDTO{
     @NotNull
     private String address;
 
-    private String phone;
-
-    private List<InsuredDTO> insureds = new ArrayList<>();
-
+    private String telephoneNumber;
+    
     public CustomerDTO(Customer customer){
-        this(customer, true);
-    }
-
-    public CustomerDTO(Customer customer, boolean casscade){
         super(customer);
-        this.firstname = customer.getFirstname();
-        this.lastname = customer.getLastname();
-        this.birthId = customer.getBirthId();
+        this.firstName = customer.getFirstName();
+        this.lastName = customer.getLastName();
+        this.ucn = customer.getUcn();
         this.passport = customer.getPassport();
         this.address = customer.getAddress();
-        this.phone = customer.getPhone();
-        if(casscade){
-            this.insureds = customer.getInsureds().stream().map(insured -> new InsuredDTO(insured, false)).collect(Collectors.toList());
-        }
+        this.telephoneNumber = customer.getTelephoneNumber();
     }
 
     public Customer construct(){
         final Customer customer = new Customer(this);
-        customer.setFirstname(firstname);
-        customer.setLastname(lastname);
-        customer.setBirthId(birthId);
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setUcn(ucn);
         customer.setPassport(passport);
         customer.setAddress(address);
-        customer.setPhone(phone);
-        if(insureds != null && insureds.size() != 0){
-            insureds.forEach(insuredDTO -> customer.getInsureds().add(insuredDTO.construct()));
-        }
+        customer.setTelephoneNumber(telephoneNumber);
         return customer;
     }
 }
