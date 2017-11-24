@@ -22,6 +22,7 @@ public abstract class Base {
     @Column(nullable = false)
     private Date created;
 
+    @Column
     private Date updated;
 
     @Column(nullable = false)

@@ -20,5 +20,8 @@ public interface InsurancePolicyService {
 
     InsurancePolicyDTO findById(Long id);
 
-    InsurancePolicyDTO findByDateOfIssue(Date date);
+    List<InsurancePolicyDTO> findByDateOfIssue(Date date);
+    
+    List<InsurancePolicyDTO> findByDateBecomeEffective(Date date);
+
 }

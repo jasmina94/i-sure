@@ -38,9 +38,6 @@ public class Participant extends Base{
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @ManyToOne
-    private InsurancePolicy insuredByPolicy;
-
     public Participant(BaseDTO baseDTO){
         super(baseDTO);
     }

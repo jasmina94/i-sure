@@ -1,30 +1,44 @@
 package com.ftn.controller;
 
-import com.ftn.exception.BadRequestException;
-import com.ftn.model.InsurancePolicy;
-import com.ftn.model.dto.InsurancePolicyDTO;
-import com.ftn.service.InsurancePolicyService;
+
+import java.util.Date;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
-import java.util.Date;
+import com.ftn.exception.BadRequestException;
+import com.ftn.model.dto.InsurancePolicyDTO;
+import com.ftn.service.InsurancePolicyService;
+import com.ftn.service.implementation.InsurancePolicyServiceImpl;
+
 
 /**
  * Created by Jasmina on 22/11/2017.
  */
-@RestController
-@RequestMapping("/api/insurancePolicy")
+
+@Controller
+@RequestMapping("/insurancePolicy")
+
 public class InsurancePolicyController {
 
     private final InsurancePolicyService insurancePolicyService;
 
     @Autowired
-    public InsurancePolicyController(InsurancePolicyService insurancePolicyService){
+    public InsurancePolicyController(InsurancePolicyServiceImpl insurancePolicyService){
+
         this.insurancePolicyService = insurancePolicyService;
     }
 
@@ -48,25 +62,58 @@ public class InsurancePolicyController {
         if (bindingResult.hasErrors()) {
             throw new BadRequestException();
         }
-        return new ResponseEntity<>(insurancePolicyService.update(id, insurancePolicyDTO), HttpStatus.OK);
+
+        
+        InsurancePolicyDTO ipDTO;
+//        if(insurancePolicyDTO.getCreated() == null){
+//    		insurancePolicyDTO.setCreated(insurancePolicyService.findById(id).getCreated());
+//    	}
+        try {
+        	
+			ipDTO = insurancePolicyService.update(id, insurancePolicyDTO);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+        
+        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+
     }
 
     @Transactional
     @DeleteMapping(value = "/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
-        insurancePolicyService.delete(id);
+
+        try {
+			insurancePolicyService.delete(id);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @Transactional
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id){
-        return new ResponseEntity<>(insurancePolicyService.findById(id), HttpStatus.OK);
+
+    	
+    	InsurancePolicyDTO ipDTO;
+    	
+    	try {
+			ipDTO = insurancePolicyService.findById(id);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+    	
+        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
     }
 
     @Transactional
-    @GetMapping(value = "/{date}")
+    @GetMapping(value = "/byDateOfIssue/{date}")
     public ResponseEntity findByDateOfIssue(@PathVariable Date date){
-        return new ResponseEntity<>(insurancePolicyService.findByDateOfIssue(date), HttpStatus.OK);
+    	
+    	return new ResponseEntity<>(insurancePolicyService.findByDateOfIssue(date), HttpStatus.OK);
+			
+
     }
 }
