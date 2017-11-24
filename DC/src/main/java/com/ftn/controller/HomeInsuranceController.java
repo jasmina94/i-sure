@@ -92,13 +92,9 @@ public class HomeInsuranceController {
 	@Transactional
 	@GetMapping(value = "/byUcn/{ucn}")
 	public ResponseEntity findByDateOfIssue(@PathVariable String ucn) {
-		HomeInsuranceDTO hiDTO;
-		try {
-			hiDTO = homeInsuranceService.findByUcn(ucn);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-		return new ResponseEntity<>(hiDTO, HttpStatus.OK);
+		
+		return new ResponseEntity<>(homeInsuranceService.findByUcn(ucn), HttpStatus.OK);
+			
 	}
 
 }

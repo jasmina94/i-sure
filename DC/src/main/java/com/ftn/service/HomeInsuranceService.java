@@ -21,5 +21,5 @@ public interface HomeInsuranceService {
 
 	HomeInsuranceDTO findById(Long id);
 
-	HomeInsuranceDTO findByUcn(String ucn);
+	List<HomeInsuranceDTO> findByUcn(String ucn);
 }

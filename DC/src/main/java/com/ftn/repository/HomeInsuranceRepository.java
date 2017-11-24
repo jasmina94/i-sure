@@ -17,5 +17,5 @@ public interface HomeInsuranceRepository extends JpaRepository<HomeInsurance, Lo
 	public List<HomeInsurance> findAll();
 	public HomeInsurance save(HomeInsurance homeInsurance);
 	public void delete(Long id);
-	public Optional<HomeInsurance> findByUcn(String ucn);
+	public List<HomeInsurance> findByUcn(String ucn);
 }

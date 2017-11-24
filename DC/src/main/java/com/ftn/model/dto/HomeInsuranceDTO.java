@@ -1,11 +1,10 @@
 package com.ftn.model.dto;
 
-import java.util.Collection;
-
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import com.ftn.model.HomeInsurance;
-import com.ftn.model.InsurancePolicy;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,12 +16,17 @@ import lombok.NoArgsConstructor;
 public class HomeInsuranceDTO extends BaseDTO {
 
 	@NotNull
+	@Size(max = 80)
 	private String ownerFirstName;
 	@NotNull
+	@Size(max = 80)
 	private String ownerLastName;
 	@NotNull
+	@Size(max = 80)
 	private String address;
 	@NotNull
+	@Size(min = 13, max = 13)
+	@Pattern(regexp = "[0-9]*")
 	private String ucn;
 	@NotNull
 	private double price;

@@ -47,11 +47,6 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
     	
         final InsurancePolicy insurancePolicy = insurancePolicyDTO.construct();
         
-//        insurancePolicy.setIti(itiRepository.save(insurancePolicy.getIti()));
-//        insurancePolicy.setHomeInsurance(homeInsuranceRepository.save(insurancePolicy.getHomeInsurance()));
-//        insurancePolicy.setRoadsideAssistanceInsurance(raiRepository.save(insurancePolicy.getRoadsideAssistanceInsurance()));
-//        
-        
         insurancePolicyRepository.save(insurancePolicy);
         return new InsurancePolicyDTO(insurancePolicy);
     }
@@ -78,14 +73,15 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
     }
 
     @Override
-    public InsurancePolicyDTO findByDateOfIssue(Date date) {
-        final InsurancePolicy insurancePolicy = insurancePolicyRepository.findByDateOfIssue(date).orElseThrow(NotFoundException::new);
-        return new InsurancePolicyDTO(insurancePolicy);
+    public List<InsurancePolicyDTO> findByDateOfIssue(Date date) {
+    	
+        return insurancePolicyRepository.findByDateOfIssue(date).stream().map(InsurancePolicyDTO::new).collect(Collectors.toList());
+        
     }
     
     @Override
-    public InsurancePolicyDTO findByDateBecomeEffective(Date date) {
-        final InsurancePolicy insurancePolicy = insurancePolicyRepository.findByDateOfIssue(date).orElseThrow(NotFoundException::new);
-        return new InsurancePolicyDTO(insurancePolicy);
+    public List<InsurancePolicyDTO> findByDateBecomeEffective(Date date) {
+       return insurancePolicyRepository.findByDateOfIssue(date).stream().map(InsurancePolicyDTO::new).collect(Collectors.toList());
+        
     }
 }

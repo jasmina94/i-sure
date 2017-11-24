@@ -58,8 +58,9 @@ public class HomeInsuranceServiceImpl implements HomeInsuranceService {
 
    
 	@Override
-	public HomeInsuranceDTO findByUcn(String ucn) {
-		final HomeInsurance homeInsurance = homeInsuranceRepository.findByUcn(ucn).orElseThrow(NotFoundException::new);
-        return new HomeInsuranceDTO(homeInsurance);
+	public List<HomeInsuranceDTO> findByUcn(String ucn) {
+		
+		return homeInsuranceRepository.findByUcn(ucn).stream().map(HomeInsuranceDTO::new).collect(Collectors.toList());
+         
 	}
 }

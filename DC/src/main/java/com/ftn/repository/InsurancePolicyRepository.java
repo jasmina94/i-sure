@@ -18,8 +18,8 @@ public interface InsurancePolicyRepository extends JpaRepository<InsurancePolicy
 
 	public void delete(Long id);
 
-	public Optional<InsurancePolicy> findByDateOfIssue(Date dateOfIssue);
+	public List<InsurancePolicy> findByDateOfIssue(Date dateOfIssue);
 	
-	public Optional<InsurancePolicy> findByDateBecomeEffective(Date dateBecomeEffective);
+	public List<InsurancePolicy> findByDateBecomeEffective(Date dateBecomeEffective);
 
 }
