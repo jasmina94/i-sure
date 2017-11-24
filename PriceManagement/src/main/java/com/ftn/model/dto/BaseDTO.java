@@ -26,5 +26,15 @@ public abstract class BaseDTO {
     
     private boolean active = true;
 
+	public BaseDTO(BaseDTO baseDTO) {
+		super();
+		this.id = baseDTO.getId();
+		this.created = baseDTO.getCreated();
+		this.updated = baseDTO.getUpdated();
+		this.active = baseDTO.isActive();
+	}
+    
+    
+
 
 }

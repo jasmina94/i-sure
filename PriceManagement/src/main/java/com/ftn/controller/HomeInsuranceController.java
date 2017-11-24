@@ -31,13 +31,11 @@ public class HomeInsuranceController {
 		this.homeInsuranceService = homeInsuranceService;
 	}
 
-	
 	@GetMapping
 	public ResponseEntity read() {
 		return new ResponseEntity<>(homeInsuranceService.readAll(), HttpStatus.OK);
 	}
 
-	
 	@PostMapping
 	public ResponseEntity create(@Valid @RequestBody HomeInsuranceDTO homeInsuranceDTO, BindingResult bindingResult) {
 		if (bindingResult.hasErrors())
@@ -45,7 +43,6 @@ public class HomeInsuranceController {
 		return new ResponseEntity<>(homeInsuranceService.create(homeInsuranceDTO), HttpStatus.OK);
 	}
 
-	
 	@PatchMapping(value = "/{id}")
 	public ResponseEntity update(@PathVariable Long id, @Valid @RequestBody HomeInsuranceDTO homeInsuranceDTO,
 			BindingResult bindingResult) {
@@ -64,10 +61,9 @@ public class HomeInsuranceController {
 		return new ResponseEntity<>(hiDTO, HttpStatus.OK);
 	}
 
-	
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity delete(@PathVariable Long id) {
-		
+
 		try {
 			homeInsuranceService.delete(id);
 		} catch (Exception e) {
@@ -87,16 +83,10 @@ public class HomeInsuranceController {
 		return new ResponseEntity<>(hiDTO, HttpStatus.OK);
 	}
 
-	
 	@GetMapping(value = "/byUcn/{ucn}")
-	public ResponseEntity findByDateOfIssue(@PathVariable String ucn) {
-		HomeInsuranceDTO hiDTO;
-		try {
-			hiDTO = homeInsuranceService.findByUcn(ucn);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-		return new ResponseEntity<>(hiDTO, HttpStatus.OK);
+	public ResponseEntity findByUcn(@PathVariable String ucn) {
+	
+		return new ResponseEntity<>(homeInsuranceService.findByUcn(ucn), HttpStatus.OK);
 	}
 
 }

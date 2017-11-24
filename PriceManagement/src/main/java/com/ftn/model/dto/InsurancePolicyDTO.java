@@ -26,7 +26,9 @@ public class InsurancePolicyDTO extends BaseDTO{
 	
 	// private List<Insured> participants = new ArrayList<>();
 
+	@NotNull
 	private InternationalTravelInsuranceDTO iti;
+	
 	private HomeInsuranceDTO homeInsurance;
 	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 

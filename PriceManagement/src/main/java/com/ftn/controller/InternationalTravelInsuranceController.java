@@ -106,7 +106,7 @@ public class InternationalTravelInsuranceController {
 		}
 
 	     
-	    @GetMapping(value = "/byDurationsInDays/{durationInDays}")
+	    @GetMapping(value = "/byDurationInDays/{durationInDays}")
 		public ResponseEntity findByDurationInDays(@PathVariable int durationInDays) {
 	    	return new ResponseEntity<>(internationalTravelInsuranceService.findByDurationInDays(durationInDays), HttpStatus.OK);
 		}

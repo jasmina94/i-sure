@@ -99,14 +99,7 @@ public class InsurancePolicyController {
     @GetMapping(value = "/byDateOfIssue/{date}")
     public ResponseEntity findByDateOfIssue(@PathVariable Date date){
     	
-    	InsurancePolicyDTO ipDTO;
-    	
-    	try {
-			ipDTO = insurancePolicyService.findByDateOfIssue(date);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-    	
-        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+    	return new ResponseEntity<>(insurancePolicyService.findByDateOfIssue(date), HttpStatus.OK);
+			
     }
 }
