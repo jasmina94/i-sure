@@ -1,0 +1,43 @@
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+    
+    #header{
+    }
+    
+     .shoppingCart {
+     	float: right;
+    	padding: 5px 30px 0px 0px;
+     }
+    
+	.shoppingCart {
+		text-decoration: none;
+		-webkit-tap-highlight-color: transparent;
+		color: #ab8628;
+		font-size:25px;
+		font-family: garamond;
+		
+	}
+ 	.shoppingCart:hover {
+		color: #ccae3b;
+		font-size:30px;
+	}
+
+	.shoppingCart:active {
+			color: #ccae3b;
+			font-size:30px;
+		}
+
+
+	
+
+
+
+			
