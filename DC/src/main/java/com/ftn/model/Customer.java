@@ -66,6 +66,8 @@ public class Customer extends Base{
         this.passport = customerDTO.getPassport();
         this.address = customerDTO.getAddress();
         this.telephoneNumber = customerDTO.getTelephoneNumber();
+        this.carrier = customerDTO.isCarrier();
+        this.email = customerDTO.getEmail();
     }
 }
 

@@ -54,6 +54,8 @@ public class CustomerDTO extends BaseDTO{
         this.passport = customer.getPassport();
         this.address = customer.getAddress();
         this.telephoneNumber = customer.getTelephoneNumber();
+        this.carrier = customer.isCarrier();
+        this.email = customer.getEmail();
     }
 
     public Customer construct(){
@@ -64,6 +66,8 @@ public class CustomerDTO extends BaseDTO{
         customer.setPassport(passport);
         customer.setAddress(address);
         customer.setTelephoneNumber(telephoneNumber);
+        customer.setAddress(address);
+        customer.setEmail(email);
         return customer;
     }
 }
