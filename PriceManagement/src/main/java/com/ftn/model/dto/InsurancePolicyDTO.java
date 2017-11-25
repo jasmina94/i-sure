@@ -19,9 +19,11 @@ public class InsurancePolicyDTO extends BaseDTO{
 
 	@NotNull
 	private double totalValue;
+
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateOfIssue;
+
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateBecomeEffective;
@@ -32,6 +34,7 @@ public class InsurancePolicyDTO extends BaseDTO{
 	private InternationalTravelInsuranceDTO iti;
 	
 	private HomeInsuranceDTO homeInsurance;
+
 	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
 }

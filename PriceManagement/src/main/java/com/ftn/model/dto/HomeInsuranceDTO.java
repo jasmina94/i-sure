@@ -16,9 +16,11 @@ public class HomeInsuranceDTO extends BaseDTO {
 	@NotNull
 	@Size(max = 80)
 	private String ownerFirstName;
+
 	@NotNull
 	@Size(max = 80)
 	private String ownerLastName;
+
 	@NotNull
 	@Size(max = 80)
 	private String address;
@@ -27,6 +29,7 @@ public class HomeInsuranceDTO extends BaseDTO {
 	@Size(min = 13, max = 13)
 	@Pattern(regexp = "[0-9]*")
 	private String ucn;
+
 	@NotNull
 	private double price;
 

@@ -11,10 +11,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class PricelistDTO {
+
 	private Long id;
+
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date dateFrom;
+
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date dateTo;
+
 	private Collection<PricelistItemDTO> pricelistItems;
 }

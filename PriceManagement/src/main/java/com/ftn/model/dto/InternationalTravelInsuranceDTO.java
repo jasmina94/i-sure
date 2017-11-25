@@ -21,10 +21,13 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date issueDate;
+
 	@NotNull
 	private int durationInDays;
+
 	@NotNull
 	private int numberOfPersons;
+
 	@NotNull
 	private double price;
 
