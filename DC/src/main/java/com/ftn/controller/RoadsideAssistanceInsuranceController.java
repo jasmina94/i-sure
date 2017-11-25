@@ -91,9 +91,9 @@ public class RoadsideAssistanceInsuranceController {
     }
     
     @Transactional
-    @GetMapping(value = "/byUcn/{ucn}")
-    public ResponseEntity findByUcn(@PathVariable String ucn){
-    	return new ResponseEntity<>(roadsideAssistanceInsuranceService.findByUcn(ucn), HttpStatus.OK);
+    @GetMapping(value = "/byPersonalId/{personalId}")
+    public ResponseEntity findByPersonalId(@PathVariable String personalId){
+    	return new ResponseEntity<>(roadsideAssistanceInsuranceService.findByPersonalId(personalId), HttpStatus.OK);
     }
 
     @Transactional

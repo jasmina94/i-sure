@@ -1,24 +1,19 @@
 package com.ftn.model;
 
-import java.util.Collection;
-import java.util.Date;
+import javax.persistence.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import com.ftn.model.dto.BaseDTO;
-import com.ftn.model.dto.HomeInsuranceDTO;
-import com.ftn.model.dto.InternationalTravelInsuranceDTO;
 import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
 import com.ftn.util.SqlConstants;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -29,25 +24,34 @@ public class RoadsideAssistanceInsurance extends Base{
 
 	@Column(nullable = false)
 	private String ownerFirstName;
+
 	@Column(nullable = false)
 	private String ownerLastName;
+
 	@Column(nullable = false)
-	private String ucn;
+	private String personalId;
+
 	@Column(nullable = false)
 	private String carBrand;
+
 	// ENUMERACIJA?
 	@Column(nullable = false)
 	private String carType;
+
 	@Column(nullable = false)
 	private String yearOfManufacture;
+
 	@Column(nullable = false)
 	private String licencePlateNumber;
+
 	@Column(nullable = false)
 	private String undercarriageNumber;
+
 	@Column(nullable = false)
 	private double price;
-	
-	//private List<Risk> risks = new ArrayList<>();
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Risk> risks = new ArrayList<>();
 	
 	public RoadsideAssistanceInsurance(BaseDTO baseDTO){
 		super(baseDTO);
@@ -56,14 +60,13 @@ public class RoadsideAssistanceInsurance extends Base{
 	public void merge(RoadsideAssistanceInsuranceDTO raiDTO){
 		this.ownerFirstName = raiDTO.getOwnerFirstName();
 		this.ownerLastName = raiDTO.getOwnerLastName();
-		this.ucn = raiDTO.getUcn();
+		this.personalId = raiDTO.getPersonalId();
 		this.carBrand = raiDTO.getCarBrand();
 		this.carType = raiDTO.getCarType();
 		this.yearOfManufacture = raiDTO.getYearOfManufacture();
 		this.licencePlateNumber = raiDTO.getLicencePlateNumber();
 		this.undercarriageNumber = raiDTO.getUndercarriageNumber();
 		this.price = raiDTO.getPrice();
-		//fali mapiranje rizika
 	}
 
 	

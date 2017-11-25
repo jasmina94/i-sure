@@ -3,7 +3,6 @@ package com.ftn.model.dto;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.validation.constraints.NotNull;
 
@@ -70,7 +69,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 						insurancePolicy.getRoadsideAssistanceInsurance());
 				this.roadsideAssistanceInsurance = raiDTO;
 			}
-			InternationalTravelInsuranceDTO itiDTO = new InternationalTravelInsuranceDTO(insurancePolicy.getIti());
+			InternationalTravelInsuranceDTO itiDTO = new InternationalTravelInsuranceDTO(insurancePolicy.getInternationalTravelInsurance());
 
 			this.iti = itiDTO;
 			
@@ -101,7 +100,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 			insurancePolicy.setRoadsideAssistanceInsurance(raiIntern);
 		}
 
-		insurancePolicy.setIti(itiIntern);
+		insurancePolicy.setInternationalTravelInsurance(itiIntern);
 
 		// insurancePolicy.setCustomers(this.customers.stream().map(Customer::new).collect(Collectors.toList()));
 		insurancePolicy.getCustomers().clear();

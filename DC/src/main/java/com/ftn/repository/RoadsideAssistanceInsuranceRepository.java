@@ -9,24 +9,24 @@ import com.ftn.model.RoadsideAssistanceInsurance;
 
 public interface RoadsideAssistanceInsuranceRepository extends JpaRepository<RoadsideAssistanceInsurance, Long>{
 	
-	public Optional<RoadsideAssistanceInsurance> findById(Long id);
+	Optional<RoadsideAssistanceInsurance> findById(Long id);
 
-	public List<RoadsideAssistanceInsurance> findAll();
+	List<RoadsideAssistanceInsurance> findAll();
 
-	public RoadsideAssistanceInsurance save(RoadsideAssistanceInsurance roadsideAssistanceInsurance);
+	RoadsideAssistanceInsurance save(RoadsideAssistanceInsurance roadsideAssistanceInsurance);
 
-	public void delete(Long id);
+	void delete(Long id);
 
-	public List<RoadsideAssistanceInsurance> findByUcn(String ucn);
+	List<RoadsideAssistanceInsurance> findByPersonalId(String personalId);
 
-	public List<RoadsideAssistanceInsurance> findByYearOfManufacture(String yearOfManifacture);
+	List<RoadsideAssistanceInsurance> findByYearOfManufacture(String yearOfManifacture);
 
-	public List<RoadsideAssistanceInsurance> findByLicencePlateNumber(String licencePlateNumber);
+	List<RoadsideAssistanceInsurance> findByLicencePlateNumber(String licencePlateNumber);
 
-	public List<RoadsideAssistanceInsurance> findByUndercarriageNumber(String undercarriageNumber);
+	List<RoadsideAssistanceInsurance> findByUndercarriageNumber(String undercarriageNumber);
 
-	public List<RoadsideAssistanceInsurance> findByCarBrand(String carBrand);
+	List<RoadsideAssistanceInsurance> findByCarBrand(String carBrand);
 	
-	public List<RoadsideAssistanceInsurance> findByCarType(String carType);
+	List<RoadsideAssistanceInsurance> findByCarType(String carType);
 
 }

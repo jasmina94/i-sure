@@ -20,15 +20,15 @@ public interface RoadsideAssistanceInsuranceService {
     
     RoadsideAssistanceInsuranceDTO findById(Long id);
     
-    public List<RoadsideAssistanceInsuranceDTO> findByUcn(String ucn);
+	List<RoadsideAssistanceInsuranceDTO> findByPersonalId(String personalId);
 
-	public List<RoadsideAssistanceInsuranceDTO> findByYearOfManufacture(String yearOfManufacture);
+	List<RoadsideAssistanceInsuranceDTO> findByYearOfManufacture(String yearOfManufacture);
 
-	public List<RoadsideAssistanceInsuranceDTO> findByLicencePlateNumber(String licencePlateNumber);
+	List<RoadsideAssistanceInsuranceDTO> findByLicencePlateNumber(String licencePlateNumber);
 
-	public List<RoadsideAssistanceInsuranceDTO> findByUndercarriageNumber(String undercarriageNumber);
+	List<RoadsideAssistanceInsuranceDTO> findByUndercarriageNumber(String undercarriageNumber);
 
-	public List<RoadsideAssistanceInsuranceDTO> findByCarBrand(String carBrand);
+	List<RoadsideAssistanceInsuranceDTO> findByCarBrand(String carBrand);
 	
-	public List<RoadsideAssistanceInsuranceDTO> findByCarType(String carType);
+	List<RoadsideAssistanceInsuranceDTO> findByCarType(String carType);
 }

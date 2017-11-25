@@ -20,5 +20,5 @@ public interface CustomerService {
 
     CustomerDTO findById(Long id);
 
-    CustomerDTO findByBirthId(String birthId);
+    CustomerDTO findByPersonalId(String personalId);
 }

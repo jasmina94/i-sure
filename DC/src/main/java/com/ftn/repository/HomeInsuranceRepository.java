@@ -13,9 +13,13 @@ import com.ftn.model.HomeInsurance;
 @Repository
 public interface HomeInsuranceRepository extends JpaRepository<HomeInsurance, Long>{
 	
-	public Optional<HomeInsurance> findById(Long id);
-	public List<HomeInsurance> findAll();
-	public HomeInsurance save(HomeInsurance homeInsurance);
-	public void delete(Long id);
-	public List<HomeInsurance> findByUcn(String ucn);
+	Optional<HomeInsurance> findById(Long id);
+
+	List<HomeInsurance> findAll();
+
+	HomeInsurance save(HomeInsurance homeInsurance);
+
+	void delete(Long id);
+
+	List<HomeInsurance> findByPersonalId(String personalId);
 }

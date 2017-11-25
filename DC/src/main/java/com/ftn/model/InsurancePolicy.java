@@ -3,7 +3,6 @@ package com.ftn.model;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -48,9 +47,11 @@ public class InsurancePolicy extends Base {
 	private List<Customer> customers = new ArrayList<>();
 
 	@OneToOne(cascade = CascadeType.ALL)
-	private InternationalTravelInsurance iti;
+	private InternationalTravelInsurance internationalTravelInsurance;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private HomeInsurance homeInsurance;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private RoadsideAssistanceInsurance roadsideAssistanceInsurance;
 
@@ -65,8 +66,8 @@ public class InsurancePolicy extends Base {
 		this.dateOfIssue = insurancePolicyDTO.getDateOfIssue();
 		this.dateBecomeEffective = insurancePolicyDTO.getDateBecomeEffective();
 
-		InternationalTravelInsurance itiIntern = new InternationalTravelInsurance(insurancePolicyDTO.getIti());
-		itiIntern.merge(insurancePolicyDTO.getIti());
+		InternationalTravelInsurance internationalTravelInsurance = new InternationalTravelInsurance(insurancePolicyDTO.getIti());
+		internationalTravelInsurance.merge(insurancePolicyDTO.getIti());
 
 		if (insurancePolicyDTO.getHomeInsurance() != null) {
 			HomeInsurance hiIntern = new HomeInsurance(insurancePolicyDTO.getHomeInsurance());
@@ -81,7 +82,7 @@ public class InsurancePolicy extends Base {
 			this.roadsideAssistanceInsurance = raiIntern;
 		}
 
-		this.iti = itiIntern;
+		this.internationalTravelInsurance = internationalTravelInsurance;
 		
 		
 		// this.customers =

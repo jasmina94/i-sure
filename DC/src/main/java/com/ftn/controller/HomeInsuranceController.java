@@ -91,10 +91,10 @@ public class HomeInsuranceController {
 	}
 
 	@Transactional
-	@GetMapping(value = "/byUcn/{ucn}")
-	public ResponseEntity findByDateOfIssue(@PathVariable String ucn) {
+	@GetMapping(value = "byPersonalId/{personalId}")
+	public ResponseEntity findByDateOfIssue(@PathVariable String personalId) {
 		
-		return new ResponseEntity<>(homeInsuranceService.findByUcn(ucn), HttpStatus.OK);
+		return new ResponseEntity<>(homeInsuranceService.findByPersonalId(personalId), HttpStatus.OK);
 			
 	}
 
