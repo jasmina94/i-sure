@@ -15,6 +15,7 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import com.ftn.model.dto.BaseDTO;
+import com.ftn.model.dto.CustomerDTO;
 import com.ftn.model.dto.InsurancePolicyDTO;
 
 import com.ftn.util.SqlConstants;
@@ -43,9 +44,9 @@ public class InsurancePolicy extends Base {
 	@Column(nullable = false)
 	private Date dateBecomeEffective;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Customer> customers = new ArrayList<>();
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private InternationalTravelInsurance iti;
 	@OneToOne(cascade = CascadeType.ALL)
@@ -67,18 +68,28 @@ public class InsurancePolicy extends Base {
 		InternationalTravelInsurance itiIntern = new InternationalTravelInsurance(insurancePolicyDTO.getIti());
 		itiIntern.merge(insurancePolicyDTO.getIti());
 
-		HomeInsurance hiIntern = new HomeInsurance(insurancePolicyDTO.getHomeInsurance());
-		hiIntern.merge(insurancePolicyDTO.getHomeInsurance());
+		if (insurancePolicyDTO.getHomeInsurance() != null) {
+			HomeInsurance hiIntern = new HomeInsurance(insurancePolicyDTO.getHomeInsurance());
+			hiIntern.merge(insurancePolicyDTO.getHomeInsurance());
+			this.homeInsurance = hiIntern;
+		}
 
-		RoadsideAssistanceInsurance raiIntern = new RoadsideAssistanceInsurance(
-				insurancePolicyDTO.getRoadsideAssistanceInsurance());
-		raiIntern.merge(insurancePolicyDTO.getRoadsideAssistanceInsurance());
+		if (insurancePolicyDTO.getRoadsideAssistanceInsurance() != null) {
+			RoadsideAssistanceInsurance raiIntern = new RoadsideAssistanceInsurance(
+					insurancePolicyDTO.getRoadsideAssistanceInsurance());
+			raiIntern.merge(insurancePolicyDTO.getRoadsideAssistanceInsurance());
+			this.roadsideAssistanceInsurance = raiIntern;
+		}
 
 		this.iti = itiIntern;
-		this.roadsideAssistanceInsurance = raiIntern;
-		this.homeInsurance = hiIntern;
-		this.customers = insurancePolicyDTO.getCustomers().stream().map(Customer::new).collect(Collectors.toList());
 		
+		
+		// this.customers =
+		// insurancePolicyDTO.getCustomers().stream().map(Customer::new).collect(Collectors.toList());
+		this.customers.clear();
+		for (CustomerDTO customerDTO : insurancePolicyDTO.getCustomers()) {
+			this.customers.add(customerDTO.construct());
+		}
 		/*
 		 * fali preslikavanje za Ucesnike, Osiguranje kuce, Pomoc na putu i
 		 * glavno osiguranje i za rizike
