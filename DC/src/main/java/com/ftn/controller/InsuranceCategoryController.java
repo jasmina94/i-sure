@@ -64,8 +64,8 @@ public class InsuranceCategoryController {
     }
 
     @Transactional
-    @GetMapping(value = "/{name}")
-    public ResponseEntity findByBirthId(@PathVariable String name){
+    @GetMapping(value = "/name/{name}")
+    public ResponseEntity findByName(@PathVariable String name){
         return new ResponseEntity<>(insuranceCategoryService.findByName(name), HttpStatus.OK);
     }
 }

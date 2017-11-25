@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +24,7 @@ public class RiskTypeDTO extends BaseDTO {
     @NotNull
     private InsuranceCategoryDTO insuranceCategory;
 
-    private List<RiskDTO> risks;
+    private List<RiskDTO> risks = new ArrayList<>();
 
     public RiskTypeDTO(RiskType riskType){
         this(riskType, true);

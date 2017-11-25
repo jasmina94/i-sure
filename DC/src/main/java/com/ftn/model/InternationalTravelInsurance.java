@@ -36,7 +36,7 @@ public class InternationalTravelInsurance extends Base{
 	@Column
 	private double price;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "internationalTravelInsurance")
 	private List<Risk> risks = new ArrayList<>();
 	
 	public InternationalTravelInsurance(BaseDTO baseDTO){

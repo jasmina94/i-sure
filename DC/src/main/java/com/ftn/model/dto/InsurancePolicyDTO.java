@@ -39,7 +39,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 	private List<CustomerDTO> customers = new ArrayList<>();
 
 	@NotNull
-	private InternationalTravelInsuranceDTO iti;
+	private InternationalTravelInsuranceDTO internationalTravelInsuranceDTO;
 
 	private HomeInsuranceDTO homeInsurance;
 	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
@@ -71,7 +71,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 			}
 			InternationalTravelInsuranceDTO itiDTO = new InternationalTravelInsuranceDTO(insurancePolicy.getInternationalTravelInsurance());
 
-			this.iti = itiDTO;
+			this.internationalTravelInsuranceDTO = itiDTO;
 			
 			
 			// this.customers =
@@ -89,7 +89,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 		insurancePolicy.setDateOfIssue(dateOfIssue);
 		insurancePolicy.setDateBecomeEffective(dateBecomeEffective);
 
-		InternationalTravelInsurance itiIntern = this.iti.construct();
+		InternationalTravelInsurance itiIntern = this.internationalTravelInsuranceDTO.construct();
 		if (this.homeInsurance != null) {
 			HomeInsurance hiIntern = this.homeInsurance.construct();
 			insurancePolicy.setHomeInsurance(hiIntern);

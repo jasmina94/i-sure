@@ -18,12 +18,15 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 public class PricelistDTO extends BaseDTO{
+
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date dateFrom;
+
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date dateTo;
+
 	private List<PricelistItemDTO> pricelistItems = new ArrayList<>();
 	
 	public PricelistDTO(Pricelist pricelist) {

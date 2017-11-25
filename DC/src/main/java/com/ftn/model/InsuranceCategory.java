@@ -30,7 +30,7 @@ public class InsuranceCategory extends Base{
     @Column(nullable = false)
     private String categoryName;
 
-    @OneToMany(mappedBy = "insuranceCategory", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "insuranceCategory", cascade = CascadeType.ALL, orphanRemoval=true)
     private List<RiskType> riskTypes = new ArrayList<>();
 
     public InsuranceCategory(BaseDTO baseDTO){

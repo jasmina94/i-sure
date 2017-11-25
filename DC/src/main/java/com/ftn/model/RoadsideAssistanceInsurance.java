@@ -50,7 +50,7 @@ public class RoadsideAssistanceInsurance extends Base{
 	@Column(nullable = false)
 	private double price;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "roadsideAssistanceInsurance")
 	private List<Risk> risks = new ArrayList<>();
 	
 	public RoadsideAssistanceInsurance(BaseDTO baseDTO){

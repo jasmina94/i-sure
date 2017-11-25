@@ -29,10 +29,13 @@ import lombok.NoArgsConstructor;
 @SQLDelete(sql = SqlConstants.UPDATE + "pricelist" + SqlConstants.SOFT_DELETE)
 @Where(clause = SqlConstants.ACTIVE)
 public class Pricelist extends Base{
+
 	@Column(nullable = false)
 	private Date dateFrom;
+
 	@Column(nullable = false)
 	private Date dateTo;
+
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
 	@JoinColumn(name = "pricelist_id")
 	private List<PricelistItem> pricelistItems = new ArrayList<>();

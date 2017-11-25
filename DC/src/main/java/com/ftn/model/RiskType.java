@@ -10,6 +10,7 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,8 +30,8 @@ public class RiskType extends Base {
     @ManyToOne(optional = false)
     private InsuranceCategory insuranceCategory;
 
-    @OneToMany(mappedBy = "riskType", cascade = CascadeType.ALL)
-    private List<Risk> risks;
+    @OneToMany(mappedBy = "riskType", cascade = CascadeType.ALL, orphanRemoval=true)
+    private List<Risk> risks = new ArrayList<>();
 
     public RiskType(BaseDTO baseDTO){
         super(baseDTO);

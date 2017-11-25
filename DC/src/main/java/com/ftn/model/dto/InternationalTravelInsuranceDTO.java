@@ -1,5 +1,6 @@
 package com.ftn.model.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,7 +32,7 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 	@NotNull
 	private double price;
 	
-	private List<RiskDTO> risks;
+	private List<RiskDTO> risks = new ArrayList<>();
 
 	public InternationalTravelInsuranceDTO(InternationalTravelInsurance internationalTravelInsurance){
 		this(internationalTravelInsurance, true);

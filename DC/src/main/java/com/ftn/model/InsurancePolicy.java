@@ -55,8 +55,6 @@ public class InsurancePolicy extends Base {
 	@OneToOne(cascade = CascadeType.ALL)
 	private RoadsideAssistanceInsurance roadsideAssistanceInsurance;
 
-	// private List<Risk> risks = new ArrayList<>();
-
 	public InsurancePolicy(BaseDTO baseDTO) {
 		super(baseDTO);
 	}
@@ -66,8 +64,8 @@ public class InsurancePolicy extends Base {
 		this.dateOfIssue = insurancePolicyDTO.getDateOfIssue();
 		this.dateBecomeEffective = insurancePolicyDTO.getDateBecomeEffective();
 
-		InternationalTravelInsurance internationalTravelInsurance = new InternationalTravelInsurance(insurancePolicyDTO.getIti());
-		internationalTravelInsurance.merge(insurancePolicyDTO.getIti());
+		InternationalTravelInsurance internationalTravelInsurance = new InternationalTravelInsurance(insurancePolicyDTO.getInternationalTravelInsuranceDTO());
+		internationalTravelInsurance.merge(insurancePolicyDTO.getInternationalTravelInsuranceDTO());
 
 		if (insurancePolicyDTO.getHomeInsurance() != null) {
 			HomeInsurance hiIntern = new HomeInsurance(insurancePolicyDTO.getHomeInsurance());
@@ -84,16 +82,9 @@ public class InsurancePolicy extends Base {
 
 		this.internationalTravelInsurance = internationalTravelInsurance;
 		
-		
-		// this.customers =
-		// insurancePolicyDTO.getCustomers().stream().map(Customer::new).collect(Collectors.toList());
 		this.customers.clear();
 		for (CustomerDTO customerDTO : insurancePolicyDTO.getCustomers()) {
 			this.customers.add(customerDTO.construct());
 		}
-		/*
-		 * fali preslikavanje za Ucesnike, Osiguranje kuce, Pomoc na putu i
-		 * glavno osiguranje i za rizike
-		 */
 	}
 }

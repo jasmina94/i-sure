@@ -37,7 +37,7 @@ public class HomeInsurance extends Base {
 	@Column(nullable = false)
 	private double price;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "homeInsurance")
 	private List<Risk> risks = new ArrayList<>();
 	
 	public HomeInsurance(BaseDTO baseDTO){
