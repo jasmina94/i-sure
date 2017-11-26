@@ -8,6 +8,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
@@ -24,7 +27,7 @@ public class RoadsideAssistanceInsuranceDTO  extends BaseDTO{
 	@NotNull
 	@Size(min = 13, max = 13)
     @Pattern(regexp = "[0-9]*")
-	private String ucn;
+	private String personalId;
 
 	@NotNull
 	@Size(max = 80)
@@ -52,6 +55,6 @@ public class RoadsideAssistanceInsuranceDTO  extends BaseDTO{
 	@NotNull
 	private double price;
 
-	//private List<RiskDTO> risks = new ArrayList<>();
+	private List<RiskDTO> risks = new ArrayList<>();
 
 }

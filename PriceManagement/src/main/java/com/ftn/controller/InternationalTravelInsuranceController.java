@@ -24,7 +24,7 @@ import com.ftn.service.InternationalTravelInsuranceService;
 import com.ftn.service.implementation.InternationalTravelInsuranceServiceImpl;
 
 @Controller
-@RequestMapping("/internationalTravelInsurance")
+@RequestMapping("/internationalTravelInsurances")
 public class InternationalTravelInsuranceController {
 
 	 private final InternationalTravelInsuranceService internationalTravelInsuranceService;
@@ -55,15 +55,13 @@ public class InternationalTravelInsuranceController {
 	            throw new BadRequestException();
 	        }
 	        
-	        InternationalTravelInsuranceDTO ipDTO;
-	        
 	        try {
-				ipDTO = internationalTravelInsuranceService.update(id, internationalTravelInsuranceDTO);
+				internationalTravelInsuranceDTO = internationalTravelInsuranceService.update(id, internationalTravelInsuranceDTO);
 			} catch (Exception e) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
 	        
-	        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+	        return new ResponseEntity<>(internationalTravelInsuranceDTO, HttpStatus.OK);
 	    }
 
 	     
@@ -81,15 +79,15 @@ public class InternationalTravelInsuranceController {
 	    @GetMapping(value = "/{id}")
 	    public ResponseEntity findById(@PathVariable Long id){
 	    	
-	    	InternationalTravelInsuranceDTO ipDTO;
+	    	InternationalTravelInsuranceDTO internationalTravelInsuranceDTO;
 	    	
 	    	try {
-				ipDTO = internationalTravelInsuranceService.findById(id);
+				internationalTravelInsuranceDTO = internationalTravelInsuranceService.findById(id);
 			} catch (Exception e) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
 	    	
-	        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+	        return new ResponseEntity<>(internationalTravelInsuranceDTO, HttpStatus.OK);
 	    }
 
 	     

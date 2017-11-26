@@ -1,8 +1,8 @@
 package com.ftn.service.implementation;
 
-import com.ftn.configurations.Paths;
 import com.ftn.model.dto.InsuranceCategoryDTO;
 import com.ftn.service.InsuranceCategoryService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -19,20 +19,22 @@ import java.util.List;
 @Service
 public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
 
+    @Value("${dc.insurance.category}")
+    private String URI;
+
     @Override
     public List<InsuranceCategoryDTO> readAll() {
-        String uri = Paths.DATA_CENTER_INSURANCE_CATEGORY_URI;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsuranceCategoryDTO[]> response = restTemplate.getForEntity(uri, InsuranceCategoryDTO[].class);
+        ResponseEntity<InsuranceCategoryDTO[]> response = restTemplate.getForEntity(URI, InsuranceCategoryDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public InsuranceCategoryDTO create(InsuranceCategoryDTO insuranceCategoryDTO) {
-        String uri = Paths.DATA_CENTER_INSURANCE_CATEGORY_URI;
+
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.postForEntity(uri, new HttpEntity<>(insuranceCategoryDTO),
+        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(insuranceCategoryDTO),
                 InsuranceCategoryDTO.class);
 
         return response.getBody();
@@ -40,13 +42,13 @@ public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
 
     @Override
     public InsuranceCategoryDTO update(Long id, InsuranceCategoryDTO insuranceCategoryDTO) {
-        String uri = Paths.DATA_CENTER_INSURANCE_CATEGORY_URI + "/" + id;
+        URI += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
 
-        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.exchange(uri, HttpMethod.PATCH,
+        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
                 new HttpEntity<>(insuranceCategoryDTO), InsuranceCategoryDTO.class);
 
         return response.getBody();
@@ -54,16 +56,16 @@ public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
 
     @Override
     public void delete(Long id) {
-        String uri = Paths.DATA_CENTER_INSURANCE_CATEGORY_URI + "/" + id;
+        URI += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(uri);
+        restTemplate.delete(URI);
     }
 
     @Override
     public InsuranceCategoryDTO findById(Long id) {
-        String uri = Paths.DATA_CENTER_INSURANCE_CATEGORY_URI + "/" + id;
+        URI += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.getForEntity(uri, InsuranceCategoryDTO.class);
+        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.getForEntity(URI, InsuranceCategoryDTO.class);
 
         return response.getBody();
     }
@@ -71,9 +73,9 @@ public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
     @Override
     public InsuranceCategoryDTO findByName(String name) {
 
-        String uri = Paths.DATA_CENTER_INSURANCE_CATEGORY_URI + "/byUcn/" + name;
+        URI += "/byPersonalId/" + name;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.getForEntity(uri, InsuranceCategoryDTO.class);
+        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.getForEntity(URI, InsuranceCategoryDTO.class);
 
         return response.getBody();
     }

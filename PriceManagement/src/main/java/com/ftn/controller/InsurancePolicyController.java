@@ -27,7 +27,7 @@ import com.ftn.service.implementation.InsurancePolicyServiceImpl;
  * Created by Jasmina on 22/11/2017.
  */
 @Controller
-@RequestMapping("/insurancePolicy")
+@RequestMapping("/insurancePolicies")
 public class InsurancePolicyController {
 
     private final InsurancePolicyService insurancePolicyService;
@@ -58,15 +58,13 @@ public class InsurancePolicyController {
             throw new BadRequestException();
         }
         
-        InsurancePolicyDTO ipDTO;
-        
         try {
-			ipDTO = insurancePolicyService.update(id, insurancePolicyDTO);
+			insurancePolicyDTO = insurancePolicyService.update(id, insurancePolicyDTO);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
         
-        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+        return new ResponseEntity<>(insurancePolicyDTO, HttpStatus.OK);
     }
 
     
@@ -84,15 +82,15 @@ public class InsurancePolicyController {
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id){
     	
-    	InsurancePolicyDTO ipDTO;
+    	InsurancePolicyDTO insurancePolicyDTO;
     	
     	try {
-			ipDTO = insurancePolicyService.findById(id);
+			insurancePolicyDTO = insurancePolicyService.findById(id);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
     	
-        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+        return new ResponseEntity<>(insurancePolicyDTO, HttpStatus.OK);
     }
 
     

@@ -17,7 +17,7 @@ import javax.validation.Valid;
  * Created by Jasmina on 16/11/2017.
  */
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 public class UserController {
 
     private final UserService userService;

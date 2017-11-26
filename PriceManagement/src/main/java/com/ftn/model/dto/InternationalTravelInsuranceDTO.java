@@ -1,6 +1,8 @@
 package com.ftn.model.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
@@ -31,6 +33,6 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 	@NotNull
 	private double price;
 
-	//private ArrayList<RiskDTO> risks;
+	private List<RiskDTO> risks = new ArrayList<>();
 
 }

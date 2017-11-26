@@ -22,7 +22,7 @@ import com.ftn.service.RoadsideAssistanceInsuranceService;
 import com.ftn.service.implementation.RoadsideAssistanceInsuranceServiceImpl;
 
 @RestController
-@RequestMapping("/roadsideAssistanceInsurance")
+@RequestMapping("/roadsideAssistanceInsurances")
 public class RoadsideAssistanceInsuranceController {
 
 	private final RoadsideAssistanceInsuranceService roadsideAssistanceInsuranceService;
@@ -53,15 +53,13 @@ public class RoadsideAssistanceInsuranceController {
             throw new BadRequestException();
         }
         
-        RoadsideAssistanceInsuranceDTO ipDTO;
-        
         try {
-			ipDTO = roadsideAssistanceInsuranceService.update(id, roadsideAssistanceInsuranceDTO);
+			roadsideAssistanceInsuranceDTO = roadsideAssistanceInsuranceService.update(id, roadsideAssistanceInsuranceDTO);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
         
-        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+        return new ResponseEntity<>(roadsideAssistanceInsuranceDTO, HttpStatus.OK);
     }
 
     @Transactional
@@ -79,15 +77,15 @@ public class RoadsideAssistanceInsuranceController {
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id){
     	
-    	RoadsideAssistanceInsuranceDTO ipDTO;
+    	RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO;
     	
     	try {
-			ipDTO = roadsideAssistanceInsuranceService.findById(id);
+			roadsideAssistanceInsuranceDTO = roadsideAssistanceInsuranceService.findById(id);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
     	
-        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+        return new ResponseEntity<>(roadsideAssistanceInsuranceDTO, HttpStatus.OK);
     }
     
     @Transactional

@@ -1,34 +1,30 @@
 package com.ftn.service;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-
-
-import com.ftn.model.dto.InsurancePolicyDTO;
 import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
+
+import java.util.List;
 
 public interface RoadsideAssistanceInsuranceService {
 
-	List<RoadsideAssistanceInsuranceDTO> readAll();
+    List<RoadsideAssistanceInsuranceDTO> readAll();
 
     RoadsideAssistanceInsuranceDTO create(RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO);
 
     RoadsideAssistanceInsuranceDTO update(Long id, RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO);
 
     void delete(Long id);
-    
+
     RoadsideAssistanceInsuranceDTO findById(Long id);
-    
-    public List<RoadsideAssistanceInsuranceDTO> findByUcn(String ucn);
 
-	public List<RoadsideAssistanceInsuranceDTO> findByYearOfManufacture(String yearOfManufacture);
+    List<RoadsideAssistanceInsuranceDTO> findByPersonalId(String personalId);
 
-	public List<RoadsideAssistanceInsuranceDTO> findByLicencePlateNumber(String licencePlateNumber);
+    List<RoadsideAssistanceInsuranceDTO> findByYearOfManufacture(String yearOfManufacture);
 
-	public List<RoadsideAssistanceInsuranceDTO> findByUndercarriageNumber(String undercarriageNumber);
+    List<RoadsideAssistanceInsuranceDTO> findByLicencePlateNumber(String licencePlateNumber);
 
-	public List<RoadsideAssistanceInsuranceDTO> findByCarBrand(String carBrand);
-	
-	public List<RoadsideAssistanceInsuranceDTO> findByCarType(String carType);
+    List<RoadsideAssistanceInsuranceDTO> findByUndercarriageNumber(String undercarriageNumber);
+
+    List<RoadsideAssistanceInsuranceDTO> findByCarBrand(String carBrand);
+
+    List<RoadsideAssistanceInsuranceDTO> findByCarType(String carType);
 }

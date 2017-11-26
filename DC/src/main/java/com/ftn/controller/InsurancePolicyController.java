@@ -32,7 +32,7 @@ import com.ftn.service.implementation.InsurancePolicyServiceImpl;
  */
 
 @Controller
-@RequestMapping("/insurancePolicy")
+@RequestMapping("/insurancePolicies")
 
 public class InsurancePolicyController {
 
@@ -65,20 +65,15 @@ public class InsurancePolicyController {
             throw new BadRequestException();
         }
 
-        
-        InsurancePolicyDTO ipDTO;
-//        if(insurancePolicyDTO.getCreated() == null){
-//    		insurancePolicyDTO.setCreated(insurancePolicyService.findById(id).getCreated());
-//    	}
         try {
         	
-			ipDTO = insurancePolicyService.update(id, insurancePolicyDTO);
+			insurancePolicyDTO = insurancePolicyService.update(id, insurancePolicyDTO);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
         
-        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+        return new ResponseEntity<>(insurancePolicyDTO, HttpStatus.OK);
 
     }
 
@@ -100,15 +95,15 @@ public class InsurancePolicyController {
     public ResponseEntity findById(@PathVariable Long id){
 
     	
-    	InsurancePolicyDTO ipDTO;
+    	InsurancePolicyDTO insurancePolicyDTO;
     	
     	try {
-			ipDTO = insurancePolicyService.findById(id);
+			insurancePolicyDTO = insurancePolicyService.findById(id);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
     	
-        return new ResponseEntity<>(ipDTO, HttpStatus.OK);
+        return new ResponseEntity<>(insurancePolicyDTO, HttpStatus.OK);
     }
 
     @Transactional

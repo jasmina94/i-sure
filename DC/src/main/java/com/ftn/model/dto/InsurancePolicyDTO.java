@@ -42,9 +42,8 @@ public class InsurancePolicyDTO extends BaseDTO {
 	private InternationalTravelInsuranceDTO internationalTravelInsuranceDTO;
 
 	private HomeInsuranceDTO homeInsurance;
-	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
-	// private List<RiskDTO> risks = new ArrayList<>();
+	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
 	public InsurancePolicyDTO(InsurancePolicy insurancePolicy) {
 		this(insurancePolicy, true);

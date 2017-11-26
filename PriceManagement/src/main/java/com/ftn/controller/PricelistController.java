@@ -16,7 +16,7 @@ import com.ftn.model.dto.PricelistDTO;
 import com.ftn.service.PricelistService;
 
 @RestController
-@RequestMapping("/api/pricelists")
+@RequestMapping("/pricelists")
 public class PricelistController {
 	
 	private final PricelistService pricelistService;

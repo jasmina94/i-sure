@@ -8,6 +8,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
@@ -28,11 +31,11 @@ public class HomeInsuranceDTO extends BaseDTO {
 	@NotNull
 	@Size(min = 13, max = 13)
 	@Pattern(regexp = "[0-9]*")
-	private String ucn;
+	private String personalId;
 
 	@NotNull
 	private double price;
 
-	// private List<RiskDTO> risks;
+	private List<RiskDTO> risks = new ArrayList<>();
 
 }

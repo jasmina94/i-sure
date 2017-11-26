@@ -2,7 +2,8 @@ package com.ftn.service.implementation;
 
 import com.ftn.model.dto.UserDTO;
 import com.ftn.service.UserService;
-import org.springframework.http.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,13 +13,14 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class UserServiceImpl implements UserService{
 
-    private static String DATA_CENTER_ADDRESS = "http://localhost:8080/api/users";
+    @Value("${dc.adress}")
+    private String URI;
 
     @Override
     public UserDTO getUserById(Long id) {
-        String uri = DATA_CENTER_ADDRESS + "/" + id.toString();
+        URI += "/" + id.toString();
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<UserDTO> response = restTemplate.getForEntity(uri, UserDTO.class);
+        ResponseEntity<UserDTO> response = restTemplate.getForEntity(URI, UserDTO.class);
 
         if(response == null) {
             System.out.println("Response is null.");

@@ -1,13 +1,8 @@
 package com.ftn.service;
 
-import java.util.Date;
+import com.ftn.model.dto.HomeInsuranceDTO;
+
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
-import com.ftn.model.dto.HomeInsuranceDTO;
-import com.ftn.model.dto.InsurancePolicyDTO;
-import com.ftn.model.dto.HomeInsuranceDTO;
 
 public interface HomeInsuranceService {
 
@@ -21,5 +16,5 @@ public interface HomeInsuranceService {
 
 	HomeInsuranceDTO findById(Long id);
 
-	List<HomeInsuranceDTO> findByUcn(String ucn);
+	List<HomeInsuranceDTO> findByPersonalId(String personalId);
 }

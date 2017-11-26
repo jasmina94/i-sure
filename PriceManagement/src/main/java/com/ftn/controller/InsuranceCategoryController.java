@@ -15,7 +15,7 @@ import javax.validation.Valid;
  * Created by zlatan on 25/11/2017.
  */
 @RestController
-@RequestMapping("/api/insuranceCategories")
+@RequestMapping("/insuranceCategories")
 public class InsuranceCategoryController {
 
     private final InsuranceCategoryService insuranceCategoryService;

@@ -5,6 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by zlatan on 25/11/2017.
@@ -19,4 +21,6 @@ public class RiskDTO extends BaseDTO {
 
     @NotNull
     private RiskTypeDTO riskType;
+
+    private List<PricelistItemDTO> pricelistItem = new ArrayList<>();
 }

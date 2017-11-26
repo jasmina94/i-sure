@@ -15,7 +15,7 @@ import javax.validation.Valid;
  * Created by zlatan on 25/11/2017.
  */
 @RestController
-@RequestMapping("/api/riskTypes")
+@RequestMapping("/riskTypes")
 public class RiskTypeController {
 
     private final RiskTypeService riskTypeService;

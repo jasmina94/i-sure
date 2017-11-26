@@ -1,24 +1,30 @@
 package com.ftn.model.dto;
 
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-public class PricelistDTO {
+public class PricelistDTO extends BaseDTO{
 
-	private Long id;
-
+	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date dateFrom;
 
+	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date dateTo;
 
-	private Collection<PricelistItemDTO> pricelistItems;
+	private List<PricelistItemDTO> pricelistItems = new ArrayList<>();
+
 }

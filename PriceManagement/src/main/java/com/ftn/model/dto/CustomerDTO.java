@@ -1,19 +1,17 @@
 package com.ftn.model.dto;
 
-import java.util.List;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-public class CustomerDTO{
-
-	private Long id;
+public class CustomerDTO extends BaseDTO{
 
 	@NotNull
 	private String firstName;
@@ -22,13 +20,13 @@ public class CustomerDTO{
 	private String lastName;
 
 	@NotNull
-    @Size(min = 13, max = 13)
-    @Pattern(regexp = "[0-9]*")
-	private String ucn;
+	@Size(min = 13, max = 13)
+	@Pattern(regexp = "[0-9]*")
+	private String personalId;
 
 	@NotNull
-    @Size(min = 9, max = 9)
-    @Pattern(regexp = "[0-9]*")
+	@Size(min = 9, max = 9)
+	@Pattern(regexp = "[0-9]*")
 	private String passport;
 
 	@NotNull
@@ -36,8 +34,10 @@ public class CustomerDTO{
 
 	private String telephoneNumber;
 
+	@NotNull
 	private boolean carrier;
 
 	private String email;
+
 
 }
