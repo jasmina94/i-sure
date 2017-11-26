@@ -1,8 +1,7 @@
 package com.ftn.service.implementation;
 
-import java.util.Arrays;
-import java.util.List;
-
+import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
+import com.ftn.service.RoadsideAssistanceInsuranceService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -11,10 +10,8 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.ftn.configurations.Paths;
-import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
-import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
-import com.ftn.service.RoadsideAssistanceInsuranceService;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class RoadsideAssistanceInsuranceServiceImpl implements RoadsideAssistanceInsuranceService {

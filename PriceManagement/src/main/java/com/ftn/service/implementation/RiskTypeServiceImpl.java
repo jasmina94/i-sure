@@ -1,6 +1,5 @@
 package com.ftn.service.implementation;
 
-import com.ftn.configurations.Paths;
 import com.ftn.model.dto.RiskTypeDTO;
 import com.ftn.service.RiskTypeService;
 import org.springframework.beans.factory.annotation.Value;
