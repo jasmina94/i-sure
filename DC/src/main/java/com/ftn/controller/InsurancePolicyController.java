@@ -1,6 +1,8 @@
 package com.ftn.controller;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.validation.Valid;
@@ -111,9 +113,20 @@ public class InsurancePolicyController {
 
     @Transactional
     @GetMapping(value = "/byDateOfIssue/{date}")
-    public ResponseEntity findByDateOfIssue(@PathVariable Date date){
+    public ResponseEntity findByDateOfIssue(@PathVariable String date){
     	
-    	return new ResponseEntity<>(insurancePolicyService.findByDateOfIssue(date), HttpStatus.OK);
+    	SimpleDateFormat sm = new SimpleDateFormat("yyyy-mm-dd");
+
+        Date dt;
+		try {
+			dt = sm.parse(date);
+			return new ResponseEntity<>(insurancePolicyService.findByDateOfIssue(dt), HttpStatus.OK);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 			
 
     }

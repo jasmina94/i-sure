@@ -41,8 +41,9 @@ public class HomeInsuranceController {
 	@Transactional
 	@PostMapping
 	public ResponseEntity create(@Valid @RequestBody HomeInsuranceDTO homeInsuranceDTO, BindingResult bindingResult) {
-		if (bindingResult.hasErrors())
+		if (bindingResult.hasErrors()){
 			throw new BadRequestException();
+		}
 		return new ResponseEntity<>(homeInsuranceService.create(homeInsuranceDTO), HttpStatus.OK);
 	}
 

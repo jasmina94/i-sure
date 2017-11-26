@@ -1,6 +1,5 @@
 package com.ftn.model.dto;
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -42,6 +41,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 
 	@NotNull
 	private InternationalTravelInsuranceDTO iti;
+
 	private HomeInsuranceDTO homeInsurance;
 	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
@@ -56,20 +56,30 @@ public class InsurancePolicyDTO extends BaseDTO {
 		this.totalValue = insurancePolicy.getTotalValue();
 		this.dateOfIssue = insurancePolicy.getDateOfIssue();
 		this.dateBecomeEffective = insurancePolicy.getDateBecomeEffective();
-		
+
 		if (casscade) {
-			 
-			 HomeInsuranceDTO hiDTO = new HomeInsuranceDTO(insurancePolicy.getHomeInsurance());
-			 RoadsideAssistanceInsuranceDTO raiDTO = new RoadsideAssistanceInsuranceDTO(insurancePolicy.getRoadsideAssistanceInsurance());
-			 InternationalTravelInsuranceDTO itiDTO = new InternationalTravelInsuranceDTO(insurancePolicy.getIti());
-			 
-			 this.iti = itiDTO;
-			 this.homeInsurance = hiDTO;
-			 this.roadsideAssistanceInsurance = raiDTO;
-			 this.customers.clear();
-			 for (Customer customer : insurancePolicy.getCustomers()) {
-				 customers.add(new CustomerDTO(customer));
-			 }
+			HomeInsuranceDTO hiDTO;
+			if (insurancePolicy.getHomeInsurance() != null) {
+				hiDTO = new HomeInsuranceDTO(insurancePolicy.getHomeInsurance());
+				this.homeInsurance = hiDTO;
+			}
+
+			if (insurancePolicy.getRoadsideAssistanceInsurance() != null) {
+				RoadsideAssistanceInsuranceDTO raiDTO = new RoadsideAssistanceInsuranceDTO(
+						insurancePolicy.getRoadsideAssistanceInsurance());
+				this.roadsideAssistanceInsurance = raiDTO;
+			}
+			InternationalTravelInsuranceDTO itiDTO = new InternationalTravelInsuranceDTO(insurancePolicy.getIti());
+
+			this.iti = itiDTO;
+			
+			
+			// this.customers =
+			// insurancePolicy.getCustomers().stream().map(CustomerDTO::new).collect(Collectors.toList());
+			this.customers.clear();
+			for (Customer customer : insurancePolicy.getCustomers()) {
+				customers.add(new CustomerDTO(customer));
+			}
 		}
 	}
 
@@ -78,15 +88,19 @@ public class InsurancePolicyDTO extends BaseDTO {
 		insurancePolicy.setTotalValue(totalValue);
 		insurancePolicy.setDateOfIssue(dateOfIssue);
 		insurancePolicy.setDateBecomeEffective(dateBecomeEffective);
-		
+
 		InternationalTravelInsurance itiIntern = this.iti.construct();
-		HomeInsurance hiIntern = this.homeInsurance.construct(); 
-		RoadsideAssistanceInsurance raiIntern = this.roadsideAssistanceInsurance.construct();
-		
+		if (this.homeInsurance != null) {
+			HomeInsurance hiIntern = this.homeInsurance.construct();
+			insurancePolicy.setHomeInsurance(hiIntern);
+		}
+
+		if (this.roadsideAssistanceInsurance != null) {
+			RoadsideAssistanceInsurance raiIntern = this.roadsideAssistanceInsurance.construct();
+			insurancePolicy.setRoadsideAssistanceInsurance(raiIntern);
+		}
+
 		insurancePolicy.setIti(itiIntern);
-		insurancePolicy.setRoadsideAssistanceInsurance(raiIntern);
-		insurancePolicy.setHomeInsurance(hiIntern);
-		
 		insurancePolicy.getCustomers().clear();
 		for (CustomerDTO customerDTO : customers) {
 			insurancePolicy.getCustomers().add(customerDTO.construct());

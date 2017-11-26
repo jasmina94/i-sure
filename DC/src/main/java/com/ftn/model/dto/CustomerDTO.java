@@ -66,7 +66,11 @@ public class CustomerDTO extends BaseDTO{
         customer.setPassport(passport);
         customer.setAddress(address);
         customer.setTelephoneNumber(telephoneNumber);
+
+        customer.setAddress(address);
+
         customer.setCarrier(carrier);
+
         customer.setEmail(email);
         return customer;
     }
