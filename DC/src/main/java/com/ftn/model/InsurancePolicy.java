@@ -78,14 +78,9 @@ public class InsurancePolicy extends Base {
 		this.iti = itiIntern;
 		this.roadsideAssistanceInsurance = raiIntern;
 		this.homeInsurance = hiIntern;
-		//this.customers = insurancePolicyDTO.getCustomers().stream().map(Customer::new).collect(Collectors.toList());
 		this.customers.clear();
 		for (CustomerDTO customerDTO : insurancePolicyDTO.getCustomers()) {
 			this.customers.add(customerDTO.construct());
 		}
-		/*
-		 * fali preslikavanje za Ucesnike, Osiguranje kuce, Pomoc na putu i
-		 * glavno osiguranje i za rizike
-		 */
 	}
 }

@@ -66,7 +66,6 @@ public class InsurancePolicyDTO extends BaseDTO {
 			 this.iti = itiDTO;
 			 this.homeInsurance = hiDTO;
 			 this.roadsideAssistanceInsurance = raiDTO;
-			 //this.customers = insurancePolicy.getCustomers().stream().map(CustomerDTO::new).collect(Collectors.toList());
 			 this.customers.clear();
 			 for (Customer customer : insurancePolicy.getCustomers()) {
 				 customers.add(new CustomerDTO(customer));
@@ -88,15 +87,10 @@ public class InsurancePolicyDTO extends BaseDTO {
 		insurancePolicy.setRoadsideAssistanceInsurance(raiIntern);
 		insurancePolicy.setHomeInsurance(hiIntern);
 		
-		//insurancePolicy.setCustomers(this.customers.stream().map(Customer::new).collect(Collectors.toList()));
 		insurancePolicy.getCustomers().clear();
 		for (CustomerDTO customerDTO : customers) {
 			insurancePolicy.getCustomers().add(customerDTO.construct());
 		}
-		/*
-		 * fali preslikavanje za Ucesnike, Osiguranje kuce, Pomoc na putu i
-		 * glavno osiguranje i za rizike
-		 */
 		return insurancePolicy;
 	}
 
