@@ -6,4 +6,5 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://www.ftn.com/mt102header", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.ftn.mt102header;
+package com.ftn.model.dto.mt102header;
+

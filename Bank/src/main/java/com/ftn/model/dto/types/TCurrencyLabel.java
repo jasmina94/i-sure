@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.types;
+package com.ftn.model.dto.types;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;

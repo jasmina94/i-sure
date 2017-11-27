@@ -1,5 +1,6 @@
 package com.ftn.model.database;
 
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Data
+
 public class Mt102Model {
 
     @Id
@@ -50,5 +52,5 @@ public class Mt102Model {
     private boolean sent;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "mt102Model")
-    private List<Warrant> warrants;
+    private List<SingleWarrant> warrants;
 }

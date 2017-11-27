@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://www.ftn.com/warrant", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.ftn.warrant;
+package com.ftn.model.dto.warrant;

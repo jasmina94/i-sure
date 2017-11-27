@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.warrant;
+package com.ftn.model.dto.warrant;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="warrant" type="{http://www.ftn.com/warrant}warrant"/&gt;
+ *         &lt;element name="warrantSchema" type="{http://www.ftn.com/warrant}warrantSchema"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -45,7 +45,7 @@ public class GetWarrantRequest {
     protected Warrant warrant;
 
     /**
-     * Gets the value of the warrant property.
+     * Gets the value of the warrantSchema property.
      * 
      * @return
      *     possible object is
@@ -57,7 +57,7 @@ public class GetWarrantRequest {
     }
 
     /**
-     * Sets the value of the warrant property.
+     * Sets the value of the warrantSchema property.
      * 
      * @param value
      *     allowed object is

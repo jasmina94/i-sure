@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @Data
-public class Warrant {
+public class SingleWarrant {
 
     @Id
     @GeneratedValue
@@ -59,5 +59,4 @@ public class Warrant {
 
     @ManyToOne
     private Mt102Model mt102Model;
-
 }

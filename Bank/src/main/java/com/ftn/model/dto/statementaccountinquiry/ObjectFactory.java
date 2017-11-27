@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.statementaccountinquiry;
+package com.ftn.model.dto.statementaccountinquiry;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

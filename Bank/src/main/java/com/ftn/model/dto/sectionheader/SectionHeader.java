@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.sectionheader;
+package com.ftn.model.dto.sectionheader;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
-import com.ftn.types.TChanges;
+import com.ftn.model.dto.types.TChanges;
 
 
 /**

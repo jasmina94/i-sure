@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.mt103;
+package com.ftn.model.dto.mt103;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.datatype.XMLGregorianCalendar;
-import com.ftn.types.TBankData;
-import com.ftn.types.TCorporateBody;
-import com.ftn.types.TPaymentData;
+import com.ftn.model.dto.types.TBankData;
+import com.ftn.model.dto.types.TCorporateBody;
+import com.ftn.model.dto.types.TPaymentData;
 
 
 /**
@@ -242,37 +242,37 @@ public class Mt103 {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "podaciOBanci"
+            "bankData"
     })
     public static class CreditorData
         extends TCorporateBody
     {
 
-        @XmlElement(name = "podaci_o_banci", required = true)
-        protected TBankData podaciOBanci;
+        @XmlElement(name = "bank_data", required = true)
+        protected TBankData bankData;
 
         /**
-         * Gets the value of the podaciOBanci property.
+         * Gets the value of the bankData property.
          * 
          * @return
          *     possible object is
          *     {@link TBankData }
          *     
          */
-        public TBankData getPodaciOBanci() {
-            return podaciOBanci;
+        public TBankData getBankData() {
+            return bankData;
         }
 
         /**
-         * Sets the value of the podaciOBanci property.
+         * Sets the value of the bankData property.
          * 
          * @param value
          *     allowed object is
          *     {@link TBankData }
          *     
          */
-        public void setPodaciOBanci(TBankData value) {
-            this.podaciOBanci = value;
+        public void setBankData(TBankData value) {
+            this.bankData = value;
         }
 
     }

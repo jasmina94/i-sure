@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://www.ftn.com/statementAccountInquiry", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.ftn.statementaccountinquiry;
+package com.ftn.model.dto.statementaccountinquiry;

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn.com/mt900" xmlns:mt900="http://www.ftn.com/mt900"
+    xmlns:types="http://www.ftn.com/types">
+    <xs:import namespace="http://www.ftn.com/types" schemaLocation="types_schema.xsd"/>
+    <xs:element name="getMt900Request">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="mt900" type="mt900:mt900"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getMt900Response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="mt900" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="mt900">
+        <xs:sequence>
+            <xs:element name="debtor_bank_data" type="types:TBankData"/>
+            <xs:element name="warrant_data">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="types:TWarrantData">
+                            <xs:attribute name="warrant_message_id">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="message_id">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+</xs:schema>

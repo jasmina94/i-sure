@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.mt102body;
+package com.ftn.model.dto.mt102body;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

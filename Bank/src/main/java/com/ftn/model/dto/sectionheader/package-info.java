@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://www.ftn.com/sectionHeader", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.ftn.sectionheader;
+package com.ftn.model.dto.sectionheader;

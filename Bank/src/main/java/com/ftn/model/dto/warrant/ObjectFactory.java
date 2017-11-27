@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.warrant;
+package com.ftn.model.dto.warrant;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

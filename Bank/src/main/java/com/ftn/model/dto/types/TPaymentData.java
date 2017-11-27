@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.types;
+package com.ftn.model.dto.types;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;

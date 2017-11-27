@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.section;
+package com.ftn.model.dto.section;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +14,17 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import com.ftn.sectionheader.SectionHeader;
-import com.ftn.sectionitem.SectionItem;
+import com.ftn.model.dto.sectionheader.SectionHeader;
+import com.ftn.model.dto.sectionitem.SectionItem;
 
 
 /**
- * <p>Java class for section complex type.
+ * <p>Java class for sectionSchema complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="section"&gt;
+ * &lt;complexType name="sectionSchema"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -101,6 +101,18 @@ public class Section {
             sectionItem = new ArrayList<SectionItem>();
         }
         return this.sectionItem;
+    }
+
+    /**
+     * Sets the value of the stavkaPreseka property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link List<SectionItem> }
+     *
+     */
+    public void setSectionItem(List<SectionItem> value) {
+        this.sectionItem = value;
     }
 
 }

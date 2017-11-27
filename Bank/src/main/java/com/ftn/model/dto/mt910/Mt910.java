@@ -6,15 +6,17 @@
 //
 
 
-package com.ftn.mt910;
+package com.ftn.model.dto.mt910;
+
+import com.ftn.model.dto.types.TBankData;
+import com.ftn.model.dto.types.TWarrantData;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import com.ftn.types.TBankData;
-import com.ftn.types.TWarrantData;
+
 
 
 /**

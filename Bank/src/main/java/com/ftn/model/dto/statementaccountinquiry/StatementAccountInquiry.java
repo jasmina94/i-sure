@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.statementaccountinquiry;
+package com.ftn.model.dto.statementaccountinquiry;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -52,8 +52,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class StatementAccountInquiry {
 
-    @XmlElement(name = "account_numbet", required = true)
-    protected String accountNumbet;
+    @XmlElement(name = "account_number", required = true)
+    protected String accountNumber;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar date;
@@ -61,27 +61,27 @@ public class StatementAccountInquiry {
     protected BigInteger sectionSerialNumber;
 
     /**
-     * Gets the value of the accountNumbet property.
+     * Gets the value of the accountNumber property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAccountNumbet() {
-        return accountNumbet;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
     /**
-     * Sets the value of the accountNumbet property.
+     * Sets the value of the accountNumber property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAccountNumbet(String value) {
-        this.accountNumbet = value;
+    public void setAccountNumber(String value) {
+        this.accountNumber = value;
     }
 
     /**

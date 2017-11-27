@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.section;
+package com.ftn.model.dto.section;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="section" type="{http://www.ftn.com/section}section"/&gt;
+ *         &lt;element name="sectionSchema" type="{http://www.ftn.com/section}sectionSchema"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -45,7 +45,7 @@ public class GetSectionRequest {
     protected Section section;
 
     /**
-     * Gets the value of the section property.
+     * Gets the value of the sectionSchema property.
      * 
      * @return
      *     possible object is
@@ -57,7 +57,7 @@ public class GetSectionRequest {
     }
 
     /**
-     * Sets the value of the section property.
+     * Sets the value of the sectionSchema property.
      * 
      * @param value
      *     allowed object is

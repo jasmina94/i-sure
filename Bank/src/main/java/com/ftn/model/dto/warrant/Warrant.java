@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.warrant;
+package com.ftn.model.dto.warrant;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
-import com.ftn.types.TDataTransfer;
+import com.ftn.model.dto.types.TDataTransfer;
 
 
 /**
- * <p>Java class for warrant complex type.
+ * <p>Java class for warrantSchema complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="warrant"&gt;
+ * &lt;complexType name="warrantSchema"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;

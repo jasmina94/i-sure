@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.mt102;
+package com.ftn.model.dto.mt102;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import com.ftn.mt102body.Mt102Body;
-import com.ftn.mt102header.Mt102Header;
+import com.ftn.model.dto.mt102body.Mt102Body;
+import com.ftn.model.dto.mt102header.Mt102Header;
 
 
 /**

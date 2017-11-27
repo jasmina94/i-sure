@@ -5,5 +5,5 @@
 // Generated on: 2017.11.26 at 09:30:54 PM CET 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.ftn.com/section", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.ftn.section;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.ftn.com/sectionSchema", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.ftn.model.dto.section;

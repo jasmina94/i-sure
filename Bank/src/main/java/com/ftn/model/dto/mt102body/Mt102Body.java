@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.mt102body;
+package com.ftn.model.dto.mt102body;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -18,9 +18,9 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.datatype.XMLGregorianCalendar;
-import com.ftn.types.TCorporateBody;
-import com.ftn.types.TCurrencyLabel;
-import com.ftn.types.TPaymentData;
+import com.ftn.model.dto.types.TCorporateBody;
+import com.ftn.model.dto.types.TCurrencyLabel;
+import com.ftn.model.dto.types.TPaymentData;
 
 
 /**

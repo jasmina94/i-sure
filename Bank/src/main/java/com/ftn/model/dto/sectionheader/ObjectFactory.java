@@ -5,8 +5,7 @@
 // Generated on: 2017.11.26 at 09:30:54 PM CET 
 //
 
-
-package com.ftn.sectionheader;
+package com.ftn.model.dto.sectionheader;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

@@ -6,7 +6,7 @@
 //
 
 
-package com.ftn.sectionitem;
+package com.ftn.model.dto.sectionitem;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
