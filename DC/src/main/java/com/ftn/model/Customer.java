@@ -44,9 +44,8 @@ public class Customer extends Base{
     @Column(nullable = false)
     private boolean carrier;
 
-    @Column(nullable = false)
+    @Column
     private String email;
-    
     
     
     public Customer(BaseDTO baseDTO){

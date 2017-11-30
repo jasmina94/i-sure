@@ -33,15 +33,6 @@ public class Risk extends Base {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "risk")
     private List<PricelistItem> pricelistItem = new ArrayList<>();
 
-    @ManyToOne
-    private HomeInsurance homeInsurance;
-
-    @ManyToOne
-    private RoadsideAssistanceInsurance roadsideAssistanceInsurance;
-
-    @ManyToOne
-    private InternationalTravelInsurance internationalTravelInsurance;
-
     public Risk(BaseDTO baseDTO){
         super(baseDTO);
     }
