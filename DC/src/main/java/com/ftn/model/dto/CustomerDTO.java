@@ -42,8 +42,12 @@ public class CustomerDTO extends BaseDTO{
     private boolean carrier;
 
     private String email;
-    
+
     public CustomerDTO(Customer customer){
+        this(customer, true);
+    }
+    
+    public CustomerDTO(Customer customer, boolean cascade){
         super(customer);
         this.firstName = customer.getFirstName();
         this.lastName = customer.getLastName();
@@ -54,6 +58,8 @@ public class CustomerDTO extends BaseDTO{
         this.carrier = customer.isCarrier();
         this.email = customer.getEmail();
     }
+
+
 
     public Customer construct(){
         final Customer customer = new Customer(this);

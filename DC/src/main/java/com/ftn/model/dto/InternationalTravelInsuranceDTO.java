@@ -34,6 +34,8 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 	
 	private List<RiskDTO> risks = new ArrayList<>();
 
+	private List<InsurancePolicyDTO> insurancePolicies;
+
 	public InternationalTravelInsuranceDTO(InternationalTravelInsurance internationalTravelInsurance){
 		this(internationalTravelInsurance, true);
 	}
@@ -46,7 +48,8 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 		this.price = internationalTravelInsurance.getPrice();
 		if(cascade){
 			this.risks = internationalTravelInsurance.getRisks().stream().map(risk -> new RiskDTO(risk, false)).collect(Collectors.toList());
-		}
+            this.insurancePolicies = internationalTravelInsurance.getInsurancePolicies().stream().map(insurancePolicy -> new InsurancePolicyDTO(insurancePolicy, false)).collect(Collectors.toList());
+        }
 	}
 	
 	public InternationalTravelInsurance construct(){
@@ -58,6 +61,9 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 		if(this.risks != null && this.risks.size() > 0){
 			this.risks.forEach(riskDTO -> internationalTravelInsurance.getRisks().add(riskDTO.construct()));
 		}
+		if(this.insurancePolicies != null && this.insurancePolicies.size() > 0){
+            this.insurancePolicies.forEach(insurancePolicyDTO -> internationalTravelInsurance.getInsurancePolicies().add(insurancePolicyDTO.construct()));
+        }
 		return internationalTravelInsurance;
 	}
 }
