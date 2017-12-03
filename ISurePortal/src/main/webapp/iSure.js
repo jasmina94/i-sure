@@ -4,7 +4,11 @@
 
     angular.module('iSure', [
         'ngRoute',
-        'ui.router'
+        'ui.router',
+        'ngAnimate',
+        'ngAria',
+        'ngMaterial',
+        'md-steppers'
     ]);
 
 }());

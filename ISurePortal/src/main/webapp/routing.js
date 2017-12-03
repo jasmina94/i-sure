@@ -5,9 +5,9 @@
         function ($routeProvider, $stateProvider, $urlRouterProvider) {
     	 $stateProvider
          .state('homePage', {
-             templateUrl: 'components/homePage.html',
-             //controller: 'indexController',
-             //controllerAs: 'indexControllerVm'
+             templateUrl: 'components/insuranceStepper/stepper.html',
+             controller: 'insuranceStepperController',
+             controllerAs: 'vm'
          });
     	 
     	
