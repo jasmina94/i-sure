@@ -37,7 +37,6 @@
     "commit": "0bd3db9dadc468e76e0ca64780caa97c0ca07c66"
   },
   "_source": "https://github.com/ipiz/md-steppers.git",
-  "_target": "^0.3.4",
-  "_originalSource": "md-steppers",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "md-steppers"
 }

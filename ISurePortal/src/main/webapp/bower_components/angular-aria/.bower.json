@@ -15,6 +15,6 @@
     "commit": "e3a7d3413d81cc9aa6bd492c0a5d17d3aa9f5e55"
   },
   "_source": "https://github.com/angular/bower-angular-aria.git",
-  "_target": "^1.4.8",
+  "_target": "1.6.7",
   "_originalSource": "angular-aria"
 }
