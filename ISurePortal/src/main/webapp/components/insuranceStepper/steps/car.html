@@ -1,0 +1,116 @@
+<md-step label="Car insurance"
+         md-complete="vm.stepData[3].data.completed"
+         ng-disabled="vm.stepProgress < 4"> <md-step-body>
+    <form name="step4">
+        <md-content class="md-padding">
+            <div layout="row" layout-align="center top">
+                <div flex="nogrow" style="width: 700px;margin-left: 100px;">
+                    <div style="width: 20%; float: left; padding-top: 10px;">
+                        <p>Duration (from/to):</p>
+                    </div>
+                    <div style="width: 80%;">
+                        <div flex-gt-xs style="width: 200px; float: left;margin-right: 20px;margin-left: -10px;">
+                            <md-datepicker ng-model="vm.fromDate" md-placeholder="Enter date"
+                                           md-min-date="vm.minFromDate" md-max-date="vm.maxFromDate"
+                                           md-date-filter="vm.compareDates"> </md-datepicker>
+                        </div>
+                        <div flex-gt-xs style="width: 200px; float: right;">
+                            <md-datepicker ng-model="vm.toDate" md-placeholder="Enter date"
+                                           md-min-date="vm.fromDate" md-max-date="vm.maxToDate"
+                                           md-date-filter="vm.compareDates"></md-datepicker>
+                        </div>
+                    </div>
+                    <div layout="row" style="width: 100%;">
+                        <div style="width: 20%; padding-top: 25px;float:left;">
+                            <p>Road assistance:</p>
+                        </div>
+                        <div style="width: 80%;">
+                            <md-input-container><md-select
+                                    ng-model="vm.selectedAssistance"
+                                    md-selected-text="vm.getSelectedAssistance()"> <md-optgroup
+                                    label="assistance"> <md-option ng-value="assistance"
+                                                                   ng-repeat="assistance in vm.assistances">{{assistance}}</md-option> </md-optgroup> </md-select> </md-input-container>
+                        </div>
+                    </div>
+
+                    <div layout="row" style="width: 100%;margin-top: -10px;">
+                        <div style="width: 20%; padding-top: 25px;float:left;">
+                            <p>Repair price:</p>
+                        </div>
+                        <div style="width: 80%;">
+                            <md-input-container><md-select
+                                    ng-model="vm.selectedRepairPrice"
+                                    md-selected-text="vm.getSelectedRepairPrice()"> <md-optgroup
+                                    label="prices"> <md-option ng-value="price"
+                                                               ng-repeat="price in vm.repairPrices">{{price}}</md-option> </md-optgroup> </md-select> </md-input-container>
+                        </div>
+                    </div>
+
+                    <div layout="row" style="width: 100%;margin-top: -10px;">
+                        <div style="width: 20%; padding-top: 25px;float:left;">
+                            <p>Hotel accommodation:</p>
+                        </div>
+                        <div style="width: 80%;">
+                            <md-input-container><md-select
+                                    ng-model="vm.selectedAccommodationDay"
+                                    md-selected-text="vm.getSelectedAccommodationDay()"> <md-optgroup
+                                    label="days"> <md-option ng-value="day"
+                                                             ng-repeat="day in vm.accommodationDays">{{day}}</md-option> </md-optgroup> </md-select> </md-input-container>
+                        </div>
+                    </div>
+
+                    <div layout="row" style="width: 100%;margin-top: -10px;margin-bottom: 15px;">
+                        <div style="width: 20%; padding-top: 25px;float:left;">
+                            <p>Alternative transport:</p>
+                        </div>
+                        <div style="width: 80%;">
+                            <md-input-container><md-select
+                                    ng-model="vm.selectedTransport"
+                                    md-selected-text="vm.getSelectedTransport()"> <md-optgroup
+                                    label="transports"> <md-option ng-value="transport"
+                                                                   ng-repeat="transport in vm.transports">{{transport}}</md-option> </md-optgroup> </md-select> </md-input-container>
+                        </div>
+                    </div>
+
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Owner Firstname</label> <input name="area" ng-model="vm.stepData[3].data.firstname" /> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Owner Lastname</label> <input name="area" ng-model="vm.stepData[3].data.lastname" /> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Personal ID</label> <input name="area" ng-model="vm.stepData[3].data.personlId" /> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Car Brand</label> <input name="area" ng-model="vm.stepData[3].data.carBrand" /> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Car Type</label> <input name="area" ng-model="vm.stepData[3].data.carType" /> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Year of Manufacture</label> <input name="area" ng-model="vm.stepData[3].data.yearOfManufacture" /> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Licence Plate Number</label> <input name="area" ng-model="vm.stepData[3].data.plateNumber" /> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Undercarriage Number</label> <input name="area" ng-model="vm.stepData[3].data.undercarriageNumber" /> </md-input-container>
+
+
+                </div>
+            </div>
+        </md-content>
+        <md-step-actions layout="row">
+            <div flex>
+                <md-button ng-click="vm.moveToPreviousStep()">PREVIOUS</md-button>
+
+            </div>
+            <div flex layout="row" layout-align="end top">
+                <md-button class="md-warn">CANCEL</md-button>
+                <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.submitCurrentStep(vm.stepData[3].data)">SKIP</md-button>
+                <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.submitCurrentStep(vm.stepData[3].data)">NEXT</md-button>
+            </div>
+        </md-step-actions>
+    </form>
+</md-step-body> </md-step>

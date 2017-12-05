@@ -3,21 +3,31 @@
     'use strict';
     var app = angular.module('iSure');
 
-    app.controller('insuranceStepperController', function ($scope, $q, $timeout) {
+    app.controller('insuranceStepperController', function ($scope, $q, $timeout, insuranceService) {
 
         var vm = this;
+
+        init();
+
+        function init() {
+            insuranceService.getTravelInsuranceRisks("International Travel").then(
+                function(response) {
+                    if (response.status == 200) {
+                       console.log(response.data);
+                    }
+                })
+        }
 
         vm.selectedStep = 0;
         vm.stepProgress = 1;
         vm.maxStep = 6;
         vm.showBusyText = false;
         vm.stepData = [
-            { step: 1, completed: false, optional: false, data: {} },
-            { step: 2, completed: false, optional: false, data: {} },
-            { step: 3, completed: false, optional: false, data: {} },
-            { step: 4, completed: false, optional: false, data: {} },
-            { step: 5, completed: false, optional: false, data: {} },
-            { step: 6, completed: false, optional: false, data: {} },
+            { step: "travel", completed: false, optional: false, internationalTravelInsurance: {selectedReon: "Africa", numberOfPeople: 4, playSport: "football", ageGroup: "18-60", selectedAmount:"10000e"} },
+            { step: "travelersData", completed: false, optional: false, customers: {} },
+            { step: "home", completed: false, optional: false, homeInsurance: {} },
+            { step: "car", completed: false, optional: false, roadsideAssistanceInsurance: {} },
+            { step: "payment", completed: false, optional: false, payment: {} },
         ];
 
         vm.enableNextStep = function nextStep() {
@@ -38,7 +48,9 @@
             }
         }
 
-        vm.submitCurrentStep = function submitCurrentStep(stepData, isSkip) {
+        vm.submitCurrentStep = function submitCurrentStep(isSkip) {
+            console.log(vm.stepData[0]);
+            console.log(isSkip);
             var deferred = $q.defer();
             vm.showBusyText = true;
             console.log('On before submit');
@@ -121,18 +133,7 @@
         };
         
         vm.reons = ['Europe','Africa','America','Asia'];
-        vm.selectedReon;
-        vm.getSelectedReon = function() {
-          if (vm.selectedReon !== undefined) {
-            return vm.selectedReon;
-          } else {
-            return "Reons";
-          }
-        };
-        vm.numberOfPeople = 4;
-        
         vm.itemsCheckbox = ['less 18','18-60','above 60'];
-        vm.selected = ['18-60'];
         vm.toggle = function (item, list) {
           var idx = list.indexOf(item);
           if (idx > -1) {
@@ -147,27 +148,11 @@
           return list.indexOf(item) > -1;
         };
         
-        vm.playSport = true;
+        vm.playSport = false;
         
         vm.sports = ['football','basketball','skiing','swimming'];
-        vm.selectedSport;
-        vm.getSelectedSport = function() {
-          if (vm.selectedSport !== undefined) {
-            return vm.selectedSport;
-          } else {
-            return "Sports";
-          }
-        };
         
         vm.amounts = ['10000e','20000e','30000e','40000e'];
-        vm.selectedAmount;
-        vm.getSelectedAmount = function() {
-          if (vm.selectedAmount !== undefined) {
-            return vm.selectedAmount;
-          } else {
-            return "Amounts";
-          }
-        };
         
         vm.carrier = true;
         
