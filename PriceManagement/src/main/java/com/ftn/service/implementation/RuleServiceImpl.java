@@ -7,6 +7,7 @@ import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.ObjectFilter;
 import org.kie.api.runtime.rule.FactHandle;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class RuleServiceImpl implements RuleService{
         kieSession.insert(u);
         kieSession.fireAllRules();
         User user = findUser(kieSession);
-        kieSession.dispose();
+        kieSession.destroy();
         System.out.println(user);
         return user;
     }
