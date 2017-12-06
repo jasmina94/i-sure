@@ -13,22 +13,26 @@
             insuranceService.getTravelInsuranceRisks("International Travel").then(
                 function(response) {
                     if (response.status == 200) {
-                       console.log(response.data);
+                        vm.risks = response.data;
+                        vm.stepData = [
+                            { step: "travel", completed: false, optional: false, internationalTravelInsurance: {selectedReon: vm.risks['Region'][0],
+                                numberOfPeople: 4, playSport: vm.risks['Sport'][0], ageGroup: vm.risks['Age'][0], selectedAmount:vm.risks['Value'][0]} },
+                            { step: "travelersData", completed: false, optional: false, customers: {} },
+                            { step: "home", completed: false, optional: false, homeInsurance: {} },
+                            { step: "car", completed: false, optional: false, roadsideAssistanceInsurance: {} },
+                            { step: "payment", completed: false, optional: false, payment: {} }
+                        ];
                     }
                 })
         }
+
+        vm.insurancePolicy = {};
 
         vm.selectedStep = 0;
         vm.stepProgress = 1;
         vm.maxStep = 6;
         vm.showBusyText = false;
-        vm.stepData = [
-            { step: "travel", completed: false, optional: false, internationalTravelInsurance: {selectedReon: "Africa", numberOfPeople: 4, playSport: "football", ageGroup: "18-60", selectedAmount:"10000e"} },
-            { step: "travelersData", completed: false, optional: false, customers: {} },
-            { step: "home", completed: false, optional: false, homeInsurance: {} },
-            { step: "car", completed: false, optional: false, roadsideAssistanceInsurance: {} },
-            { step: "payment", completed: false, optional: false, payment: {} },
-        ];
+
 
         vm.enableNextStep = function nextStep() {
             //do not exceed into max step
@@ -48,25 +52,21 @@
             }
         }
 
-        vm.submitCurrentStep = function submitCurrentStep(isSkip) {
-            console.log(vm.stepData[0]);
-            console.log(isSkip);
-            var deferred = $q.defer();
+        vm.submitCurrentStep = function submitCurrentStep() {
             vm.showBusyText = true;
-            console.log('On before submit');
-            if (!stepData.completed && !isSkip) {
-                //simulate $http
-                $timeout(function () {
+            var timeDiff = Math.abs(vm.stepData[vm.selectedStep].internationalTravelInsurance.fromDate.getTime() - vm.stepData[vm.selectedStep].internationalTravelInsurance.toDate.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            vm.stepData[vm.selectedStep].internationalTravelInsurance.durationInDays = diffDays;
+            alert(diffDays);
+            if (!vm.stepData[vm.selectedStep].completed ) {
                     vm.showBusyText = false;
-                    console.log('On submit success');
-                    deferred.resolve({ status: 200, statusText: 'success', data: {} });
                     //move to next step when success
-                    stepData.completed = true;
+                    vm.stepData[vm.selectedStep].completed = true;
                     vm.enableNextStep();
-                }, 1000)
             } else {
                 vm.showBusyText = false;
                 vm.enableNextStep();
+
             }
         }
         
