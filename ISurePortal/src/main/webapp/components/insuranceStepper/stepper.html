@@ -9,9 +9,8 @@
 			</h2>
 		</div>
 		</md-toolbar> <md-stepper-card-content class="md-no-padding">
-		<md-steppers md-dynamic-height md-disable-tabs-behavior="true"
-			md-stretch-steppers="always" md-selected="vm.selectedStep"
-			md-busy-text="'Processing...'" md-busy="vm.showBusyText">
+		<md-steppers md-dynamic-height
+			md-stretch-steppers="always" md-selected="vm.selectedStep">
 			<div ng-include="'components/insuranceStepper/steps/travel.html'"></div>
 			<div ng-include="'components/insuranceStepper/steps/travelersData.html'"></div>
 			<div ng-include="'components/insuranceStepper/steps/home.html'"></div>

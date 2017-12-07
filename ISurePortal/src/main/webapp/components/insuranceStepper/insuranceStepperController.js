@@ -1,4 +1,4 @@
-(function(){
+(function () {
 
     'use strict';
     var app = angular.module('iSure');
@@ -10,29 +10,29 @@
         init();
 
         function init() {
+            vm.selectedStep = 0;
+            vm.maxStep = 6;
+            vm.showBusyText = false;
+            vm.stepTwo = {
+                notCompleted: false, optional: false,
+                data: {}
+            };
             insuranceService.getTravelInsuranceRisks("International Travel").then(
-                function(response) {
+                function (response) {
                     if (response.status == 200) {
-                        vm.risks = response.data;
-                        vm.stepData = [
-                            { step: "travel", completed: false, optional: false, internationalTravelInsurance: {selectedReon: vm.risks['Region'][0],
-                                numberOfPeople: 4, playSport: vm.risks['Sport'][0], ageGroup: vm.risks['Age'][0], selectedAmount:vm.risks['Value'][0]} },
-                            { step: "travelersData", completed: false, optional: false, customers: {} },
-                            { step: "home", completed: false, optional: false, homeInsurance: {} },
-                            { step: "car", completed: false, optional: false, roadsideAssistanceInsurance: {} },
-                            { step: "payment", completed: false, optional: false, payment: {} }
-                        ];
+                        vm.travelRisks = response.data;
+                        vm.stepOne = {
+                            notCompleted: true, optional: false, data: {
+                                selectedReon: vm.travelRisks['Region'][0],
+                                numberOfPeople: 4,
+                                playSport: vm.travelRisks['Sport'][0],
+                                ageGroup: vm.travelRisks['Age'][0],
+                                selectedAmount: vm.travelRisks['Value'][0]
+                            }
+                        };
                     }
                 })
         }
-
-        vm.insurancePolicy = {};
-
-        vm.selectedStep = 0;
-        vm.stepProgress = 1;
-        vm.maxStep = 6;
-        vm.showBusyText = false;
-
 
         vm.enableNextStep = function nextStep() {
             //do not exceed into max step
@@ -44,198 +44,169 @@
                 vm.stepProgress = vm.stepProgress + 1;
             }
             vm.selectedStep = vm.selectedStep + 1;
-        }
+        };
 
         vm.moveToPreviousStep = function moveToPreviousStep() {
             if (vm.selectedStep > 0) {
                 vm.selectedStep = vm.selectedStep - 1;
             }
-        }
+        };
 
-        vm.submitCurrentStep = function submitCurrentStep() {
-            vm.showBusyText = true;
-            var timeDiff = Math.abs(vm.stepData[vm.selectedStep].internationalTravelInsurance.fromDate.getTime() - vm.stepData[vm.selectedStep].internationalTravelInsurance.toDate.getTime());
+        vm.calculateDays = function calculateDays() {
+            var timeDiff = Math.abs(vm.stepData[0].data.fromDate.getTime() - vm.stepData[0].data.toDate.getTime());
             var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            vm.stepData[vm.selectedStep].internationalTravelInsurance.durationInDays = diffDays;
-            alert(diffDays);
-            if (!vm.stepData[vm.selectedStep].completed ) {
-                    vm.showBusyText = false;
-                    //move to next step when success
-                    vm.stepData[vm.selectedStep].completed = true;
-                    vm.enableNextStep();
-            } else {
-                vm.showBusyText = false;
-                vm.enableNextStep();
+            vm.stepData[0].data.durationInDays = diffDays;
+        };
+        vm.showHome = true;
+        vm.submitCurrentStep = function submitCurrentStep(what) {
+            if (what !== 'none') {
+                if (what === 'home') {
+                    vm.showHome = false;
+                    if (vm.homeRisks === undefined) {
+                        insuranceService.getTravelInsuranceRisks("Home").then(
+                            function (response) {
+                                if (response.status == 200) {
+                                    console.log(response.data);
+                                    vm.homeRisks = response.data;
+                                    vm.stepThree = {
+                                        notCompleted: false, optional: true,
+                                        data: {
+                                            area: vm.homeRisks['Surface area'][0],
+                                            age: vm.homeRisks['Property age'][0],
+                                            value: vm.homeRisks['Estimated value of property'][0],
+                                            risk: vm.homeRisks['Property risks'][0]
+                                        }
+                                    };
+                                }
+                            })
+                    }
+                } else if (what === 'car') {
 
+                }
             }
-        }
-        
-        vm.fromDate = new Date();
+            //validation goes here , if its satisfied then it's this
+            vm.stepOne.notCompleted = false;
+            vm.selectedStep = vm.selectedStep + 1;
+        };
 
-        vm.minFromDate = new Date(
-          vm.fromDate.getFullYear(),
-          vm.fromDate.getMonth() - 2,
-          vm.fromDate.getDate()
-        );
+        vm.checkIfEnabled = function(){
+            return vm.stepOne.notCompleted;
+        };
 
-        vm.maxFromDate = new Date(
-          vm.fromDate.getFullYear(),
-          vm.fromDate.getMonth() + 2,
-          vm.fromDate.getDate()
-        );
-        
-        vm.toDate = new Date();
-
-        vm.minToDate = new Date(
-          vm.toDate.getFullYear(),
-          vm.toDate.getMonth() - 2,
-          vm.toDate.getDate()
-        );
-
-        vm.maxToDate = new Date(
-          vm.toDate.getFullYear(),
-          vm.toDate.getMonth() + 2,
-          vm.toDate.getDate()
-        );
-        
         vm.todayDate = new Date();
 
-        vm.compareDates = function(date) {
-		      var data_first_day = date.getDate();
-		      var data_first_month = date.getMonth()+1;
-		      var data_first_year = date.getFullYear();
-		
-		      var data_second_day = vm.todayDate.getDate();
-		      var data_second_month = vm.todayDate.getMonth()+1;
-		      var data_second_year = vm.todayDate.getFullYear();
-		      
-		      if(data_first_year == data_second_year && data_first_month == data_second_month && data_first_day == data_second_day){
-		    	  return true;
-		      }else if(data_first_year > data_second_year){
-		          return true;
-		        }else if (data_first_year == data_second_year){
-		            if((data_first_month > data_second_month)){
-		              return true;
-		            }else if ((data_first_month < data_second_month)) {
-		              return false;
-		            }else{
-		              if(data_first_day == data_second_day){
-		                return false;
-		              }else if (data_first_day > data_second_day){
-		                return true;
-		              }else{
-		                return false;
-		              }
-		            }
-		        }else{
-		          return false;
-		        }
+        vm.isDateValid = function (date) {
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+            var d = new Date(date);
+            d.setHours(0, 0, 0, 0);
+            return d >= today;
         };
-        
-        vm.reons = ['Europe','Africa','America','Asia'];
-        vm.itemsCheckbox = ['less 18','18-60','above 60'];
+
+        vm.reons = ['Europe', 'Africa', 'America', 'Asia'];
+        vm.itemsCheckbox = ['less 18', '18-60', 'above 60'];
         vm.toggle = function (item, list) {
-          var idx = list.indexOf(item);
-          if (idx > -1) {
-            list.splice(idx, 1);
-          }
-          else {
-            list.push(item);
-          }
+            var idx = list.indexOf(item);
+            if (idx > -1) {
+                list.splice(idx, 1);
+            }
+            else {
+                list.push(item);
+            }
         };
 
         vm.exists = function (item, list) {
-          return list.indexOf(item) > -1;
+            return list.indexOf(item) > -1;
         };
-        
+
         vm.playSport = false;
-        
-        vm.sports = ['football','basketball','skiing','swimming'];
-        
-        vm.amounts = ['10000e','20000e','30000e','40000e'];
-        
+
+        vm.sports = ['football', 'basketball', 'skiing', 'swimming'];
+
+        vm.amounts = ['10000e', '20000e', '30000e', '40000e'];
+
         vm.carrier = true;
-        
-        vm.areas = ['less 30m2','30-50m2','above 50m2'];
+
+        vm.areas = ['less 30m2', '30-50m2', 'above 50m2'];
         vm.selectedAreaOfHome;
-        vm.getSelectedAreaOfHome = function() {
-          if (vm.selectedAreaOfHome !== undefined) {
-            return vm.selectedAreaOfHome;
-          } else {
-            return "Areas";
-          }
+        vm.getSelectedAreaOfHome = function () {
+            if (vm.selectedAreaOfHome !== undefined) {
+                return vm.selectedAreaOfHome;
+            } else {
+                return "Areas";
+            }
         };
-        
-        vm.ageOfHome = ['less 2','5-10','above 10'];
+
+        vm.ageOfHome = ['less 2', '5-10', 'above 10'];
         vm.selectedAgeOfHome;
-        vm.getSelectedAgeOfHome = function() {
-          if (vm.selectedAgeOfHome !== undefined) {
-            return vm.selectedAgeOfHome;
-          } else {
-            return "Ages";
-          }
+        vm.getSelectedAgeOfHome = function () {
+            if (vm.selectedAgeOfHome !== undefined) {
+                return vm.selectedAgeOfHome;
+            } else {
+                return "Ages";
+            }
         };
-        
-        vm.values = ['v1','v2','v3'];
+
+        vm.values = ['v1', 'v2', 'v3'];
         vm.selectedHomeValue;
-        vm.getSelectedHomeValue = function() {
-          if (vm.selectedHomeValue !== undefined) {
-            return vm.selectedHomeValue;
-          } else {
-            return "Values";
-          }
+        vm.getSelectedHomeValue = function () {
+            if (vm.selectedHomeValue !== undefined) {
+                return vm.selectedHomeValue;
+            } else {
+                return "Values";
+            }
         };
-        
-        vm.risks = ['fire','flood','robbery'];
+
+        vm.risks = ['fire', 'flood', 'robbery'];
         vm.selectedRisk;
-        vm.getSelectedRisk = function() {
-          if (vm.selectedRisk !== undefined) {
-            return vm.selectedRisk;
-          } else {
-            return "Risks";
-          }
+        vm.getSelectedRisk = function () {
+            if (vm.selectedRisk !== undefined) {
+                return vm.selectedRisk;
+            } else {
+                return "Risks";
+            }
         };
-        
-        vm.assistances = ['a1','a2','a3'];
+
+        vm.assistances = ['a1', 'a2', 'a3'];
         vm.selectedAssistances;
-        vm.getSelectedAssistance = function() {
-          if (vm.selectedAssistance !== undefined) {
-            return vm.selectedAssistance;
-          } else {
-            return "Assistances";
-          }
+        vm.getSelectedAssistance = function () {
+            if (vm.selectedAssistance !== undefined) {
+                return vm.selectedAssistance;
+            } else {
+                return "Assistances";
+            }
         };
-        
-        vm.repairPrices = ['r1','r2','r3'];
+
+        vm.repairPrices = ['r1', 'r2', 'r3'];
         vm.selectedRepairPrice;
-        vm.getSelectedRepairPrice = function() {
-          if (vm.selectedRepairPrice !== undefined) {
-            return vm.selectedRepairPrice;
-          } else {
-            return "Prices";
-          }
+        vm.getSelectedRepairPrice = function () {
+            if (vm.selectedRepairPrice !== undefined) {
+                return vm.selectedRepairPrice;
+            } else {
+                return "Prices";
+            }
         };
-        
-        vm.accommodationDays = ['a1','a2','a3'];
+
+        vm.accommodationDays = ['a1', 'a2', 'a3'];
         vm.selectedAccommodationDay;
-        vm.getSelectedAccommodationDay = function() {
-          if (vm.selectedAccommodationDay !== undefined) {
-            return vm.selectedAccommodationDay;
-          } else {
-            return "Days";
-          }
+        vm.getSelectedAccommodationDay = function () {
+            if (vm.selectedAccommodationDay !== undefined) {
+                return vm.selectedAccommodationDay;
+            } else {
+                return "Days";
+            }
         };
-        
-        vm.transports = ['t1','t2','t3'];
+
+        vm.transports = ['t1', 't2', 't3'];
         vm.selectedTransport;
-        vm.getSelectedTransport = function() {
-          if (vm.selectedTransport !== undefined) {
-            return vm.selectedTransport;
-          } else {
-            return "Transports";
-          }
+        vm.getSelectedTransport = function () {
+            if (vm.selectedTransport !== undefined) {
+                return vm.selectedTransport;
+            } else {
+                return "Transports";
+            }
         };
-        
+
         vm.pay = 'Pay1';
     });
 

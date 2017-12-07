@@ -1,51 +1,30 @@
 <md-step label="Personal Info"
-         md-complete="vm.stepData[1].data.completed"
-         ng-disabled="vm.stepProgress < 2"> <md-step-body>
-    <form name="step2">
-        <md-content class="md-padding">
-            <div layout="row" layout-align="center top">
-                <div flex="nogrow" style="width: 400px">
-                    <md-input-container class="md-block"> <label>Firstname</label> <input name="firstname"
-                                                                                          ng-model="vm.stepData[1].data.firstname"/> </md-input-container>
-                    <md-input-container class="md-block input-adjust"> <label>Lastname</label> <input name="lastname"
-                                                                                                      ng-model="vm.stepData[1].data.lastname" /> </md-input-container>
-                    <md-input-container class="md-block input-adjust"> <label>Personal ID</label> <input name="personalId"
-                                                                                                         ng-model="vm.stepData[1].data.personalId" /> </md-input-container>
-                    <md-input-container class="md-block input-adjust"> <label>Passport</label> <input name="passport"
-                                                                                                      ng-model="vm.stepData[1].data.passport" /> </md-input-container>
-                    <md-input-container class="md-block input-adjust"> <label>Address</label> <input name="address"
-                                                                                                     ng-model="vm.stepData[1].data.address" /> </md-input-container>
-                    <md-input-container class="md-block input-adjust" style="margin-bottom: -20px;"> <label>Phone number</label> <input name="phone"
-                                                                                                                                        ng-model="vm.stepData[1].data.phone" /> </md-input-container>
-                    <div layout="row">
-                        <div style="width: 20%; float: left; padding-top: 25px;">
-                            <p>Carrier?</p>
-                        </div>
-                        <div style="width: 10%; float: left;">
-                            <md-switch md-no-ink
-                                       aria-label="Switch No Ink" ng-model="vm.carrier">
-                            </md-switch>
-                        </div>
-                    </div>
-                    <div ng-if="vm.carrier"
-                         style="width: 100%;">
-                        <md-input-container style="margin-top: 0px;" class="md-block"> <label>Email</label> <input name="email"
-                                                                                                                   ng-model="vm.stepData[1].data.email" /> </md-input-container>
-                    </div>
-                </div>
-            </div>
-        </md-content>
-        <md-step-actions layout="row">
-            <div flex>
-                <md-button ng-click="vm.moveToPreviousStep()">PREVIOUS</md-button>
+         md-complete="vm.stepTwo.notCompleted"
+         ng-disabled="vm.checkIfEnabled()">
+    <md-step-body>
+        <form name="step2">
 
-            </div>
-            <div flex layout="row" layout-align="end top">
-                <md-button class="md-warn">CANCEL</md-button>
-                <md-button ng-disabled="vm.showBusyText"
-                           ng-click="vm.submitCurrentStep(vm.stepData[1].data)"
-                           class="gold-btn">NEXT</md-button>
-            </div>
-        </md-step-actions>
-    </form>
-</md-step-body> </md-step>
+            <md-step-actions layout="row">
+                <div flex>
+                    <md-button ng-click="vm.moveToPreviousStep()">PREVIOUS</md-button>
+
+                </div>
+                <div flex layout="row" layout-align="end top">
+                    <md-button class="md-warn">CANCEL</md-button>
+                    <md-button ng-disabled="vm.showBusyText"
+                               ng-click="vm.submitCurrentStep('home')"
+                               class="gold-btn">GET HOME INSURANCE
+                    </md-button>
+                    <md-button ng-disabled="vm.showBusyText"
+                               ng-click="vm.submitCurrentStep('car')"
+                               class="gold-btn">GET CAR INSURANCE
+                    </md-button>
+                    <md-button ng-disabled="vm.showBusyText"
+                               ng-click="vm.submitCurrentStep('none')"
+                               class="gold-btn">CONTINUE TO PAYMENT
+                    </md-button>
+                </div>
+            </md-step-actions>
+        </form>
+    </md-step-body>
+</md-step>
