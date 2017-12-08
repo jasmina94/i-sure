@@ -8,9 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by Jasmina on 21/11/2017.
@@ -29,7 +26,7 @@ public class CustomerDTO extends BaseDTO{
     @NotNull
     @Size(min = 13, max = 13)
     @Pattern(regexp = "[0-9]*")
-    private String ucn;
+    private String personalId;
 
     @NotNull
     @Size(min = 9, max = 9)
@@ -45,12 +42,16 @@ public class CustomerDTO extends BaseDTO{
     private boolean carrier;
 
     private String email;
-    
+
     public CustomerDTO(Customer customer){
+        this(customer, true);
+    }
+    
+    public CustomerDTO(Customer customer, boolean cascade){
         super(customer);
         this.firstName = customer.getFirstName();
         this.lastName = customer.getLastName();
-        this.ucn = customer.getUcn();
+        this.personalId = customer.getPersonalId();
         this.passport = customer.getPassport();
         this.address = customer.getAddress();
         this.telephoneNumber = customer.getTelephoneNumber();
@@ -58,11 +59,13 @@ public class CustomerDTO extends BaseDTO{
         this.email = customer.getEmail();
     }
 
+
+
     public Customer construct(){
         final Customer customer = new Customer(this);
         customer.setFirstName(firstName);
         customer.setLastName(lastName);
-        customer.setUcn(ucn);
+        customer.setPersonalId(personalId);
         customer.setPassport(passport);
         customer.setAddress(address);
         customer.setTelephoneNumber(telephoneNumber);

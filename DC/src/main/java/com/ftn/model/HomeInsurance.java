@@ -1,7 +1,6 @@
 package com.ftn.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 import org.hibernate.annotations.Where;
 
@@ -12,6 +11,9 @@ import com.ftn.util.SqlConstants;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -30,13 +32,17 @@ public class HomeInsurance extends Base {
 	private String address;
 	
 	@Column(nullable = false)
-	private String ucn;
+	private String personalId;
 	
 	@Column(nullable = false)
 	private double price;
-	
-	//private Collection<Risk> risks;
-	
+
+	@ManyToMany
+	private List<Risk> risks = new ArrayList<>();
+
+    @OneToMany(mappedBy = "homeInsurance", cascade = CascadeType.ALL)
+    private List<InsurancePolicy> insurancePolicies = new ArrayList<>();
+
 	public HomeInsurance(BaseDTO baseDTO){
 		super(baseDTO);
 		
@@ -46,9 +52,9 @@ public class HomeInsurance extends Base {
 		this.ownerFirstName = homeInsuranceDTO.getOwnerFirstName();
 		this.ownerLastName = homeInsuranceDTO.getOwnerLastName();
 		this.address = homeInsuranceDTO.getAddress();
-		this.ucn = homeInsuranceDTO.getUcn();
+		this.personalId = homeInsuranceDTO.getPersonalId();
 		this.price = homeInsuranceDTO.getPrice();
-		//fali mapiranje rizika
+		homeInsuranceDTO.getRisks().forEach(riskDTO -> this.getRisks().add(riskDTO.construct()));
 	}
 
 }

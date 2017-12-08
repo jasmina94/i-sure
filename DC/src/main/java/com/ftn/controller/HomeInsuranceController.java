@@ -22,7 +22,7 @@ import com.ftn.service.HomeInsuranceService;
 import com.ftn.service.implementation.HomeInsuranceServiceImpl;
 
 @Controller
-@RequestMapping("/homeInsurance")
+@RequestMapping("/homeInsurances")
 public class HomeInsuranceController {
 
 	private final HomeInsuranceService homeInsuranceService;
@@ -55,15 +55,13 @@ public class HomeInsuranceController {
 			throw new BadRequestException();
 		}
 
-		HomeInsuranceDTO hiDTO;
-
 		try {
-			hiDTO = homeInsuranceService.update(id, homeInsuranceDTO);
+			homeInsuranceDTO = homeInsuranceService.update(id, homeInsuranceDTO);
 
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<>(hiDTO, HttpStatus.OK);
+		return new ResponseEntity<>(homeInsuranceDTO, HttpStatus.OK);
 	}
 
 	@Transactional
@@ -81,20 +79,20 @@ public class HomeInsuranceController {
 	@Transactional
 	@GetMapping(value = "/{id}")
 	public ResponseEntity findById(@PathVariable Long id) {
-		HomeInsuranceDTO hiDTO;
+		HomeInsuranceDTO homeInsuranceDTO;
 		try {
-			hiDTO = homeInsuranceService.findById(id);
+			homeInsuranceDTO = homeInsuranceService.findById(id);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<>(hiDTO, HttpStatus.OK);
+		return new ResponseEntity<>(homeInsuranceDTO, HttpStatus.OK);
 	}
 
 	@Transactional
-	@GetMapping(value = "/byUcn/{ucn}")
-	public ResponseEntity findByDateOfIssue(@PathVariable String ucn) {
+	@GetMapping(value = "byPersonalId/{personalId}")
+	public ResponseEntity findByDateOfIssue(@PathVariable String personalId) {
 		
-		return new ResponseEntity<>(homeInsuranceService.findByUcn(ucn), HttpStatus.OK);
+		return new ResponseEntity<>(homeInsuranceService.findByPersonalId(personalId), HttpStatus.OK);
 			
 	}
 

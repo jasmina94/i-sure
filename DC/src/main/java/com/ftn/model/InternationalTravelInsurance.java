@@ -1,9 +1,10 @@
 package com.ftn.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
@@ -25,24 +26,31 @@ public class InternationalTravelInsurance extends Base{
 	
 	@Column
 	private Date issueDate;
+
 	@Column
 	private int durationInDays;
+
 	@Column
 	private int numberOfPersons;
+
 	@Column
 	private double price;
-	
-	//private Collection<Risk> risks;
+
+	@ManyToMany
+	private List<Risk> risks = new ArrayList<>();
+
+    @OneToMany(mappedBy = "internationalTravelInsurance", cascade = CascadeType.ALL)
+    private List<InsurancePolicy> insurancePolicies = new ArrayList<>();
 	
 	public InternationalTravelInsurance(BaseDTO baseDTO){
 		super(baseDTO);
 	}
 	
-	public void merge(InternationalTravelInsuranceDTO itiDTO){
-		this.issueDate = itiDTO.getIssueDate();
-		this.durationInDays = itiDTO.getDurationInDays();
-		this.numberOfPersons = itiDTO.getNumberOfPersons();
-		this.price = itiDTO.getPrice();
-		//fali mapiranje rizika
+	public void merge(InternationalTravelInsuranceDTO internationalTravelInsuranceDTO){
+		this.issueDate = internationalTravelInsuranceDTO.getIssueDate();
+		this.durationInDays = internationalTravelInsuranceDTO.getDurationInDays();
+		this.numberOfPersons = internationalTravelInsuranceDTO.getNumberOfPersons();
+		this.price = internationalTravelInsuranceDTO.getPrice();
+		internationalTravelInsuranceDTO.getRisks().forEach(riskDTO -> this.getRisks().add(riskDTO.construct()));
 	}
 }

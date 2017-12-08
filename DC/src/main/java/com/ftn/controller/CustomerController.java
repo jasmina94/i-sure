@@ -17,7 +17,7 @@ import javax.validation.Valid;
  * Created by Jasmina on 22/11/2017.
  */
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("/customers")
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -64,8 +64,8 @@ public class CustomerController {
     }
 
     @Transactional
-    @GetMapping(value = "/{birthId}")
-    public ResponseEntity findByBirthId(@PathVariable String birthId){
-        return new ResponseEntity<>(customerService.findByBirthId(birthId), HttpStatus.OK);
+    @GetMapping(value = "/personalId/{personalId}")
+    public ResponseEntity findByBirthId(@PathVariable String personalId){
+        return new ResponseEntity<>(customerService.findByPersonalId(personalId), HttpStatus.OK);
     }
 }

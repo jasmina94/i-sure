@@ -2,6 +2,7 @@ package com.ftn.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.SQLDelete;
@@ -26,8 +27,12 @@ public class PricelistItem extends Base{
 	
 	@Column(nullable = false)
 	private double coefficient;
+
 	@Column(nullable = false)
 	private double price;
+
+	@ManyToOne
+	private Risk risk;
 	
 	public PricelistItem(BaseDTO baseDTO) {
 		super(baseDTO);
@@ -36,5 +41,6 @@ public class PricelistItem extends Base{
 	public void merge(PricelistItemDTO pricelistItemDTO) {
 		this.coefficient = pricelistItemDTO.getCoefficient();
 		this.price = pricelistItemDTO.getPrice();
+
 	}
 }

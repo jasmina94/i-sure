@@ -57,8 +57,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDTO findByBirthId(String birthId) {
-        final Customer customer = customerRepository.findByUcn(birthId).orElseThrow(NotFoundException::new);
+    public CustomerDTO findByPersonalId(String personalId) {
+        final Customer customer = customerRepository.findByPersonalId(personalId).orElseThrow(NotFoundException::new);
         return new CustomerDTO(customer);
     }
 }

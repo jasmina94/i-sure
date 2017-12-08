@@ -40,46 +40,30 @@ public class InsurancePolicyDTO extends BaseDTO {
 	private List<CustomerDTO> customers = new ArrayList<>();
 
 	@NotNull
-	private InternationalTravelInsuranceDTO iti;
+	private InternationalTravelInsuranceDTO internationalTravelInsurance;
 
 	private HomeInsuranceDTO homeInsurance;
-	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
-	// private List<RiskDTO> risks = new ArrayList<>();
+	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
 	public InsurancePolicyDTO(InsurancePolicy insurancePolicy) {
 		this(insurancePolicy, true);
 	}
 
-	public InsurancePolicyDTO(InsurancePolicy insurancePolicy, boolean casscade) {
+	public InsurancePolicyDTO(InsurancePolicy insurancePolicy, boolean cascade) {
 		super(insurancePolicy);
 		this.totalValue = insurancePolicy.getTotalValue();
 		this.dateOfIssue = insurancePolicy.getDateOfIssue();
 		this.dateBecomeEffective = insurancePolicy.getDateBecomeEffective();
-
-		if (casscade) {
-			HomeInsuranceDTO hiDTO;
-			if (insurancePolicy.getHomeInsurance() != null) {
-				hiDTO = new HomeInsuranceDTO(insurancePolicy.getHomeInsurance());
-				this.homeInsurance = hiDTO;
-			}
-
-			if (insurancePolicy.getRoadsideAssistanceInsurance() != null) {
-				RoadsideAssistanceInsuranceDTO raiDTO = new RoadsideAssistanceInsuranceDTO(
-						insurancePolicy.getRoadsideAssistanceInsurance());
-				this.roadsideAssistanceInsurance = raiDTO;
-			}
-			InternationalTravelInsuranceDTO itiDTO = new InternationalTravelInsuranceDTO(insurancePolicy.getIti());
-
-			this.iti = itiDTO;
-			
-			
-			// this.customers =
-			// insurancePolicy.getCustomers().stream().map(CustomerDTO::new).collect(Collectors.toList());
-			this.customers.clear();
-			for (Customer customer : insurancePolicy.getCustomers()) {
-				customers.add(new CustomerDTO(customer));
-			}
+		if (cascade) {
+			this.customers = insurancePolicy.getCustomers().stream().map(customer -> new CustomerDTO(customer, false)).collect(Collectors.toList());
+		    this.internationalTravelInsurance = new InternationalTravelInsuranceDTO(insurancePolicy.getInternationalTravelInsurance(), false);
+		    if(insurancePolicy.getHomeInsurance() != null){
+                this.homeInsurance = new HomeInsuranceDTO(insurancePolicy.getHomeInsurance(), false);
+            }
+		    if(insurancePolicy.getRoadsideAssistanceInsurance() != null){
+                this.roadsideAssistanceInsurance = new RoadsideAssistanceInsuranceDTO(insurancePolicy.getRoadsideAssistanceInsurance(), false);
+            }
 		}
 	}
 
@@ -88,24 +72,18 @@ public class InsurancePolicyDTO extends BaseDTO {
 		insurancePolicy.setTotalValue(totalValue);
 		insurancePolicy.setDateOfIssue(dateOfIssue);
 		insurancePolicy.setDateBecomeEffective(dateBecomeEffective);
-
-		InternationalTravelInsurance itiIntern = this.iti.construct();
-		if (this.homeInsurance != null) {
-			HomeInsurance hiIntern = this.homeInsurance.construct();
-			insurancePolicy.setHomeInsurance(hiIntern);
-		}
-
-		if (this.roadsideAssistanceInsurance != null) {
-			RoadsideAssistanceInsurance raiIntern = this.roadsideAssistanceInsurance.construct();
-			insurancePolicy.setRoadsideAssistanceInsurance(raiIntern);
-		}
-
-		insurancePolicy.setIti(itiIntern);
-		insurancePolicy.getCustomers().clear();
-		for (CustomerDTO customerDTO : customers) {
-			insurancePolicy.getCustomers().add(customerDTO.construct());
-		}
+        if(this.customers != null && this.customers.size() > 0){
+            this.customers.forEach(customerDTO -> insurancePolicy.getCustomers().add(customerDTO.construct()));
+        }
+        if(this.internationalTravelInsurance != null){
+            insurancePolicy.setInternationalTravelInsurance(internationalTravelInsurance.construct());
+        }
+        if(this.homeInsurance != null){
+            insurancePolicy.setHomeInsurance(homeInsurance.construct());
+        }
+        if(this.roadsideAssistanceInsurance != null){
+            insurancePolicy.setRoadsideAssistanceInsurance(roadsideAssistanceInsurance.construct());
+        }
 		return insurancePolicy;
 	}
-
 }

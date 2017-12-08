@@ -58,8 +58,8 @@ public class RoadsideAssistanceInsuranceServiceImpl implements RoadsideAssistanc
     }
 
 	@Override
-	public List<RoadsideAssistanceInsuranceDTO> findByUcn(String ucn) {
-		return roadsideAssistanceInsuranceRepository.findByUcn(ucn).stream().map(RoadsideAssistanceInsuranceDTO::new).collect(Collectors.toList());
+	public List<RoadsideAssistanceInsuranceDTO> findByPersonalId(String personalId) {
+		return roadsideAssistanceInsuranceRepository.findByPersonalId(personalId).stream().map(RoadsideAssistanceInsuranceDTO::new).collect(Collectors.toList());
 	}
 
 	@Override

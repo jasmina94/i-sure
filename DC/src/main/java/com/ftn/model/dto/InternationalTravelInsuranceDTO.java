@@ -1,6 +1,9 @@
 package com.ftn.model.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.constraints.NotNull;
 
@@ -19,31 +22,48 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date issueDate;
+
 	@NotNull
 	private int durationInDays;
+
 	@NotNull
 	private int numberOfPersons;
+
 	@NotNull
 	private double price;
 	
-	//private Collection<RiskDTO> risks;
+	private List<RiskDTO> risks = new ArrayList<>();
 
-	public InternationalTravelInsuranceDTO(InternationalTravelInsurance iti){
-		super(iti);
-		this.issueDate = iti.getIssueDate();
-		this.durationInDays = iti.getDurationInDays();
-		this.numberOfPersons = iti.getNumberOfPersons();
-		this.price = iti.getPrice();
-		//fali mapiranje rizika
+	private List<InsurancePolicyDTO> insurancePolicies;
+
+	public InternationalTravelInsuranceDTO(InternationalTravelInsurance internationalTravelInsurance){
+		this(internationalTravelInsurance, true);
+	}
+
+	public InternationalTravelInsuranceDTO(InternationalTravelInsurance internationalTravelInsurance, boolean cascade){
+		super(internationalTravelInsurance);
+		this.issueDate = internationalTravelInsurance.getIssueDate();
+		this.durationInDays = internationalTravelInsurance.getDurationInDays();
+		this.numberOfPersons = internationalTravelInsurance.getNumberOfPersons();
+		this.price = internationalTravelInsurance.getPrice();
+		if(cascade){
+			this.risks = internationalTravelInsurance.getRisks().stream().map(risk -> new RiskDTO(risk, false)).collect(Collectors.toList());
+            this.insurancePolicies = internationalTravelInsurance.getInsurancePolicies().stream().map(insurancePolicy -> new InsurancePolicyDTO(insurancePolicy, false)).collect(Collectors.toList());
+        }
 	}
 	
 	public InternationalTravelInsurance construct(){
-		InternationalTravelInsurance iti = new InternationalTravelInsurance(this);
-		iti.setIssueDate(this.issueDate);
-		iti.setDurationInDays(this.durationInDays);
-		iti.setNumberOfPersons(this.numberOfPersons);
-		iti.setPrice(this.price);
-		//fali mapiranje rizika
-		return iti;
+		InternationalTravelInsurance internationalTravelInsurance = new InternationalTravelInsurance(this);
+		internationalTravelInsurance.setIssueDate(this.issueDate);
+		internationalTravelInsurance.setDurationInDays(this.durationInDays);
+		internationalTravelInsurance.setNumberOfPersons(this.numberOfPersons);
+		internationalTravelInsurance.setPrice(this.price);
+		if(this.risks != null && this.risks.size() > 0){
+			this.risks.forEach(riskDTO -> internationalTravelInsurance.getRisks().add(riskDTO.construct()));
+		}
+		if(this.insurancePolicies != null && this.insurancePolicies.size() > 0){
+            this.insurancePolicies.forEach(insurancePolicyDTO -> internationalTravelInsurance.getInsurancePolicies().add(insurancePolicyDTO.construct()));
+        }
+		return internationalTravelInsurance;
 	}
 }
