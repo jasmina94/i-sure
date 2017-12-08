@@ -12486,3 +12486,1113 @@ Using default security password: 894bc55d-ed31-4e53-927d-0a1b9115f121
 [INFO ]2017-12-04 13:29:12 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 [INFO ]2017-12-04 13:29:12 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
 [INFO ]2017-12-04 13:29:12 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:20:52 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 5528 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:20:52 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:20:52 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:20:52 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:20:52 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:20:55 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1c871e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:20:57 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8447 (https) 8084 (http)
+[INFO ]2017-12-08 17:20:57 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:20:57 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:20:58 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:20:58 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5919 ms
+[INFO ]2017-12-08 17:20:58 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:20:58 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:20:58 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:20:58 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:20:58 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:21:01 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:21:01 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:21:01 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:21:01 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:21:01 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:21:01 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:21:03 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:21:03 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:21:03 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:21:03 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:21:03 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:21:03 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:21:07 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:21:07 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:20:52 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:21:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:21:08 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:21:08 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:21:08 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:21:08 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:21:08 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:21:08 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8447"]
+[INFO ]2017-12-08 17:21:08 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [https-jsse-nio-8447]
+[ERROR]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler [https-jsse-nio-8447]
+java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[ERROR]2017-12-08 17:21:10 o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8447]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8447]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 13 common frames omitted
+Caused by: java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	... 14 common frames omitted
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[INFO ]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:21:10 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8084]
+[INFO ]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8447"]
+[INFO ]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:21:10 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:21:10 o.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[INFO ]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8447"]
+[INFO ]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8447"]
+[INFO ]2017-12-08 17:21:10 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:21:10 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-08 17:21:10 o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8447 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8447, or configure this application to listen on another port.
+
+[INFO ]2017-12-08 17:21:10 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:20:52 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:21:10 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:21:10 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:21:10 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:21:11 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:21:38 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 9204 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:21:38 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:21:38 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:21:38 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:21:38 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:21:40 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1c871e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:21:40 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8447 (https) 8084 (http)
+[INFO ]2017-12-08 17:21:40 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:21:40 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:21:40 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:21:40 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2087 ms
+[INFO ]2017-12-08 17:21:40 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:21:40 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:21:40 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:21:40 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:21:40 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:21:41 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:21:41 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:21:41 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:21:41 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:21:41 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:21:41 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:21:42 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:21:42 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:21:42 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:21:42 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:21:42 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:21:42 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:21:46 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:21:46 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:21:38 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:21:47 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:21:47 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:21:47 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:21:47 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:21:47 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:21:47 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:21:47 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8447"]
+[INFO ]2017-12-08 17:21:47 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [https-jsse-nio-8447]
+[ERROR]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler [https-jsse-nio-8447]
+java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[ERROR]2017-12-08 17:21:48 o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8447]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8447]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 13 common frames omitted
+Caused by: java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	... 14 common frames omitted
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[INFO ]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:21:48 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8084]
+[INFO ]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8447"]
+[INFO ]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:21:48 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:21:48 o.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[INFO ]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8447"]
+[INFO ]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8447"]
+[INFO ]2017-12-08 17:21:48 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:21:48 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-08 17:21:48 o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8447 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8447, or configure this application to listen on another port.
+
+[INFO ]2017-12-08 17:21:48 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:21:38 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:21:48 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:21:48 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:21:48 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:21:49 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:22:53 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 8296 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:22:53 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:22:53 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:22:53 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:22:53 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:22:55 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1c871e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:22:55 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8448 (https) 8084 (http)
+[INFO ]2017-12-08 17:22:55 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:22:55 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:22:55 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:22:55 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2050 ms
+[INFO ]2017-12-08 17:22:55 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:22:55 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:22:55 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:22:55 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:22:55 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:22:56 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:22:56 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:22:56 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:22:56 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:22:56 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:22:56 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:22:56 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:22:57 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:22:57 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:22:57 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:22:57 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:22:57 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:23:01 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:23:01 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:22:53 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:23:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:23:01 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:23:01 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:23:01 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:23:01 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:23:02 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8448"]
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [https-jsse-nio-8448]
+[ERROR]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler [https-jsse-nio-8448]
+java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[ERROR]2017-12-08 17:23:02 o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8448]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8448]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 13 common frames omitted
+Caused by: java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	... 14 common frames omitted
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:23:02 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8084]
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8448"]
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:23:02 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:23:02 o.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8448"]
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8448"]
+[INFO ]2017-12-08 17:23:02 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8084"]
+[INFO ]2017-12-08 17:23:02 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-08 17:23:02 o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8448 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8448, or configure this application to listen on another port.
+
+[INFO ]2017-12-08 17:23:02 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:22:53 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:23:02 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:23:02 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:23:02 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:23:03 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:24:01 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 3708 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:24:01 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:24:01 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:24:01 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:24:01 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:24:02 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1c871e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:24:03 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8445 (https) 8082 (http)
+[INFO ]2017-12-08 17:24:03 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:24:03 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:24:03 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:24:03 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2109 ms
+[INFO ]2017-12-08 17:24:03 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:24:03 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:24:03 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:24:03 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:24:03 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:24:03 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:24:03 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:24:03 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:24:03 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:24:03 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:24:03 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:24:04 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:24:04 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:24:04 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:24:04 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:24:04 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:24:04 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:24:08 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:24:08 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:24:01 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:24:09 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:24:09 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:24:09 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:24:09 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:24:09 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:24:09 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:24:09 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:24:09 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [https-jsse-nio-8445]
+[ERROR]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler [https-jsse-nio-8445]
+java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[ERROR]2017-12-08 17:24:10 o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8445]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8445]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 13 common frames omitted
+Caused by: java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	... 14 common frames omitted
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[INFO ]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:24:10 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8082]
+[INFO ]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:24:10 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:24:10 o.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[INFO ]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:24:10 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:24:10 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-08 17:24:10 o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8445 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8445, or configure this application to listen on another port.
+
+[INFO ]2017-12-08 17:24:10 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:24:01 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:24:10 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:24:10 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:24:10 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:24:11 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:25:39 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 9436 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:25:39 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:25:39 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:25:39 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:25:39 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:25:40 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1c871e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:25:41 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8445 (https) 8082 (http)
+[INFO ]2017-12-08 17:25:41 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:25:41 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:25:41 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:25:41 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2065 ms
+[INFO ]2017-12-08 17:25:41 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:25:41 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:25:41 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:25:41 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:25:41 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:25:41 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:25:41 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:25:42 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:25:42 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:25:42 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:25:42 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:25:42 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:25:43 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:25:43 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:25:43 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:25:43 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:25:43 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:25:52 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:25:52 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:25:39 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:25:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:25:53 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:25:53 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:25:53 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:25:53 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:25:53 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [https-jsse-nio-8445]
+[ERROR]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler [https-jsse-nio-8445]
+java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[ERROR]2017-12-08 17:25:53 o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8445]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8445]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 13 common frames omitted
+Caused by: java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	... 14 common frames omitted
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:25:53 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8082]
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:25:53 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:25:53 o.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:25:53 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:25:53 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-08 17:25:53 o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8445 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8445, or configure this application to listen on another port.
+
+[INFO ]2017-12-08 17:25:53 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:25:39 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:25:53 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:25:53 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:25:53 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:25:54 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:26:39 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 496 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:26:39 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:26:39 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2c767a52: startup date [Fri Dec 08 17:26:39 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:26:40 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:26:41 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5b4baffb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:26:41 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+[INFO ]2017-12-08 17:26:41 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:26:41 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:26:42 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:26:42 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2036 ms
+[INFO ]2017-12-08 17:26:42 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:26:42 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:26:42 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:26:42 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:26:42 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:26:42 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:26:42 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:26:42 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:26:42 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:26:42 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:26:42 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:26:42 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:26:43 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:26:43 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:26:43 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:26:43 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:26:43 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:26:47 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:26:47 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2c767a52: startup date [Fri Dec 08 17:26:39 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:26:48 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:26:48 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:26:48 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:26:48 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:26:48 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:26:48 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:26:48 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ]2017-12-08 17:26:48 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8080]
+[INFO ]2017-12-08 17:26:48 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:26:48 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+[INFO ]2017-12-08 17:26:48 korenski.MtbApplication - Started MtbApplication in 8.945 seconds (JVM running for 9.816)
+[INFO ]2017-12-08 17:28:08 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2017-12-08 17:28:08 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2c767a52: startup date [Fri Dec 08 17:26:39 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:28:08 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:28:08 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:28:08 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:28:09 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:28:17 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 2080 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:28:17 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:28:17 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:28:17 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:28:17 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:28:19 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1c871e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:28:19 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8445 (https) 8082 (http)
+[INFO ]2017-12-08 17:28:19 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:28:19 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:28:19 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:28:19 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2027 ms
+[INFO ]2017-12-08 17:28:20 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:28:20 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:28:20 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:28:20 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:28:20 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:28:20 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:28:20 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:28:20 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:28:20 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:28:20 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:28:20 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:28:21 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:28:21 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:28:21 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:28:21 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:28:21 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:28:21 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:28:26 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:28:26 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:28:17 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:28:26 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:28:26 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:28:26 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:28:26 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:28:26 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:28:27 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [https-jsse-nio-8445]
+[ERROR]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler [https-jsse-nio-8445]
+java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[ERROR]2017-12-08 17:28:27 o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8445]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8445]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:233)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:178)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at korenski.MtbApplication.main(MtbApplication.java:49)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 13 common frames omitted
+Caused by: java.lang.IllegalArgumentException: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:103)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:81)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:244)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:590)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:969)
+	... 14 common frames omitted
+Caused by: java.io.IOException: Alias name isure data center does not identify a key entry
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:212)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:101)
+	... 19 common frames omitted
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:28:27 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8082]
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:28:27 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:28:27 o.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:28:27 o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:28:27 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-08 17:28:27 o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8445 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8445, or configure this application to listen on another port.
+
+[INFO ]2017-12-08 17:28:27 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:28:17 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:28:27 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:28:27 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:28:27 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:28:28 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:28:57 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 6812 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:28:57 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:28:57 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:28:57 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:28:57 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:28:59 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1c871e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:28:59 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8445 (https) 8082 (http)
+[INFO ]2017-12-08 17:28:59 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:28:59 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:28:59 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:28:59 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2061 ms
+[INFO ]2017-12-08 17:29:00 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:29:00 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:29:00 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:29:00 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:29:00 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:29:00 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:29:00 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:29:00 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:29:00 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:29:00 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:29:00 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:29:00 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:29:01 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:29:01 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:29:01 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:29:01 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:29:01 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:29:05 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:29:05 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:28:57 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:29:06 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:29:06 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:29:06 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:29:06 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:29:06 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:29:06 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:29:06 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:29:06 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [https-jsse-nio-8445]
+[INFO ]2017-12-08 17:29:07 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:29:07 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:29:07 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:29:07 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8082]
+[INFO ]2017-12-08 17:29:07 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8445 (https) 8082 (http)
+[INFO ]2017-12-08 17:29:07 korenski.MtbApplication - Started MtbApplication in 10.526 seconds (JVM running for 11.388)
+[INFO ]2017-12-08 17:30:12 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2017-12-08 17:30:12 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2017-12-08 17:30:12 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+[ERROR]2017-12-08 17:30:20 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on GET request for "https://localhost:8444/permissions/allPermissions": sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target; nested exception is javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target] with root cause
+sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1496)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:216)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1026)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:961)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1072)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:162)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
+	at korenski.service.implementation.PermissionServiceImplementation.readAll(PermissionServiceImplementation.java:27)
+	at korenski.controller.autorizacija.PermissionController.allPermissions(PermissionController.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:220)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:589)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ]2017-12-08 17:35:38 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2017-12-08 17:35:38 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:28:57 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:35:38 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:35:38 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:35:38 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:35:39 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:35:58 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 6880 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
+[INFO ]2017-12-08 17:35:58 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-08 17:35:58 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:35:58 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:35:59 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-08 17:36:00 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$57ea9a15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-08 17:36:00 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8445 (https) 8082 (http)
+[INFO ]2017-12-08 17:36:00 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-08 17:36:00 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-08 17:36:01 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-08 17:36:01 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2444 ms
+[INFO ]2017-12-08 17:36:01 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-08 17:36:01 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-08 17:36:01 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-08 17:36:01 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-08 17:36:01 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-08 17:36:01 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:36:01 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-08 17:36:01 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-08 17:36:01 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-08 17:36:01 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-08 17:36:02 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-08 17:36:02 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-08 17:36:04 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-08 17:36:04 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-08 17:36:04 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2017-12-08 17:36:04 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-08 17:36:04 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2017-12-08 17:36:08 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-08 17:36:08 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:35:58 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-08 17:36:08 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-08 17:36:09 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:36:09 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:36:09 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-08 17:36:09 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2017-12-08 17:36:09 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-08 17:36:09 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8445"]
+[INFO ]2017-12-08 17:36:09 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [https-jsse-nio-8445]
+[INFO ]2017-12-08 17:36:10 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:36:10 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+[INFO ]2017-12-08 17:36:10 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-08 17:36:10 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8082]
+[INFO ]2017-12-08 17:36:10 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8445 (https) 8082 (http)
+[INFO ]2017-12-08 17:36:10 korenski.MtbApplication - Started MtbApplication in 12.339 seconds (JVM running for 14.782)
+[INFO ]2017-12-08 17:37:13 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2017-12-08 17:37:13 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2017-12-08 17:37:13 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+[INFO ]2017-12-08 17:37:50 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2017-12-08 17:37:50 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@708f5957: startup date [Fri Dec 08 17:35:58 CET 2017]; root of context hierarchy
+[INFO ]2017-12-08 17:37:50 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-08 17:37:50 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-08 17:37:50 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2017-12-08 17:37:51 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete

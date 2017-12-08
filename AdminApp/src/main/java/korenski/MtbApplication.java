@@ -1,5 +1,9 @@
 package korenski;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
+
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
@@ -22,6 +26,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class MtbApplication extends WebMvcConfigurerAdapter {
 	
+	static {
+		HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+            public boolean verify(String hostname, SSLSession session) {
+                return true;
+            }
+        });
+	}
+	
 //	@Bean
 //	public AuthorizationInterceptor authorizationInterceptor() {
 //	    return new AuthorizationInterceptor();
@@ -37,32 +49,32 @@ public class MtbApplication extends WebMvcConfigurerAdapter {
 		SpringApplication.run(MtbApplication.class, args);
 	}
 	
-//	  @Bean
-//	  public EmbeddedServletContainerFactory servletContainer() {
-//	    TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory() {
-//	        @Override
-//	        protected void postProcessContext(Context context) {
-//	          SecurityConstraint securityConstraint = new SecurityConstraint();
-//	          securityConstraint.setUserConstraint("CONFIDENTIAL");
-//	          SecurityCollection collection = new SecurityCollection();
-//	          collection.addPattern("/*");
-//	          securityConstraint.addCollection(collection);
-//	          context.addConstraint(securityConstraint);
-//	        }
-//	      };
-//	    
-//	    tomcat.addAdditionalTomcatConnectors(initiateHttpConnector());
-//	    return tomcat;
-//	  }
-//	  
-//	  private Connector initiateHttpConnector() {
-//	    Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
-//	    connector.setScheme("http");
-//	    connector.setPort(8080);
-//	    connector.setSecure(false);
-//	    connector.setRedirectPort(8443);
-//	    
-//	    return connector;
-//	  }
+	  @Bean
+	  public EmbeddedServletContainerFactory servletContainer() {
+	    TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory() {
+	        @Override
+	        protected void postProcessContext(Context context) {
+	          SecurityConstraint securityConstraint = new SecurityConstraint();
+	          securityConstraint.setUserConstraint("CONFIDENTIAL");
+	          SecurityCollection collection = new SecurityCollection();
+	          collection.addPattern("/*");
+	          securityConstraint.addCollection(collection);
+	          context.addConstraint(securityConstraint);
+	        }
+	      };
+	    
+	    tomcat.addAdditionalTomcatConnectors(initiateHttpConnector());
+	    return tomcat;
+	  }
+	  
+	  private Connector initiateHttpConnector() {
+	    Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+	    connector.setScheme("http");
+	    connector.setPort(8082);
+	    connector.setSecure(false);
+	    connector.setRedirectPort(8445);
+	    
+	    return connector;
+	  }
 	
 }
