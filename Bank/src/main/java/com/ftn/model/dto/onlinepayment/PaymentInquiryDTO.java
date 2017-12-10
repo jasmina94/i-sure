@@ -26,7 +26,7 @@ public class PaymentInquiryDTO {
     private double amount;
 
     @NotNull
-    private int merchantTransactionId;
+    private int merchantOrderId;
 
     @NotNull
     private Date merchantTimestamp;

@@ -14,6 +14,11 @@ public class EnvironmentProperties {
 
     private String nbsUrl;
 
+    private String concentratorUrl;
+
+    private String pccUrl;
+
+
     public void setSwiftCode(String swiftCode){
         this.swiftCode = swiftCode;
     }
@@ -28,5 +33,21 @@ public class EnvironmentProperties {
 
     public void setNbsUrl(String nbsUrl) {
         this.nbsUrl = nbsUrl;
+    }
+
+    public String getConcentratorUrl() {
+        return concentratorUrl;
+    }
+
+    public void setConcentratorUrl(String concentratorUrl) {
+        this.concentratorUrl = concentratorUrl;
+    }
+
+    public String getPccUrl() {
+        return pccUrl;
+    }
+
+    public void setPccUrl(String pccUrl) {
+        this.pccUrl = pccUrl;
     }
 }
