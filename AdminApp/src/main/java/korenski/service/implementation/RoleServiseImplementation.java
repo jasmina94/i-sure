@@ -3,7 +3,8 @@ package korenski.service.implementation;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -12,10 +13,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import korenski.exception.NotFoundException;
-import korenski.model.autorizacija.Permission;
 import korenski.model.autorizacija.Role;
-import korenski.repository.autorizacija.RoleRepository;
 import korenski.service.RoleService;
 @Service
 public class RoleServiseImplementation implements  RoleService{
@@ -25,7 +23,7 @@ public class RoleServiseImplementation implements  RoleService{
 	
 	@Override
 	public List<Role> readAll() {
-		RestTemplate restTemplate = new RestTemplate();
+		KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
 		String specific_uri = uri+"/allRoles";
 		ResponseEntity<Role[]> response = restTemplate.getForEntity(specific_uri, Role[].class);
 
@@ -34,7 +32,7 @@ public class RoleServiseImplementation implements  RoleService{
 
 	@Override
 	public Role create(Role role) {
-		RestTemplate restTemplate = new RestTemplate();
+		KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
 		String specific_uri = uri+"/newRole";
 		ResponseEntity<Role> response = restTemplate.postForEntity(specific_uri, new HttpEntity<>(role),
 				Role.class);

@@ -2,12 +2,12 @@ package korenski.controller.autorizacija;
 
 import java.util.Collection;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 //import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import korenski.exception.BadRequestException;
 import korenski.model.autorizacija.Permission;
 import korenski.service.PermissionService;
-import korenski.service.RoleService;
 
 
 @Controller
@@ -35,7 +35,7 @@ public class PermissionController {
         this.permissionService = permissionService;
     }
 	
-	//@PreAuthorize("authenticated")
+
 	//@CustomAnnotation(value = "INSERT_PERMISSION")
 	@PostMapping(value = "/newPermission")
 	public ResponseEntity newPermission(@Valid @RequestBody Permission permission, BindingResult bindingResult) throws Exception {
@@ -85,6 +85,7 @@ public class PermissionController {
 			}
 			return new ResponseEntity<>(permissionModified, HttpStatus.OK);
 	}
+	
 	
 	//@CustomAnnotation(value = "FIND_ALL_PERMISSION")
 	@GetMapping(value = "/allPermissions")
