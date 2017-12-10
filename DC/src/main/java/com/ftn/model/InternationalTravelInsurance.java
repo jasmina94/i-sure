@@ -36,8 +36,11 @@ public class InternationalTravelInsurance extends Base{
 	@Column
 	private double price;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "internationalTravelInsurance")
+	@ManyToMany
 	private List<Risk> risks = new ArrayList<>();
+
+    @OneToMany(mappedBy = "internationalTravelInsurance", cascade = CascadeType.ALL)
+    private List<InsurancePolicy> insurancePolicies = new ArrayList<>();
 	
 	public InternationalTravelInsurance(BaseDTO baseDTO){
 		super(baseDTO);
@@ -48,5 +51,6 @@ public class InternationalTravelInsurance extends Base{
 		this.durationInDays = internationalTravelInsuranceDTO.getDurationInDays();
 		this.numberOfPersons = internationalTravelInsuranceDTO.getNumberOfPersons();
 		this.price = internationalTravelInsuranceDTO.getPrice();
+		internationalTravelInsuranceDTO.getRisks().forEach(riskDTO -> this.getRisks().add(riskDTO.construct()));
 	}
 }

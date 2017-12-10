@@ -50,23 +50,27 @@ public class RoadsideAssistanceInsurance extends Base{
 	@Column(nullable = false)
 	private double price;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "roadsideAssistanceInsurance")
+	@ManyToMany
 	private List<Risk> risks = new ArrayList<>();
+
+    @OneToMany(mappedBy = "internationalTravelInsurance", cascade = CascadeType.ALL)
+    private List<InsurancePolicy> insurancePolicies = new ArrayList<>();
 	
 	public RoadsideAssistanceInsurance(BaseDTO baseDTO){
 		super(baseDTO);
 	}
 
-	public void merge(RoadsideAssistanceInsuranceDTO raiDTO){
-		this.ownerFirstName = raiDTO.getOwnerFirstName();
-		this.ownerLastName = raiDTO.getOwnerLastName();
-		this.personalId = raiDTO.getPersonalId();
-		this.carBrand = raiDTO.getCarBrand();
-		this.carType = raiDTO.getCarType();
-		this.yearOfManufacture = raiDTO.getYearOfManufacture();
-		this.licencePlateNumber = raiDTO.getLicencePlateNumber();
-		this.undercarriageNumber = raiDTO.getUndercarriageNumber();
-		this.price = raiDTO.getPrice();
+	public void merge(RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO){
+		this.ownerFirstName = roadsideAssistanceInsuranceDTO.getOwnerFirstName();
+		this.ownerLastName = roadsideAssistanceInsuranceDTO.getOwnerLastName();
+		this.personalId = roadsideAssistanceInsuranceDTO.getPersonalId();
+		this.carBrand = roadsideAssistanceInsuranceDTO.getCarBrand();
+		this.carType = roadsideAssistanceInsuranceDTO.getCarType();
+		this.yearOfManufacture = roadsideAssistanceInsuranceDTO.getYearOfManufacture();
+		this.licencePlateNumber = roadsideAssistanceInsuranceDTO.getLicencePlateNumber();
+		this.undercarriageNumber = roadsideAssistanceInsuranceDTO.getUndercarriageNumber();
+		this.price = roadsideAssistanceInsuranceDTO.getPrice();
+		roadsideAssistanceInsuranceDTO.getRisks().forEach(riskDTO -> this.getRisks().add(riskDTO.construct()));
 	}
 
 	

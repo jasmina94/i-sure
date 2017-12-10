@@ -41,6 +41,8 @@ public class HomeInsuranceDTO extends BaseDTO {
 
 	private List<RiskDTO> risks = new ArrayList<>();
 
+	private List<InsurancePolicyDTO> insurancePolicies;
+
 	public HomeInsuranceDTO(HomeInsurance homeInsurance){
 		this(homeInsurance, true);
 	}
@@ -54,8 +56,8 @@ public class HomeInsuranceDTO extends BaseDTO {
 		this.price = homeInsurance.getPrice();
 		if(cascade){
 			this.risks = homeInsurance.getRisks().stream().map(risk -> new RiskDTO(risk, false)).collect(Collectors.toList());
+            this.insurancePolicies = homeInsurance.getInsurancePolicies().stream().map(insurancePolicy -> new InsurancePolicyDTO(insurancePolicy, false)).collect(Collectors.toList());
 		}
-
 	}
 	
 	public HomeInsurance construct(){
@@ -68,6 +70,9 @@ public class HomeInsuranceDTO extends BaseDTO {
 		if(this.risks != null && this.risks.size() > 0){
 			this.risks.forEach(riskDTO -> homeInsurance.getRisks().add(riskDTO.construct()));
 		}
+		if(this.insurancePolicies != null && this.insurancePolicies.size() > 0){
+		    this.insurancePolicies.forEach(insurancePolicyDTO -> homeInsurance.getInsurancePolicies().add(insurancePolicyDTO.construct()));
+        }
 		return homeInsurance;
 	}
 	

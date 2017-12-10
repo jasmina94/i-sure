@@ -3,6 +3,7 @@ package com.ftn.model.dto;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.constraints.NotNull;
 
@@ -39,7 +40,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 	private List<CustomerDTO> customers = new ArrayList<>();
 
 	@NotNull
-	private InternationalTravelInsuranceDTO internationalTravelInsuranceDTO;
+	private InternationalTravelInsuranceDTO internationalTravelInsurance;
 
 	private HomeInsuranceDTO homeInsurance;
 
@@ -49,36 +50,20 @@ public class InsurancePolicyDTO extends BaseDTO {
 		this(insurancePolicy, true);
 	}
 
-	public InsurancePolicyDTO(InsurancePolicy insurancePolicy, boolean casscade) {
+	public InsurancePolicyDTO(InsurancePolicy insurancePolicy, boolean cascade) {
 		super(insurancePolicy);
 		this.totalValue = insurancePolicy.getTotalValue();
 		this.dateOfIssue = insurancePolicy.getDateOfIssue();
 		this.dateBecomeEffective = insurancePolicy.getDateBecomeEffective();
-
-		if (casscade) {
-
-			HomeInsuranceDTO hiDTO;
-			if (insurancePolicy.getHomeInsurance() != null) {
-				hiDTO = new HomeInsuranceDTO(insurancePolicy.getHomeInsurance());
-				this.homeInsurance = hiDTO;
-			}
-
-			if (insurancePolicy.getRoadsideAssistanceInsurance() != null) {
-				RoadsideAssistanceInsuranceDTO raiDTO = new RoadsideAssistanceInsuranceDTO(
-						insurancePolicy.getRoadsideAssistanceInsurance());
-				this.roadsideAssistanceInsurance = raiDTO;
-			}
-			InternationalTravelInsuranceDTO itiDTO = new InternationalTravelInsuranceDTO(insurancePolicy.getInternationalTravelInsurance());
-
-			this.internationalTravelInsuranceDTO = itiDTO;
-			
-			
-			// this.customers =
-			// insurancePolicy.getCustomers().stream().map(CustomerDTO::new).collect(Collectors.toList());
-			this.customers.clear();
-			for (Customer customer : insurancePolicy.getCustomers()) {
-				customers.add(new CustomerDTO(customer));
-			}
+		if (cascade) {
+			this.customers = insurancePolicy.getCustomers().stream().map(customer -> new CustomerDTO(customer, false)).collect(Collectors.toList());
+		    this.internationalTravelInsurance = new InternationalTravelInsuranceDTO(insurancePolicy.getInternationalTravelInsurance(), false);
+		    if(insurancePolicy.getHomeInsurance() != null){
+                this.homeInsurance = new HomeInsuranceDTO(insurancePolicy.getHomeInsurance(), false);
+            }
+		    if(insurancePolicy.getRoadsideAssistanceInsurance() != null){
+                this.roadsideAssistanceInsurance = new RoadsideAssistanceInsuranceDTO(insurancePolicy.getRoadsideAssistanceInsurance(), false);
+            }
 		}
 	}
 
@@ -87,30 +72,18 @@ public class InsurancePolicyDTO extends BaseDTO {
 		insurancePolicy.setTotalValue(totalValue);
 		insurancePolicy.setDateOfIssue(dateOfIssue);
 		insurancePolicy.setDateBecomeEffective(dateBecomeEffective);
-
-		InternationalTravelInsurance itiIntern = this.internationalTravelInsuranceDTO.construct();
-		if (this.homeInsurance != null) {
-			HomeInsurance hiIntern = this.homeInsurance.construct();
-			insurancePolicy.setHomeInsurance(hiIntern);
-		}
-
-		if (this.roadsideAssistanceInsurance != null) {
-			RoadsideAssistanceInsurance raiIntern = this.roadsideAssistanceInsurance.construct();
-			insurancePolicy.setRoadsideAssistanceInsurance(raiIntern);
-		}
-
-		insurancePolicy.setInternationalTravelInsurance(itiIntern);
-
-		// insurancePolicy.setCustomers(this.customers.stream().map(Customer::new).collect(Collectors.toList()));
-		insurancePolicy.getCustomers().clear();
-		for (CustomerDTO customerDTO : customers) {
-			insurancePolicy.getCustomers().add(customerDTO.construct());
-		}
-		/*
-		 * fali preslikavanje za Ucesnike, Osiguranje kuce, Pomoc na putu i
-		 * glavno osiguranje i za rizike
-		 */
+        if(this.customers != null && this.customers.size() > 0){
+            this.customers.forEach(customerDTO -> insurancePolicy.getCustomers().add(customerDTO.construct()));
+        }
+        if(this.internationalTravelInsurance != null){
+            insurancePolicy.setInternationalTravelInsurance(internationalTravelInsurance.construct());
+        }
+        if(this.homeInsurance != null){
+            insurancePolicy.setHomeInsurance(homeInsurance.construct());
+        }
+        if(this.roadsideAssistanceInsurance != null){
+            insurancePolicy.setRoadsideAssistanceInsurance(roadsideAssistanceInsurance.construct());
+        }
 		return insurancePolicy;
 	}
-
 }

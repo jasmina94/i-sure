@@ -64,7 +64,7 @@ public class CustomerController {
     }
 
     @Transactional
-    @GetMapping(value = "/{personalId}")
+    @GetMapping(value = "/personalId/{personalId}")
     public ResponseEntity findByBirthId(@PathVariable String personalId){
         return new ResponseEntity<>(customerService.findByPersonalId(personalId), HttpStatus.OK);
     }
