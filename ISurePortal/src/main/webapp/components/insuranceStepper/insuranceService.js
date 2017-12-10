@@ -10,11 +10,12 @@
         insuranceService.getTravelInsuranceRisks = function(insuranceType) {
             return $http.get(url + "riskTypes/insuranceCategory/" + insuranceType);
             }
+        
+        insuranceService.createInsurancePolicy = function(insurancePolicyDTO) {
+            return $http.post(url + "insurancePolicies",insurancePolicyDTO);
+            }
 
         return insuranceService;
 
     });
-
-
-
 })();

@@ -23,10 +23,9 @@
                         vm.travelRisks = response.data;
                         vm.stepOne = {
                             notCompleted: true, optional: false, data: {
-                                selectedReon: vm.travelRisks['Region'][0],
-                                numberOfPeople: 4,
-                                playSport: vm.travelRisks['Sport'][0],
-                                ageGroup: vm.travelRisks['Age'][0],
+                                selectedRegion: vm.travelRisks['Region'][0],
+                                numberOfPeople: {},
+                                selectedSport: vm.travelRisks['Sport'][0],
                                 selectedAmount: vm.travelRisks['Value'][0]
                             }
                         };
@@ -52,10 +51,10 @@
             }
         };
 
-        vm.calculateDays = function calculateDays() {
-            var timeDiff = Math.abs(vm.stepData[0].data.fromDate.getTime() - vm.stepData[0].data.toDate.getTime());
+        vm.calculateDays = function calculateDays(fromDate, toDate) {
+            var timeDiff = Math.abs(fromDate.getTime() - toDate.getTime());
             var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            vm.stepData[0].data.durationInDays = diffDays;
+            return diffDays;
         };
         vm.showHome = true;
         vm.submitCurrentStep = function submitCurrentStep(what) {
@@ -71,21 +70,39 @@
                                     vm.stepThree = {
                                         notCompleted: false, optional: true,
                                         data: {
-                                            area: vm.homeRisks['Surface area'][0],
-                                            age: vm.homeRisks['Property age'][0],
-                                            value: vm.homeRisks['Estimated value of property'][0],
-                                            risk: vm.homeRisks['Property risks'][0]
+                                            selectedArea: vm.homeRisks['Surface area'][0],
+                                            selectedAge: vm.homeRisks['Property age'][0],
+                                            selectedValue: vm.homeRisks['Estimated value of property'][0],
+                                            selectedRisk: vm.homeRisks['Property risks'][0]
                                         }
                                     };
                                 }
                             })
                     }
-                } else if (what === 'car') {
-
+                } else if (what === 'roadside') {
+                	if (vm.carRisks === undefined) {
+                        insuranceService.getTravelInsuranceRisks("Roadside").then(
+                            function (response) {
+                                if (response.status == 200) {
+                                    console.log(response.data);
+                                    vm.carRisks = response.data;
+                                    vm.stepFour = {
+                                        notCompleted: false, optional: true,
+                                        data: {
+                                        	selectedAccommodation: vm.carRisks['Accommodation'][0],
+                                        	selectedRepair: vm.carRisks['Repair'][0],
+                                        	selectedTowing: vm.carRisks['Towing'][0],
+                                        	selectedTransport: vm.carRisks['Transport'][0]
+                                        }
+                                    };
+                                }
+                            })
+                    }
                 }
             }
             //validation goes here , if its satisfied then it's this
             vm.stepOne.notCompleted = false;
+         	vm.addTabs();
             vm.selectedStep = vm.selectedStep + 1;
         };
 
@@ -103,112 +120,130 @@
             return d >= today;
         };
 
-        vm.reons = ['Europe', 'Africa', 'America', 'Asia'];
-        vm.itemsCheckbox = ['less 18', '18-60', 'above 60'];
-        vm.toggle = function (item, list) {
-            var idx = list.indexOf(item);
-            if (idx > -1) {
-                list.splice(idx, 1);
-            }
-            else {
-                list.push(item);
-            }
-        };
-
-        vm.exists = function (item, list) {
-            return list.indexOf(item) > -1;
-        };
-
-        vm.playSport = false;
-
-        vm.sports = ['football', 'basketball', 'skiing', 'swimming'];
-
-        vm.amounts = ['10000e', '20000e', '30000e', '40000e'];
-
-        vm.carrier = true;
-
-        vm.areas = ['less 30m2', '30-50m2', 'above 50m2'];
-        vm.selectedAreaOfHome;
-        vm.getSelectedAreaOfHome = function () {
-            if (vm.selectedAreaOfHome !== undefined) {
-                return vm.selectedAreaOfHome;
-            } else {
-                return "Areas";
-            }
-        };
-
-        vm.ageOfHome = ['less 2', '5-10', 'above 10'];
-        vm.selectedAgeOfHome;
-        vm.getSelectedAgeOfHome = function () {
-            if (vm.selectedAgeOfHome !== undefined) {
-                return vm.selectedAgeOfHome;
-            } else {
-                return "Ages";
-            }
-        };
-
-        vm.values = ['v1', 'v2', 'v3'];
-        vm.selectedHomeValue;
-        vm.getSelectedHomeValue = function () {
-            if (vm.selectedHomeValue !== undefined) {
-                return vm.selectedHomeValue;
-            } else {
-                return "Values";
-            }
-        };
-
-        vm.risks = ['fire', 'flood', 'robbery'];
-        vm.selectedRisk;
-        vm.getSelectedRisk = function () {
-            if (vm.selectedRisk !== undefined) {
-                return vm.selectedRisk;
-            } else {
-                return "Risks";
-            }
-        };
-
-        vm.assistances = ['a1', 'a2', 'a3'];
-        vm.selectedAssistances;
-        vm.getSelectedAssistance = function () {
-            if (vm.selectedAssistance !== undefined) {
-                return vm.selectedAssistance;
-            } else {
-                return "Assistances";
-            }
-        };
-
-        vm.repairPrices = ['r1', 'r2', 'r3'];
-        vm.selectedRepairPrice;
-        vm.getSelectedRepairPrice = function () {
-            if (vm.selectedRepairPrice !== undefined) {
-                return vm.selectedRepairPrice;
-            } else {
-                return "Prices";
-            }
-        };
-
-        vm.accommodationDays = ['a1', 'a2', 'a3'];
-        vm.selectedAccommodationDay;
-        vm.getSelectedAccommodationDay = function () {
-            if (vm.selectedAccommodationDay !== undefined) {
-                return vm.selectedAccommodationDay;
-            } else {
-                return "Days";
-            }
-        };
-
-        vm.transports = ['t1', 't2', 't3'];
-        vm.selectedTransport;
-        vm.getSelectedTransport = function () {
-            if (vm.selectedTransport !== undefined) {
-                return vm.selectedTransport;
-            } else {
-                return "Transports";
-            }
-        };
-
         vm.pay = 'Pay1';
-    });
+        
+        vm.addTabs = function(){
+        	vm.tabs=[];
+        	var totalPeople = sumNumberOfPeople();
+        	for(var i=1;i<=totalPeople;i++){
+        		vm.tabs.push(""+i);
+        	}
+        }
+        
+        function sumNumberOfPeople(){
+        	var people = vm.stepOne.data.numberOfPeople;
+        	var totalPeople = 0;
+        	var value = 0;
+        	for(var num in people) {
+        		  value = people[num];
+        		  totalPeople += value; 
+        	}
+        	return totalPeople;
+        }
+        
+        function createPatternOfDate(date){
+        	var pattern = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+        	return pattern;
+        }
+        
+        
+        vm.createInsurancePolicy = function(){
+        	
+        	var customers = [];
+        	var customer = {};
+        	var customerData =vm.stepTwo.data; 
+        	for(var c in customerData)
+        	{	
+        		if(customerData[c] != null){
+	        		if(!customerData[c].carrier){
+	        			customerData[c].email = null;
+	        		}
+	        		customer = {
+	        				"firstName": customerData[c].firstname,	
+	        				"lastName": customerData[c].lastname,
+	        				"personalId": customerData[c].personalId,
+	        				"passport": customerData[c].passport,
+	        				"address": customerData[c].address,
+	        				"telephoneNumber": customerData[c].telephoneNumber,
+	        				"carrier": customerData[c].carrier,
+	        				"email": customerData[c].email
+	        		}	
+	        		customers.push(customer);
+	        	}
+        	}
+        	console.log(customers);
+        	
+        	var travelRisks = [];
+        	travelRisks.push(vm.stepOne.data.selectedRegion);
+        	travelRisks.push(vm.stepOne.data.selectedSport);
+        	travelRisks.push(vm.stepOne.data.selectedAmount);
+        	
+        	var internationalTravelInsuranceDTO = 
+        	{
+        		"issueDate": createPatternOfDate(vm.stepOne.data.fromDate),
+        		"durationInDays": vm.calculateDays(vm.stepOne.data.fromDate, vm.stepOne.data.toDate),
+        		"numberOfPersons": sumNumberOfPeople(),
+        		"price": 12000,
+        		"risks": travelRisks
+        		//"insurancePolicies": null
 
+        	}
+        	console.log(internationalTravelInsuranceDTO);
+        	
+        	var homeRisks = [];
+        	homeRisks.push(vm.stepThree.data.selectedArea);
+        	homeRisks.push(vm.stepThree.data.selectedAge);
+        	homeRisks.push(vm.stepThree.data.selectedRisk);
+        	homeRisks.push(vm.stepThree.data.selectedValue);
+        	
+        	var homeInsuranceDTO = 
+        	{
+        		"ownerFirstName": vm.stepThree.data.firstname,
+        		"ownerLastName": vm.stepThree.data.lastname,
+        		"address": vm.stepThree.data.address,
+        		"personalId": vm.stepThree.data.personalId,
+        		"price": 10000,
+        		"risks": homeRisks
+        	}
+        	console.log(homeInsuranceDTO);
+        	
+        	var roadsideRisks = [];
+        	roadsideRisks.push(vm.stepFour.data.selectedAccommodation);
+        	roadsideRisks.push(vm.stepFour.data.selectedRepair);
+        	roadsideRisks.push(vm.stepFour.data.selectedTowing);
+        	roadsideRisks.push(vm.stepFour.data.selectedTransport);
 
+        	var roadsideAssistanceInsuranceDTO = 
+        	{
+        		"ownerFirstName": vm.stepFour.data.ownerFirstname,
+        		"ownerLastName": vm.stepFour.data.ownerLastname,
+        		"personalId": vm.stepFour.data.personalId,
+        		"carBrand": vm.stepFour.data.carBrand,
+        		"carType": vm.stepFour.data.carType,
+        		"yearOfManufacture": vm.stepFour.data.yearOfManufacture,
+        		"licencePlateNumber": vm.stepFour.data.licencePlateNumber,
+        		"undercarriageNumber": vm.stepFour.data.undercarriageNumber,
+        		"price": 20000,
+        		"risks": roadsideRisks
+        	}
+        	console.log(roadsideAssistanceInsuranceDTO);
+
+        	var insurancePolicyDTO = 
+        	{
+        		"totalValue": 50000,
+        		"dateOfIssue": "2017-12-10",
+        		"dateBecomeEffective": "2017-12-15",
+        		"customers": customers,
+        		"internationalTravelInsurance": internationalTravelInsuranceDTO,
+        		"homeInsurance": homeInsuranceDTO,
+        		"roadsideAssistanceInsurance": roadsideAssistanceInsuranceDTO
+        	}
+        	 insuranceService.createInsurancePolicy(insurancePolicyDTO).then(
+                 function (response) {
+                     if (response.status == 200) {
+                         console.log(response.data);
+                     }
+                 })
+		    }
+	});
 }());

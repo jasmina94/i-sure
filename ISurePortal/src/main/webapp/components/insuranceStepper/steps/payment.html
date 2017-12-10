@@ -1,6 +1,6 @@
 <md-step label="Payment choices"
-         md-complete="vm.stepData[4].data.completed"
-         ng-disabled="vm.stepProgress < 5"> <md-step-body>
+         md-complete=""
+         ng-disabled=""> <md-step-body>
     <form name="step5">
         <md-content class="md-padding">
             <div layout="column" layout-align="center center"
@@ -14,7 +14,7 @@
                     <md-radio-button value="Pay2"> Pay2 </md-radio-button>
                     <md-radio-button value="Pay3">Pay3</md-radio-button>
                 </md-radio-group>
-                <md-button class="gold-btn">PAY</md-button>
+                <md-button class="gold-btn" ng-click="vm.createInsurancePolicy()">PAY</md-button>
             </div>
         </md-content>
     </form>

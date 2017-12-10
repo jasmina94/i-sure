@@ -21,7 +21,6 @@ public class RiskDTO extends BaseDTO {
     @NotNull
     private String riskName;
 
-    @NotNull
     private RiskTypeDTO riskType;
 
     private List<PricelistItemDTO> pricelistItems = new ArrayList<>();

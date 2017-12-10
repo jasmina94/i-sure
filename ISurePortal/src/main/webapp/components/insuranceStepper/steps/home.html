@@ -1,7 +1,7 @@
 <md-step label="Home insurance"
          md-complete="vm.stepThree
          .data.notCompleted"
-         ng-disabled="true">
+         ng-disabled="">
     <md-step-body>
         <form name="step3">
             <md-content class="md-padding">
@@ -15,10 +15,8 @@
                             <div style="width: 80%;">
                                 <md-input-container>
                                     <md-select
-                                            ng-model="vm.stepThree
-                                    .data.area"
-                                            md-selected-text="vm.stepThree
-                                    .data.area.riskName">
+                                            ng-model="vm.stepThree.data.selectedArea"
+                                            md-selected-text="vm.stepThree.data.selectedArea.riskName">
                                         <md-optgroup
                                                 label="areas">
                                             <md-option ng-value="area"
@@ -38,10 +36,8 @@
                             <div style="width: 80%;">
                                 <md-input-container>
                                     <md-select
-                                            ng-model="vm.stepThree
-                                    .data.age"
-                                            md-selected-text="vm.stepThree
-                                    .data.age.riskName">
+                                            ng-model="vm.stepThree.data.selectedAge"
+                                            md-selected-text="vm.stepThree.data.selectedAge.riskName">
                                         <md-optgroup
                                                 label="age">
                                             <md-option ng-value="age"
@@ -59,11 +55,8 @@
                             </div>
                             <div style="width: 80%;">
                                 <md-input-container>
-                                    <md-select style="color:#f0d68f;"
-                                               ng-model="vm.stepThree
-                                                           .data.value"
-                                               md-selected-text="vm.stepThree
-                                                           .data.value.riskName">
+                                    <md-select ng-model="vm.stepThree.data.selectedValue"
+                                               md-selected-text="vm.stepThree.data.selectedValue.riskName">
                                         <md-optgroup
                                                 label="values">
                                             <md-option ng-value="value"
@@ -83,10 +76,8 @@
                             <div style="width: 80%;">
                                 <md-input-container>
                                     <md-select
-                                            ng-model="vm.stepThree
-                                    .data.risk"
-                                            md-selected-text="vm.stepThree
-                                    .data.risk.riskName">
+                                            ng-model="vm.stepThree.data.selectedRisk"
+                                            md-selected-text="vm.stepThree.data.selectedRisk.riskName">
                                         <md-optgroup
                                                 label="risks">
                                             <md-option ng-value="risk"
@@ -98,27 +89,15 @@
                                 </md-input-container>
                             </div>
                         </div>
-
                         <md-input-container class="md-block input-adjust" style="width: 60%;"><label>Owner Firstname
-                        </label> <input name="firstname"
-                                        ng-model="vm.stepThree
-                                    .data.firstname"/></md-input-container>
+                        </label> <input name="firstname" ng-model="vm.stepThree.data.firstname"/></md-input-container>
                         <md-input-container class="md-block input-adjust" style="width: 60%;"><label>Owner Lastname
-                        </label> <input name="lastname"
-                                        ng-model="vm.stepThree
-                                    .data.lastname"/></md-input-container>
+                        </label> <input name="lastname" ng-model="vm.stepThree.data.lastname"/></md-input-container>
                         <md-input-container class="md-block input-adjust" style="width: 60%;"><label>Personal ID</label>
-                            <input name="personalId"
-                                   ng-model="vm.stepThree
-                                                                                                                             .data.personalId"/>
-                        </md-input-container>
+                            <input name="personalId" ng-model="vm.stepThree.data.personalId"/></md-input-container>
                         <md-input-container class="md-block input-adjust" style="margin-top: -10px;width: 60%;"><label>Address</label>
-                            <input name="address"
-                                   ng-model="vm.stepThree
-                                                                                                                                           .data.address"/>
-                        </md-input-container>
+                            <input name="address" ng-model="vm.stepThree.data.address"/></md-input-container>
                     </div>
-
                 </div>
             </md-content>
             <md-step-actions layout="row">
@@ -131,8 +110,7 @@
                     <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.submitCurrentStep(vm.stepThree
                 .data)">SKIP
                     </md-button>
-                    <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.submitCurrentStep(vm.stepThree
-                .data)">NEXT
+                    <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.submitCurrentStep('roadside')">NEXT
                     </md-button>
                 </div>
             </md-step-actions>

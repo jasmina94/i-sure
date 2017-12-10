@@ -1,9 +1,39 @@
 <md-step label="Personal Info"
          md-complete="vm.stepTwo.notCompleted"
-         ng-disabled="vm.checkIfEnabled()">
+         ng-disabled="">
     <md-step-body>
         <form name="step2">
-
+		<md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom >
+    <md-tab ng-repeat="num in vm.tabs" label={{num}}>
+    	<md-content class="md-padding">
+          			<div layout="row" layout-align="center top">
+				<div flex="nogrow" style="width: 400px">
+				<div ng-if="num=='1'" ng-model="vm.stepTwo.data[num-1].carrier" ng-init="vm.stepTwo.data[num-1].carrier = true"><h3>Carrier info</h3></div>
+				<div ng-if="num!='1'" ng-model="vm.stepTwo.data[num-1].carrier" ng-init="vm.stepTwo.data[num-1].carrier = false"><h3>Other travelers info</h3></div>
+					<md-input-container class="md-block"> <label>Firstname</label> <input name="firstname"
+						ng-model="vm.stepTwo.data[num-1].firstname"/> </md-input-container>
+					<md-input-container class="md-block input-adjust"> <label>Lastname</label> <input name="lastname"
+						ng-model="vm.stepTwo.data[num-1].lastname" /> </md-input-container>
+					<md-input-container class="md-block input-adjust"> <label>Personal ID</label> <input name="personalId"
+						ng-model="vm.stepTwo.data[num-1].personalId" /> </md-input-container>
+					<md-input-container class="md-block input-adjust"> <label>Passport</label> <input name="passport"
+						ng-model="vm.stepTwo.data[num-1].passport" /> </md-input-container>
+					<md-input-container class="md-block input-adjust"> <label>Address</label> <input name="address"
+						ng-model="vm.stepTwo.data[num-1].address" /> </md-input-container>
+					<md-input-container class="md-block input-adjust" style="margin-bottom: 0px;"> <label>Phone number</label> <input name="telephoneNumber"
+						ng-model="vm.stepTwo.data[num-1].telephoneNumber" /> </md-input-container>
+					<div ng-if="num=='1'" 
+							style="width: 100%;">
+						<md-input-container style="margin-top: 0px;" class="md-block"> <label>Email</label> <input name="email"
+						ng-model="vm.stepTwo.data[num-1].email" /> </md-input-container>
+						</div>
+					</div>
+				</div>
+        </md-content>
+    </md-tab>
+    </md-tabs>
+			</md-content>
             <md-step-actions layout="row">
                 <div flex>
                     <md-button ng-click="vm.moveToPreviousStep()">PREVIOUS</md-button>
@@ -16,7 +46,7 @@
                                class="gold-btn">GET HOME INSURANCE
                     </md-button>
                     <md-button ng-disabled="vm.showBusyText"
-                               ng-click="vm.submitCurrentStep('car')"
+                               ng-click="vm.submitCurrentStep('roadside')"
                                class="gold-btn">GET CAR INSURANCE
                     </md-button>
                     <md-button ng-disabled="vm.showBusyText"
