@@ -1,5 +1,6 @@
 package com.ftn.service.implementation;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,14 +10,15 @@ import org.springframework.stereotype.Service;
 
 import com.ftn.exception.NotFoundException;
 import com.ftn.model.Customer;
+import com.ftn.model.HomeInsurance;
 import com.ftn.model.InsurancePolicy;
-
+import com.ftn.model.InternationalTravelInsurance;
+import com.ftn.model.RoadsideAssistanceInsurance;
 import com.ftn.model.dto.InsurancePolicyDTO;
 import com.ftn.repository.CustomerRepository;
 import com.ftn.repository.HomeInsuranceRepository;
 import com.ftn.repository.InsurancePolicyRepository;
 import com.ftn.repository.InternationalTravelInsuranceRepository;
-
 import com.ftn.repository.RoadsideAssistanceInsuranceRepository;
 import com.ftn.service.InsurancePolicyService;
 
@@ -57,7 +59,36 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
     public InsurancePolicyDTO create(InsurancePolicyDTO insurancePolicyDTO) {
 
         final InsurancePolicy insurancePolicy = insurancePolicyDTO.construct();
-    
+        
+        List<Customer> customers = insurancePolicy.getCustomers();
+        List<Customer> savedCustomers = new ArrayList();
+        Customer savedCustomer =null;
+        for(Customer customer : customers){
+        	savedCustomer = customerRepository.save(customer);
+        	savedCustomers.add(savedCustomer);
+        }
+        
+        insurancePolicy.setCustomers(savedCustomers);
+        
+        InternationalTravelInsurance international = insurancePolicy.getInternationalTravelInsurance();
+        
+        international = itiRepository.save(international);
+        
+        HomeInsurance home = insurancePolicy.getHomeInsurance();
+        RoadsideAssistanceInsurance road = insurancePolicy.getRoadsideAssistanceInsurance();
+        
+        if(home != null){
+        	
+        	home = homeInsuranceRepository.save(home);
+        	insurancePolicy.setHomeInsurance(home);
+        	
+        }
+        
+        if(road != null){
+        	road = raiRepository.save(road);
+        	insurancePolicy.setRoadsideAssistanceInsurance(road);
+        }
+        
         insurancePolicyRepository.save(insurancePolicy);
         return new InsurancePolicyDTO(insurancePolicy);
     }

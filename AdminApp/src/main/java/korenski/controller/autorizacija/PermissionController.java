@@ -8,7 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,7 +35,7 @@ public class PermissionController {
         this.permissionService = permissionService;
     }
 	
-	@PreAuthorize("authenticated")
+	//@PreAuthorize("authenticated")
 	//@CustomAnnotation(value = "INSERT_PERMISSION")
 	@PostMapping(value = "/newPermission")
 	public ResponseEntity newPermission(@Valid @RequestBody Permission permission, BindingResult bindingResult) throws Exception {

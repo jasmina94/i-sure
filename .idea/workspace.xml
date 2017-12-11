@@ -1,7 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="011abc22-5a44-448d-857b-b64348ca726d" name="Default" comment="" />
+    <list default="true" id="011abc22-5a44-448d-857b-b64348ca726d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PCC/gradle/wrapper/gradle-wrapper.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PCC/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/exception/BadRequestException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/BaseDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/CustomerDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/HomeInsuranceController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/HomeInsuranceDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/HomeInsuranceService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/HomeInsuranceServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/ISureSalesApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/test/java/com/ftn/ISureSalesApplicationTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/InsuranceCategoryController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/InsuranceCategoryDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/InsuranceCategoryService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/InsuranceCategoryServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/InsurancePolicyController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/InsurancePolicyDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/InsurancePolicyService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/InsurancePolicyServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/InternationalTravelInsuranceController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/InternationalTravelInsuranceDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/InternationalTravelInsuranceService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/InternationalTravelInsuranceServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/exception/NotFoundException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/PricelistController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/PricelistDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/PricelistItemDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/PricelistService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/PricelistServiceImplementation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/RiskController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/RiskDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/RiskService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/RiskServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/RiskTypeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/RiskTypeDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/RiskTypeService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/RiskTypeServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/RoadsideAssistanceInsuranceController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/RoadsideAssistanceInsuranceDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/RoadsideAssistanceInsuranceService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/RoadsideAssistanceInsuranceServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/controller/UserController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/model/dto/UserDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/UserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/java/com/ftn/service/implementation/UserServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/i-sure-sales/src/main/resources/application.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PCC/src/main/resources/application.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PCC/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PCC/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PCC/gradlew.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PCC/gradlew" />
+      <change type="DELETED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\src\main\resources\application.properties" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\.gitignore" afterPath="$PROJECT_DIR$/i-sure-sales/.gitignore" />
+      <change type="MOVED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\.mvn\wrapper\maven-wrapper.jar" afterPath="$PROJECT_DIR$/i-sure-sales/.mvn/wrapper/maven-wrapper.jar" />
+      <change type="MOVED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\.mvn\wrapper\maven-wrapper.properties" afterPath="$PROJECT_DIR$/i-sure-sales/.mvn/wrapper/maven-wrapper.properties" />
+      <change type="MOVED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\mvnw" afterPath="$PROJECT_DIR$/i-sure-sales/mvnw" />
+      <change type="MOVED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\mvnw.cmd" afterPath="$PROJECT_DIR$/i-sure-sales/mvnw.cmd" />
+      <change type="MOVED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\pom.xml" afterPath="$PROJECT_DIR$/i-sure-sales/pom.xml" />
+      <change type="MOVED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\src\main\java\com\ftn\ISureDcProxyApplication.java" afterPath="$PROJECT_DIR$/PCC/src/main/java/com/ftn/PccApplication.java" />
+      <change type="MOVED" beforePath="C:\Users\milica.govedarica\Documents\sep\i-sure\ProxyDC\src\test\java\com\ftn\ISureDcProxyApplicationTests.java" afterPath="$PROJECT_DIR$/PCC/src/test/java/com/ftn/PccApplicationTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/target/classes/korenski/controller/autorizacija/PermissionController.class" afterPath="$PROJECT_DIR$/AdminApp/target/classes/korenski/controller/autorizacija/PermissionController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DC/src/main/java/com/ftn/controller/CustomerController.java" afterPath="$PROJECT_DIR$/DC/src/main/java/com/ftn/controller/CustomerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DC/src/main/java/com/ftn/service/implementation/InsurancePolicyServiceImpl.java" afterPath="$PROJECT_DIR$/DC/src/main/java/com/ftn/service/implementation/InsurancePolicyServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/src/main/java/korenski/controller/autorizacija/PermissionController.java" afterPath="$PROJECT_DIR$/AdminApp/src/main/java/korenski/controller/autorizacija/PermissionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DC/src/main/java/com/ftn/controller/RiskController.java" afterPath="$PROJECT_DIR$/DC/src/main/java/com/ftn/controller/RiskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DC/src/main/java/com/ftn/controller/RiskTypeController.java" afterPath="$PROJECT_DIR$/DC/src/main/java/com/ftn/controller/RiskTypeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/src/main/java/korenski/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/AdminApp/src/main/java/korenski/config/SecurityConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/files/Logger/all.log" afterPath="$PROJECT_DIR$/AdminApp/files/Logger/all.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DC/files/Logger/all.log" afterPath="$PROJECT_DIR$/DC/files/Logger/all.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/AdminApp/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/target/classes/application.properties" afterPath="$PROJECT_DIR$/AdminApp/target/classes/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/target/classes/META-INF/maven/korenski/mtb/pom.properties" afterPath="$PROJECT_DIR$/AdminApp/target/classes/META-INF/maven/korenski/mtb/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/pom.xml" afterPath="$PROJECT_DIR$/AdminApp/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminApp/target/classes/META-INF/maven/korenski/mtb/pom.xml" afterPath="$PROJECT_DIR$/AdminApp/target/classes/META-INF/maven/korenski/mtb/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="i-sure.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,20 +100,15 @@
     <favorites_list name="i-sure" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="RoadsideAssistanceInsuranceDTO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DC/src/main/java/com/ftn/model/dto/RoadsideAssistanceInsuranceDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
@@ -44,12 +118,12 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1932" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -60,7 +134,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -72,7 +146,10 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -81,66 +158,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="i-sure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="i-sure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ftn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="i-sure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="i-sure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ftn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -149,6 +171,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.ISureDataCenterApplication">
     <configuration default="false" name="ISureDataCenterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -354,31 +377,31 @@
       <workItem from="1512217373357" duration="13000" />
       <workItem from="1512217401619" duration="20000" />
       <workItem from="1512217434942" duration="13000" />
+      <workItem from="1512981687572" duration="383000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219000" />
+    <option name="totallyTimeSpent" value="602000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -388,6 +411,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -406,6 +430,16 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/DC/src/main/java/com/ftn/model/dto/RoadsideAssistanceInsuranceDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DC/src/main/java/com/ftn/model/dto/RoadsideAssistanceInsuranceDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
