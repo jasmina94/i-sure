@@ -1,4 +1,4 @@
-package korenski.config;
+package com.ftn.config;
 
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
@@ -54,7 +54,7 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter{
       super.configure(http);
       http
       	.authorizeRequests()
-      	.antMatchers("/", "/adminResources/*").authenticated().anyRequest().permitAll().and()
+      	.antMatchers("/").authenticated().anyRequest().permitAll().and()
       	.httpBasic().and().csrf().disable();
    }
 }

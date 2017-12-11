@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,6 +36,7 @@ public class PermissionController {
     }
 	
 	//@CustomAnnotation(value = "INSERT_PERMISSION")
+	@PreAuthorize("hasRole('admin')")
 	@PostMapping(value = "/newPermission")
 	public ResponseEntity newPermission(@Valid @RequestBody Permission permission, BindingResult bindingResult) throws Exception {
 
@@ -85,6 +87,7 @@ public class PermissionController {
 	}
 	
 	//@CustomAnnotation(value = "FIND_ALL_PERMISSION")
+	@PreAuthorize("hasRole('admin')")
 	@GetMapping(value = "/allPermissions")
 	public ResponseEntity<Collection<Permission>> allPermissions() throws Exception {
 

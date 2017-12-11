@@ -37,6 +37,7 @@ public class PermissionController {
 	
 
 	//@CustomAnnotation(value = "INSERT_PERMISSION")
+	@PreAuthorize("authenticated")
 	@PostMapping(value = "/newPermission")
 	public ResponseEntity newPermission(@Valid @RequestBody Permission permission, BindingResult bindingResult) throws Exception {
 
@@ -88,6 +89,7 @@ public class PermissionController {
 	
 	
 	//@CustomAnnotation(value = "FIND_ALL_PERMISSION")
+	@PreAuthorize("authenticated")
 	@GetMapping(value = "/allPermissions")
 	public ResponseEntity<Collection<Permission>> allPermissions() throws Exception {
 
