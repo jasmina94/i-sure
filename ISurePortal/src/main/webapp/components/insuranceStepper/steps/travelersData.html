@@ -1,5 +1,5 @@
 <md-step label="Personal Info"
-         md-complete="vm.stepTwo.notCompleted"
+         md-complete="vm.stepTwo.completed"
          ng-disabled="">
     <md-step-body>
         <form name="step2">
@@ -42,16 +42,8 @@
                 <div flex layout="row" layout-align="end top">
                     <md-button class="md-warn">CANCEL</md-button>
                     <md-button ng-disabled="vm.showBusyText"
-                               ng-click="vm.submitCurrentStep('home')"
-                               class="gold-btn">GET HOME INSURANCE
-                    </md-button>
-                    <md-button ng-disabled="vm.showBusyText"
-                               ng-click="vm.submitCurrentStep('roadside')"
-                               class="gold-btn">GET CAR INSURANCE
-                    </md-button>
-                    <md-button ng-disabled="vm.showBusyText"
-                               ng-click="vm.submitCurrentStep('none')"
-                               class="gold-btn">CONTINUE TO PAYMENT
+                               ng-click="vm.submitCurrentStep()"
+                               class="gold-btn">NEXT
                     </md-button>
                 </div>
             </md-step-actions>
