@@ -1,7 +1,7 @@
 <md-step label="Home insurance"
          md-complete="vm.stepThree
          .data.completed"
-         ng-disabled="">
+         ng-disabled="!vm.stepTwo.completed">
     <md-step-body>
         <form name="step3">
             <md-content class="md-padding">
@@ -90,27 +90,39 @@
                             </div>
                         </div>
                         <md-input-container class="md-block input-adjust" style="width: 60%;"><label>Owner Firstname
-                        </label> <input name="firstname" ng-model="vm.stepThree.data.firstname"/></md-input-container>
+                        </label> <input name="firstname" ng-model="vm.stepThree.data.firstname" required/>
+                        </md-input-container>
                         <md-input-container class="md-block input-adjust" style="width: 60%;"><label>Owner Lastname
-                        </label> <input name="lastname" ng-model="vm.stepThree.data.lastname"/></md-input-container>
+                        </label> <input name="lastname" ng-model="vm.stepThree.data.lastname" required/>
+                        </md-input-container>
                         <md-input-container class="md-block input-adjust" style="width: 60%;"><label>Personal ID</label>
-                            <input name="personalId" ng-model="vm.stepThree.data.personalId"/></md-input-container>
+                            <input type="text" minlength="13" maxlength="13" pattern="^(\d{13})?$" name="personalId"
+                                   ng-model="vm.stepThree.data.personalId" required/></md-input-container>
                         <md-input-container class="md-block input-adjust" style="margin-top: -10px;width: 60%;"><label>Address</label>
-                            <input name="address" ng-model="vm.stepThree.data.address"/></md-input-container>
+                            <input name="address" ng-model="vm.stepThree.data.address" required/></md-input-container>
                     </div>
                 </div>
             </md-content>
             <md-step-actions layout="row">
                 <div flex>
-                    <md-button ng-click="vm.moveToPreviousStep()">PREVIOUS</md-button>
+                    <md-button ng-click="vm.moveToPreviousStep()">BACK TO TRAVELERS INFO</md-button>
 
                 </div>
                 <div flex layout="row" layout-align="end top">
                     <md-button class="md-warn">CANCEL</md-button>
-                    <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.skip('home')">SKIP
-                    </md-button>
-                    <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.submitCurrentStep()">NEXT
-                    </md-button>
+                    <div>
+                        <md-button type="submit" class="gold-btn" ng-click="vm.skip('home')">SKIP
+                        </md-button>
+                        <md-tooltip md-direction="bottom">THIS IS OPTIONAL, SO YOU CAN SKIP IT.
+                        </md-tooltip>
+                    </div>
+                    <div>
+                        <md-button type="submit" ng-disabled="step3.$invalid" class="gold-btn"
+                                   ng-click="vm.submitCurrentStep()">ADDITIONAL CAR INSURANCE
+                        </md-button>
+                        <md-tooltip ng-if="step3.$invalid" md-direction="bottom">YOU NEED TO ENTER DATA FOR HOME OWNER
+                        </md-tooltip>
+                    </div>
                 </div>
             </md-step-actions>
         </form>

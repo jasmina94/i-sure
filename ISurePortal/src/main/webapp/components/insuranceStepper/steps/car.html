@@ -1,6 +1,6 @@
 <md-step label="Car insurance"
          md-complete="vm.stepFour.completed"
-         ng-disabled=""> <md-step-body>
+         ng-disabled="!vm.stepThree.completed"> <md-step-body>
     <form name="step4">
         <md-content class="md-padding">
             <div layout="row" layout-align="center top">
@@ -79,28 +79,28 @@
 
 
                     <md-input-container class="md-block input-adjust" style="width: 60%;">
-                        <label>Owner Firstname</label> <input name="ownerFirstname" ng-model="vm.stepFour.data.ownerFirstname" /> </md-input-container>
+                        <label>Owner Firstname</label> <input name="ownerFirstname" ng-model="vm.stepFour.data.ownerFirstname" required/> </md-input-container>
 
                     <md-input-container class="md-block input-adjust" style="width: 60%;">
-                        <label>Owner Lastname</label> <input name="ownerLastname" ng-model="vm.stepFour.data.ownerLastname" /> </md-input-container>
+                        <label>Owner Lastname</label> <input name="ownerLastname" ng-model="vm.stepFour.data.ownerLastname" required/> </md-input-container>
 
                     <md-input-container class="md-block input-adjust" style="width: 60%;">
-                        <label>Personal ID</label> <input name="personalId" ng-model="vm.stepFour.data.personalId" /> </md-input-container>
+                        <label>Personal ID</label> <input type="text" minlength="13" maxlength="13" pattern="^(\d{13})?$" name="personalId" ng-model="vm.stepFour.data.personalId" required/> </md-input-container>
 
                     <md-input-container class="md-block input-adjust" style="width: 60%;">
-                        <label>Car Brand</label> <input name="carBrand" ng-model="vm.stepFour.data.carBrand" /> </md-input-container>
+                        <label>Car Brand</label> <input name="carBrand" ng-model="vm.stepFour.data.carBrand" required/> </md-input-container>
 
                     <md-input-container class="md-block input-adjust" style="width: 60%;">
-                        <label>Car Type</label> <input name="carType" ng-model="vm.stepFour.data.carType" /> </md-input-container>
+                        <label>Car Type</label> <input name="carType" ng-model="vm.stepFour.data.carType" required/> </md-input-container>
 
                     <md-input-container class="md-block input-adjust" style="width: 60%;">
-                        <label>Year of Manufacture</label> <input name="yearOfManufacture" ng-model="vm.stepFour.data.yearOfManufacture" /> </md-input-container>
+                        <label>Year of Manufacture</label> <input type="text" minlength="4" maxlength="4" pattern="^(\d{4})?$" name="yearOfManufacture" ng-model="vm.stepFour.data.yearOfManufacture" required/> </md-input-container>
 
                     <md-input-container class="md-block input-adjust" style="width: 60%;">
-                        <label>Licence Plate Number</label> <input name="licencePlateNumber" ng-model="vm.stepFour.data.licencePlateNumber" /> </md-input-container>
+                        <label>Licence Plate Number</label> <input type="text" minlength="13" maxlength="13" pattern="^(\d{13})?$" name="licencePlateNumber" ng-model="vm.stepFour.data.licencePlateNumber" required/> </md-input-container>
 
                     <md-input-container class="md-block input-adjust" style="width: 60%;">
-                        <label>Undercarriage Number</label> <input name="undercarriageNumber" ng-model="vm.stepFour.data.undercarriageNumber" /> </md-input-container>
+                        <label>Undercarriage Number</label> <input name="undercarriageNumber" ng-model="vm.stepFour.data.undercarriageNumber" required/> </md-input-container>
 
 
                 </div>
@@ -108,13 +108,24 @@
         </md-content>
         <md-step-actions layout="row">
             <div flex>
-                <md-button ng-click="vm.moveToPreviousStep()">PREVIOUS</md-button>
+                <md-button ng-click="vm.moveToPreviousStep()">BACK TO HOME INSURANCE</md-button>
 
             </div>
             <div flex layout="row" layout-align="end top">
                 <md-button class="md-warn">CANCEL</md-button>
-                <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.skip('car')">SKIP</md-button>
-                <md-button type="submit" ng-disabled="" class="gold-btn" ng-click="vm.submitCurrentStep()">NEXT</md-button>
+                <div>
+                    <md-button type="submit" class="gold-btn" ng-click="vm.skip('car')">SKIP
+                    </md-button>
+                    <md-tooltip md-direction="bottom">THIS IS OPTIONAL, SO YOU CAN SKIP IT.
+                    </md-tooltip>
+                </div>
+                <div>
+                    <md-button type="submit" ng-disabled="step4.$invalid" class="gold-btn"
+                               ng-click="vm.submitCurrentStep()">CONTINUE TO PAYMENT
+                    </md-button>
+                    <md-tooltip ng-if="step4.$invalid" md-direction="bottom">YOU NEED TO ENTER DATA FOR CAR
+                    </md-tooltip>
+                </div>
             </div>
         </md-step-actions>
     </form>

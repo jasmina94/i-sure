@@ -11,23 +11,27 @@
                             <div flex-gt-xs style="width: 200px; float: left;margin-right: 20px;margin-left: -10px;">
                                 <md-datepicker ng-model="vm.stepOne.data.fromDate" md-placeholder="Enter date"
                                                md-min-date="vm.todayDate"
-                                               md-date-filter="vm.isDateValid" ng-required></md-datepicker>
+                                               md-date-filter="vm.isDateValid" required></md-datepicker>
                             </div>
                             <div flex-gt-xs style="width: 200px; float: right;">
                                 <md-datepicker ng-model="vm.stepOne.data.toDate" md-placeholder="Enter date"
                                                md-min-date="vm.stepOne.data.fromDate"
-                                               ng-required></md-datepicker>
+                                               required></md-datepicker>
                             </div>
                         </div>
-                        
-                        <div layout="row" ng-repeat="age in vm.travelRisks['Age']" style="padding-top: 0px; width:100%;">
-                        	<div style="width: 20%; float: left; padding-top: 25px;">
+
+                        <div layout="row" ng-repeat="age in vm.travelRisks['Age']"
+                             style="padding-top: 0px; width:100%;">
+                            <div style="width: 20%; float: left; padding-top: 25px;">
                                 <label>{{age.riskName}}:</label>
                             </div>
                             <div style="width: 40%;height:50px;">
-                               	<md-input-container class="md-block"> <label>Number of people</label> <input min="0" max="5"
-									type="number" ng-model="vm.stepOne.data.numberOfPeople[age.riskName]" ng-init="vm.stepOne.data.numberOfPeople[age.riskName] = 2"/> 
-									</md-input-container>
+                                <md-input-container class="md-block"><label>Number of people</label> <input min="0"
+                                                                                                            max="5"
+                                                                                                            type="number"
+                                                                                                            ng-model="vm.stepOne.data.numberOfPeople[age.riskName]"
+                                                                                                            ng-init="vm.stepOne.data.numberOfPeople[vm.travelRisks['Age'][0].riskName] = 1"/>
+                                </md-input-container>
                             </div>
                         </div>
                         <div layout="row">
@@ -66,7 +70,8 @@
                                         <md-optgroup
                                                 label="Regions">
                                             <md-option ng-value="region"
-                                                       ng-repeat="region in vm.travelRisks['Region']">{{region.riskName}}
+                                                       ng-repeat="region in vm.travelRisks['Region']">
+                                                {{region.riskName}}
                                             </md-option>
                                         </md-optgroup>
                                     </md-select>
@@ -98,9 +103,12 @@
             <md-step-actions layout="row">
                 <div flex layout="row" layout-align="end top">
                     <md-button type="button" class="md-warn">CANCEL</md-button>
-                    <md-button ng-disabled="" ng-click="vm.submitCurrentStep()" class="gold-btn">
-                        NEXT
-                    </md-button>
+                    <div>
+                        <md-button ng-disabled="step1.$invalid" ng-click="vm.submitCurrentStep()" class="gold-btn">
+                            ENTER TRAVELERS INFO
+                        </md-button>
+                        <md-tooltip ng-if="step1.$invalid" md-direction="bottom">YOU NEED TO ENTER DATE OF TRAVEL</md-tooltip>
+                    </div>
                 </div>
             </md-step-actions>
         </form>
