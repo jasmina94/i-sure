@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,17 +38,17 @@ public class PermissionController {
 	//@CustomAnnotation(value = "INSERT_PERMISSION")
 	@PostMapping(value = "/newPermission")
 	public ResponseEntity newPermission(@Valid @RequestBody Permission permission, BindingResult bindingResult) throws Exception {
-
+		System.out.println("radi");
 		if (bindingResult.hasErrors())
 			throw new BadRequestException();
 		
 		Permission perm;
-		try {
+		//try {
 			perm = permissionService.create(permission);
 			return new ResponseEntity<>(perm, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+		//} catch (Exception e) {
+		//	return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		//}
 	
 		
 	}
@@ -85,6 +86,7 @@ public class PermissionController {
 	}
 	
 	//@CustomAnnotation(value = "FIND_ALL_PERMISSION")
+	@PreAuthorize("hasRole('admin')")
 	@GetMapping(value = "/allPermissions")
 	public ResponseEntity<Collection<Permission>> allPermissions() throws Exception {
 

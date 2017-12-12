@@ -3,6 +3,8 @@ package korenski.service.implementation;
 import java.util.Arrays;
 import java.util.List;
 
+import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -22,7 +24,7 @@ public class PermissionServiceImplementation implements PermissionService{
 	
 	@Override
 	public List<Permission> readAll() {
-		RestTemplate restTemplate = new RestTemplate();
+		KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
 		String specific_uri = uri+"/allPermissions";
 		ResponseEntity<Permission[]> response = restTemplate.getForEntity(specific_uri, Permission[].class);
 
@@ -31,7 +33,7 @@ public class PermissionServiceImplementation implements PermissionService{
 
 	@Override
 	public Permission create(Permission permission) {
-		RestTemplate restTemplate = new RestTemplate();
+		KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
 		String specific_uri = uri+"/newPermission";
 		ResponseEntity<Permission> response = restTemplate.postForEntity(specific_uri, new HttpEntity<>(permission),
 				Permission.class);

@@ -1,13 +1,15 @@
 package com.ftn.exception.resolver;
 
-import com.ftn.exception.BadRequestException;
-import com.ftn.exception.NotFoundException;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import javax.servlet.http.HttpServletRequest;
+import com.ftn.exception.BadRequestException;
+import com.ftn.exception.ForbiddenException;
+import com.ftn.exception.NotFoundException;
 
 /**
  * Created by Jasmina on 16/11/2017.
@@ -27,5 +29,10 @@ public class ExceptionResolver {
     @ExceptionHandler(DataAccessException.class)
     public ResponseEntity dataAccessException(HttpServletRequest request, DataAccessException exception) {
         return new ResponseEntity<>("{\"message\": \"" + exception.getMessage() + "\"}", HttpStatus.CONFLICT);
+    }
+    
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity forbiddenException(HttpServletRequest request, ForbiddenException exception) {
+        return new ResponseEntity<>("{\"message\": \"" + exception.getMessage() + "\"}", HttpStatus.FORBIDDEN);
     }
 }

@@ -2,12 +2,12 @@ package korenski.controller.autorizacija;
 
 import java.util.Collection;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 //import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import korenski.exception.BadRequestException;
 import korenski.model.autorizacija.Permission;
 import korenski.service.PermissionService;
-import korenski.service.RoleService;
 
 
 @Controller
@@ -35,23 +34,21 @@ public class PermissionController {
         this.permissionService = permissionService;
     }
 	
-	//@PreAuthorize("authenticated")
 	//@CustomAnnotation(value = "INSERT_PERMISSION")
+	@PreAuthorize("hasRole('admin')")
 	@PostMapping(value = "/newPermission")
 	public ResponseEntity newPermission(@Valid @RequestBody Permission permission, BindingResult bindingResult) throws Exception {
-
+		
 		if (bindingResult.hasErrors())
 			throw new BadRequestException();
 		
 		Permission perm;
-		try {
+		//try {
 			perm = permissionService.create(permission);
 			return new ResponseEntity<>(perm, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-	
-		
+		//} catch (Exception e) {
+		//	return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		//}
 	}
 	
 	//@CustomAnnotation(value = "DELETE_PERMISSION")
@@ -87,6 +84,7 @@ public class PermissionController {
 	}
 	
 	//@CustomAnnotation(value = "FIND_ALL_PERMISSION")
+	@PreAuthorize("hasRole('admin')")
 	@GetMapping(value = "/allPermissions")
 	public ResponseEntity<Collection<Permission>> allPermissions() throws Exception {
 
