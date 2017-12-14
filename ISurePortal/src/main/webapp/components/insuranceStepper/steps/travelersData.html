@@ -61,7 +61,7 @@
                     <md-button ng-click="vm.moveToPreviousStep()">BACK TO TRAVELING DETAILS</md-button>
                 </div>
                 <div flex layout="row" layout-align="end top">
-                    <md-button class="md-warn">CANCEL</md-button>
+                    <md-button class="md-warn" ng-click="vm.cancel()">Back to home page</md-button>
                     <div>
                         <md-button ng-disabled="step2.$invalid || vm.tabs.length === 0" ng-click="vm.submitCurrentStep()" class="gold-btn">
                             ADDITIONAL HOME INSURANCE

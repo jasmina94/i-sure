@@ -3,7 +3,7 @@
     'use strict';
     var app = angular.module('iSure');
 
-    app.controller('insuranceStepperController', function ($scope, $q, $timeout, insuranceService) {
+    app.controller('insuranceStepperController', function ($scope, insuranceService, ngNotify, $state) {
 
         var vm = this;
 
@@ -91,6 +91,10 @@
 
             vm.selectedStep = vm.selectedStep + 1;
         };
+
+        vm.cancel = function cancel() {
+            $state.go('homePage');
+        }
 
         vm.skip = function skip(whatIsSkipped) {
             if(whatIsSkipped === 'home') {
@@ -242,6 +246,9 @@
             insuranceService.createInsurancePolicy(insurancePolicyDTO).then(
                 function (response) {
                     if (response.status == 200) {
+                        ngNotify.set('Know you have your umbrella.' , {
+                            type : 'success'
+                        });
                         console.log(response.data);
                     }
                 })

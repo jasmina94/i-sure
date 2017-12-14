@@ -8,7 +8,8 @@
         'ngAnimate',
         'ngAria',
         'ngMaterial',
-        'md-steppers'
+        'md-steppers',
+        'ngNotify'
     ]);
 
 }());

@@ -102,7 +102,7 @@
             </md-content>
             <md-step-actions layout="row">
                 <div flex layout="row" layout-align="end top">
-                    <md-button type="button" class="md-warn">CANCEL</md-button>
+                    <md-button type="button" class="md-warn" ng-click="vm.cancel()">Back to home page</md-button>
                     <div>
                         <md-button ng-disabled="step1.$invalid" ng-click="vm.submitCurrentStep()" class="gold-btn">
                             ENTER TRAVELERS INFO
