@@ -12,6 +12,6 @@ public interface CardRepository extends JpaRepository<Card, Long> {
 
     Optional<Card> findByPan(String pan);
 
-    Optional<Card> findByPanAndSecurityCode(String pan, String securityCode);
+    Optional<Card> findByPanAndSecurityCode(String pan, int securityCode);
 
 }

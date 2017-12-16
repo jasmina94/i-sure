@@ -1,8 +1,11 @@
 package com.ftn.service.implementation;
 
 import com.ftn.exception.NotFoundException;
+import com.ftn.model.database.Card;
 import com.ftn.model.database.Transaction;
+import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
 import com.ftn.repository.TransactionRepository;
+import com.ftn.service.CardService;
 import com.ftn.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,12 +18,11 @@ import java.util.List;
 @Service
 public class TransactionServiceImpl implements TransactionService {
 
-    private final TransactionRepository transactionRepository;
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     @Autowired
-    public TransactionServiceImpl(TransactionRepository transactionRepository) {
-        this.transactionRepository = transactionRepository;
-    }
+    private CardService cardService;
 
     @Override
     public List<Transaction> read() {
@@ -28,7 +30,15 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Transaction create(Transaction transaction) {
+    public Transaction create(PaymentOrderDTO paymentOrderDTO) {
+        Transaction transaction = new Transaction();
+        transaction.setStatus(Transaction.Status.PENDING);
+        transaction.setType(Transaction.TransactionType.CHARGE);
+        transaction.setAmount(paymentOrderDTO.getAmount());
+
+        Card card = cardService.findCard(paymentOrderDTO);
+        transaction.setAccount(card.getAccount());
+
         return transactionRepository.save(transaction);
     }
 

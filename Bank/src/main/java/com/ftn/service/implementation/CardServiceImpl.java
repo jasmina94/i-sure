@@ -2,8 +2,9 @@ package com.ftn.service.implementation;
 
 import com.ftn.exception.NotFoundException;
 import com.ftn.model.database.Card;
+import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
 import com.ftn.repository.CardRepository;
-import com.ftn.service.TestService;
+import com.ftn.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +14,12 @@ import java.util.List;
  * Created by Jasmina on 04/12/2017.
  */
 @Service
-public class TestServiceImpl implements TestService {
+public class CardServiceImpl implements CardService {
 
     private final CardRepository cardRepository;
 
     @Autowired
-    public TestServiceImpl(CardRepository cardRepository){
+    public CardServiceImpl(CardRepository cardRepository){
         this.cardRepository = cardRepository;
     }
 
@@ -60,5 +61,13 @@ public class TestServiceImpl implements TestService {
             cardRepository.delete(id);
         }
         return;
+    }
+
+    @Override
+    public Card findCard(PaymentOrderDTO paymentOrderDTO) {
+        String pan = paymentOrderDTO.getPan();
+        int securityCode = paymentOrderDTO.getSecurityCode();
+        Card card = cardRepository.findByPanAndSecurityCode(pan, securityCode).orElseThrow(NotFoundException::new);
+        return card;
     }
 }

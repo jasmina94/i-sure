@@ -1,6 +1,7 @@
 package com.ftn.service;
 
 
+import com.ftn.model.database.Payment;
 import com.ftn.model.dto.warrant.Warrant;
 
 /**
@@ -9,5 +10,4 @@ import com.ftn.model.dto.warrant.Warrant;
 public interface PaymentService {
 
     void process(Warrant warrant);
-
 }

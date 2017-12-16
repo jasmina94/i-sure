@@ -1,11 +1,8 @@
 package com.ftn.controller;
 
-import com.ftn.exception.NotFoundException;
-import com.ftn.model.database.Account;
 import com.ftn.model.database.Card;
 import com.ftn.repository.AccountRepository;
-import com.ftn.repository.CardRepository;
-import com.ftn.service.TestService;
+import com.ftn.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,12 +19,12 @@ import javax.validation.Valid;
 @RequestMapping("/test")
 public class TestController {
 
-    private final TestService testService;
+    private final CardService testService;
 
     private final AccountRepository accountRepository;
 
     @Autowired
-    public TestController(TestService testService, AccountRepository accountRepository){
+    public TestController(CardService testService, AccountRepository accountRepository){
         this.testService = testService;
         this.accountRepository = accountRepository;
     }

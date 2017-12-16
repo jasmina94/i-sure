@@ -1,6 +1,7 @@
 package com.ftn.service;
 
 import com.ftn.model.database.Transaction;
+import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
 import com.ftn.model.dto.transaction.TransactionDTO;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public interface TransactionService {
 
     List<Transaction> read();
 
-    Transaction create(Transaction transaction);
+    Transaction create(PaymentOrderDTO paymentOrderDTO);
 
     Transaction update(Long id, Transaction transaction);
 

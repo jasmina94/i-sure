@@ -7,8 +7,12 @@ import com.ftn.model.dto.onlinepayment.PaymentInquiryDTO;
 import com.ftn.model.dto.onlinepayment.PaymentInquiryInfoDTO;
 import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
 import com.ftn.repository.MerchantRepository;
+import com.ftn.repository.PaymentRepository;
 import com.ftn.repository.TransactionRepository;
 import com.ftn.service.AcquirerService;
+import com.ftn.service.OnlinePaymentService;
+import com.ftn.service.PaymentService;
+import com.ftn.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +29,10 @@ public class AcquirerServiceImpl implements AcquirerService {
     private MerchantRepository merchantRepository;
 
     @Autowired
-    private TransactionRepository transactionRepository;
+    private TransactionService transactionService;
+
+    @Autowired
+    private OnlinePaymentService paymentService;
 
     @Override
     public boolean checkInquiry(PaymentInquiryDTO paymentInquiryDTO) {
@@ -50,8 +57,9 @@ public class AcquirerServiceImpl implements AcquirerService {
 
     @Override
     public PaymentOrderDTO generateOrderTimestamp(PaymentOrderDTO paymentOrderDTO) {
-        paymentOrderDTO.setAcquirerOrderId(111); // Get id from transaction
-        paymentOrderDTO.setAcquirerTimestamp(new Date());
+        Transaction transaction = transactionService.create(paymentOrderDTO);
+        paymentOrderDTO.setAcquirerOrderId(transaction.getId()); // Get id from transaction
+        paymentOrderDTO.setAcquirerTimestamp(transaction.getTimestamp());
         return paymentOrderDTO;
     }
 }

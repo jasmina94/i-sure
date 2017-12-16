@@ -18,6 +18,8 @@ public class EnvironmentProperties {
 
     private String pccUrl;
 
+    private String selfUrl;
+
 
     public void setSwiftCode(String swiftCode){
         this.swiftCode = swiftCode;
@@ -49,5 +51,13 @@ public class EnvironmentProperties {
 
     public void setPccUrl(String pccUrl) {
         this.pccUrl = pccUrl;
+    }
+
+    public String getSelfUrl() {
+        return selfUrl;
+    }
+
+    public void setSelfUrl(String selfUrl) {
+        this.selfUrl = selfUrl;
     }
 }

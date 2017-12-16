@@ -45,4 +45,9 @@ public class Transaction {
 
     @ManyToOne
     private Account account;
+
+    @PrePersist
+    protected void onCreate() {
+        timestamp = new Date();
+    }
 }

@@ -1,9 +1,11 @@
 package com.ftn.controller;
 
 import com.ftn.exception.BadRequestException;
+import com.ftn.model.database.Payment;
 import com.ftn.model.dto.onlinepayment.*;
 import com.ftn.model.environment.EnvironmentProperties;
 import com.ftn.service.AcquirerService;
+import com.ftn.service.OnlinePaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,10 +29,13 @@ public class AcquirerController {
 
     private final AcquirerService acquirerService;
 
+    private final OnlinePaymentService onlinePaymentService;
+
     @Autowired
-    public AcquirerController(AcquirerService acquirerService){
-        this.acquirerService = acquirerService;
+    public AcquirerController(AcquirerService acquirerService, OnlinePaymentService onlinePaymentService){
         this.restTemplate = new RestTemplate();
+        this.acquirerService = acquirerService;
+        this.onlinePaymentService = onlinePaymentService;
     }
 
     @Transactional
@@ -42,7 +47,9 @@ public class AcquirerController {
         PaymentInquiryInfoDTO paymentInquiryInfoDTO = null;
         boolean validInquiry = acquirerService.checkInquiry(paymentInquiryDTO);
         if(validInquiry){
-            paymentInquiryInfoDTO = acquirerService.create();
+            Payment payment = onlinePaymentService.create();
+            paymentInquiryInfoDTO.setPaymentId(payment.getId());
+            paymentInquiryInfoDTO.setPaymentUrl(payment.getUrl());;
         }
 
         HttpHeaders headers = new HttpHeaders();
@@ -59,6 +66,8 @@ public class AcquirerController {
     public ResponseEntity sendOrderToPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult){
         if (bindingResult.hasErrors())
             throw new BadRequestException();
+
+        // Start transaction
         paymentOrderDTO = acquirerService.generateOrderTimestamp(paymentOrderDTO);
 
         HttpHeaders headers = new HttpHeaders();
