@@ -56,19 +56,19 @@ public class AcquirerController {
 
     @Transactional
     @PostMapping
-    public ResponseEntity authenticate(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult){
+    public ResponseEntity sendOrderToPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult){
         if (bindingResult.hasErrors())
             throw new BadRequestException();
         paymentOrderDTO = acquirerService.generateOrderTimestamp(paymentOrderDTO);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<PaymentOrderDTO> entity = new HttpEntity<PaymentOrderDTO>
-                (paymentOrderDTO, headers);
+        HttpEntity<PaymentOrderDTO> entity = new HttpEntity<>(paymentOrderDTO, headers);
 
-        ResponseEntity<String> response = restTemplate.exchange(environmentProperties.getPccUrl(), HttpMethod.POST, entity, String.class);
+        ResponseEntity<PaymentOrderDTO> response = restTemplate
+                .exchange(environmentProperties.getPccUrl(), HttpMethod.POST, entity, PaymentOrderDTO.class);
 
-        return response;
+        return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
     }
 
 
@@ -83,12 +83,13 @@ public class AcquirerController {
         paymentCheckout.setMerchantOrderId(1); //change get it from DB
         paymentCheckout.setPaymentId(1); // change get it from DB
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<PaymentCheckoutDTO> entity = new HttpEntity<>(paymentCheckout, headers);
+// forward to concentrator
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setContentType(MediaType.APPLICATION_JSON);
+//        HttpEntity<PaymentCheckoutDTO> entity = new HttpEntity<>(paymentCheckout, headers);
+//        ResponseEntity<String> response = restTemplate.exchange(environmentProperties.getConcentratorUrl(),
+//                  HttpMethod.POST, entity, String.class);
 
-        ResponseEntity<String> response = restTemplate.exchange(environmentProperties.getConcentratorUrl(), HttpMethod.POST, entity, String.class);
-
-        return response;
+        return new ResponseEntity<>(paymentResponseInfoDTO,HttpStatus.OK);
     }
 }

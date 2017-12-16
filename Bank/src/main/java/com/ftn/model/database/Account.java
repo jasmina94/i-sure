@@ -35,4 +35,7 @@ public class Account {
 
     @OneToMany(mappedBy = "account")
     private List<Card> cards;
+
+    @OneToMany(mappedBy = "account")
+    private List<Transaction> transactions;
 }

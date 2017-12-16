@@ -1,4 +1,4 @@
-package com.ftn.model.dto.onlinepayment;
+package com.ftn.model.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,14 +13,14 @@ import java.util.Date;
 @NoArgsConstructor
 public class PaymentOrderDTO {
 
-
+    @NotNull
     private long acquirerOrderId;
 
-
+    @NotNull
     private Date acquirerTimestamp;
 
     @NotNull
-    private String pan;
+    private String PAN;
 
     @NotNull
     private int securityCode;

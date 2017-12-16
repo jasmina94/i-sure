@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Optional;
 
 /**
  * Created by Jasmina on 04/12/2017.
@@ -40,15 +41,16 @@ public class IssuerServiceImpl implements IssuerService {
     @Override
     public boolean checkCustomerAndAmount(PaymentOrderDTO paymentOrderDTO) {
         boolean ok = true;
-        String PAN = paymentOrderDTO.getPAN();
-        try{
+        String PAN = paymentOrderDTO.getPan();
+        try {
             Card card = cardRepository.findByPan(PAN).orElseThrow(NotFoundException::new);
             Account account = card.getAccount();
             double balance = account.getBalance();
             if(paymentOrderDTO.getAmount() > balance){
                 throw new BadRequestException();
             }
-        }catch (NotFoundException exception){
+
+        } catch (NotFoundException exception) {
             ok = false;
         }catch (BadRequestException exception){
             ok = false;
@@ -58,7 +60,7 @@ public class IssuerServiceImpl implements IssuerService {
 
     @Override
     public PaymentResponseInfoDTO reserveAndResponse(PaymentOrderDTO paymentOrderDTO) {
-        String PAN = paymentOrderDTO.getPAN();
+        String PAN = paymentOrderDTO.getPan();
         double orderAmount = paymentOrderDTO.getAmount();
         Card card = cardRepository.findByPan(PAN).orElseThrow(NotFoundException::new);
         Account account = card.getAccount();

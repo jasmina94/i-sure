@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
@@ -39,11 +36,12 @@ public class IssuerController {
     }
 
     @Transactional
-    @GetMapping
-    public ResponseEntity processOrder(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult){
+    @PostMapping
+    public ResponseEntity receiveOrderFromPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult){
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-        ResponseEntity<String> response;
+
+        ResponseEntity<PaymentResponseInfoDTO> response;
         boolean valid = issuerService.checkCustomerAndAmount(paymentOrderDTO);
 
         if(valid){
@@ -51,10 +49,10 @@ public class IssuerController {
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<PaymentResponseInfoDTO> entity = new HttpEntity<>(paymentResponseInfoDTO, headers);
-
-            response = restTemplate.exchange(environmentProperties.getPccUrl(), HttpMethod.POST, entity, String.class);
+            String responseUrl = environmentProperties.getPccUrl() + "/response";
+            response = restTemplate.exchange(responseUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
         }else {
-            response = new ResponseEntity<String>("", HttpStatus.NO_CONTENT);
+            throw new BadRequestException();
         }
 
         return response;
