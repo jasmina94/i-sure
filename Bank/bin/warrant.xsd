@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn.com/warrant"
+    xmlns:warrant="http://www.ftn.com/warrant" xmlns:types="http://www.ftn.com/types">
+    <xs:import namespace="http://www.ftn.com/types" schemaLocation="types_schema.xsd"/>
+
+    <xs:element name="getWarrantRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="warrant" type="warrant:warrant"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWarrantResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="warrant" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="warrant">
+            <xs:sequence>
+                <xs:element name="debtor">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="creditor">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="payment_purpose">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="transfer_data" type="types:TDataTransfer"/>
+            </xs:sequence>
+            <xs:attribute name="warrant_date" type="xs:date"/>
+            <xs:attribute name="currency_date" type="xs:date"/>
+            <xs:attribute name="urgent" type="xs:boolean"/>
+            <xs:attribute name="message_id">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+
+</xs:schema>
