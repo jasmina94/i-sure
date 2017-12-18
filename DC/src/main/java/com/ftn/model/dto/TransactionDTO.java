@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ftn.model.Customer;
 import com.ftn.model.Payment;
-import com.ftn.model.PaymentStatus;
+import com.ftn.model.TransactionStatus;
 import com.ftn.model.PaymentType;
 import com.ftn.model.Transaction;
 
@@ -25,7 +25,7 @@ public class TransactionDTO extends BaseDTO{
 	private Date timestamp;
 	
 	@NotNull
-	private PaymentStatus status;
+	private TransactionStatus status;
 	
 	@NotNull
 	private PaymentTypeDTO paymentType;

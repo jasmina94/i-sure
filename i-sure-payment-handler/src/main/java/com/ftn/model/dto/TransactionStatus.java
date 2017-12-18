@@ -1,6 +1,6 @@
 package com.ftn.model.dto;
 
-public enum PaymentStatus {
+public enum TransactionStatus {
 	STARTED,
 	BOOKED,
 	CANCELED

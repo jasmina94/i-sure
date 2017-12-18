@@ -20,7 +20,7 @@ public class TransactionDTO extends BaseDTO{
 	private Date timestamp;
 	
 	@NotNull
-	private PaymentStatus status;
+	private TransactionStatus status;
 	
 	@NotNull
 	private PaymentTypeDTO paymentType;

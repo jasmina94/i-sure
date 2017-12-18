@@ -11,6 +11,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.TransactionDTO;
 import com.ftn.service.TransactionService;
 
@@ -18,32 +19,31 @@ import com.ftn.service.TransactionService;
 public class TransactionServiceImpl implements TransactionService{
 	
 	@Value("${dc.home}")
-    private String home;
+    private String dc_home;
 	
 	@Value("${dc.transactions}")
-	private String transactions;
+	private String dc_transactions;
+	
+	private RestTemplate restTemplate = new RestTemplate();
 	
 	@Override
 	public List<TransactionDTO> readAll() {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<TransactionDTO[]> response = restTemplate.getForEntity(home + transactions, TransactionDTO[].class);
+        ResponseEntity<TransactionDTO[]> response = restTemplate.getForEntity(dc_home + dc_transactions, TransactionDTO[].class);
 
         return Arrays.asList(response.getBody());
 	}
 
 	@Override
 	public TransactionDTO create(TransactionDTO transactionDTO) {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<TransactionDTO> response = restTemplate.postForEntity(home + transactions, new HttpEntity<>(transactionDTO),
+        ResponseEntity<TransactionDTO> response = restTemplate.postForEntity(dc_home + dc_transactions, new HttpEntity<>(transactionDTO),
                 TransactionDTO.class);
-
+        
         return response.getBody();
 	}
 
 	@Override
 	public TransactionDTO update(Long id, TransactionDTO transactionDTO) {
-		String URI = home + transactions + "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
+		String URI = dc_home + dc_transactions + "/" + id;
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
@@ -57,15 +57,13 @@ public class TransactionServiceImpl implements TransactionService{
 
 	@Override
 	public void delete(Long id) {
-		String URI = home + transactions + "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
+		String URI = dc_home + dc_transactions + "/" + id;
         restTemplate.delete(URI);
 	}
 
 	@Override
 	public TransactionDTO findById(Long id) {
-        String URI = home + transactions + "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
+        String URI = dc_home + dc_transactions + "/" + id;
         ResponseEntity<TransactionDTO> response = restTemplate.getForEntity(URI, TransactionDTO.class);
 
         return response.getBody();

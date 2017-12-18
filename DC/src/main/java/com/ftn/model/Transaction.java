@@ -32,7 +32,7 @@ public class Transaction extends Base{
 	private Date timestamp;
 	
 	@Column(nullable = false)
-	private PaymentStatus status;
+	private TransactionStatus status;
 	
 	@ManyToOne
 	@JoinColumn(name = "payment_type_id")

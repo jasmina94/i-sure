@@ -1,6 +1,6 @@
 package com.ftn.model;
 
-public enum PaymentStatus {
+public enum TransactionStatus {
 	STARTED,
 	BOOKED,
 	CANCELED
