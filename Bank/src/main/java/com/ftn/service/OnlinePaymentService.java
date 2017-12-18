@@ -1,6 +1,7 @@
 package com.ftn.service;
 
 import com.ftn.model.database.Payment;
+import com.ftn.model.dto.onlinepayment.PaymentInquiryInfoDTO;
 
 import java.util.List;
 

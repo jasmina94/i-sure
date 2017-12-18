@@ -4,11 +4,16 @@ import com.ftn.exception.BadRequestException;
 import com.ftn.exception.NotFoundException;
 import com.ftn.model.database.Account;
 import com.ftn.model.database.Card;
+import com.ftn.model.database.Transaction;
 import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
 import com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO;
+import com.ftn.model.environment.EnvironmentProperties;
 import com.ftn.repository.AccountRepository;
 import com.ftn.repository.CardRepository;
 import com.ftn.service.IssuerService;
+import com.ftn.service.OnlinePaymentService;
+import com.ftn.service.TransactionService;
+import org.aspectj.weaver.ast.Not;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,39 +32,54 @@ public class IssuerServiceImpl implements IssuerService {
     @Autowired
     private AccountRepository accountRepository;
 
+    @Autowired
+    private TransactionService transactionService;
+
+    @Autowired
+    private OnlinePaymentService onlinePaymentService;
+
+    @Autowired
+    private EnvironmentProperties environmentProperties;
+
+
     @Override
-    public boolean checkCustomer(String PAN) {
-        boolean ok = true;
+    public PaymentResponseInfoDTO.CardAuthStatus checkCard(PaymentOrderDTO paymentOrderDTO) {
+        PaymentResponseInfoDTO.CardAuthStatus cardAuthStatus = PaymentResponseInfoDTO.CardAuthStatus.SUCCESSED;
+        String pan = paymentOrderDTO.getPan();
+        int securityCode = paymentOrderDTO.getSecurityCode();
         try{
-            Card card = cardRepository.findByPan(PAN).orElseThrow(NotFoundException::new);
-        }catch (NotFoundException exception){
-            ok = false;
-        }
-        return ok;
-    }
-
-    @Override
-    public boolean checkCustomerAndAmount(PaymentOrderDTO paymentOrderDTO) {
-        boolean ok = true;
-        String PAN = paymentOrderDTO.getPan();
-        try {
-            Card card = cardRepository.findByPan(PAN).orElseThrow(NotFoundException::new);
-            Account account = card.getAccount();
-            double balance = account.getBalance();
-            if(paymentOrderDTO.getAmount() > balance){
-                throw new BadRequestException();
+            Card card = cardRepository.findByPan(pan).orElseThrow(NotFoundException::new);
+            if(card.getSecurityCode() == securityCode){
+                cardAuthStatus = PaymentResponseInfoDTO.CardAuthStatus.SUCCESSED;
+            }else {
+                cardAuthStatus = PaymentResponseInfoDTO.CardAuthStatus.FAILED;
             }
-
-        } catch (NotFoundException exception) {
-            ok = false;
-        }catch (BadRequestException exception){
-            ok = false;
+        }catch (NotFoundException exception){
+            cardAuthStatus = PaymentResponseInfoDTO.CardAuthStatus.FAILED;
         }
-        return ok;
+        return cardAuthStatus;
     }
 
     @Override
-    public PaymentResponseInfoDTO reserveAndResponse(PaymentOrderDTO paymentOrderDTO) {
+    public PaymentResponseInfoDTO.TransactionStatus checkTransaction(PaymentOrderDTO paymentOrderDTO) {
+        PaymentResponseInfoDTO.TransactionStatus transactionStatus = PaymentResponseInfoDTO.TransactionStatus.SUCCESSED;
+        String pan = paymentOrderDTO.getPan();
+        try{
+            Card card = cardRepository.findByPan(pan).orElseThrow(NotFoundException::new);
+            Account account = card.getAccount();
+            if(paymentOrderDTO.getAmount() > account.getBalance()){
+                transactionStatus = PaymentResponseInfoDTO.TransactionStatus.FAILED;
+            }else {
+                transactionStatus = PaymentResponseInfoDTO.TransactionStatus.SUCCESSED;
+            }
+        }catch (NotFoundException exception){
+            transactionStatus = PaymentResponseInfoDTO.TransactionStatus.CARD_AUTH_FAILURE;
+        }
+        return transactionStatus;
+    }
+
+    @Override
+    public Transaction reserve(PaymentOrderDTO paymentOrderDTO) {
         String PAN = paymentOrderDTO.getPan();
         double orderAmount = paymentOrderDTO.getAmount();
         Card card = cardRepository.findByPan(PAN).orElseThrow(NotFoundException::new);
@@ -67,13 +87,26 @@ public class IssuerServiceImpl implements IssuerService {
         account.setReserved(account.getReserved()+orderAmount);
         account.setBalance(account.getBalance()-orderAmount);
         accountRepository.save(account);
+        return transactionService.create(paymentOrderDTO, Transaction.TransactionType.CHARGE);
+    }
 
-        PaymentResponseInfoDTO paymentResponseInfo = new PaymentResponseInfoDTO();
-        paymentResponseInfo.setAcquirerOrderId(paymentOrderDTO.getAcquirerOrderId());
-        paymentResponseInfo.setAcquirerTimestamp(paymentOrderDTO.getAcquirerTimestamp());
-        paymentResponseInfo.setIssuerOrderId(1);
-        paymentResponseInfo.setIssuerTimestamp(new Date());
+    @Override
+    public PaymentResponseInfoDTO makeResponse(PaymentOrderDTO paymentOrderDTO) {
+        PaymentResponseInfoDTO paymentResponseInfoDTO = new PaymentResponseInfoDTO();
+        PaymentResponseInfoDTO.CardAuthStatus cardAuthStatus = checkCard(paymentOrderDTO);
+        PaymentResponseInfoDTO.TransactionStatus transactionStatus = checkTransaction(paymentOrderDTO);
 
-        return paymentResponseInfo;
+        if(cardAuthStatus.equals(PaymentResponseInfoDTO.CardAuthStatus.SUCCESSED)
+                && transactionStatus.equals(PaymentResponseInfoDTO.TransactionStatus.SUCCESSED)){
+            Transaction transaction = reserve(paymentOrderDTO);
+            paymentResponseInfoDTO.setIssuerOrderId(transaction.getId());
+            paymentResponseInfoDTO.setIssuerTimestamp(transaction.getTimestamp());
+        }
+
+        paymentResponseInfoDTO.setAcquirerOrderId(paymentOrderDTO.getAcquirerOrderId());
+        paymentResponseInfoDTO.setAcquirerTimestamp(paymentOrderDTO.getAcquirerTimestamp());
+        paymentResponseInfoDTO.setCardAuthStatus(cardAuthStatus);
+        paymentResponseInfoDTO.setTransactionStatus(transactionStatus);
+        return paymentResponseInfoDTO;
     }
 }

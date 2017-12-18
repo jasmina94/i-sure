@@ -1,5 +1,6 @@
 package com.ftn.service;
 
+import com.ftn.model.database.Transaction;
 import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
 import com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO;
 
@@ -8,9 +9,11 @@ import com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO;
  */
 public interface IssuerService {
 
-    boolean checkCustomer(String PAN);
+    PaymentResponseInfoDTO.CardAuthStatus checkCard(PaymentOrderDTO paymentOrderDTO);
 
-    boolean checkCustomerAndAmount(PaymentOrderDTO paymentOrderDTO);
+    PaymentResponseInfoDTO.TransactionStatus checkTransaction(PaymentOrderDTO paymentOrderDTO);
 
-    PaymentResponseInfoDTO reserveAndResponse(PaymentOrderDTO paymentOrderDTO);
+    Transaction reserve(PaymentOrderDTO paymentOrderDTO);
+
+    PaymentResponseInfoDTO makeResponse(PaymentOrderDTO paymentOrderDTO);
 }

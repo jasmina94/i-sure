@@ -13,7 +13,7 @@ public interface TransactionService {
 
     List<Transaction> read();
 
-    Transaction create(PaymentOrderDTO paymentOrderDTO);
+    Transaction create(PaymentOrderDTO paymentOrderDTO, Transaction.TransactionType type);
 
     Transaction update(Long id, Transaction transaction);
 

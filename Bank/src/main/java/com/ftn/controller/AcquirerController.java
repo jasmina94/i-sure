@@ -43,32 +43,30 @@ public class AcquirerController {
     public ResponseEntity processInquiry(@Valid @RequestBody PaymentInquiryDTO paymentInquiryDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-
-        PaymentInquiryInfoDTO paymentInquiryInfoDTO = null;
+        ResponseEntity<String> response;
         boolean validInquiry = acquirerService.checkInquiry(paymentInquiryDTO);
         if(validInquiry){
-            Payment payment = onlinePaymentService.create();
-            paymentInquiryInfoDTO.setPaymentId(payment.getId());
-            paymentInquiryInfoDTO.setPaymentUrl(payment.getUrl());;
+            PaymentInquiryInfoDTO paymentInquiryInfoDTO = acquirerService.create();
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            HttpEntity<PaymentInquiryInfoDTO> entity = new HttpEntity<>(paymentInquiryInfoDTO, headers);
+            response = restTemplate.exchange(environmentProperties.getConcentratorUrl(), HttpMethod.POST, entity, String.class);
+        }else {
+            response = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<PaymentInquiryInfoDTO> entity = new HttpEntity<>(paymentInquiryInfoDTO, headers);
-
-        ResponseEntity<String> response = restTemplate.exchange(environmentProperties.getConcentratorUrl(), HttpMethod.POST, entity, String.class);
 
         return response;
     }
 
     @Transactional
     @PostMapping
-    public ResponseEntity sendOrderToPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult){
+    public ResponseEntity sendOrderToPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO,
+                                        BindingResult bindingResult){
         if (bindingResult.hasErrors())
             throw new BadRequestException();
 
         // Start transaction
-        paymentOrderDTO = acquirerService.generateOrderTimestamp(paymentOrderDTO);
+        paymentOrderDTO = acquirerService.generateOrder(paymentOrderDTO);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -92,7 +90,7 @@ public class AcquirerController {
         paymentCheckout.setMerchantOrderId(1); //change get it from DB
         paymentCheckout.setPaymentId(1); // change get it from DB
 
-// forward to concentrator
+//        Forward to concentrator
 //        HttpHeaders headers = new HttpHeaders();
 //        headers.setContentType(MediaType.APPLICATION_JSON);
 //        HttpEntity<PaymentCheckoutDTO> entity = new HttpEntity<>(paymentCheckout, headers);

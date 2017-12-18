@@ -2,10 +2,12 @@ package com.ftn.service.implementation;
 
 import com.ftn.exception.NotFoundException;
 import com.ftn.model.database.Merchant;
+import com.ftn.model.database.Payment;
 import com.ftn.model.database.Transaction;
 import com.ftn.model.dto.onlinepayment.PaymentInquiryDTO;
 import com.ftn.model.dto.onlinepayment.PaymentInquiryInfoDTO;
 import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
+import com.ftn.model.environment.EnvironmentProperties;
 import com.ftn.repository.MerchantRepository;
 import com.ftn.repository.PaymentRepository;
 import com.ftn.repository.TransactionRepository;
@@ -32,7 +34,10 @@ public class AcquirerServiceImpl implements AcquirerService {
     private TransactionService transactionService;
 
     @Autowired
-    private OnlinePaymentService paymentService;
+    private OnlinePaymentService onlinePaymentService;
+
+    @Autowired
+    private EnvironmentProperties environmentProperties;
 
     @Override
     public boolean checkInquiry(PaymentInquiryDTO paymentInquiryDTO) {
@@ -49,16 +54,17 @@ public class AcquirerServiceImpl implements AcquirerService {
 
     @Override
     public PaymentInquiryInfoDTO create() {
-        PaymentInquiryInfoDTO paymentInquiryInfo = new PaymentInquiryInfoDTO();
-        paymentInquiryInfo.setPaymentUrl("https://localhost:8091/payment/"); //Change redirect on form page
-        paymentInquiryInfo.setPaymentId(1);
-        return paymentInquiryInfo;
+        Payment payment = onlinePaymentService.create();
+        PaymentInquiryInfoDTO paymentInquiryInfoDTO = new PaymentInquiryInfoDTO();
+        paymentInquiryInfoDTO.setPaymentUrl(payment.getUrl());
+        paymentInquiryInfoDTO.setPaymentId(payment.getId());
+        return paymentInquiryInfoDTO;
     }
 
     @Override
-    public PaymentOrderDTO generateOrderTimestamp(PaymentOrderDTO paymentOrderDTO) {
-        Transaction transaction = transactionService.create(paymentOrderDTO);
-        paymentOrderDTO.setAcquirerOrderId(transaction.getId()); // Get id from transaction
+    public PaymentOrderDTO generateOrder(PaymentOrderDTO paymentOrderDTO) {
+        Transaction transaction = transactionService.create(paymentOrderDTO, Transaction.TransactionType.INCOME);
+        paymentOrderDTO.setAcquirerOrderId(transaction.getId());
         paymentOrderDTO.setAcquirerTimestamp(transaction.getTimestamp());
         return paymentOrderDTO;
     }

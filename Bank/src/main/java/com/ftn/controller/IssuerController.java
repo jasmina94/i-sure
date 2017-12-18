@@ -41,19 +41,13 @@ public class IssuerController {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
 
-        ResponseEntity<PaymentResponseInfoDTO> response;
-        boolean valid = issuerService.checkCustomerAndAmount(paymentOrderDTO);
+        PaymentResponseInfoDTO paymentResponseInfoDTO = issuerService.makeResponse(paymentOrderDTO);
 
-        if(valid){
-            PaymentResponseInfoDTO paymentResponseInfoDTO = issuerService.reserveAndResponse(paymentOrderDTO);
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            HttpEntity<PaymentResponseInfoDTO> entity = new HttpEntity<>(paymentResponseInfoDTO, headers);
-            String responseUrl = environmentProperties.getPccUrl() + "/response";
-            response = restTemplate.exchange(responseUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
-        }else {
-            throw new BadRequestException();
-        }
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<PaymentResponseInfoDTO> entity = new HttpEntity<>(paymentResponseInfoDTO, headers);
+        String responseUrl = environmentProperties.getPccUrl() + "/response";
+        ResponseEntity<PaymentResponseInfoDTO> response = restTemplate.exchange(responseUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
 
         return response;
     }

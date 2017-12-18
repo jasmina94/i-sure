@@ -13,5 +13,5 @@ public interface AcquirerService {
 
     PaymentInquiryInfoDTO create();
 
-    PaymentOrderDTO generateOrderTimestamp(PaymentOrderDTO paymentOrderDTO);
+    PaymentOrderDTO generateOrder(PaymentOrderDTO paymentOrderDTO);
 }

@@ -30,15 +30,19 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Transaction create(PaymentOrderDTO paymentOrderDTO) {
+    public Transaction create(PaymentOrderDTO paymentOrderDTO, Transaction.TransactionType type) {
         Transaction transaction = new Transaction();
         transaction.setStatus(Transaction.Status.PENDING);
-        transaction.setType(Transaction.TransactionType.CHARGE);
+        transaction.setType(type);  // in acquirer bank this is INCOME in issuer this is charge
         transaction.setAmount(paymentOrderDTO.getAmount());
 
-        Card card = cardService.findCard(paymentOrderDTO);
-        transaction.setAccount(card.getAccount());
-
+        // Not needed possibly
+        if(type.equals(Transaction.TransactionType.INCOME)){
+            // somehow find merchant account in acquirer bank
+        }else {
+            Card card = cardService.findCard(paymentOrderDTO);
+            transaction.setAccount(card.getAccount());
+        }
         return transactionRepository.save(transaction);
     }
 

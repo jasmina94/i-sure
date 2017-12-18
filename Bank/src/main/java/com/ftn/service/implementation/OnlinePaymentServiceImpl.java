@@ -1,16 +1,19 @@
 package com.ftn.service.implementation;
 
 import com.ftn.model.database.Payment;
+import com.ftn.model.dto.onlinepayment.PaymentInquiryInfoDTO;
 import com.ftn.model.environment.EnvironmentProperties;
 import com.ftn.repository.PaymentRepository;
 import com.ftn.service.OnlinePaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Jasmina on 16/12/2017.
  */
+@Service
 public class OnlinePaymentServiceImpl implements OnlinePaymentService {
 
     @Autowired
@@ -27,8 +30,8 @@ public class OnlinePaymentServiceImpl implements OnlinePaymentService {
     @Override
     public Payment create() {
         Payment payment = new Payment();
-        String bankUrl = environmentProperties.getSelfUrl();
-        String paymentUrl = bankUrl + "payment.html";
+        String paymentUrl = environmentProperties.getSelfUrl();
+        paymentUrl += "payment.html"; // Make it random somehow
         payment.setUrl(paymentUrl);
         return paymentRepository.save(payment);
     }
