@@ -1,8 +1,10 @@
 package com.ftn.service;
 
+import com.ftn.model.dto.RiskDTO;
 import com.ftn.model.dto.RiskTypeDTO;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by zlatan on 25/11/2017.
@@ -20,4 +22,6 @@ public interface RiskTypeService {
     RiskTypeDTO findById(Long id);
 
     RiskTypeDTO findByName(String name);
+
+    Map<String, List<RiskDTO>> findRiskTypesByCategory(String name);
 }

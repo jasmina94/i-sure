@@ -24,4 +24,6 @@ public interface RiskTypeService {
     RiskTypeDTO findByName(String name);
 
     Map<String, List<RiskDTO>> findByCategory(String name);
+
+    List<RiskTypeDTO> findRiskTypesByCategory(String name);
 }

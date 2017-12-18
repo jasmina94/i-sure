@@ -2,7 +2,6 @@ package com.ftn.controller;
 
 import com.ftn.exception.BadRequestException;
 import com.ftn.model.dto.RiskTypeDTO;
-import com.ftn.service.RiskService;
 import com.ftn.service.RiskTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -73,5 +72,11 @@ public class RiskTypeController {
     @GetMapping(value = "/insuranceCategory/{name}")
     public ResponseEntity findRisksByCategory(@PathVariable String name){
         return new ResponseEntity<>(riskTypeService.findByCategory(name), HttpStatus.OK);
+    }
+
+    @Transactional
+    @GetMapping(value = "/insuranceCategoryRiskTypes/{name}")
+    public ResponseEntity findRiskTypesByCategory(@PathVariable String name){
+        return new ResponseEntity<>(riskTypeService.findRiskTypesByCategory(name), HttpStatus.OK);
     }
 }

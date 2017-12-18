@@ -1,5 +1,6 @@
 package com.ftn.service.implementation;
 
+import com.ftn.model.dto.RiskDTO;
 import com.ftn.model.dto.RiskTypeDTO;
 import com.ftn.service.RiskTypeService;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +13,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Created by zlatan on 25/11/2017.
@@ -76,5 +79,12 @@ public class RiskTypeServiceImpl implements RiskTypeService {
         ResponseEntity<RiskTypeDTO> response = restTemplate.getForEntity(URI, RiskTypeDTO.class);
 
         return response.getBody();
+    }
+
+    @Override
+    public Map<String, List<RiskDTO>> findRiskTypesByCategory(String name) {
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<RiskTypeDTO[]> response = restTemplate.getForEntity(URI + "/insuranceCategoryRiskTypes/" + name, RiskTypeDTO[].class);
+        return Arrays.asList(response.getBody()).stream().collect(Collectors.toMap(RiskTypeDTO::getRiskTypeName, RiskTypeDTO::getRisks));
     }
 }

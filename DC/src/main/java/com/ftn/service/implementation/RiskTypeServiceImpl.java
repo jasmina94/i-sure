@@ -74,8 +74,15 @@ public class RiskTypeServiceImpl implements RiskTypeService{
     }
 
     @Override
-    public Map<String, List<RiskDTO>> findByCategory(String name) {
-        final List<RiskTypeDTO> riskTypes = riskTypeRepository.findByInsuranceCategory(insuranceCategoryRepository.findByCategoryName(name).get()).stream().map(RiskTypeDTO::new).collect(Collectors.toList());
+     public Map<String, List<RiskDTO>> findByCategory(String name) {
+        final List<RiskTypeDTO> riskTypes = riskTypeRepository.findByInsuranceCategory(insuranceCategoryRepository.findByCategoryName(name).get())
+                .stream().map(RiskTypeDTO::new).collect(Collectors.toList());
         return riskTypes.stream().collect(Collectors.toMap(RiskTypeDTO::getRiskTypeName, RiskTypeDTO::getRisks));
+    }
+
+    @Override
+    public List<RiskTypeDTO> findRiskTypesByCategory(String name) {
+        return riskTypeRepository.findByInsuranceCategory(insuranceCategoryRepository.findByCategoryName(name).get())
+                .stream().map(RiskTypeDTO::new).collect(Collectors.toList());
     }
 }

@@ -60,4 +60,9 @@ public class RiskTypeController {
     public ResponseEntity findByBirthId(@PathVariable String name){
         return new ResponseEntity<>(riskTypeService.findByName(name), HttpStatus.OK);
     }
+
+    @GetMapping(value = "/insuranceCategory/{name}")
+    public ResponseEntity findRisksByCategory(@PathVariable String name){
+        return new ResponseEntity<>(riskTypeService.findRiskTypesByCategory(name), HttpStatus.OK);
+    }
 }
