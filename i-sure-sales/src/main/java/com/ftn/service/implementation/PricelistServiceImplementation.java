@@ -19,9 +19,11 @@ public class PricelistServiceImplementation implements PricelistService{
     @Value("${dc.pricelist}")
     private String URI;
 
+    RestTemplate restTemplate = new RestTemplate();
+
 	@Override
 	public List<PricelistDTO> findAll() {
-        RestTemplate restTemplate = new RestTemplate();
+
         ResponseEntity<PricelistDTO[]> response = restTemplate.getForEntity(URI, PricelistDTO[].class);
 
         return Arrays.asList(response.getBody());
@@ -29,16 +31,15 @@ public class PricelistServiceImplementation implements PricelistService{
 
 	@Override
 	public PricelistDTO findById(Long id) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<PricelistDTO> response = restTemplate.getForEntity(URI, PricelistDTO.class);
+
+        ResponseEntity<PricelistDTO> response = restTemplate.getForEntity(URI + id, PricelistDTO.class);
 
         return response.getBody();
 	}
 
 	@Override
 	public PricelistDTO create(PricelistDTO pricelistDTO) {
-        RestTemplate restTemplate = new RestTemplate();
+
         ResponseEntity<PricelistDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(pricelistDTO), PricelistDTO.class);
 
         return response.getBody();
@@ -46,21 +47,19 @@ public class PricelistServiceImplementation implements PricelistService{
 
 	@Override
 	public PricelistDTO update(Long id, PricelistDTO pricelistDTO) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
+
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
         
-        ResponseEntity<PricelistDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH, new HttpEntity<>(pricelistDTO), PricelistDTO.class);
+        ResponseEntity<PricelistDTO> response = restTemplate.exchange(URI + id, HttpMethod.PATCH, new HttpEntity<>(pricelistDTO), PricelistDTO.class);
 
         return response.getBody();
 	}
 
 	@Override
 	public void delete(Long id) {
-        URI += "/" + id;
-	    RestTemplate restTemplate = new RestTemplate();
-	    restTemplate.delete(URI);
+
+	    restTemplate.delete(URI + id);
 	}
 }

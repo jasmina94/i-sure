@@ -20,10 +20,11 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
     @Value("${dc.insurance.policy}")
     private String URI;
 
+    RestTemplate restTemplate = new RestTemplate();
+
     @Override
     public List<InsurancePolicyDTO> readAll() {
 
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<InsurancePolicyDTO[]> response = restTemplate.getForEntity(URI, InsurancePolicyDTO[].class);
 
         return Arrays.asList(response.getBody());
@@ -31,7 +32,7 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
 
     @Override
     public InsurancePolicyDTO create(InsurancePolicyDTO insurancePolicyDTO) {
-        RestTemplate restTemplate = new RestTemplate();
+
         ResponseEntity<InsurancePolicyDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(insurancePolicyDTO),
                 InsurancePolicyDTO.class);
 
@@ -40,13 +41,12 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
 
     @Override
     public InsurancePolicyDTO update(Long id, InsurancePolicyDTO insurancePolicyDTO) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
+
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
 
-        ResponseEntity<InsurancePolicyDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
+        ResponseEntity<InsurancePolicyDTO> response = restTemplate.exchange(URI + id, HttpMethod.PATCH,
                 new HttpEntity<>(insurancePolicyDTO), InsurancePolicyDTO.class);
 
         return response.getBody();
@@ -54,34 +54,30 @@ public class InsurancePolicyServiceImpl implements InsurancePolicyService {
 
     @Override
     public void delete(Long id) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(URI);
+
+        restTemplate.delete(URI + id);
     }
 
     @Override
     public InsurancePolicyDTO findById(Long id) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsurancePolicyDTO> response = restTemplate.getForEntity(URI, InsurancePolicyDTO.class);
+
+        ResponseEntity<InsurancePolicyDTO> response = restTemplate.getForEntity(URI + id, InsurancePolicyDTO.class);
 
         return response.getBody();
     }
 
     @Override
     public List<InsurancePolicyDTO> findByDateOfIssue(Date date) {
-        URI += "/byDateOfIssue/" + date;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsurancePolicyDTO[]> response = restTemplate.getForEntity(URI, InsurancePolicyDTO[].class);
+
+        ResponseEntity<InsurancePolicyDTO[]> response = restTemplate.getForEntity(URI + "byDateOfIssue/" + date, InsurancePolicyDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public List<InsurancePolicyDTO> findByDateBecomeEffective(Date date) {
-        URI += "/byDateBecomeEffective/" + date;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsurancePolicyDTO[]> response = restTemplate.getForEntity(URI, InsurancePolicyDTO[].class);
+
+        ResponseEntity<InsurancePolicyDTO[]> response = restTemplate.getForEntity(URI + "byDateBecomeEffective/" + date, InsurancePolicyDTO[].class);
 
         return Arrays.asList(response.getBody());
     }

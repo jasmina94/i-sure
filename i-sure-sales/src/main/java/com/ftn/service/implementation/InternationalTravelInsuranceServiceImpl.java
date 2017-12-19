@@ -20,6 +20,8 @@ public class InternationalTravelInsuranceServiceImpl implements InternationalTra
     @Value("${dc.international.travel.insurance}")
     private String URI;
 
+    private RestTemplate restTemplate = new RestTemplate();
+
     @Override
     public List<InternationalTravelInsuranceDTO> readAll() {
         RestTemplate restTemplate = new RestTemplate();

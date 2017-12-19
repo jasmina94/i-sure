@@ -22,9 +22,11 @@ public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
     @Value("${dc.insurance.category}")
     private String URI;
 
+    RestTemplate restTemplate = new RestTemplate();
+
     @Override
     public List<InsuranceCategoryDTO> readAll() {
-        RestTemplate restTemplate = new RestTemplate();
+
         ResponseEntity<InsuranceCategoryDTO[]> response = restTemplate.getForEntity(URI, InsuranceCategoryDTO[].class);
 
         return Arrays.asList(response.getBody());
@@ -33,7 +35,6 @@ public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
     @Override
     public InsuranceCategoryDTO create(InsuranceCategoryDTO insuranceCategoryDTO) {
 
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<InsuranceCategoryDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(insuranceCategoryDTO),
                 InsuranceCategoryDTO.class);
 
@@ -42,13 +43,12 @@ public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
 
     @Override
     public InsuranceCategoryDTO update(Long id, InsuranceCategoryDTO insuranceCategoryDTO) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
+
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
 
-        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
+        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.exchange(URI + id, HttpMethod.PATCH,
                 new HttpEntity<>(insuranceCategoryDTO), InsuranceCategoryDTO.class);
 
         return response.getBody();
@@ -56,16 +56,14 @@ public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
 
     @Override
     public void delete(Long id) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(URI);
+
+        restTemplate.delete(URI + id);
     }
 
     @Override
     public InsuranceCategoryDTO findById(Long id) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.getForEntity(URI, InsuranceCategoryDTO.class);
+
+        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.getForEntity(URI + id, InsuranceCategoryDTO.class);
 
         return response.getBody();
     }
@@ -73,9 +71,7 @@ public class InsuranceCategoryServiceImpl implements InsuranceCategoryService {
     @Override
     public InsuranceCategoryDTO findByName(String name) {
 
-        URI += "/byPersonalId/" + name;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.getForEntity(URI, InsuranceCategoryDTO.class);
+        ResponseEntity<InsuranceCategoryDTO> response = restTemplate.getForEntity(URI + "byPersonalId/" + name, InsuranceCategoryDTO.class);
 
         return response.getBody();
     }
