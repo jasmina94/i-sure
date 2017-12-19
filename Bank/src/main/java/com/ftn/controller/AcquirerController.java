@@ -39,22 +39,23 @@ public class AcquirerController {
     }
 
     @Transactional
-    @GetMapping
+    @PostMapping(value = "/inquiry")
     public ResponseEntity processInquiry(@Valid @RequestBody PaymentInquiryDTO paymentInquiryDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-        ResponseEntity<String> response;
+
+        ResponseEntity<PaymentInquiryInfoDTO> response;
         boolean validInquiry = acquirerService.checkInquiry(paymentInquiryDTO);
         if(validInquiry){
             PaymentInquiryInfoDTO paymentInquiryInfoDTO = acquirerService.create();
+            String concentratorUrl = environmentProperties.getConcentratorUrl() + "inquiries";
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<PaymentInquiryInfoDTO> entity = new HttpEntity<>(paymentInquiryInfoDTO, headers);
-            response = restTemplate.exchange(environmentProperties.getConcentratorUrl(), HttpMethod.POST, entity, String.class);
+            response = restTemplate.exchange(concentratorUrl, HttpMethod.POST, entity, PaymentInquiryInfoDTO.class);
         }else {
             response = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-
         return response;
     }
 

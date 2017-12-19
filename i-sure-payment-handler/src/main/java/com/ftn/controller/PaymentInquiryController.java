@@ -56,7 +56,8 @@ public class PaymentInquiryController {
             throw new BadRequestException();
         
         transactionDTO = transactionService.findById(transactionDTO.getId());
-        
+
+        // Ovo stavi u neki servis :)
         //payment part
         PaymentInquiryDTO piDTO = new PaymentInquiryDTO();
         piDTO.setMerchantId(merchant_id);
@@ -64,8 +65,9 @@ public class PaymentInquiryController {
         piDTO.setAmount(transactionDTO.getAmount());
         //trebao bi biti Long za sada sam ga kastovao u int
         piDTO.setMerchantOrderId((int)transactionDTO.getId());
+
         piDTO.setMerchantTimestamp(transactionDTO.getTimestamp());
-        //koji url da stavim?
+        //koji url da stavim? - ovo je neka stranica koja treba da se napravi na portalu
         piDTO.setErrorUrl("tmp");
         
         System.out.println(pc_home + pc_inquiries);

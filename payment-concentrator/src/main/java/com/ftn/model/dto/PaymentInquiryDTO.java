@@ -1,5 +1,6 @@
 package com.ftn.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,11 +16,11 @@ import java.util.Date;
 public class PaymentInquiryDTO {
 
     @NotNull
-    @Size(min = 0, max = 30)
+    @Size(max = 30)
     private String merchantId;
 
     @NotNull
-    @Size(min = 0, max = 100)
+    @Size(max = 100)
     private String merchantPassword;
 
     @NotNull
@@ -29,6 +30,7 @@ public class PaymentInquiryDTO {
     private int merchantOrderId;
 
     @NotNull
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date merchantTimestamp;
 
     @NotNull
