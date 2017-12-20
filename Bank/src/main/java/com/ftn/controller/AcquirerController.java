@@ -48,11 +48,7 @@ public class AcquirerController {
         boolean validInquiry = acquirerService.checkInquiry(paymentInquiryDTO);
         if(validInquiry){
             PaymentInquiryInfoDTO paymentInquiryInfoDTO = acquirerService.create();
-            String concentratorUrl = environmentProperties.getConcentratorUrl() + "inquiries";
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            HttpEntity<PaymentInquiryInfoDTO> entity = new HttpEntity<>(paymentInquiryInfoDTO, headers);
-            response = restTemplate.exchange(concentratorUrl, HttpMethod.POST, entity, PaymentInquiryInfoDTO.class);
+            response = new ResponseEntity<PaymentInquiryInfoDTO>(paymentInquiryInfoDTO, HttpStatus.OK);
         }else {
             response = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
