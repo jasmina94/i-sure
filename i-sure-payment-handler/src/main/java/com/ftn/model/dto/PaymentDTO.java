@@ -9,8 +9,4 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PaymentDTO extends BaseDTO{
 	private String paymentUrl;
-	
-	private InsurancePolicyDTO insurancePolicy;
-	
-	private TransactionDTO transaction;
 }

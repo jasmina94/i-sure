@@ -30,6 +30,9 @@ public class TransactionDTO extends BaseDTO{
 	
 	private PaymentDTO payment;
 	
+	@NotNull
+	private InsurancePolicyDTO insurancePolicy;
+	
 	private Long acquiererOrderId;
 	
 	private Date acquiererTimestamp;	

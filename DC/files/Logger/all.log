@@ -8097,3 +8097,515 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 [INFO ]2017-12-18 20:19:36 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ed7259e: startup date [Mon Dec 18 20:06:16 CET 2017]; root of context hierarchy
 [INFO ]2017-12-18 20:19:36 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
 [INFO ]2017-12-18 20:19:36 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-21 16:35:38 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-O6QOD7O with PID 11180 (C:\Users\Shade\Documents\GIT\i-sure\DC\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\DC)
+[INFO ]2017-12-21 16:35:38 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-21 16:35:38 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ed7259e: startup date [Thu Dec 21 16:35:38 CET 2017]; root of context hierarchy
+[INFO ]2017-12-21 16:35:39 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-21 16:35:42 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c3fad364] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-21 16:35:43 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+[INFO ]2017-12-21 16:35:43 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-21 16:35:43 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-21 16:35:43 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-21 16:35:43 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4901 ms
+[INFO ]2017-12-21 16:35:43 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-21 16:35:43 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-21 16:35:43 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-21 16:35:43 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-21 16:35:43 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-21 16:35:45 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-21 16:35:45 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-21 16:35:45 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-21 16:35:45 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-21 16:35:45 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-21 16:35:46 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[ERROR]2017-12-21 16:35:49 o.a.tomcat.jdbc.pool.ConnectionPool - Unable to create initial connections of pool.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:718)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:650)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:468)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:143)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:254)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:228)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:373)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:362)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at com.ftn.ISureDataCenterApplication.main(ISureDataCenterApplication.java:10)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 59 common frames omitted
+[WARN ]2017-12-21 16:35:49 o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[WARN ]2017-12-21 16:35:49 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+[INFO ]2017-12-21 16:35:49 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-21 16:35:49 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-21 16:35:49 o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at com.ftn.ISureDataCenterApplication.main(ISureDataCenterApplication.java:10)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:264)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:228)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:373)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:362)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 16 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:254)
+	... 32 common frames omitted
+[INFO ]2017-12-21 16:37:42 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-O6QOD7O with PID 724 (C:\Users\Shade\Documents\GIT\i-sure\DC\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\DC)
+[INFO ]2017-12-21 16:37:42 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-21 16:37:42 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ed7259e: startup date [Thu Dec 21 16:37:42 CET 2017]; root of context hierarchy
+[INFO ]2017-12-21 16:37:42 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-21 16:37:44 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c3fad364] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-21 16:37:45 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+[INFO ]2017-12-21 16:37:45 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-21 16:37:45 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-21 16:37:45 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-21 16:37:45 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2786 ms
+[INFO ]2017-12-21 16:37:45 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-21 16:37:45 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-21 16:37:45 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-21 16:37:45 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-21 16:37:45 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-21 16:37:46 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-21 16:37:46 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-21 16:37:46 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-21 16:37:46 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-21 16:37:46 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-21 16:37:46 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-21 16:37:47 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[WARN ]2017-12-21 16:37:48 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.payment, referenced property unknown: com.ftn.model.Payment.insurancePolicy
+[INFO ]2017-12-21 16:37:48 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-21 16:37:48 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-21 16:37:48 o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.payment, referenced property unknown: com.ftn.model.Payment.insurancePolicy
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at com.ftn.ISureDataCenterApplication.main(ISureDataCenterApplication.java:10)
+Caused by: org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.payment, referenced property unknown: com.ftn.model.Payment.insurancePolicy
+	at org.hibernate.cfg.OneToOneSecondPass.doSecondPass(OneToOneSecondPass.java:154)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:373)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:362)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 16 common frames omitted
+[INFO ]2017-12-21 16:40:41 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-O6QOD7O with PID 1076 (C:\Users\Shade\Documents\GIT\i-sure\DC\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\DC)
+[INFO ]2017-12-21 16:40:41 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-21 16:40:41 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ed7259e: startup date [Thu Dec 21 16:40:41 CET 2017]; root of context hierarchy
+[INFO ]2017-12-21 16:40:42 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-21 16:40:45 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c3fad364] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-21 16:40:46 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+[INFO ]2017-12-21 16:40:46 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-21 16:40:46 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-21 16:40:46 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-21 16:40:46 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4697 ms
+[INFO ]2017-12-21 16:40:46 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-21 16:40:46 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-21 16:40:46 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-21 16:40:46 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-21 16:40:46 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-21 16:40:47 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-21 16:40:47 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-21 16:40:48 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-21 16:40:48 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-21 16:40:48 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-21 16:40:48 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-21 16:40:49 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[WARN ]2017-12-21 16:40:49 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.payment, referenced property unknown: com.ftn.model.Payment.insurancePolicy
+[INFO ]2017-12-21 16:40:49 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-21 16:40:49 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-21 16:40:49 o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.payment, referenced property unknown: com.ftn.model.Payment.insurancePolicy
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at com.ftn.ISureDataCenterApplication.main(ISureDataCenterApplication.java:10)
+Caused by: org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.payment, referenced property unknown: com.ftn.model.Payment.insurancePolicy
+	at org.hibernate.cfg.OneToOneSecondPass.doSecondPass(OneToOneSecondPass.java:154)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:373)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:362)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 16 common frames omitted
+[INFO ]2017-12-21 16:41:48 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-O6QOD7O with PID 6436 (C:\Users\Shade\Documents\GIT\i-sure\DC\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\DC)
+[INFO ]2017-12-21 16:41:48 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-21 16:41:48 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ed7259e: startup date [Thu Dec 21 16:41:48 CET 2017]; root of context hierarchy
+[INFO ]2017-12-21 16:41:48 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-21 16:41:50 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c3fad364] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-21 16:41:50 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+[INFO ]2017-12-21 16:41:50 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-21 16:41:50 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-21 16:41:50 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-21 16:41:50 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2382 ms
+[INFO ]2017-12-21 16:41:50 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-21 16:41:50 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-21 16:41:50 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-21 16:41:50 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-21 16:41:50 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-21 16:41:51 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-21 16:41:51 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-21 16:41:51 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-21 16:41:51 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-21 16:41:51 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-21 16:41:51 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-21 16:41:51 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[WARN ]2017-12-21 16:41:52 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.transaction, referenced property unknown: com.ftn.model.Transaction.transaction
+[INFO ]2017-12-21 16:41:52 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2017-12-21 16:41:52 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2017-12-21 16:41:52 o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.transaction, referenced property unknown: com.ftn.model.Transaction.transaction
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at com.ftn.ISureDataCenterApplication.main(ISureDataCenterApplication.java:10)
+Caused by: org.hibernate.AnnotationException: Unknown mappedBy in: com.ftn.model.InsurancePolicy.transaction, referenced property unknown: com.ftn.model.Transaction.transaction
+	at org.hibernate.cfg.OneToOneSecondPass.doSecondPass(OneToOneSecondPass.java:154)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1623)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:373)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:362)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 16 common frames omitted
+[INFO ]2017-12-21 16:42:28 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-O6QOD7O with PID 9708 (C:\Users\Shade\Documents\GIT\i-sure\DC\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\DC)
+[INFO ]2017-12-21 16:42:28 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2017-12-21 16:42:28 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ed7259e: startup date [Thu Dec 21 16:42:28 CET 2017]; root of context hierarchy
+[INFO ]2017-12-21 16:42:28 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2017-12-21 16:42:30 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c3fad364] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2017-12-21 16:42:30 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+[INFO ]2017-12-21 16:42:30 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2017-12-21 16:42:30 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2017-12-21 16:42:30 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2017-12-21 16:42:30 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2319 ms
+[INFO ]2017-12-21 16:42:30 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2017-12-21 16:42:30 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2017-12-21 16:42:30 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2017-12-21 16:42:30 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2017-12-21 16:42:30 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2017-12-21 16:42:31 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-21 16:42:31 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2017-12-21 16:42:31 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2017-12-21 16:42:31 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2017-12-21 16:42:31 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2017-12-21 16:42:31 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2017-12-21 16:42:31 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table home_insurance_risks drop foreign key FKkj47b5b0vx72iq0aojmj0qlj4
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.home_insurance_risks' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table home_insurance_risks drop foreign key FKlmmwrre97p6prh6sxodwpe6g0
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.home_insurance_risks' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table insurance_policy drop foreign key FK9s5rtml927tubm9t26cvspfdm
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.insurance_policy' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table insurance_policy drop foreign key FK1v1h8v68bvqyemsqiaxa8p2nq
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.insurance_policy' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table insurance_policy drop foreign key FKg22butqgf1n5ahdkfhf0ts80w
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.insurance_policy' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table insurance_policy_customers drop foreign key FKhse5tfo823oomlfokhbyb1h6k
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.insurance_policy_customers' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table insurance_policy_customers drop foreign key FKl1g8wr7i039i7e80ljwvid0al
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.insurance_policy_customers' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table international_travel_insurance_risks drop foreign key FKr29j4p0xxoung8nf6xxpsxy1u
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.international_travel_insurance_risks' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table international_travel_insurance_risks drop foreign key FKerh2m0hn3o6u1grm9k9o1dcan
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.international_travel_insurance_risks' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table pricelist_item drop foreign key FK4h38tj7clb134fe2nsi2xlq7h
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.pricelist_item' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table pricelist_item drop foreign key FKrj0fqhdlepbpcno6pidue6b0w
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.pricelist_item' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table risk drop foreign key FKn1p30t4mwcpx5fg1f66axr2c9
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.risk' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table risk_type drop foreign key FK4nu8kyxkb7r3vyobruyaogoea
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.risk_type' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table roadside_assistance_insurance_risks drop foreign key FKstw61jssg3ovlvea87nwvdwx
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.roadside_assistance_insurance_risks' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table roadside_assistance_insurance_risks drop foreign key FKt1446lbmwsdyt9rhi7vacgqkp
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.roadside_assistance_insurance_risks' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.role_permissions' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.role_permissions' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table transaction drop foreign key FKk42lxib0u5j74xlu1rkib52m6
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.transaction' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table transaction drop foreign key FKq9m7rb5uydysanp8smxcovxlh
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.transaction' doesn't exist
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table transaction drop foreign key FKjxr3plkixp2y2eghe1shts1rv
+[ERROR]2017-12-21 16:42:33 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.transaction' doesn't exist
+[INFO ]2017-12-21 16:43:04 o.h.tool.hbm2ddl.SchemaExport - HHH000476: Executing import script '/import.sql'
+[INFO ]2017-12-21 16:43:05 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2017-12-21 16:43:05 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ed7259e: startup date [Thu Dec 21 16:42:28 CET 2017]; root of context hierarchy
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.authorisation.PermissionController.newPermission(com.ftn.model.authorisation.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Permission> com.ftn.controller.authorisation.PermissionController.updatePermission(java.lang.Long,com.ftn.model.authorisation.Permission,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Permission> com.ftn.controller.authorisation.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.ftn.model.authorisation.Permission>> com.ftn.controller.authorisation.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.updateRole(java.lang.Long,com.ftn.model.authorisation.Role,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.newRole(com.ftn.model.authorisation.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.ftn.model.authorisation.Role>> com.ftn.controller.authorisation.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.update(java.lang.Long,com.ftn.model.dto.CustomerDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.create(com.ftn.model.dto.CustomerDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/personalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.findByBirthId(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.update(java.lang.Long,com.ftn.model.dto.HomeInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.create(com.ftn.model.dto.HomeInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/byPersonalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.findByDateOfIssue(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.update(java.lang.Long,com.ftn.model.dto.InsuranceCategoryDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.create(com.ftn.model.dto.InsuranceCategoryDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.findByName(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.update(java.lang.Long,com.ftn.model.dto.InsurancePolicyDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.create(com.ftn.model.dto.InsurancePolicyDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/byDateOfIssue/{date}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.findByDateOfIssue(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.update(java.lang.Long,com.ftn.model.dto.InternationalTravelInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.create(com.ftn.model.dto.InternationalTravelInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byIssueDate/{date}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByIssueDate(java.util.Date)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byNumberOfPersons/{numberOfPersons}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByNumberOfPersons(int)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byDurationsInDays/{durationInDays}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByDurationInDays(int)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.update(java.lang.Long,com.ftn.model.dto.PaymentDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.create(com.ftn.model.dto.PaymentDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.update(java.lang.Long,com.ftn.model.dto.PricelistDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.create(com.ftn.model.dto.PricelistDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.update(java.lang.Long,com.ftn.model.dto.RiskDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.create(com.ftn.model.dto.RiskDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.findByName(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.update(java.lang.Long,com.ftn.model.dto.RiskTypeDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.create(com.ftn.model.dto.RiskTypeDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findByName(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.update(java.lang.Long,com.ftn.model.dto.RoadsideAssistanceInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.create(com.ftn.model.dto.RoadsideAssistanceInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byCarBrand/{carBrand}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByCarBrand(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byCarType/{carType}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByCarType(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byPersonalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByPersonalId(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byYearOfManufacture/{yearOfManufacture}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByYearOfManufacture(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byUndercarriageNumber/{undercarriageNumber}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByUndercarriageNumber(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byLicencePlateNumber/{licencePlateNumber}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByLicencePlateNumber(java.lang.String)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.update(java.lang.Long,com.ftn.model.dto.TransactionDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.create(com.ftn.model.dto.TransactionDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.findById(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.update(java.lang.Long,com.ftn.model.dto.UserDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.delete(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.read(java.lang.Long)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.read()
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.create(com.ftn.model.dto.UserDTO,org.springframework.validation.BindingResult)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2017-12-21 16:43:07 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-21 16:43:07 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-21 16:43:07 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2017-12-21 16:43:08 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2017-12-21 16:43:08 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ]2017-12-21 16:43:08 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8080]
+[INFO ]2017-12-21 16:43:08 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2017-12-21 16:43:08 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+[INFO ]2017-12-21 16:43:08 com.ftn.ISureDataCenterApplication - Started ISureDataCenterApplication in 40.411 seconds (JVM running for 41.567)
+[INFO ]2017-12-21 16:43:18 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2017-12-21 16:43:18 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ed7259e: startup date [Thu Dec 21 16:42:28 CET 2017]; root of context hierarchy
+[INFO ]2017-12-21 16:43:18 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2017-12-21 16:43:18 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

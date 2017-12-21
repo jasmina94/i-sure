@@ -27,10 +27,6 @@ public class Payment extends Base{
 	@Column(nullable = false)
 	private String paymentUrl;
 	
-	@OneToOne
-	@JoinColumn(name = "insurance_policy_id")
-	private InsurancePolicy insurancePolicy;
-	
 	@OneToOne(mappedBy = "payment")
 	private Transaction transaction;
 	
@@ -40,8 +36,5 @@ public class Payment extends Base{
 	
 	public void merge(PaymentDTO paymentDTO) {
 		this.paymentUrl = paymentDTO.getPaymentUrl();
-		if(paymentDTO.getInsurancePolicy() != null) {
-			this.insurancePolicy = paymentDTO.getInsurancePolicy().construct();
-		}
 	}
 }

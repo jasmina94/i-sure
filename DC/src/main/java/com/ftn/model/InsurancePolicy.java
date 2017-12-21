@@ -52,7 +52,7 @@ public class InsurancePolicy extends Base {
 	private RoadsideAssistanceInsurance roadsideAssistanceInsurance;
 	
 	@OneToOne(mappedBy = "insurancePolicy")
-	private Payment payment;
+	private Transaction transaction;
 	
 	public InsurancePolicy(BaseDTO baseDTO) {
 		super(baseDTO);

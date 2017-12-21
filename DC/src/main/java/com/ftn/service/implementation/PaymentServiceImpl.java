@@ -18,13 +18,11 @@ import com.ftn.service.PaymentService;
 public class PaymentServiceImpl implements PaymentService{
 	
 	private final PaymentRepository paymentRepository;
-	private final InsurancePolicyRepository insurancePolicyRepository;
+	
 	
 	@Autowired
-	public PaymentServiceImpl(PaymentRepository PaymentRepository,
-			InsurancePolicyRepository insurancePolicyRepository) {
+	public PaymentServiceImpl(PaymentRepository PaymentRepository) {
 		this.paymentRepository = PaymentRepository;
-		this.insurancePolicyRepository = insurancePolicyRepository;
 	}
 	
 	@Override
@@ -36,11 +34,7 @@ public class PaymentServiceImpl implements PaymentService{
 	public PaymentDTO create(PaymentDTO paymentDTO) {
 		final Payment payment = paymentDTO.construct();
 		
-		InsurancePolicy insurancePolicy = payment.getInsurancePolicy();
-		if(insurancePolicy != null) {
-			insurancePolicy = insurancePolicyRepository.save(insurancePolicy);
-        	payment.setInsurancePolicy(insurancePolicy);
-		}
+		
 		
 		Payment retVal = paymentRepository.save(payment);
 		return new PaymentDTO(retVal);

@@ -1,7 +1,7 @@
 package com.ftn.model;
 
 public enum TransactionStatus {
-	STARTED,
+	PENDING,
 	BOOKED,
-	CANCELED
+	REVERSED
 }

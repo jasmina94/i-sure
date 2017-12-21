@@ -9,18 +9,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.ftn.exception.BadRequestException;
-import com.ftn.model.dto.PaymentCheckoutDTO;
+import com.ftn.model.dto.PaymentDTO;
 import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
-import com.ftn.model.dto.TransactionStatus;
 import com.ftn.model.dto.TransactionDTO;
+import com.ftn.service.PaymentInquiryService;
+import com.ftn.service.PaymentService;
 import com.ftn.service.TransactionService;
 import com.ftn.service.implementation.TransactionServiceImpl;
 
@@ -34,20 +34,20 @@ public class PaymentInquiryController {
 	@Value("${pc.payment.inquiries}")
 	private String pc_inquiries;
 	
-	@Value("${merchant.id}")
-    private String merchant_id;
-	
-	@Value("${merchant.password}")
-	private String merchant_password;
-	
 	private RestTemplate restTemplate = new RestTemplate();
 	
+	
 	private final TransactionService transactionService;
+	private final PaymentService paymentService;
+	private final PaymentInquiryService paymentInquiryService;
 
     @Autowired
-    public PaymentInquiryController(TransactionServiceImpl transactionService){
-
+    public PaymentInquiryController(TransactionServiceImpl transactionService,
+    		PaymentInquiryService paymentInquiryService,
+    		PaymentService paymentService){
         this.transactionService = transactionService;
+        this.paymentInquiryService = paymentInquiryService;
+        this.paymentService = paymentService;
     }
     
     @PostMapping
@@ -57,23 +57,17 @@ public class PaymentInquiryController {
         
         transactionDTO = transactionService.findById(transactionDTO.getId());
 
-        // Ovo stavi u neki servis :)
-        //payment part
-        PaymentInquiryDTO piDTO = new PaymentInquiryDTO();
-        piDTO.setMerchantId(merchant_id);
-        piDTO.setMerchantPassword(merchant_password);
-        piDTO.setAmount(transactionDTO.getAmount());
-        //trebao bi biti Long za sada sam ga kastovao u int
-        piDTO.setMerchantOrderId((int)transactionDTO.getId());
-
-        piDTO.setMerchantTimestamp(transactionDTO.getTimestamp());
-        //koji url da stavim? - ovo je neka stranica koja treba da se napravi na portalu
-        piDTO.setErrorUrl("tmp");
-        
-        System.out.println(pc_home + pc_inquiries);
+        PaymentInquiryDTO piDTO = paymentInquiryService.create(transactionDTO);
         
         ResponseEntity<PaymentInquiryInfoDTO> response = restTemplate.postForEntity(pc_home + pc_inquiries, new HttpEntity<>(piDTO),
                 PaymentInquiryInfoDTO.class);
+        
+        PaymentDTO payment = new PaymentDTO();
+        payment.setPaymentUrl(response.getBody().getPaymentUrl());
+        payment = paymentService.create(payment);
+        
+        transactionDTO.setPayment(payment);
+        transactionService.update(transactionDTO.getId(), transactionDTO);
         
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
     }

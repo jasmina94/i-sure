@@ -35,6 +35,9 @@ public class TransactionDTO extends BaseDTO{
 	
 	private PaymentDTO payment;
 	
+	@NotNull
+	private InsurancePolicyDTO insurancePolicy;
+	
 	private Long acquiererOrderId;
 	
 	private Date acquiererTimestamp;
@@ -55,6 +58,9 @@ public class TransactionDTO extends BaseDTO{
         	if(transaction.getPayment() != null) {
         		this.payment = new PaymentDTO(transaction.getPayment());
         	}
+        	if(transaction.getInsurancePolicy() != null) {
+    			this.insurancePolicy = new InsurancePolicyDTO(transaction.getInsurancePolicy());
+    		}
         }
     }
 
@@ -71,6 +77,9 @@ public class TransactionDTO extends BaseDTO{
         if(this.payment != null){
             transaction.setPayment(payment.construct());
         }
+        if(insurancePolicy != null) {
+			transaction.setInsurancePolicy(insurancePolicy.construct());
+		}
         return transaction;
     }
 }

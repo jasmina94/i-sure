@@ -45,6 +45,10 @@ public class Transaction extends Base{
 	@JoinColumn(name = "payment_id")
 	private Payment payment;
 	
+	@OneToOne
+	@JoinColumn(name = "insurance_policy_id")
+	private InsurancePolicy insurancePolicy;
+	
 	private Long acquiererOrderId;
 	
 	private Date acquiererTimestamp;
@@ -62,6 +66,9 @@ public class Transaction extends Base{
 		}
 		if(transactionDTO.getPayment() != null){
 			this.payment = transactionDTO.getPayment().construct();
+		}
+		if(transactionDTO.getInsurancePolicy() != null) {
+			this.insurancePolicy = transactionDTO.getInsurancePolicy().construct();
 		}
 	}
 }

@@ -12,6 +12,7 @@ import com.ftn.model.Payment;
 import com.ftn.model.Transaction;
 import com.ftn.model.dto.InsurancePolicyDTO;
 import com.ftn.model.dto.TransactionDTO;
+import com.ftn.repository.InsurancePolicyRepository;
 import com.ftn.repository.PaymentRepository;
 import com.ftn.repository.TransactionRepository;
 import com.ftn.service.TransactionService;
@@ -21,12 +22,14 @@ public class TransactionServiceImpl implements TransactionService{
 	
 	private final TransactionRepository transactionRepository;
 	private final PaymentRepository paymentRepository;
+	private final InsurancePolicyRepository insurancePolicyRepository;
 	
 	@Autowired
 	public TransactionServiceImpl(TransactionRepository transactionRepository,
-			PaymentRepository paymentRepository) {
+			PaymentRepository paymentRepository, InsurancePolicyRepository insurancePolicyRepository) {
 		this.transactionRepository = transactionRepository;
 		this.paymentRepository = paymentRepository;
+		this.insurancePolicyRepository = insurancePolicyRepository;
 	}
 	
 	@Override
@@ -38,10 +41,10 @@ public class TransactionServiceImpl implements TransactionService{
 	public TransactionDTO create(TransactionDTO transactionDTO) {
 		final Transaction transaction = transactionDTO.construct();
 		
-		Payment payment = transaction.getPayment();
-		if(payment != null) {
-			payment = paymentRepository.save(payment);
-        	transaction.setPayment(payment);
+		InsurancePolicy insurancePolicy = transaction.getInsurancePolicy();
+		if(insurancePolicy != null) {
+			insurancePolicy = insurancePolicyRepository.save(insurancePolicy);
+        	transaction.setInsurancePolicy(insurancePolicy);
 		}
 		
 		Transaction retVal = transactionRepository.save(transaction);
