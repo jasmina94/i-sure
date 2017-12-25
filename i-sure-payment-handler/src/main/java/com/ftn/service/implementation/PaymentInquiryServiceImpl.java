@@ -1,11 +1,13 @@
 package com.ftn.service.implementation;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.TransactionDTO;
 import com.ftn.service.PaymentInquiryService;
 
+@Service
 public class PaymentInquiryServiceImpl implements PaymentInquiryService{
 	
 	@Value("${merchant.id}")

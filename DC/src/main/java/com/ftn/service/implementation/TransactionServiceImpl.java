@@ -41,11 +41,11 @@ public class TransactionServiceImpl implements TransactionService{
 	public TransactionDTO create(TransactionDTO transactionDTO) {
 		final Transaction transaction = transactionDTO.construct();
 		
-		InsurancePolicy insurancePolicy = transaction.getInsurancePolicy();
-		if(insurancePolicy != null) {
-			insurancePolicy = insurancePolicyRepository.save(insurancePolicy);
-        	transaction.setInsurancePolicy(insurancePolicy);
-		}
+//		InsurancePolicy insurancePolicy = transaction.getInsurancePolicy();
+//		if(insurancePolicy != null) {
+//			insurancePolicy = insurancePolicyRepository.save(insurancePolicy);
+//        	transaction.setInsurancePolicy(insurancePolicy);
+//		}
 		
 		Transaction retVal = transactionRepository.save(transaction);
 		return new TransactionDTO(retVal);
