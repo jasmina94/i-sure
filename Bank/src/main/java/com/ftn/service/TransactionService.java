@@ -18,4 +18,6 @@ public interface TransactionService {
     Transaction update(Long id, Transaction transaction);
 
     void delete(Long id);
+
+    Transaction findById(Long id);
 }

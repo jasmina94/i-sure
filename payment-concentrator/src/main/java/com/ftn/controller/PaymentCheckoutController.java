@@ -29,15 +29,15 @@ public class PaymentCheckoutController {
 	private RestTemplate restTemplate = new RestTemplate();
 	
 	@PostMapping
-    public ResponseEntity recievePaymentCheckout(@Valid @RequestBody PaymentCheckoutDTO paymentCheckoutDTO, BindingResult bindingResult) {
+    public ResponseEntity receivePaymentCheckout(@Valid @RequestBody PaymentCheckoutDTO paymentCheckoutDTO,
+												 BindingResult bindingResult) {
 		if (bindingResult.hasErrors())
             throw new BadRequestException();
 		
-		ResponseEntity<String> response = restTemplate.postForEntity(pc_home + pc_payment_checkout,
-				new HttpEntity<>(paymentCheckoutDTO),
-				String.class);
-		
-		//ne znam sta string treba da vrati
-    	return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+		//Proslediti checkout ka hendleru sa rest templejtom
+		// url(success/error) uputiti ka portalu iz hendlera
+
+        //Response ostaviti ovakav ovo ide nazad ka banci
+    	return new ResponseEntity<>(paymentCheckoutDTO, HttpStatus.OK);
     }
 }

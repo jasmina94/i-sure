@@ -17,9 +17,12 @@ public class Payment {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String url;
 
+    @Column
+    private long merchantOrderId;
+
     @OneToOne
-    private Transaction transaction;
+    private Merchant merchant;
 }

@@ -17,5 +17,7 @@ spring:
                   import_files: insert.sql
 
 environment:
+  acquirerUrl: http://localhost:9015/
+  issuerUrl: http://localhost:9020/
   acquirerPort: 9015
   issuerPort: 9020

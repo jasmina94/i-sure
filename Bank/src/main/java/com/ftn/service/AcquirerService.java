@@ -1,8 +1,7 @@
 package com.ftn.service;
 
-import com.ftn.model.dto.onlinepayment.PaymentInquiryDTO;
-import com.ftn.model.dto.onlinepayment.PaymentInquiryInfoDTO;
-import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
+import com.ftn.model.database.Account;
+import com.ftn.model.dto.onlinepayment.*;
 
 /**
  * Created by Jasmina on 04/12/2017.
@@ -11,7 +10,11 @@ public interface AcquirerService {
 
     boolean checkInquiry(PaymentInquiryDTO paymentInquiryDTO);
 
-    PaymentInquiryInfoDTO create();
+    PaymentInquiryInfoDTO create(PaymentInquiryDTO paymentInquiryDTO);
 
-    PaymentOrderDTO generateOrder(PaymentOrderDTO paymentOrderDTO);
+    PaymentOrderDTO generateOrder(PaymentOrderDTO paymentOrderDTO, long paymentId);
+
+    Account getMerchantAccount(PaymentInquiryDTO paymentInquiryDTO);
+
+    PaymentCheckoutDTO generateCheckout(PaymentResponseInfoDTO paymentResponseInfoDTO);
 }

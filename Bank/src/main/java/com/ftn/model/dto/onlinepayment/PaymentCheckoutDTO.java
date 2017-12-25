@@ -24,4 +24,8 @@ public class PaymentCheckoutDTO {
 
     @NotNull
     private long paymentId;
+
+    private String successUrl;
+
+    private String errorUrl;
 }

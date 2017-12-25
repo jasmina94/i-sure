@@ -46,6 +46,9 @@ public class Transaction {
     @ManyToOne
     private Account account;
 
+    @OneToOne
+    private Payment payment;
+
     @PrePersist
     protected void onCreate() {
         timestamp = new Date();

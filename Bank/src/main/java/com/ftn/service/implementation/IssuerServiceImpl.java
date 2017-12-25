@@ -44,13 +44,13 @@ public class IssuerServiceImpl implements IssuerService {
 
     @Override
     public PaymentResponseInfoDTO.CardAuthStatus checkCard(PaymentOrderDTO paymentOrderDTO) {
-        PaymentResponseInfoDTO.CardAuthStatus cardAuthStatus = PaymentResponseInfoDTO.CardAuthStatus.SUCCESSED;
+        PaymentResponseInfoDTO.CardAuthStatus cardAuthStatus;
         String pan = paymentOrderDTO.getPan();
         int securityCode = paymentOrderDTO.getSecurityCode();
         try{
             Card card = cardRepository.findByPan(pan).orElseThrow(NotFoundException::new);
             if(card.getSecurityCode() == securityCode){
-                cardAuthStatus = PaymentResponseInfoDTO.CardAuthStatus.SUCCESSED;
+                cardAuthStatus = PaymentResponseInfoDTO.CardAuthStatus.SUCCESSFUL;
             }else {
                 cardAuthStatus = PaymentResponseInfoDTO.CardAuthStatus.FAILED;
             }
@@ -62,7 +62,7 @@ public class IssuerServiceImpl implements IssuerService {
 
     @Override
     public PaymentResponseInfoDTO.TransactionStatus checkTransaction(PaymentOrderDTO paymentOrderDTO) {
-        PaymentResponseInfoDTO.TransactionStatus transactionStatus = PaymentResponseInfoDTO.TransactionStatus.SUCCESSED;
+        PaymentResponseInfoDTO.TransactionStatus transactionStatus;
         String pan = paymentOrderDTO.getPan();
         try{
             Card card = cardRepository.findByPan(pan).orElseThrow(NotFoundException::new);
@@ -70,7 +70,7 @@ public class IssuerServiceImpl implements IssuerService {
             if(paymentOrderDTO.getAmount() > account.getBalance()){
                 transactionStatus = PaymentResponseInfoDTO.TransactionStatus.FAILED;
             }else {
-                transactionStatus = PaymentResponseInfoDTO.TransactionStatus.SUCCESSED;
+                transactionStatus = PaymentResponseInfoDTO.TransactionStatus.SUCCESSFUL;
             }
         }catch (NotFoundException exception){
             transactionStatus = PaymentResponseInfoDTO.TransactionStatus.CARD_AUTH_FAILURE;
@@ -84,7 +84,6 @@ public class IssuerServiceImpl implements IssuerService {
         double orderAmount = paymentOrderDTO.getAmount();
         Card card = cardRepository.findByPan(PAN).orElseThrow(NotFoundException::new);
         Account account = card.getAccount();
-        account.setReserved(account.getReserved()+orderAmount);
         account.setBalance(account.getBalance()-orderAmount);
         accountRepository.save(account);
         return transactionService.create(paymentOrderDTO, Transaction.TransactionType.CHARGE);
@@ -96,8 +95,8 @@ public class IssuerServiceImpl implements IssuerService {
         PaymentResponseInfoDTO.CardAuthStatus cardAuthStatus = checkCard(paymentOrderDTO);
         PaymentResponseInfoDTO.TransactionStatus transactionStatus = checkTransaction(paymentOrderDTO);
 
-        if(cardAuthStatus.equals(PaymentResponseInfoDTO.CardAuthStatus.SUCCESSED)
-                && transactionStatus.equals(PaymentResponseInfoDTO.TransactionStatus.SUCCESSED)){
+        if(cardAuthStatus.equals(PaymentResponseInfoDTO.CardAuthStatus.SUCCESSFUL)
+                && transactionStatus.equals(PaymentResponseInfoDTO.TransactionStatus.SUCCESSFUL)){
             Transaction transaction = reserve(paymentOrderDTO);
             paymentResponseInfoDTO.setIssuerOrderId(transaction.getId());
             paymentResponseInfoDTO.setIssuerTimestamp(transaction.getTimestamp());

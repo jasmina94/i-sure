@@ -14,12 +14,12 @@ import java.util.Date;
 public class PaymentResponseInfoDTO {
 
     public enum CardAuthStatus{
-        SUCCESSED,
+        SUCCESSFUL,
         FAILED
     }
 
     public enum TransactionStatus{
-        SUCCESSED,
+        SUCCESSFUL,
         FAILED,
         CARD_AUTH_FAILURE
     }

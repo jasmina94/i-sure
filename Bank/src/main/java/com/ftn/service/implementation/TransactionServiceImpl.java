@@ -5,6 +5,7 @@ import com.ftn.model.database.Card;
 import com.ftn.model.database.Transaction;
 import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
 import com.ftn.repository.TransactionRepository;
+import com.ftn.service.AcquirerService;
 import com.ftn.service.CardService;
 import com.ftn.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class TransactionServiceImpl implements TransactionService {
     @Autowired
     private CardService cardService;
 
+    @Autowired
+    private AcquirerService acquirerService;
+
     @Override
     public List<Transaction> read() {
         return transactionRepository.findAll();
@@ -33,17 +37,17 @@ public class TransactionServiceImpl implements TransactionService {
     public Transaction create(PaymentOrderDTO paymentOrderDTO, Transaction.TransactionType type) {
         Transaction transaction = new Transaction();
         transaction.setStatus(Transaction.Status.PENDING);
-        transaction.setType(type);  // in acquirer bank this is INCOME in issuer this is charge
+        transaction.setType(type);  // in acquirer bank this is INCOME in issuer this is CHARGE
         transaction.setAmount(paymentOrderDTO.getAmount());
 
-        // Not needed possibly
-        if(type.equals(Transaction.TransactionType.INCOME)){
-            // somehow find merchant account in acquirer bank
-        }else {
+        if(type.equals(Transaction.TransactionType.CHARGE)){
             Card card = cardService.findCard(paymentOrderDTO);
             transaction.setAccount(card.getAccount());
+            transaction.setType(Transaction.TransactionType.CHARGE);
         }
-        return transactionRepository.save(transaction);
+
+        transaction =  transactionRepository.save(transaction);
+        return transaction;
     }
 
     @Override
@@ -61,5 +65,10 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public void delete(Long id) {
         transactionRepository.delete(id);
+    }
+
+    @Override
+    public Transaction findById(Long id) {
+        return transactionRepository.findOne(id);
     }
 }

@@ -27,7 +27,7 @@ public class PaymentInquiryDTO {
     private double amount;
 
     @NotNull
-    private int merchantOrderId;
+    private Long merchantOrderId;
 
     @NotNull
     @JsonFormat(pattern="yyyy-MM-dd")

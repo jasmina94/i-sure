@@ -1,6 +1,7 @@
 package com.ftn.controller;
 
 import com.ftn.exception.BadRequestException;
+import com.ftn.model.dto.PaymentCheckoutDTO;
 import com.ftn.model.dto.PaymentOrderDTO;
 import com.ftn.model.dto.PaymentResponseInfoDTO;
 import com.ftn.model.environment.EnvironmentProperties;
@@ -41,7 +42,7 @@ public class PccController {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
 
-        bankService.setAcquirerUrl(request);
+        //bankService.setAcquirerUrl(request);
         String BIN = paymentOrderDTO.getPAN().substring(1, 6);
         String issuerUrl = bankService.getIssuerUrl(BIN);
 
@@ -64,11 +65,12 @@ public class PccController {
             throw new BadRequestException();
 
         // Forward response to acquirer
-        String acquirerUrl =  environmentProperties.getAcquirerUrl() + "/acquirer/checkout";
+        String acquirerUrl =  environmentProperties.getAcquirerUrl() + "acquirer/checkout";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PaymentResponseInfoDTO> entity = new HttpEntity<>(paymentResponseInfoDTO, headers);
 
+        //Response from acquirer is same
         ResponseEntity<PaymentResponseInfoDTO> response = restTemplate
                 .exchange(acquirerUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
 
