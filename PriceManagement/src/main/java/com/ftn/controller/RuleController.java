@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.apache.maven.shared.invoker.*;
 
 import java.io.*;
+import java.util.Arrays;
 
 /**
  * Created by zlatan on 11/25/17.
@@ -50,7 +52,7 @@ public class RuleController {
     }
 
     @RequestMapping(value = "/saveFile", method = RequestMethod.POST)
-    public void saveFile(String tekst) {
+    public void saveFile(String tekst) throws MavenInvocationException {
         System.out.println(tekst);
 
         File fileFromContext = new File("/Users/zlatan/Documents/GIT/i-sure/PriceManagement/src/main/resources/com/ftn/isureprices/rules/ISure.drl");
@@ -60,7 +62,13 @@ public class RuleController {
         File fileFromProject = new File(classLoader.getResource("com/ftn/isureprices/rules/ISure.drl").getFile());
         saveRuleFile(tekst, fileFromProject);
 
+        InvocationRequest request = new DefaultInvocationRequest();
+        request.setPomFile( new File( "/Users/zlatan/Documents/GIT/i-sure/PriceManagement/pom.xml" ) );
+        request.setGoals( Arrays.asList( "clean", "install" ) );
 
+        Invoker invoker = new DefaultInvoker();
+        //invoker.setMavenHome(new File(System.getenv("M2_HOME")));
+        invoker.execute( request );
     }
 
     private void saveRuleFile(String text, File file) {
