@@ -15,6 +15,15 @@
                 document.getElementById("tekstarea").value = data.toString();
             }
         });
+
+        $.ajax({
+            type: 'GET',
+            url: '/openFile2',
+            success: function(data) {
+                console.log(data);
+                document.getElementById("tekstarea2").value = data.toString();
+            }
+        });
     }
 
     function editRule() {
@@ -26,6 +35,13 @@
             data: {'tekst' : tekst},
             success: function(data) {
                 alert("Pravilo uspesno izmenjeno!");
+//                $.ajax({
+//                    type: 'POST',
+//                    url: '/env',
+//                    success: function(data) {
+//                        alert("Restarted!");
+//                    }
+//                });
 //                $.ajax({
 //                    type: 'POST',
 //                    url: '/refresh',
@@ -42,6 +58,12 @@
 <textarea id="tekstarea" rows="30" cols="50">
     eee
 </textarea>
+<<<<<<< Updated upstream
+=======
+<textarea id="tekstarea2" rows="30" cols="50">
+    eee
+</textarea>
+>>>>>>> Stashed changes
 <button onclick="editRule()">Save</button>
 </body>
 </html>
