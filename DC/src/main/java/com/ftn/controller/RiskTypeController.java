@@ -68,4 +68,10 @@ public class RiskTypeController {
     public ResponseEntity findByName(@PathVariable String name){
         return new ResponseEntity<>(riskTypeService.findByName(name), HttpStatus.OK);
     }
+
+    @Transactional
+    @GetMapping(value = "/insuranceCategory/{name}")
+    public ResponseEntity findRisksByCategory(@PathVariable String name){
+        return new ResponseEntity<>(riskTypeService.findByCategory(name), HttpStatus.OK);
+    }
 }

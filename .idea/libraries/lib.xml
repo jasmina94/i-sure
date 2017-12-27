@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/commons-digester-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/jasperreports-6.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/osgi-over-slf4j-1.7.25-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/jcl-over-slf4j-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/osgi-over-slf4j-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/itext-2.1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/jaxb-xjc-2.2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/log4j-over-slf4j-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/commons-beanutils-1.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/jcl-over-slf4j-1.7.25-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/log4j-over-slf4j-1.7.25-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/jul-to-slf4j-1.7.25-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/javax.servlet-api-3.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/jul-to-slf4j-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/jaxb-impl-2.2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/jaxb-api-2.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AdminApp/lib/slf4j-api-1.7.25.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
