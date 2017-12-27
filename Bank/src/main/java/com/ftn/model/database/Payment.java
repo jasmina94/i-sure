@@ -21,6 +21,9 @@ public class Payment {
     private String url;
 
     @Column
+    private double amount;
+
+    @Column
     private long merchantOrderId;
 
     @OneToOne

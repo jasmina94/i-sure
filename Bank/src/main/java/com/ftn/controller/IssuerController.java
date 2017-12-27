@@ -1,7 +1,6 @@
 package com.ftn.controller;
 
 import com.ftn.exception.BadRequestException;
-import com.ftn.model.dto.onlinepayment.PaymentInquiryInfoDTO;
 import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
 import com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO;
 import com.ftn.model.environment.EnvironmentProperties;
@@ -25,24 +24,26 @@ public class IssuerController {
     @Autowired
     private EnvironmentProperties environmentProperties;
 
-    private final RestTemplate restTemplate;
-
     private final IssuerService issuerService;
 
+    private final RestTemplate restTemplate;
+
+
     @Autowired
-    public IssuerController(IssuerService issuerService){
+    public IssuerController(IssuerService issuerService) {
         this.issuerService = issuerService;
         this.restTemplate = new RestTemplate();
     }
 
     @Transactional
     @PostMapping
-    public ResponseEntity receiveOrderFromPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult){
+    public ResponseEntity receiveOrderFromPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
 
-        PaymentResponseInfoDTO paymentResponseInfoDTO = issuerService.makeResponse(paymentOrderDTO);
+        PaymentResponseInfoDTO paymentResponseInfoDTO = issuerService.generateResponse(paymentOrderDTO);
 
+        // Forward to PCC
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PaymentResponseInfoDTO> entity = new HttpEntity<>(paymentResponseInfoDTO, headers);

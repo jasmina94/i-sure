@@ -9,11 +9,11 @@ import com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO;
  */
 public interface IssuerService {
 
-    PaymentResponseInfoDTO.CardAuthStatus checkCard(PaymentOrderDTO paymentOrderDTO);
+    PaymentResponseInfoDTO.CardAuthStatus cardAuthentication(PaymentOrderDTO paymentOrderDTO);
 
-    PaymentResponseInfoDTO.TransactionStatus checkTransaction(PaymentOrderDTO paymentOrderDTO);
+    PaymentResponseInfoDTO.TransactionStatus transactionAuthorization(PaymentOrderDTO paymentOrderDTO);
 
-    Transaction reserve(PaymentOrderDTO paymentOrderDTO);
+    Transaction transfer(PaymentOrderDTO paymentOrderDTO);
 
-    PaymentResponseInfoDTO makeResponse(PaymentOrderDTO paymentOrderDTO);
+    PaymentResponseInfoDTO generateResponse(PaymentOrderDTO paymentOrderDTO);
 }

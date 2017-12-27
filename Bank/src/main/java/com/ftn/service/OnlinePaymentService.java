@@ -11,11 +11,7 @@ import java.util.List;
  */
 public interface OnlinePaymentService {
 
-    List<Payment> read();
-
     Payment findByPaymentId(long id);
 
     Payment create(PaymentInquiryDTO paymentInquiryDTO);
-
-    Payment update(Long id, Payment payment);
 }

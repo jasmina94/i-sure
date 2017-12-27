@@ -1,7 +1,6 @@
 package com.ftn.controller;
 
 import com.ftn.exception.BadRequestException;
-import com.ftn.model.database.Transaction;
 import com.ftn.model.dto.onlinepayment.*;
 import com.ftn.model.environment.EnvironmentProperties;
 import com.ftn.service.AcquirerService;
@@ -14,9 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.io.IOException;
 
 /**
  * Created by Jasmina on 04/12/2017.
@@ -28,20 +25,14 @@ public class AcquirerController {
     @Autowired
     private EnvironmentProperties environmentProperties;
 
-    private final RestTemplate restTemplate;
-
     private final AcquirerService acquirerService;
 
-    private final OnlinePaymentService onlinePaymentService;
-
-    private final TransactionService transactionService;
+    private final RestTemplate restTemplate;
 
     @Autowired
-    public AcquirerController(AcquirerService acquirerService, OnlinePaymentService onlinePaymentService, TransactionService transactionService){
-        this.restTemplate = new RestTemplate();
+    public AcquirerController(AcquirerService acquirerService) {
         this.acquirerService = acquirerService;
-        this.onlinePaymentService = onlinePaymentService;
-        this.transactionService = transactionService;
+        this.restTemplate = new RestTemplate();
     }
 
     @Transactional
@@ -52,10 +43,10 @@ public class AcquirerController {
 
         ResponseEntity<PaymentInquiryInfoDTO> response;
         boolean validInquiry = acquirerService.checkInquiry(paymentInquiryDTO);
-        if(validInquiry){
-            PaymentInquiryInfoDTO paymentInquiryInfoDTO = acquirerService.create(paymentInquiryDTO);
+        if (validInquiry) {
+            PaymentInquiryInfoDTO paymentInquiryInfoDTO = acquirerService.generateInquiryInfo(paymentInquiryDTO);
             response = new ResponseEntity<>(paymentInquiryInfoDTO, HttpStatus.OK);
-        }else {
+        } else {
             response = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return response;
@@ -63,14 +54,14 @@ public class AcquirerController {
 
     @Transactional
     @PostMapping(value = "/order/{paymentId}")
-    public ResponseEntity sendOrderToPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO,
-                @PathVariable long paymentId, BindingResult bindingResult){
+    public ResponseEntity processOrder(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, @PathVariable long paymentId, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
 
         // Start transaction
         paymentOrderDTO = acquirerService.generateOrder(paymentOrderDTO, paymentId);
 
+        // Forward to PCC
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PaymentOrderDTO> entity = new HttpEntity<>(paymentOrderDTO, headers);
@@ -81,13 +72,11 @@ public class AcquirerController {
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
     }
 
-
     @Transactional
     @PostMapping(value = "/checkout")
-    public ResponseEntity receiveAndSend(@Valid @RequestBody PaymentResponseInfoDTO paymentResponseInfoDTO, BindingResult bindingResult){
+    public ResponseEntity processResponse(@Valid @RequestBody PaymentResponseInfoDTO paymentResponseInfoDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-
 
         PaymentCheckoutDTO paymentCheckoutDTO = acquirerService.generateCheckout(paymentResponseInfoDTO);
         String concentratorUrl = environmentProperties.getConcentratorUrl() + "checkout";
@@ -96,8 +85,8 @@ public class AcquirerController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PaymentCheckoutDTO> entity = new HttpEntity<>(paymentCheckoutDTO, headers);
-        ResponseEntity<PaymentCheckoutDTO> response = restTemplate.exchange(concentratorUrl,HttpMethod.POST, entity, PaymentCheckoutDTO.class);
+        ResponseEntity<PaymentCheckoutDTO> response = restTemplate.exchange(concentratorUrl, HttpMethod.POST, entity, PaymentCheckoutDTO.class);
 
-        return new ResponseEntity<>(paymentResponseInfoDTO,HttpStatus.OK);
+        return new ResponseEntity<>(paymentResponseInfoDTO, HttpStatus.OK);
     }
 }

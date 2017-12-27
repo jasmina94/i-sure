@@ -60,12 +60,12 @@ public class PccController {
 
     @Transactional
     @PostMapping(value = "/response")
-    public ResponseEntity receiveResponse(@Valid @RequestBody PaymentResponseInfoDTO paymentResponseInfoDTO, BindingResult bindingResult){
+    public ResponseEntity receiveResponse(@Valid @RequestBody PaymentResponseInfoDTO paymentResponseInfoDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
 
         // Forward response to acquirer
-        String acquirerUrl =  environmentProperties.getAcquirerUrl() + "acquirer/checkout";
+        String acquirerUrl = environmentProperties.getAcquirerUrl() + "acquirer/checkout";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PaymentResponseInfoDTO> entity = new HttpEntity<>(paymentResponseInfoDTO, headers);

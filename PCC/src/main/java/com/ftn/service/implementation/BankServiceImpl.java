@@ -39,7 +39,7 @@ public class BankServiceImpl implements BankService{
     public void setAcquirerUrl(HttpServletRequest request) {
         String host = request.getRemoteHost();
         String port = environmentProperties.getAcquirerPort();
-        String acquirerAddress = "http://" + host + ":" + port; //Possible change
+        String acquirerAddress = "http://" + host + ":" + port;
         environmentProperties.setAcquirerUrl(acquirerAddress);
     }
 }

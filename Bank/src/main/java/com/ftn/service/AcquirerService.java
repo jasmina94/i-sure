@@ -10,7 +10,7 @@ public interface AcquirerService {
 
     boolean checkInquiry(PaymentInquiryDTO paymentInquiryDTO);
 
-    PaymentInquiryInfoDTO create(PaymentInquiryDTO paymentInquiryDTO);
+    PaymentInquiryInfoDTO generateInquiryInfo(PaymentInquiryDTO paymentInquiryDTO);
 
     PaymentOrderDTO generateOrder(PaymentOrderDTO paymentOrderDTO, long paymentId);
 

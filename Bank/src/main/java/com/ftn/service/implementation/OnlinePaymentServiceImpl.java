@@ -30,11 +30,6 @@ public class OnlinePaymentServiceImpl implements OnlinePaymentService {
     private EnvironmentProperties environmentProperties;
 
     @Override
-    public List<Payment> read() {
-        return paymentRepository.findAll();
-    }
-
-    @Override
     public Payment findByPaymentId(long id) {
         Payment payment;
         try {
@@ -49,25 +44,22 @@ public class OnlinePaymentServiceImpl implements OnlinePaymentService {
     public Payment create(PaymentInquiryDTO paymentInquiryDTO) {
         String merchantId = paymentInquiryDTO.getMerchantId();
         String merchantPassword = paymentInquiryDTO.getMerchantPassword();
-        Merchant merchant = merchantRepository.findByMerchantIdAndPassword(merchantId, merchantPassword).orElseThrow(NotFoundException::new);
-        long merchantOrderId = paymentInquiryDTO.getMerchantOrderId();
         Payment payment = new Payment();
         payment = paymentRepository.save(payment);
         long paymentId = payment.getId();
-        String paymentUrl = environmentProperties.getSelfUrl();
-        paymentUrl += "acquirer/order/" + paymentId;
-        payment.setUrl(paymentUrl);
-        payment.setMerchantOrderId(merchantOrderId);
-        try {
+        payment.setUrl(generatePaymentUrl(paymentId));
+        payment.setMerchantOrderId(paymentInquiryDTO.getMerchantOrderId());
+        payment.setAmount(paymentInquiryDTO.getAmount());
+        Merchant merchant = merchantRepository.findByMerchantIdAndPassword(merchantId, merchantPassword);
+        if(merchant != null){
             payment.setMerchant(merchant);
-        }catch (NotFoundException exception){
-            payment.setMerchant(null);
         }
         return paymentRepository.save(payment);
     }
 
-    @Override
-    public Payment update(Long id, Payment payment) {
-        return null;
+    private String generatePaymentUrl(Long paymentId){
+        String paymentUrl = environmentProperties.getSelfUrl();
+        paymentUrl += "acquirer/order/" + paymentId;
+        return paymentUrl;
     }
 }

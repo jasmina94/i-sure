@@ -30,7 +30,7 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ftn.mt910
+     * Create a new ObjectFactory that can be used to generateInquiryInfo new instances of schema derived classes for package: com.ftn.mt910
      * 
      */
     public ObjectFactory() {

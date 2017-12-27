@@ -40,19 +40,20 @@ public class AcquirerServiceImpl implements AcquirerService {
 
     @Override
     public boolean checkInquiry(PaymentInquiryDTO paymentInquiryDTO) {
-        boolean found = true;
+        boolean found;
         String merchantId = paymentInquiryDTO.getMerchantId();
         String merchantPassword = paymentInquiryDTO.getMerchantPassword();
-        final Merchant merchant = merchantRepository.findByMerchantIdAndPassword
-                (merchantId, merchantPassword).orElseThrow(NotFoundException::new);
-        if(merchant == null){
+        Merchant merchant = merchantRepository.findByMerchantIdAndPassword(merchantId, merchantPassword);
+        if (merchant != null) {
+            found = true;
+        } else {
             found = false;
         }
         return found;
     }
 
     @Override
-    public PaymentInquiryInfoDTO create(PaymentInquiryDTO paymentInquiryDTO) {
+    public PaymentInquiryInfoDTO generateInquiryInfo(PaymentInquiryDTO paymentInquiryDTO) {
         Payment payment = onlinePaymentService.create(paymentInquiryDTO);
         PaymentInquiryInfoDTO paymentInquiryInfoDTO = new PaymentInquiryInfoDTO();
         paymentInquiryInfoDTO.setPaymentUrl(payment.getUrl());
@@ -64,12 +65,12 @@ public class AcquirerServiceImpl implements AcquirerService {
     public PaymentOrderDTO generateOrder(PaymentOrderDTO paymentOrderDTO, long paymentId) {
         Transaction transaction = transactionService.create(paymentOrderDTO, Transaction.TransactionType.INCOME);
         Payment payment = onlinePaymentService.findByPaymentId(paymentId);
-        if(payment != null){
-           Account account = payment.getMerchant().getAccount();
-           transaction.setAccount(account);
-           transaction.setPayment(payment);
-           transaction.setType(Transaction.TransactionType.INCOME);
-           transaction = transactionService.update(transaction.getId(), transaction);
+        if (payment != null) {
+            Account account = payment.getMerchant().getAccount();
+            transaction.setAccount(account);
+            transaction.setPayment(payment);
+            transaction.setType(Transaction.TransactionType.INCOME);
+            transaction = transactionService.update(transaction.getId(), transaction);
         }
         paymentOrderDTO.setAcquirerOrderId(transaction.getId());
         paymentOrderDTO.setAcquirerTimestamp(transaction.getTimestamp());
@@ -81,10 +82,10 @@ public class AcquirerServiceImpl implements AcquirerService {
         String merchantId = paymentInquiryDTO.getMerchantId();
         String merchantPassword = paymentInquiryDTO.getMerchantPassword();
         Account account;
-        Merchant merchant = merchantRepository.findByMerchantIdAndPassword(merchantId, merchantPassword).orElseThrow(NotFoundException::new);
-        try {
+        Merchant merchant = merchantRepository.findByMerchantIdAndPassword(merchantId, merchantPassword);
+        if (merchant != null) {
             account = merchant.getAccount();
-        }catch (NotFoundException exception){
+        } else {
             account = null;
         }
         return account;
@@ -102,31 +103,33 @@ public class AcquirerServiceImpl implements AcquirerService {
         String successUrl = selfUrl + "acquirer/success";
 
         Transaction transaction = transactionService.findById(acquirerOrderId);
-        if(transaction != null){
+        if (transaction != null) {
             long paymentId = transaction.getPayment().getId();
             paymentCheckout.setPaymentId(paymentId);
             long merchantOrderId = transaction.getPayment().getMerchantOrderId();
             paymentCheckout.setMerchantOrderId(merchantOrderId);
             paymentCheckout.setSuccessUrl(successUrl);
 
-            //Change status
-            if(paymentResponseInfoDTO.getCardAuthStatus().equals(PaymentResponseInfoDTO.CardAuthStatus.SUCCESSFUL)
-                    && paymentResponseInfoDTO.getTransactionStatus().equals(PaymentResponseInfoDTO.TransactionStatus.SUCCESSFUL)){
+            //Change status and account balance
+            if (paymentResponseInfoDTO.getCardAuthStatus().equals(PaymentResponseInfoDTO.CardAuthStatus.SUCCESSFUL)
+                    && paymentResponseInfoDTO.getTransactionStatus().equals(PaymentResponseInfoDTO.TransactionStatus.SUCCESSFUL)) {
                 transaction.setStatus(Transaction.Status.BOOKED);
                 paymentCheckout.setSuccessUrl(successUrl);
-            }else{
+                double amount = transaction.getPayment().getAmount();
+                Account merchantAccount = transaction.getAccount();
+                merchantAccount.setBalance(merchantAccount.getBalance() + amount);
+                transaction.setAccount(merchantAccount);
+                transactionService.update(transaction.getId(), transaction);
+            } else {
                 transaction.setStatus(Transaction.Status.REVERSED);
                 paymentCheckout.setErrorUrl(errorUrl);
             }
             transactionService.update(transaction.getId(), transaction);
-        }else{
+        } else {
             paymentCheckout.setPaymentId(0);
             paymentCheckout.setMerchantOrderId(0);
             paymentCheckout.setErrorUrl(errorUrl);
         }
-
-
-
         return paymentCheckout;
     }
 }

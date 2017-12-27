@@ -34,8 +34,15 @@ public class PaymentCheckoutController {
 		if (bindingResult.hasErrors())
             throw new BadRequestException();
 		
-		//Proslediti checkout ka hendleru sa rest templejtom
-		// url(success/error) uputiti ka portalu iz hendlera
+		// Proslediti checkout ka hendleru
+		// Url proveriti(success/error) i uputiti ka portalu iz hendlera
+
+        //Ispis je za test
+		System.out.println(paymentCheckoutDTO.getAcquirerOrderId() + "*" +
+        paymentCheckoutDTO.getMerchantOrderId() + "*" +
+        paymentCheckoutDTO.getPaymentId() + "*" +
+        paymentCheckoutDTO.getErrorUrl() + "*" +
+        paymentCheckoutDTO.getSuccessUrl() + "*");
 
         //Response ostaviti ovakav ovo ide nazad ka banci
     	return new ResponseEntity<>(paymentCheckoutDTO, HttpStatus.OK);

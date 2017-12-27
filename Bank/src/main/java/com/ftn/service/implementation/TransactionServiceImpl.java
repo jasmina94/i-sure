@@ -37,27 +37,30 @@ public class TransactionServiceImpl implements TransactionService {
     public Transaction create(PaymentOrderDTO paymentOrderDTO, Transaction.TransactionType type) {
         Transaction transaction = new Transaction();
         transaction.setStatus(Transaction.Status.PENDING);
-        transaction.setType(type);  // in acquirer bank this is INCOME in issuer this is CHARGE
+        transaction.setType(type);  // in Acquirer bank this is INCOME in Issuer this is CHARGE
         transaction.setAmount(paymentOrderDTO.getAmount());
-
         if(type.equals(Transaction.TransactionType.CHARGE)){
             Card card = cardService.findCard(paymentOrderDTO);
             transaction.setAccount(card.getAccount());
             transaction.setType(Transaction.TransactionType.CHARGE);
         }
-
         transaction =  transactionRepository.save(transaction);
         return transaction;
     }
 
     @Override
     public Transaction update(Long id, Transaction transaction) {
-        Transaction existing = transactionRepository.findOne(id);
-        if(existing != null){
-            existing = transaction;
-            transactionRepository.save(existing);
-        }else{
-            throw new NotFoundException();
+        Transaction existing = transactionRepository.findById(id).orElseThrow(NotFoundException::new);
+        try{
+            existing.setTimestamp(transaction.getTimestamp());
+            existing.setType(transaction.getType());
+            existing.setStatus(transaction.getStatus());
+            existing.setAmount(transaction.getAmount());
+            existing.setAccount(transaction.getAccount());
+            existing.setPayment(transaction.getPayment());
+            existing = transactionRepository.save(existing);
+        }catch (NotFoundException exception){
+            existing = null;
         }
         return existing;
     }
@@ -69,6 +72,11 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction findById(Long id) {
-        return transactionRepository.findOne(id);
+        Transaction transaction = transactionRepository.findById(id).orElseThrow(NotFoundException::new);
+        try{
+            return transaction;
+        }catch (NotFoundException exception){
+            return null;
+        }
     }
 }
