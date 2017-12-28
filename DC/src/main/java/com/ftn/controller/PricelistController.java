@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ftn.exception.BadRequestException;
-import com.ftn.model.dto.CustomerDTO;
+import com.ftn.model.Pricelist;
 import com.ftn.model.dto.PricelistDTO;
 import com.ftn.service.PricelistService;
 
@@ -43,7 +43,15 @@ public class PricelistController {
     public ResponseEntity create(@Valid @RequestBody PricelistDTO pricelistDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-        return new ResponseEntity<>(pricelistService.create(pricelistDTO), HttpStatus.OK);
+        
+        try {
+			PricelistDTO pricelist = pricelistService.create(pricelistDTO);
+			return new ResponseEntity<>(pricelist, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		}
+        
+        
     }
 
     @Transactional

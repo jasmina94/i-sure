@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ftn.exception.BadRequestException;
 import com.ftn.exception.NotFoundException;
 import com.ftn.model.Pricelist;
 import com.ftn.model.PricelistItem;
@@ -38,46 +39,64 @@ public class PricelistServiceImpl implements PricelistService{
 		
 		
 		
-		if(pricelistDTO.getId() == 0L){
-			final Pricelist pricelist = pricelistDTO.construct();
-			Date dateFrom  = pricelistRepository.findMaxDateTo();
-			pricelist.setDateFrom(dateFrom);
-			pricelistRepository.save(pricelist);
-	        return new PricelistDTO(pricelist);
-		}else{
-			Pricelist stari = pricelistRepository.findById(pricelistDTO.getId()).orElseThrow(NotFoundException::new);
-			List<PricelistItem> itemsOld = stari.getPricelistItems();
-			
-			final Pricelist pricelist = pricelistDTO.construct();
-			pricelist.setId(0L);
-			pricelist.setActive(true);
-			pricelist.setCreated(null);
-			
-			List<PricelistItem> items = new ArrayList();
-			PricelistItem temp = null;
-			for (PricelistItem pricelistItem : itemsOld) {
-				temp = new PricelistItem(pricelistItem);
-				temp.setActive(true);
-				temp.setCreated(null);
-				temp.setId(0L);
-				temp.setUpdated(null);
+		try {
+			if(pricelistDTO.getId() == 0L){
+				final Pricelist pricelist = pricelistDTO.construct();
+				Date dateFrom  = pricelistRepository.findMaxDateTo();
 				
-				items.add(temp);
+				if(dateFrom.after(pricelistDTO.getDateTo())){
+					throw new BadRequestException();
+				}
+				
+				pricelist.setDateFrom(dateFrom);
+				pricelistRepository.save(pricelist);
+			    return new PricelistDTO(pricelist);
+			}else{
+				Pricelist stari = pricelistRepository.findById(pricelistDTO.getId()).orElseThrow(NotFoundException::new);
+				List<PricelistItem> itemsOld = stari.getPricelistItems();
+				
+				final Pricelist pricelist = pricelistDTO.construct();
+				
+				Date dateFrom  = pricelistRepository.findMaxDateTo();
+				
+				pricelist.setDateFrom(dateFrom);
+				
+				if(dateFrom.after(pricelistDTO.getDateTo())){
+					throw new BadRequestException();
+				}
+				
+				
+				pricelist.setId(0L);
+				pricelist.setActive(true);
+				pricelist.setCreated(null);
+				
+				List<PricelistItem> items = new ArrayList();
+				PricelistItem temp = null;
+				for (PricelistItem pricelistItem : itemsOld) {
+					temp = new PricelistItem(pricelistItem);
+					temp.setActive(true);
+					temp.setCreated(null);
+					temp.setId(0L);
+					temp.setUpdated(null);
+					
+					items.add(temp);
+				}
+				
+				pricelist.setPricelistItems(items);
+				
+				
+				
+				pricelistRepository.save(pricelist);
+				return new PricelistDTO(pricelist);
+				
 			}
-			
-			pricelist.setPricelistItems(items);
-			
-			Date dateFrom  = pricelistRepository.findMaxDateTo();
-			pricelist.setDateFrom(dateFrom);
-			
-			pricelistRepository.save(pricelist);
-			return new PricelistDTO(pricelist);
-			
-		}
 //		
 //		final Pricelist pricelist = pricelistDTO.construct();
 //		pricelistRepository.save(pricelist);
 //        return new PricelistDTO(pricelist);
+		} catch (NotFoundException e) {
+			return null;
+		}
 		
 		
 	}
@@ -107,7 +126,7 @@ public class PricelistServiceImpl implements PricelistService{
 		
 		
 	    Date now = new Date();
-	    DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+	    DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
 
 	    
 	    Date todayWithZeroTime;
