@@ -16,6 +16,7 @@ import javax.validation.Valid;
  * Created by zlatan on 25/11/2017.
  */
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/riskTypes")
 public class RiskTypeController {
 
