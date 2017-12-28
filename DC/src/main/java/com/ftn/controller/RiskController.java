@@ -35,9 +35,18 @@ public class RiskController {
     @Transactional
     @PostMapping
     public ResponseEntity create(@Valid @RequestBody RiskDTO riskDTO, BindingResult bindingResult) {
-        if (bindingResult.hasErrors())
+        if (bindingResult.hasErrors()){
             throw new BadRequestException();
-        return new ResponseEntity<>(riskService.create(riskDTO), HttpStatus.OK);
+        }
+        
+        try {
+			riskService.create(riskDTO);
+		} catch (Exception e) {
+			System.out.println("Pukao create");
+			e.printStackTrace();
+		}
+        
+        return new ResponseEntity<>(riskService.findByRiskType(riskDTO.getRiskType().getId()), HttpStatus.OK);
     }
 
     @Transactional
@@ -66,5 +75,11 @@ public class RiskController {
     @GetMapping(value = "/name/{name}")
     public ResponseEntity findByName(@PathVariable String name){
         return new ResponseEntity<>(riskService.findByName(name), HttpStatus.OK);
+    }
+    
+    @Transactional
+    @GetMapping(value = "/byRiskType/{id}")
+    public ResponseEntity findByRiskType(@PathVariable Long id){
+        return new ResponseEntity<>(riskService.findByRiskType(id), HttpStatus.OK);
     }
 }

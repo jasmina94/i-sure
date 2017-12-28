@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PricelistDTO extends BaseDTO{
 
-	@NotNull
+	//@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date dateFrom;
 

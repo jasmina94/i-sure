@@ -67,4 +67,14 @@ public class PricelistController {
     public ResponseEntity findById(@PathVariable Long id){
         return new ResponseEntity<>(pricelistService.findById(id), HttpStatus.OK);
     }
+    
+    
+    @Transactional
+    @GetMapping(value = "/currentlyActive")
+    public ResponseEntity findcurrentlyActive(){
+    	System.out.println("Currently active controller");
+    	//pricelistService.findcurrentlyActive();
+    	
+        return new ResponseEntity<>(pricelistService.findcurrentlyActive(), HttpStatus.OK);
+    }
 }
