@@ -21,6 +21,10 @@ public class PaymentInquiryDTO {
     @NotNull
     @Size(min = 0, max = 100)
     private String merchantPassword;
+    
+    @NotNull
+    @Size(min = 0, max = 100)
+    private String paymentType;
 
     @NotNull
     private double amount;
