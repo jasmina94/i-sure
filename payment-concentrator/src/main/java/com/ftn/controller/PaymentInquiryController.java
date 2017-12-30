@@ -1,5 +1,6 @@
 package com.ftn.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,10 @@ public class PaymentInquiryController {
 	private PaymentServiceAdapter paymentService;
 
     @PostMapping
-    public ResponseEntity sendPaymentInquiry(@Valid @RequestBody PaymentInquiryDTO piDTO, BindingResult bindingResult) {
+    public ResponseEntity sendPaymentInquiry(@Valid @RequestBody PaymentInquiryDTO piDTO, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
         
-        return new ResponseEntity<>(paymentService.sendPaymentInquiry(piDTO), HttpStatus.OK);
+        return new ResponseEntity<>(paymentService.sendPaymentInquiry(piDTO, request), HttpStatus.OK);
     }
 }
