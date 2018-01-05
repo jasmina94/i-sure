@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import com.ftn.exception.NotFoundException;
 import com.ftn.model.Pricelist;
 import com.ftn.model.PricelistItem;
 import com.ftn.model.dto.PricelistDTO;
+import com.ftn.model.dto.RiskDTO;
+import com.ftn.repository.PricelistItemRepository;
 import com.ftn.repository.PricelistRepository;
 import com.ftn.service.PricelistService;
 
@@ -23,10 +26,12 @@ import com.ftn.service.PricelistService;
 public class PricelistServiceImpl implements PricelistService{
 	
     private final PricelistRepository pricelistRepository;
+    private final PricelistItemRepository pricelistItemRepository;
 
     @Autowired
-    public PricelistServiceImpl(PricelistRepository pricelistRepository){
+    public PricelistServiceImpl(PricelistRepository pricelistRepository, PricelistItemRepository pricelistItemRepository){
         this.pricelistRepository = pricelistRepository;
+        this.pricelistItemRepository = pricelistItemRepository;
     }
 	
 	@Override
@@ -135,6 +140,13 @@ public class PricelistServiceImpl implements PricelistService{
 			 System.out.println(todayWithZeroTime);
 			 Pricelist pl = pricelistRepository.findCurrentlyActive(todayWithZeroTime).orElseThrow(NotFoundException::new);
 			 PricelistDTO plDto = new PricelistDTO(pl);
+			 PricelistDTO tempPlDto = new PricelistDTO(pl);
+			 for(int i=0;i<tempPlDto.getPricelistItems().size();i++){
+				 Long id = tempPlDto.getPricelistItems().get(i).getId();
+				 PricelistItem pli = pricelistItemRepository.findById(id).orElseThrow(NotFoundException::new);
+				 RiskDTO r = new RiskDTO(pli.getRisk());
+				 plDto.getPricelistItems().get(i).setRisk(r);
+			 }
 			 return plDto;
 		} catch (ParseException e) {
 			

@@ -19,7 +19,7 @@
 	       </div>
 	       <div style="width: 80%;">
 	           <md-input-container>
-	                <md-select ng-model="indexVm.risk.riskType" md-selected-text="indexVm.risk.riskType.riskTypeName">
+	                <md-select ng-model="indexVm.risk.riskType" md-selected-text="indexVm.risk.riskType.riskTypeName" required>
 	                      <md-optgroup label="Type">
 	                          <md-option ng-value="type" ng-repeat="type in indexVm.riskTypes">{{type.riskTypeName}}
 	                          </md-option>
@@ -33,7 +33,7 @@
              <md-button ng-disabled="addingRisk.$invalid" ng-click="indexVm.submitAddingRisk()" class="md-raised md-primary">
                 Submit
              </md-button>
-             <md-tooltip ng-if="addingRisk.$invalid" md-direction="top">Enter Risk Name.</md-tooltip>
+             <md-tooltip ng-if="addingRisk.$invalid" md-direction="top">Enter all data.</md-tooltip>
         </div>
     </div>
 	  </md-content>
