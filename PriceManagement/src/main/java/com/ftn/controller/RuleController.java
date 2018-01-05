@@ -19,7 +19,7 @@ import java.util.Arrays;
 @RestController
 public class RuleController {
 
-    @Autowired
+  /*  @Autowired
     private AbstractApplicationContext context;
 
     private final RuleServiceImpl ruleService;
@@ -106,5 +106,5 @@ public class RuleController {
             br.close();
         }
         return lines;
-    }
+    }*/
 }

@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 public class RuleServiceImpl implements RuleService{
 
-    private final KieContainer kieContainer;
+    /*private final KieContainer kieContainer;
 
     @Autowired
     public RuleServiceImpl(KieContainer kieContainer) {
@@ -27,10 +27,10 @@ public class RuleServiceImpl implements RuleService{
         this.kieContainer = kieContainer;
     }
 
-    /**
+    *//**
      * Create a new session, insert a person's details and fire rules to
      * determine what kind of bus pass is to be issued.
-     */
+     *//*
     @Override
     public User getUser(User u) {
         KieSession kieSession = kieContainer.newKieSession("testUserSesion");
@@ -42,9 +42,9 @@ public class RuleServiceImpl implements RuleService{
         return user;
     }
 
-    /**
+    *//**
      * Search the {@link KieSession} for bus passes.
-     */
+     *//*
     @Override
     public User findUser(KieSession kieSession) {
 
@@ -70,10 +70,10 @@ public class RuleServiceImpl implements RuleService{
         return facts.get(0);
     }
 
-    /**
+    *//**
      * Print out details of all facts in working memory.
      * Handy for debugging.
-     */
+     *//*
     @SuppressWarnings("unused")
     private void printFactsMessage(KieSession kieSession) {
         Collection<FactHandle> allHandles = kieSession.getFactHandles();
@@ -83,5 +83,5 @@ public class RuleServiceImpl implements RuleService{
             msg += "    " + kieSession.getObject(handle) + "\n";
         }
         System.out.println(msg);
-    }
+    }*/
 }

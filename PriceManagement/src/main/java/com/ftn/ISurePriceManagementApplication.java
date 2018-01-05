@@ -38,8 +38,8 @@ public class ISurePriceManagementApplication {
      *
      * @return The {@link KieContainer}.
      */
-    @Bean
+    /*@Bean
     public KieContainer kieContainer() {
         return KieServices.Factory.get().getKieClasspathContainer();
-    }
+    }*/
 }
