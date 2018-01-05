@@ -15,4 +15,6 @@ public interface PricelistService {
     void delete(Long id);
 
     PricelistDTO findById(Long id);
+
+	PricelistDTO findcurrentlyActive();
 }

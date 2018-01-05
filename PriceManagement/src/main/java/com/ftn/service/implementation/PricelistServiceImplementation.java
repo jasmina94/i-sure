@@ -63,4 +63,12 @@ public class PricelistServiceImplementation implements PricelistService{
 	    RestTemplate restTemplate = new RestTemplate();
 	    restTemplate.delete(URI);
 	}
+	
+	@Override
+	public PricelistDTO findcurrentlyActive() {
+		RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<PricelistDTO> response = restTemplate.getForEntity(URI+"/currentlyActive", PricelistDTO.class);
+
+        return response.getBody();
+	}
 }

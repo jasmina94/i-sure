@@ -15,4 +15,6 @@ public interface PricelistService {
     PricelistDTO update(Long id, PricelistDTO pricelistDTO);
 
     void delete(Long id);
+
+	PricelistDTO findcurrentlyActive();
 }
