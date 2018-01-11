@@ -115,7 +115,7 @@
             return d >= today;
         };
 
-        vm.pay = 'Pay1';
+        vm.pay = 'paypal';
 
         vm.addTabs = function(){
             vm.tabs=[];
@@ -250,6 +250,23 @@
                             type : 'success'
                         });
                         console.log(response.data);
+                        
+                        var paymentType = {};
+                        paymentType.label = vm.pay;
+                        
+                        
+                        var transactionDTO = {
+                        		"timestamp": "",
+                        		
+                        		"paymentType":paymentType,
+                        		"amount": response.data.totalValue,
+                        		"insurancePolicy": response.data 
+                        	};
+                        
+                        insuranceService.createTransaction(transactionDTO).then(
+                                function (response) {
+                                });
+                        
                     }
                 })
         }

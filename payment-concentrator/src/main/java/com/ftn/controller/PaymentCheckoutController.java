@@ -20,11 +20,11 @@ import com.ftn.model.dto.PaymentCheckoutDTO;
 @RequestMapping("/checkout")
 public class PaymentCheckoutController {
 	
-	@Value("${pc.home}")
-    private String pc_home;
+	@Value("${ph.home}")
+    private String ph_home;
 	
-	@Value("${pc.payment.checkout}")
-	private String pc_payment_checkout;
+	@Value("${ph.payment.checkout}")
+	private String ph_payment_checkout;
 	
 	private RestTemplate restTemplate = new RestTemplate();
 	
@@ -34,6 +34,7 @@ public class PaymentCheckoutController {
 		if (bindingResult.hasErrors())
             throw new BadRequestException();
 		
+/*<<<<<<< HEAD
 		// Proslediti checkout ka hendleru
 		// Url proveriti(success/error) i uputiti ka portalu iz hendlera
 
@@ -46,5 +47,13 @@ public class PaymentCheckoutController {
 
         //Response ostaviti ovakav ovo ide nazad ka banci
     	return new ResponseEntity<>(paymentCheckoutDTO, HttpStatus.OK);
+=======*/
+		ResponseEntity<String> response = restTemplate.postForEntity(ph_home + ph_payment_checkout,
+				new HttpEntity<>(paymentCheckoutDTO),
+				String.class);
+		
+		//ne znam sta string treba da vrati
+    	return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+
     }
 }

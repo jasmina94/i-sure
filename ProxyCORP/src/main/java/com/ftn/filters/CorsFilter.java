@@ -31,7 +31,7 @@ public class CorsFilter implements Filter {
 
         if("OPTIONS".equalsIgnoreCase(req.getMethod())) {
             res.setHeader("Access-Control-Allow-Origin", "*");
-            res.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE, PATCH");
+            res.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE, PATCH");
             res.setHeader("Access-Control-Allow-Headers", "origin, content-type, accept, x-requested-with");
             res.setHeader("Access-Control-Max-Age", "3600");
         } else {

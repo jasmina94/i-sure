@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -22,6 +23,7 @@ import com.ftn.service.PaymentService;
 import com.ftn.service.implementation.PaymentServiceImpl;
 
 @Controller
+@CrossOrigin(origins = "*")
 @RequestMapping("/payments")
 public class PaymentController {
 	private final PaymentService paymentService;
