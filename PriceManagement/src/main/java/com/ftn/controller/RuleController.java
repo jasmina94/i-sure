@@ -16,9 +16,9 @@ import java.util.Arrays;
 /**
  * Created by zlatan on 11/25/17.
  */
-//@RestController
+@RestController
 public class RuleController {
-/*
+
     //@Autowired
     private AbstractApplicationContext context;
     //@Autowired
@@ -106,5 +106,5 @@ public class RuleController {
             br.close();
         }
         return lines;
-    }*/
+    }
 }

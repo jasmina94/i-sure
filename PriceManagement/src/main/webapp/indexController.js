@@ -6,24 +6,22 @@
     'use strict';
     var app = angular.module('iSure');
 
-    app.controller('indexController', function ($scope, ngNotify, $state, $http, mainService) {
+    app.controller('indexController', function ($scope, ngNotify, $state, $http, mainService, $route, $window) {
         var indexVm = this;
         indexVm.riskTypes = [];
         indexVm.currentlyActivePricelist = null;
         indexVm.allRisks = [];
         indexVm.residualRisks = [];
+        indexVm.maxDateTo = null;
+        indexVm.allRiskForRiskType = [];
+        indexVm.showTable = false;
+        
         indexVm.risk = {
       	      riskName: '',
       	      riskType: ''
       	    };
       
-      indexVm.pricelistItem = {
-      		coefficient : 1,
-      		price: 0,
-      		risk: {}
-      }
-      
-      indexVm.pricelistItems = []
+      indexVm.pricelistItems = [];
       
       
       indexVm.pricelist = {
@@ -31,6 +29,13 @@
       		dateTo: '',
       		pricelistItems : indexVm.pricelistItems
       }
+      
+      
+      indexVm.email = "http://localhost:80/squirrelmail/src/login.php";
+      
+      indexVm.addRisk = false;
+      indexVm.addPricelist = false;
+      indexVm.addRule = false;
         
         init();
 
@@ -45,41 +50,46 @@
         	mainService.findCurrentlyActive().then(
         			function (response) {
                         if (response.status == 200) {
-                        	indexVm.currentlyActivePricelist = response.data;
-                        	if(indexVm.currentlyActivePricelist != null){
+                        	if(response.data == ""){
+                        		indexVm.currentlyActivePricelist = null;
+                        		indexVm.pricelistItems = [];
+                        	}else{
+                        		indexVm.currentlyActivePricelist = response.data;
                         		indexVm.pricelistItems = indexVm.currentlyActivePricelist.pricelistItems;
-                        		/*for (var i=0;i<indexVm.pricelistItems.length;i++){
-                        			mainService.getPricelistById(indexVm.pricelistItems[i].id).then(
-                        	                function (response) {
-                        	                    if (response.status == 200) {
-                        	                    	indexVm.pricelistItems[i].risk = response.data.risk;
-                        	                    }
-                        	                });
-                        		}*/
-                        		
+                        		mainService.findMaxDateTo().then(
+                            			function (response) {
+                                            if (response.status == 200) {
+                                            	indexVm.maxDateTo = new Date(response.data);
+                                            	indexVm.maxDateTo.setDate(indexVm.maxDateTo.getDate() + 1);
+                                            }
+                            			});
                         	}
-                        }else if(response.status == 500){
+                        }else{
+                        	indexVm.currentlyActivePricelist = null;
                         	indexVm.pricelistItems = [];
+                        	indexVm.maxDateTo = new Date();
                         }
+                        
                     });
         }
         
-        indexVm.email = "http://localhost:80/squirrelmail/src/login.php";
-        
-        indexVm.addRisk = false;
-        indexVm.addPricelist = false;
-        indexVm.addRule = false;
-        
         indexVm.showRiskForm = function(){
+        	 indexVm.risk = {
+             	      riskName: '',
+             	      riskType: ''
+             	    };
+             
         	indexVm.addRisk = true;
         	indexVm.addPricelist = false;
         	indexVm.addRule = false;
+        	indexVm.showTable = false;
         }
         
         indexVm.showPricelistForm = function(){
         	indexVm.addPricelist = true;
         	indexVm.addRisk = false;
         	indexVm.addRule = false;
+        	indexVm.showTable = false;
         	mainService.getRisks().then(
                 function (response) {
                     if (response.status == 200) {
@@ -96,21 +106,20 @@
         	indexVm.addRule = true;
         	indexVm.addPricelist = false;
         	indexVm.addRisk = false;
+        	indexVm.showTable = false;
         }
         
         indexVm.submitAddingRisk = function(){
         	mainService.createRisk(indexVm.risk).then(
                 function (response) {
                     if (response.status == 200) {
-                    	console.log(response.data);
-                    	ngNotify.set('Successfully added risk.' , {
-                            type : 'success'
-                        });
+                    	toastr.success("Risk is added.",'<i>Success</i>');
+                    	indexVm.allRiskForRiskType = response.data;
+                    	indexVm.addRisk = false;
+                    	indexVm.showTable = true;
                 	}
             });
         }
-        
-        indexVm.todayDate = new Date();
 
         indexVm.isDateValid = function (date) {
             var today = new Date();
@@ -126,17 +135,32 @@
         	angular.forEach(indexVm.pricelistItems, function(pricelistItem) {
             	risksWithPrice.push(pricelistItem.risk);
             });
-        	indexVm.residualRisks = allRisks.filter(function(item) { return risksWithPrice.indexOf(item) === -1; });
+        	if(risksWithPrice.length != 0){
+        		indexVm.residualRisks = indexVm.allRisks;
+	        	for(var i=0;i<allRisks.length;i++){
+	        		for(var j=0;j<risksWithPrice.length;j++){
+	        			if(risksWithPrice[j] != null){
+		        			if(allRisks[i].id == risksWithPrice[j].id){
+		        				var index = indexVm.residualRisks.indexOf(allRisks[i]);
+		        				indexVm.residualRisks.splice(index, 1);
+		        			}
+	        			}
+        			}
+	        	}
+        	}else{
+        		indexVm.residualRisks = indexVm.allRisks;
+        	}
         	console.log(indexVm.residualRisks)
         }
         
         indexVm.addNew = function(){
+        	residualRisks();
         	indexVm.pricelistItems.push({ 
                 	coefficient : '',
             		price: '',
-            		risk: null
+            		risk: indexVm.residualRisks[0]
                 });
-        	residualRisks();
+        	
         };
         
         indexVm.remove = function(){
@@ -163,22 +187,37 @@
         }; 
         
         function createPatternOfDate(date){
-            var pattern = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()+" "+date.getHours()+":"+date.getMinutes();
+        	var now = new Date(); // for now
+        	now.getHours();
+        	now.getMinutes();
+            var pattern = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()+" "+now.getHours()+":"+now.getMinutes();
             return pattern;
         }
         
         indexVm.submitAddingPricelist = function(){
         	indexVm.pricelist.dateTo = createPatternOfDate(indexVm.pricelist.dateTo);
+        	indexVm.pricelist.pricelistItems = indexVm.pricelistItems;
         	mainService.createPricelist(indexVm.pricelist).then(
                 function (response) {
-                    if (response.status == 200) {
-                    	console.log(response.data);
-                    	ngNotify.set('Successfully added pricelist.' , {
-                            type : 'success'
-                        });
+                	
+                    if (response.status == 201) {
+                    	toastr.success("Pricelist is added.",'<i>Success</i>');
+                    	
+                    	mainService.findMaxDateTo().then(
+                    			function (response) {
+                                    if (response.status == 200) {
+                                    	indexVm.maxDateTo = new Date(response.data);
+                                    	indexVm.maxDateTo.setDate(indexVm.maxDateTo.getDate() + 1);
+                                    }
+                    			});
+                	}else{
+                		toastr.error("Something got wrong with pricelist. Try again.",'<i>Error</i>');
                 	}
-                    indexVm.addPricelist = false;
+                    setTimeout(function(){
+                	    location.reload();
+                	},4000);
             });
+        	
         }
 
     });

@@ -1,4 +1,4 @@
-<div ng-if="indexVm.addPricelist" style="width: 50%;margin-left: auto;margin-right: auto;" layout="column" layout-padding ng-cloak>
+<div ng-if="indexVm.addPricelist" style="width: 50%;margin-left: auto;margin-right: auto; " layout="column" layout-padding ng-cloak>
   <br/>
   <form name="addingPricelist">
   <md-toolbar style="min-height: 45px;margin-bottom: 10px;">
@@ -15,7 +15,7 @@
                         <div style="width: 80%;">
                             <div flex-gt-xs style="width: 200px; float: left;margin-right: 20px;margin-left: -10px;">
                                 <md-datepicker ng-model="indexVm.pricelist.dateTo" md-placeholder="Enter date"
-                                               md-min-date="indexVm.todayDate"
+                                               md-min-date="indexVm.maxDateTo"
                                                md-date-filter="indexVm.isDateValid" required></md-datepicker>
                             </div>
                         </div>
@@ -29,6 +29,7 @@
                                     <tr>
                                         <th><input type="checkbox" ng-model="selectedAll" ng-click="indexVm.checkAll()" /></th>
                                         <th>Risk Name</th>
+                                        <th>Risk Type</th>
                                         <th>Coefficient</th>
                                         <th>Price</th>
                                     </tr>
@@ -37,12 +38,13 @@
                                     <tr ng-repeat="pricelistItem in indexVm.pricelistItems">
                                         <td><input type="checkbox" ng-model="pricelistItem.selected"/></td>
                                         <td>
-                                    		<md-select ng-model="pricelistItem.risk" md-selected-text="pricelistItem.risk.riskName" required style="margin-top:0px;margin-bottom:0px;">
+                                    		<md-select ng-model="pricelistItem.risk" md-selected-text="pricelistItem.risk.riskName" style="margin-top:0px;margin-bottom:0px;">
                                         		<md-optgroup label=""> 
                                             		<md-option ng-value="risk" ng-repeat="risk in indexVm.residualRisks">{{risk.riskName}}
                                             		</md-option>
                                         		</md-optgroup>
                                     		</md-select></td>
+                                    	<td>{{pricelistItem.risk.riskType.riskTypeName}}</td>
                                         <td><input type="number" step="0.01" min="0" ng-model="pricelistItem.coefficient" class="form-control" placeholder="0.00" required></td>
                                         <td>
                                         <input type="number" step="0.01" min="0" ng-model="pricelistItem.price" class="form-control" placeholder="0.00" required></td>

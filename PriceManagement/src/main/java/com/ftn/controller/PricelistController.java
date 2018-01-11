@@ -60,4 +60,9 @@ public class PricelistController {
     	
         return new ResponseEntity<>(pricelistService.findcurrentlyActive(), HttpStatus.OK);
     }
+    
+    @GetMapping(value = "/maxDateTo")
+    public ResponseEntity findMaxDateTo(){
+        return new ResponseEntity<>(pricelistService.findMaxDateTo(), HttpStatus.OK);
+    }
 }

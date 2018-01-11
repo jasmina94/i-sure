@@ -8,15 +8,6 @@
                 document.getElementById("tekstarea").value = data.toString();
             }
         });
-
-        $.ajax({
-            type: 'GET',
-            url: '/openFile2',
-            success: function(data) {
-                console.log(data);
-                document.getElementById("tekstarea2").value = data.toString();
-            }
-        });
     }
 
     function editRule() {
@@ -46,22 +37,24 @@
         });
     }
 </script>
-<div ng-if="indexVm.addRule" onload="loadDrl()">
-<h1>Test Drools</h1>
-<md-input-container>
-  <label>Text</label>
-  <textarea id="tekstarea" rows="30" cols="50" style="border:solid 1px rgb(63,81,181);">
-    eee
-</textarea>
-</md-input-container>
-
-<md-input-container>
-  <label>Text</label>
-  <textarea id="tekstarea2" rows="30" cols="50" style="border:solid 1px rgb(63,81,181);">
-    eee
-</textarea>
-</md-input-container>
-
-<md-button class="md-raised md-primary" onclick="editRule()">Save</md-button>
-</div>
+	<div ng-if="indexVm.addRule" onload="loadDrl()" style="width: 50%;margin-top:20px;margin-left: auto;margin-right: auto; ">
+	  <md-toolbar style="min-height: 45px;margin-bottom: 10px;">
+			<div class="md-toolbar-tools" style="max-height: 45px;">
+				<h3>
+					<span>Add Rule</span>
+				</h3>
+			</div>
+		</md-toolbar>
+		<md-content class="md-no-momentum">
+		  <md-input-container class="md-block" style="margin-bottom: 0px;">
+	          <label>Rule</label>
+	          <textarea id="tekstarea" cols="50" rows="10">eee</textarea>
+	        </md-input-container>
+	        <div flex layout="row" layout layout-align="end top" style="width:100%;display: inline-block;">
+	             <md-button layout style="float:right;margin-right: 15px;" onclick="editRule()" class="md-raised md-primary">
+	                Submit
+	             </md-button>
+	        </div>
+	    <md-content>
+	</div>
 </html>

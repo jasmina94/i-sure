@@ -6,11 +6,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ftn.exception.BadRequestException;
 import com.ftn.exception.NotFoundException;
@@ -41,9 +41,7 @@ public class PricelistServiceImpl implements PricelistService{
 
 	@Override
 	public PricelistDTO create(PricelistDTO pricelistDTO) {
-		
-		
-		
+
 		try {
 			if(pricelistDTO.getId() == 0L){
 				final Pricelist pricelist = pricelistDTO.construct();
@@ -88,9 +86,7 @@ public class PricelistServiceImpl implements PricelistService{
 				}
 				
 				pricelist.setPricelistItems(items);
-				
-				
-				
+
 				pricelistRepository.save(pricelist);
 				return new PricelistDTO(pricelist);
 				
@@ -102,8 +98,6 @@ public class PricelistServiceImpl implements PricelistService{
 		} catch (NotFoundException e) {
 			return null;
 		}
-		
-		
 	}
 
 	@Override
@@ -150,10 +144,16 @@ public class PricelistServiceImpl implements PricelistService{
 			 return plDto;
 		} catch (ParseException e) {
 			
-			e.printStackTrace();
-			return null;
+			//e.printStackTrace();
+			return new PricelistDTO();
 		}
         
+	}
+	
+	@Override
+	public Date findMaxDateTo() {
+		Date maxDate  = pricelistRepository.findMaxDateTo();
+		return maxDate;
 	}
 
 }

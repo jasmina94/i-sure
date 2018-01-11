@@ -8,6 +8,6 @@ import org.kie.api.runtime.KieSession;
  */
 public interface RuleService {
 
-  /*  User getUser(User u);
-    User findUser(KieSession kieSession);*/
+    User getUser(User u);
+    User findUser(KieSession kieSession);
 }

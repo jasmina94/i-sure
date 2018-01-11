@@ -1,5 +1,7 @@
 package com.ftn.controller;
 
+import java.util.Date;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ftn.exception.BadRequestException;
 import com.ftn.model.Pricelist;
 import com.ftn.model.dto.PricelistDTO;
+import com.ftn.repository.PricelistRepository;
 import com.ftn.service.PricelistService;
 
 @RestController
@@ -38,7 +41,7 @@ public class PricelistController {
         return new ResponseEntity<>(pricelistService.readAll(), HttpStatus.OK);
     }
 
-    @Transactional
+	@Transactional
     @PostMapping
     public ResponseEntity create(@Valid @RequestBody PricelistDTO pricelistDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
@@ -81,8 +84,25 @@ public class PricelistController {
     @GetMapping(value = "/currentlyActive")
     public ResponseEntity findcurrentlyActive(){
     	System.out.println("Currently active controller");
-    	//pricelistService.findcurrentlyActive();
     	
-        return new ResponseEntity<>(pricelistService.findcurrentlyActive(), HttpStatus.OK);
+    	PricelistDTO pricelistDTO;
+		try {
+			pricelistDTO = pricelistService.findcurrentlyActive();
+			 return new ResponseEntity<>(pricelistDTO, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+
+			return new ResponseEntity<>(null, HttpStatus.OK);
+		}
+       
     }
+    
+    @Transactional
+    @GetMapping(value = "/maxDateTo")
+    public ResponseEntity findMaxDateTo(){
+    	System.out.println("findMaxDateTo");
+    	return new ResponseEntity<>(pricelistService.findMaxDateTo(), HttpStatus.OK);
+    }
+    
+	
 }

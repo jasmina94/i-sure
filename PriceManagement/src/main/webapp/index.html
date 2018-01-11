@@ -28,6 +28,9 @@
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/md-steppers/dist/md-steppers.min.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css"/>
+    <link rel="stylesheet" href="bower_components/toastr/toastr.min.css"/>
     <script src="iSure.js"></script>
     <script src="run.js"></script>
     <script src="indexController.js"></script>
@@ -38,7 +41,7 @@
 <body>
 <div style="background-image:url('assets/images/pmBackground.png');width:100%;height:400px;background-repeat: round;">
 	<div style="float:right;padding:20px;">
-		<a href={{indexVm.email}} class="btn btn-lg" style="color: #fff;background-color: rgb(63,81,181);border-color: rgb(63,81,181);">
+		<a href={{indexVm.email}} target="_blank" class="btn btn-lg" style="color: #fff;background-color: rgb(63,81,181);border-color: rgb(63,81,181);">
           <span class="glyphicon glyphicon-envelope" style="width:20px;height:20px;"></span> Email
         </a>
 	</div>
@@ -59,9 +62,9 @@
 	</div>
 
 </div>
-<div ng-include="'components/addRisk.html'"></div>
-<div ng-include="'components/addPricelist.html'"></div>
-<div ng-include="'home.html'"></div>
+<div ng-include="'components/addRisk.html'" style="background-color: white;"></div>
+<div ng-include="'components/addPricelist.html'" style="background-color: white;"></div>
+<div ng-include="'components/addRule.html'" style="background-color: white;"></div>
 
 
 </body>

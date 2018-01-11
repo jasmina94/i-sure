@@ -32,10 +32,10 @@ public class RiskServiceImpl implements RiskService {
     }
 
     @Override
-    public RiskDTO create(RiskDTO riskDTO) {
+    public RiskDTO[] create(RiskDTO riskDTO) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RiskDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(riskDTO),
-                RiskDTO.class);
+        ResponseEntity<RiskDTO[]> response = restTemplate.postForEntity(URI, new HttpEntity<>(riskDTO),
+                RiskDTO[].class);
 
         return response.getBody();
     }

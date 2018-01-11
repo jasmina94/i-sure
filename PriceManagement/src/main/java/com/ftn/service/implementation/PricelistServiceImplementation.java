@@ -1,7 +1,9 @@
 package com.ftn.service.implementation;
 
-import com.ftn.model.dto.PricelistDTO;
-import com.ftn.service.PricelistService;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -10,8 +12,8 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.List;
+import com.ftn.model.dto.PricelistDTO;
+import com.ftn.service.PricelistService;
 
 @Service
 public class PricelistServiceImplementation implements PricelistService{
@@ -69,6 +71,13 @@ public class PricelistServiceImplementation implements PricelistService{
 		RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<PricelistDTO> response = restTemplate.getForEntity(URI+"/currentlyActive", PricelistDTO.class);
 
+        return response.getBody();
+	}
+	
+	@Override
+	public Date findMaxDateTo() {
+		RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Date> response = restTemplate.getForEntity(URI+"/maxDateTo", Date.class);
         return response.getBody();
 	}
 }

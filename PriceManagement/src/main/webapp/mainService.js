@@ -28,6 +28,10 @@
     	mainService.getPricelistById = function(id) {
             return $http.get("pricelistItems/"+id);
             }
+    	
+    	mainService.findMaxDateTo = function() {
+            return $http.get("pricelists/maxDateTo");
+            }
         return mainService;
 
     });
