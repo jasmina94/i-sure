@@ -73,22 +73,5 @@ public class PayPalDummy {
     }
     
     
-    @RequestMapping(method = RequestMethod.GET, value = PAYPAL_CANCEL_URL)
-	public String cancelPay(){
-		System.out.println("Cancel");
-		return "cancel";
-	}
-	
-	
-	@RequestMapping(method = RequestMethod.GET, value = PAYPAL_SUCCESS_URL+"/{paymentId}/{token}/{PayerID}")
-	public String testn(@RequestParam("paymentId") String paymentId,@RequestParam("token") String token, @RequestParam("PayerID") String payerId){
-		
-			System.out.println("Testniiiiiiiiiiii");
-			
-			System.out.println("Payment id "+paymentId);
-			
-			return "testni";
-			
-		
-	}
+    
 }

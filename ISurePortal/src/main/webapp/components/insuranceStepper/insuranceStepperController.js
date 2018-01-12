@@ -265,6 +265,12 @@
                         
                         insuranceService.createTransaction(transactionDTO).then(
                                 function (response) {
+                                	
+                                	insuranceService.createInquiry(response.data).then(
+                                			function(response){
+                                				window.location = response.data.paymentUrl;
+                                				
+                                			});
                                 });
                         
                     }
