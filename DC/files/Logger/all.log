@@ -2000,3 +2000,561 @@ org.hibernate.TransientPropertyValueException: object references an unsaved tran
 [INFO ]2018-01-11 19:24:20 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
 [INFO ]2018-01-11 19:24:20 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
 [INFO ]2018-01-11 19:24:20 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-11 22:42:03 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-70A4T8A with PID 7800 (started by Tea in D:\My stuff\SEP\SEP_REPOSITORY\DC)
+[INFO ]2018-01-11 22:42:03 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2018-01-11 22:42:03 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Thu Jan 11 22:42:03 CET 2018]; root of context hierarchy
+[INFO ]2018-01-11 22:42:03 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2018-01-11 22:42:06 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de35d56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-01-11 22:42:07 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9010 (http)
+[INFO ]2018-01-11 22:42:07 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2018-01-11 22:42:07 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2018-01-11 22:42:07 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-01-11 22:42:07 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3901 ms
+[INFO ]2018-01-11 22:42:07 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-01-11 22:42:07 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-01-11 22:42:07 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-01-11 22:42:07 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-01-11 22:42:07 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-01-11 22:42:07 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-11 22:42:08 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-01-11 22:42:08 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2018-01-11 22:42:08 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-01-11 22:42:08 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-01-11 22:42:08 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[ERROR]2018-01-11 22:42:10 o.a.tomcat.jdbc.pool.ConnectionPool - Unable to create initial connections of pool.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2251)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:718)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:650)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:468)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:143)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:254)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:228)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:373)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:362)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at com.ftn.ISureDataCenterApplication.main(ISureDataCenterApplication.java:10)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 59 common frames omitted
+[WARN ]2018-01-11 22:42:10 o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[WARN ]2018-01-11 22:42:10 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+[INFO ]2018-01-11 22:42:10 o.a.catalina.core.StandardService - Stopping service Tomcat
+[INFO ]2018-01-11 22:42:10 o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ERROR]2018-01-11 22:42:10 o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+	at com.ftn.ISureDataCenterApplication.main(ISureDataCenterApplication.java:10)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:264)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:228)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:373)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:362)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 16 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:254)
+	... 32 common frames omitted
+[INFO ]2018-01-11 22:43:15 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-70A4T8A with PID 8560 (started by Tea in D:\My stuff\SEP\SEP_REPOSITORY\DC)
+[INFO ]2018-01-11 22:43:15 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2018-01-11 22:43:15 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Thu Jan 11 22:43:15 CET 2018]; root of context hierarchy
+[INFO ]2018-01-11 22:43:15 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2018-01-11 22:43:19 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de35d56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-01-11 22:43:19 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9010 (http)
+[INFO ]2018-01-11 22:43:19 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2018-01-11 22:43:19 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2018-01-11 22:43:20 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-01-11 22:43:20 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4733 ms
+[INFO ]2018-01-11 22:43:20 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-01-11 22:43:20 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-01-11 22:43:20 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-01-11 22:43:20 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-01-11 22:43:20 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-01-11 22:43:21 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-11 22:43:21 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-01-11 22:43:21 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2018-01-11 22:43:21 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-01-11 22:43:21 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-01-11 22:43:21 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-01-11 22:43:22 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-01-11 22:43:22 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2018-01-11 22:43:23 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table transaction drop foreign key FKk42lxib0u5j74xlu1rkib52m6
+[ERROR]2018-01-11 22:43:23 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.transaction' doesn't exist
+[ERROR]2018-01-11 22:43:23 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table transaction drop foreign key FKq9m7rb5uydysanp8smxcovxlh
+[ERROR]2018-01-11 22:43:23 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.transaction' doesn't exist
+[ERROR]2018-01-11 22:43:23 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table transaction drop foreign key FKjxr3plkixp2y2eghe1shts1rv
+[ERROR]2018-01-11 22:43:23 o.h.tool.hbm2ddl.SchemaExport - Table 'isuredatacenter.transaction' doesn't exist
+[INFO ]2018-01-11 22:43:25 o.h.tool.hbm2ddl.SchemaExport - HHH000476: Executing import script '/import.sql'
+[INFO ]2018-01-11 22:43:25 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-11 22:43:25 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Thu Jan 11 22:43:15 CET 2018]; root of context hierarchy
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Permission> com.ftn.controller.authorisation.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.authorisation.PermissionController.newPermission(com.ftn.model.authorisation.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Permission> com.ftn.controller.authorisation.PermissionController.updatePermission(java.lang.Long,com.ftn.model.authorisation.Permission,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.ftn.model.authorisation.Permission>> com.ftn.controller.authorisation.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.newRole(com.ftn.model.authorisation.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.updateRole(java.lang.Long,com.ftn.model.authorisation.Role,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.ftn.model.authorisation.Role>> com.ftn.controller.authorisation.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.update(java.lang.Long,com.ftn.model.dto.CustomerDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.create(com.ftn.model.dto.CustomerDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/personalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.findByBirthId(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.update(java.lang.Long,com.ftn.model.dto.HomeInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.create(com.ftn.model.dto.HomeInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/byPersonalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.findByDateOfIssue(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.update(java.lang.Long,com.ftn.model.dto.InsuranceCategoryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.create(com.ftn.model.dto.InsuranceCategoryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.findByName(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.update(java.lang.Long,com.ftn.model.dto.InsurancePolicyDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.create(com.ftn.model.dto.InsurancePolicyDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/byDateOfIssue/{date}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.findByDateOfIssue(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.update(java.lang.Long,com.ftn.model.dto.InternationalTravelInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.create(com.ftn.model.dto.InternationalTravelInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byIssueDate/{date}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByIssueDate(java.util.Date)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byNumberOfPersons/{numberOfPersons}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByNumberOfPersons(int)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byDurationsInDays/{durationInDays}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByDurationInDays(int)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.update(java.lang.Long,com.ftn.model.dto.PaymentDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.create(com.ftn.model.dto.PaymentDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.update(java.lang.Long,com.ftn.model.dto.PricelistDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.create(com.ftn.model.dto.PricelistDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.update(java.lang.Long,com.ftn.model.dto.RiskDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.create(com.ftn.model.dto.RiskDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.findByName(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.update(java.lang.Long,com.ftn.model.dto.RiskTypeDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.create(com.ftn.model.dto.RiskTypeDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findByName(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.update(java.lang.Long,com.ftn.model.dto.RoadsideAssistanceInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.create(com.ftn.model.dto.RoadsideAssistanceInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byPersonalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByPersonalId(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byCarType/{carType}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByCarType(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byCarBrand/{carBrand}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByCarBrand(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byYearOfManufacture/{yearOfManufacture}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByYearOfManufacture(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byLicencePlateNumber/{licencePlateNumber}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByLicencePlateNumber(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byUndercarriageNumber/{undercarriageNumber}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByUndercarriageNumber(java.lang.String)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.update(java.lang.Long,com.ftn.model.dto.TransactionDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.create(com.ftn.model.dto.TransactionDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.findById(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.update(java.lang.Long,com.ftn.model.dto.UserDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.delete(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.read(java.lang.Long)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.read()
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.create(com.ftn.model.dto.UserDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-01-11 22:43:27 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-11 22:43:27 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-11 22:43:28 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-11 22:43:28 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-01-11 22:43:28 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9010"]
+[INFO ]2018-01-11 22:43:28 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-9010]
+[INFO ]2018-01-11 22:43:28 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-01-11 22:43:28 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9010 (http)
+[INFO ]2018-01-11 22:43:28 com.ftn.ISureDataCenterApplication - Started ISureDataCenterApplication in 13.746 seconds (JVM running for 14.645)
+[INFO ]2018-01-11 22:51:02 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-01-11 22:51:02 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-01-11 22:51:02 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 59 ms
+[INFO ]2018-01-11 23:45:11 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2018-01-11 23:45:11 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Thu Jan 11 22:43:15 CET 2018]; root of context hierarchy
+[INFO ]2018-01-11 23:45:11 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-01-11 23:45:11 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-11 23:45:25 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-70A4T8A with PID 7052 (started by Tea in D:\My stuff\SEP\SEP_REPOSITORY\DC)
+[INFO ]2018-01-11 23:45:25 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2018-01-11 23:45:25 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Thu Jan 11 23:45:25 CET 2018]; root of context hierarchy
+[INFO ]2018-01-11 23:45:25 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2018-01-11 23:45:32 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de35d56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-01-11 23:45:32 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9010 (http)
+[INFO ]2018-01-11 23:45:32 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2018-01-11 23:45:32 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2018-01-11 23:45:32 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-01-11 23:45:32 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 7580 ms
+[INFO ]2018-01-11 23:45:32 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-01-11 23:45:32 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-01-11 23:45:32 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-01-11 23:45:32 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-01-11 23:45:32 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-01-11 23:45:33 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-11 23:45:33 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-01-11 23:45:33 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2018-01-11 23:45:33 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-01-11 23:45:33 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-01-11 23:45:33 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-01-11 23:45:34 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-01-11 23:45:34 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2018-01-11 23:45:37 o.h.tool.hbm2ddl.SchemaExport - HHH000476: Executing import script '/import.sql'
+[INFO ]2018-01-11 23:45:37 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-11 23:45:37 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Thu Jan 11 23:45:25 CET 2018]; root of context hierarchy
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.authorisation.PermissionController.newPermission(com.ftn.model.authorisation.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Permission> com.ftn.controller.authorisation.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.ftn.model.authorisation.Permission>> com.ftn.controller.authorisation.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Permission> com.ftn.controller.authorisation.PermissionController.updatePermission(java.lang.Long,com.ftn.model.authorisation.Permission,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.ftn.model.authorisation.Role>> com.ftn.controller.authorisation.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.newRole(com.ftn.model.authorisation.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.updateRole(java.lang.Long,com.ftn.model.authorisation.Role,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.update(java.lang.Long,com.ftn.model.dto.CustomerDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.create(com.ftn.model.dto.CustomerDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/personalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.findByBirthId(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.update(java.lang.Long,com.ftn.model.dto.HomeInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.create(com.ftn.model.dto.HomeInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/byPersonalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.findByDateOfIssue(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.update(java.lang.Long,com.ftn.model.dto.InsuranceCategoryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.create(com.ftn.model.dto.InsuranceCategoryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.findByName(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.update(java.lang.Long,com.ftn.model.dto.InsurancePolicyDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.create(com.ftn.model.dto.InsurancePolicyDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/byDateOfIssue/{date}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.findByDateOfIssue(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.update(java.lang.Long,com.ftn.model.dto.InternationalTravelInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.create(com.ftn.model.dto.InternationalTravelInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byNumberOfPersons/{numberOfPersons}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByNumberOfPersons(int)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byDurationsInDays/{durationInDays}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByDurationInDays(int)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byIssueDate/{date}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByIssueDate(java.util.Date)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.update(java.lang.Long,com.ftn.model.dto.PaymentDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.create(com.ftn.model.dto.PaymentDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.update(java.lang.Long,com.ftn.model.dto.PricelistDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.create(com.ftn.model.dto.PricelistDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.update(java.lang.Long,com.ftn.model.dto.RiskDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.create(com.ftn.model.dto.RiskDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.findByName(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.update(java.lang.Long,com.ftn.model.dto.RiskTypeDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.create(com.ftn.model.dto.RiskTypeDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findByName(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.update(java.lang.Long,com.ftn.model.dto.RoadsideAssistanceInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.create(com.ftn.model.dto.RoadsideAssistanceInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byLicencePlateNumber/{licencePlateNumber}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByLicencePlateNumber(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byYearOfManufacture/{yearOfManufacture}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByYearOfManufacture(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byUndercarriageNumber/{undercarriageNumber}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByUndercarriageNumber(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byCarBrand/{carBrand}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByCarBrand(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byCarType/{carType}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByCarType(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byPersonalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByPersonalId(java.lang.String)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.update(java.lang.Long,com.ftn.model.dto.TransactionDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.create(com.ftn.model.dto.TransactionDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.findById(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.update(java.lang.Long,com.ftn.model.dto.UserDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.delete(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.read(java.lang.Long)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.read()
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.create(com.ftn.model.dto.UserDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-01-11 23:45:38 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-11 23:45:38 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-11 23:45:38 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-11 23:45:39 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-01-11 23:45:39 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9010"]
+[INFO ]2018-01-11 23:45:39 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-9010]
+[INFO ]2018-01-11 23:45:39 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-01-11 23:45:39 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9010 (http)
+[INFO ]2018-01-11 23:45:39 com.ftn.ISureDataCenterApplication - Started ISureDataCenterApplication in 14.739 seconds (JVM running for 16.441)
+[INFO ]2018-01-11 23:48:48 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-01-11 23:48:48 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-01-11 23:48:48 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 45 ms
+[INFO ]2018-01-12 00:17:50 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2018-01-12 00:17:50 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Thu Jan 11 23:45:25 CET 2018]; root of context hierarchy
+[INFO ]2018-01-12 00:17:50 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-01-12 00:17:50 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-12 01:20:51 com.ftn.ISureDataCenterApplication - Starting ISureDataCenterApplication on DESKTOP-70A4T8A with PID 11152 (started by Tea in D:\My stuff\SEP\SEP_REPOSITORY\DC)
+[INFO ]2018-01-12 01:20:51 com.ftn.ISureDataCenterApplication - No active profile set, falling back to default profiles: default
+[INFO ]2018-01-12 01:20:51 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Fri Jan 12 01:20:51 CET 2018]; root of context hierarchy
+[INFO ]2018-01-12 01:20:51 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2018-01-12 01:20:53 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b59f8ada] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-01-12 01:20:54 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9010 (http)
+[INFO ]2018-01-12 01:20:54 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2018-01-12 01:20:54 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2018-01-12 01:20:54 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-01-12 01:20:54 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2794 ms
+[INFO ]2018-01-12 01:20:55 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-01-12 01:20:55 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-01-12 01:20:55 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-01-12 01:20:55 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-01-12 01:20:55 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-01-12 01:20:55 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-12 01:20:55 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-01-12 01:20:55 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2018-01-12 01:20:55 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-01-12 01:20:55 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-01-12 01:20:55 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-01-12 01:20:56 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-01-12 01:20:57 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2018-01-12 01:20:59 o.h.tool.hbm2ddl.SchemaExport - HHH000476: Executing import script '/import.sql'
+[INFO ]2018-01-12 01:20:59 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-12 01:20:59 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Fri Jan 12 01:20:51 CET 2018]; root of context hierarchy
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.authorisation.PermissionController.newPermission(com.ftn.model.authorisation.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Permission> com.ftn.controller.authorisation.PermissionController.updatePermission(java.lang.Long,com.ftn.model.authorisation.Permission,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.ftn.model.authorisation.Permission>> com.ftn.controller.authorisation.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/permissions/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Permission> com.ftn.controller.authorisation.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.newRole(com.ftn.model.authorisation.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.updateRole(java.lang.Long,com.ftn.model.authorisation.Role,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.ftn.model.authorisation.Role> com.ftn.controller.authorisation.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roles/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.ftn.model.authorisation.Role>> com.ftn.controller.authorisation.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.update(java.lang.Long,com.ftn.model.dto.CustomerDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.create(com.ftn.model.dto.CustomerDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/personalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.findByBirthId(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/customers/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.CustomerController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.update(java.lang.Long,com.ftn.model.dto.HomeInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.create(com.ftn.model.dto.HomeInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeInsurances/byPersonalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.HomeInsuranceController.findByDateOfIssue(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.update(java.lang.Long,com.ftn.model.dto.InsuranceCategoryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.create(com.ftn.model.dto.InsuranceCategoryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.findByName(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insuranceCategories/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsuranceCategoryController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.update(java.lang.Long,com.ftn.model.dto.InsurancePolicyDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.create(com.ftn.model.dto.InsurancePolicyDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/insurancePolicies/byDateOfIssue/{date}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InsurancePolicyController.findByDateOfIssue(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.update(java.lang.Long,com.ftn.model.dto.InternationalTravelInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.create(com.ftn.model.dto.InternationalTravelInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byIssueDate/{date}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByIssueDate(java.util.Date)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byNumberOfPersons/{numberOfPersons}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByNumberOfPersons(int)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/internationalTravelInsurances/byDurationsInDays/{durationInDays}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.InternationalTravelInsuranceController.findByDurationInDays(int)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.update(java.lang.Long,com.ftn.model.dto.PaymentDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.create(com.ftn.model.dto.PaymentDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/payments/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PaymentController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.update(java.lang.Long,com.ftn.model.dto.PricelistDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.create(com.ftn.model.dto.PricelistDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/pricelists/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.PricelistController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.update(java.lang.Long,com.ftn.model.dto.RiskDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.create(com.ftn.model.dto.RiskDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.findByName(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/risks/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.update(java.lang.Long,com.ftn.model.dto.RiskTypeDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.create(com.ftn.model.dto.RiskTypeDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/name/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findByName(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/insuranceCategory/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findRisksByCategory(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/riskTypes/insuranceCategoryRiskTypes/{name}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RiskTypeController.findRiskTypesByCategory(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.update(java.lang.Long,com.ftn.model.dto.RoadsideAssistanceInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.create(com.ftn.model.dto.RoadsideAssistanceInsuranceDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byPersonalId/{personalId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByPersonalId(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byCarType/{carType}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByCarType(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byCarBrand/{carBrand}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByCarBrand(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byYearOfManufacture/{yearOfManufacture}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByYearOfManufacture(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byUndercarriageNumber/{undercarriageNumber}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByUndercarriageNumber(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/roadsideAssistanceInsurances/byLicencePlateNumber/{licencePlateNumber}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.RoadsideAssistanceInsuranceController.findByLicencePlateNumber(java.lang.String)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.update(java.lang.Long,com.ftn.model.dto.TransactionDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.create(com.ftn.model.dto.TransactionDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/transactions/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.TransactionController.findById(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.update(java.lang.Long,com.ftn.model.dto.UserDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.delete(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.read(java.lang.Long)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.read()
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.UserController.create(com.ftn.model.dto.UserDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-01-12 01:21:01 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-12 01:21:01 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-12 01:21:02 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-12 01:21:02 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-01-12 01:21:02 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9010"]
+[INFO ]2018-01-12 01:21:02 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-9010]
+[INFO ]2018-01-12 01:21:02 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-01-12 01:21:02 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9010 (http)
+[INFO ]2018-01-12 01:21:02 com.ftn.ISureDataCenterApplication - Started ISureDataCenterApplication in 11.393 seconds (JVM running for 12.555)
+[INFO ]2018-01-12 01:23:05 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-01-12 01:23:05 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-01-12 01:23:05 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 40 ms
+[INFO ]2018-01-12 01:23:06 o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ]2018-01-12 01:26:23 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2018-01-12 01:26:23 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5aebe890: startup date [Fri Jan 12 01:20:51 CET 2018]; root of context hierarchy
+[INFO ]2018-01-12 01:26:23 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-01-12 01:26:23 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

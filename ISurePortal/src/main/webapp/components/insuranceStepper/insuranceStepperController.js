@@ -264,7 +264,18 @@
                         	};
                         
                         insuranceService.createTransaction(transactionDTO).then(
-                                function (response) {
+                                function (response_transaction) {
+                                	
+                                	if (response_transaction.status == 200) {
+                                		
+                                		
+                                		insuranceService.createInquiry(response_transaction.data).then(
+                                                function (response_inquiry) {
+                                                	
+                                                });
+                                		
+                                	}
+                                
                                 });
                         
                     }

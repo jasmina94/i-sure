@@ -23,7 +23,9 @@ public class PaymentInquiryServiceImpl implements PaymentInquiryService{
         piDTO.setMerchantId(merchant_id);
         piDTO.setMerchantPassword(merchant_password);
         piDTO.setPaymentType(transactionDTO.getPaymentType().getLabel());
-        piDTO.setAmount(transactionDTO.getAmount());
+        //piDTO.setAmount(transactionDTO.getAmount());
+        
+        piDTO.setAmount(1);
         //trebao bi biti Long za sada sam ga kastovao u int
         piDTO.setMerchantOrderId((int)transactionDTO.getId());
 
