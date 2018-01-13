@@ -99,4 +99,20 @@ public class TransactionController {
     	
         return new ResponseEntity<>(transactionDTO, HttpStatus.OK);
     }
+    
+    @Transactional
+    @GetMapping(value = "/payment/{paymentId}")
+    public ResponseEntity findByPaymentId(@PathVariable String paymentId){
+
+    	
+    	TransactionDTO transactionDTO;
+    	
+    	try {
+			transactionDTO = transactionService.findByPaymentId(paymentId);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+    	
+        return new ResponseEntity<>(transactionDTO, HttpStatus.OK);
+    }
 }

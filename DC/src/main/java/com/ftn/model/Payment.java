@@ -25,6 +25,9 @@ import lombok.NoArgsConstructor;
 public class Payment extends Base{
 	
 	@Column(nullable = false)
+	private String paymentServiceId;
+	
+	@Column(nullable = false)
 	private String paymentUrl;
 	
 	@OneToOne(mappedBy = "payment")
@@ -35,6 +38,7 @@ public class Payment extends Base{
 	}
 	
 	public void merge(PaymentDTO paymentDTO) {
+		this.paymentServiceId = paymentDTO.getPaymentId();
 		this.paymentUrl = paymentDTO.getPaymentUrl();
 	}
 }
