@@ -8,5 +8,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 public class PaymentDTO extends BaseDTO{
+	private String paymentId;
 	private String paymentUrl;
 }

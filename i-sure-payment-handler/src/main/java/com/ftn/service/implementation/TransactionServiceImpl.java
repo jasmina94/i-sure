@@ -70,4 +70,12 @@ public class TransactionServiceImpl implements TransactionService{
 
         return response.getBody();
 	}
+
+	@Override
+	public TransactionDTO findByPaymentId(String paymentId) {
+        String URI = dc_home + dc_transactions + "/payment/" + paymentId;
+        ResponseEntity<TransactionDTO> response = restTemplate.getForEntity(URI, TransactionDTO.class);
+
+        return response.getBody();
+    }
 }

@@ -15,4 +15,6 @@ public interface TransactionService {
     void delete(Long id);
 
     TransactionDTO findById(Long id);
+    
+    TransactionDTO findByPaymentId(String paymentId);
 }

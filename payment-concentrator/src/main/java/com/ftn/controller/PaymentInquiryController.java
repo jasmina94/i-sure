@@ -47,42 +47,24 @@ public class PaymentInquiryController {
     
     
     @RequestMapping(method = RequestMethod.GET, value = PAYPAL_CANCEL_URL)
-	public String cancelPay(){
+	public String cancelPay(@RequestParam("paymentId") String paymentId,@RequestParam("token") String token, @RequestParam("PayerID") String payerId){
 		System.out.println("Cancel");
 		return "cancel";
 	}
 	
 	
-	@RequestMapping(method = RequestMethod.GET, value = PAYPAL_SUCCESS_URL)//+"/{paymentId}/{token}/{PayerID}")
+	@RequestMapping(method = RequestMethod.GET, value = PAYPAL_SUCCESS_URL)
 	public String successPay(@RequestParam("paymentId") String paymentId,@RequestParam("token") String token, @RequestParam("PayerID") String payerId){
-		
-			System.out.println("Testniiiiiiiiiiii");
 			
-			System.out.println("Payment id "+paymentId);
-			try {
-				Payment payment = paypalService.executePayment(paymentId, payerId);
-				if(payment.getState().equals("approved")){
-					return "testni";
-				}
-			} catch (PayPalRESTException e) {
-				e.printStackTrace();
+		try {
+			Payment payment = paypalService.executePayment(paymentId, payerId);
+			if(payment.getState().equals("approved")){
+				return "testni";
 			}
-			
-			return "cancel";
+		} catch (PayPalRESTException e) {
+			e.printStackTrace();
+		}
 		
+		return "cancel";
 	}
-	
-	//@RequestMapping(method = RequestMethod.GET, value = PAYPAL_SUCCESS_URL+"/{paymentId}/{token}/{PayerID}")
-//	@GetMapping(value = "/neki")
-//	
-//	public String successPay2(@RequestParam("paymentId") String paymentId,@RequestParam("token") String token, @RequestParam("PayerID") String payerId){
-//		
-//			System.out.println("Testniiiiiiiiiiii");
-//			
-//			System.out.println("Payment id "+paymentId);
-//			
-//			return "testni";
-//			
-//		
-//	}
 }

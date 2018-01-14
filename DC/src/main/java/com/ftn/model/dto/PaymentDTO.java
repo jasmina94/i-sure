@@ -10,17 +10,20 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 public class PaymentDTO extends BaseDTO{
-	private String paymentUrl;
 	
+	private String paymentId;
+	private String paymentUrl;
 	private TransactionDTO transaction;
 	
 	public PaymentDTO(Payment payment) {
 		super(payment);
+		this.paymentId = payment.getPaymentServiceId();
 		this.paymentUrl = payment.getPaymentUrl();
 	}
 	
 	public Payment construct() {
 		final Payment payment = new Payment(this);
+		payment.setPaymentServiceId(paymentId);
 		payment.setPaymentUrl(paymentUrl);
 		return payment;
 	}

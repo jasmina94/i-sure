@@ -20,6 +20,7 @@ import com.ftn.model.dto.PaymentDTO;
 import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
 import com.ftn.model.dto.TransactionDTO;
+import com.ftn.model.dto.TransactionStatus;
 import com.ftn.service.PaymentInquiryService;
 import com.ftn.service.PaymentService;
 import com.ftn.service.TransactionService;
@@ -66,6 +67,7 @@ public class PaymentInquiryController {
                 PaymentInquiryInfoDTO.class);
         
         PaymentDTO payment = new PaymentDTO();
+        payment.setPaymentId(response.getBody().getPaymentId());
         payment.setPaymentUrl(response.getBody().getPaymentUrl());
         payment = paymentService.create(payment);
         
@@ -73,5 +75,24 @@ public class PaymentInquiryController {
         transactionService.update(transactionDTO.getId(), transactionDTO);
         
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+    }
+    
+    @PostMapping(value = "success")
+    public ResponseEntity successPay(HttpEntity<String> paymentId) {
+    	TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId.getBody());
+    	transactionDTO.setStatus(TransactionStatus.BOOKED);
+    	transactionService.update(transactionDTO.getId(), transactionDTO);
+    	
+    	return new ResponseEntity<>(HttpStatus.OK);
+    }
+    
+    @PostMapping(value = "cancel")
+    public ResponseEntity cancelPay(HttpEntity<String> paymentId) {
+    	
+    	TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId.getBody());
+    	transactionDTO.setStatus(TransactionStatus.REVERSED);
+    	transactionService.update(transactionDTO.getId(), transactionDTO);
+    	
+    	return new ResponseEntity<>(HttpStatus.OK);
     }
 }
