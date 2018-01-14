@@ -96,7 +96,7 @@ public class PayPalServiceImpl implements PayPalService {
 
 		// privremeno
 		PaymentInquiryInfoDTO piInfoDTO = new PaymentInquiryInfoDTO();
-		piInfoDTO.setPaymentId(payment.getId());
+		piInfoDTO.setPaymentId(p.getId());
 		piInfoDTO.setPaymentUrl(approval_url);
 
 		return piInfoDTO;

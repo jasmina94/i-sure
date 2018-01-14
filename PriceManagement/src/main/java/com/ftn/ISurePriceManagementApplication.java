@@ -21,7 +21,7 @@ public class ISurePriceManagementApplication {
         String[] beanNames = ctx.getBeanDefinitionNames();
         Arrays.sort(beanNames);
 
-        StringBuilder sb = new StringBuilder("Application beans:\n");
+        StringBuilder sb = new StringBuilder("Application bean:\n");
         for (
                 String beanName : beanNames)
 

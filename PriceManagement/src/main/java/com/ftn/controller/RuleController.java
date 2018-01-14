@@ -21,13 +21,9 @@ public class RuleController {
 
     @Autowired
     private AbstractApplicationContext context;
-
-    private final RuleServiceImpl ruleService;
-
+    
     @Autowired
-    public RuleController(RuleServiceImpl ruleService) {
-        this.ruleService = ruleService;
-    }
+    private RuleServiceImpl ruleService;
 
     @RequestMapping(value = "/ruleTest", method = RequestMethod.GET, produces = "application/json")
     public User getQuestions(@RequestParam(required = true) String name, @RequestParam(required = true) int number) {
