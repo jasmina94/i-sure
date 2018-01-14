@@ -20,6 +20,7 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("/acquirer")
+@CrossOrigin(origins = "*")
 public class AcquirerController {
 
     @Autowired

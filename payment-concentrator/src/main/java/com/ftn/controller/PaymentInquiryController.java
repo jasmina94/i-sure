@@ -3,6 +3,7 @@ package com.ftn.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import com.ftn.model.dto.PaymentInquiryInfoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,8 +41,8 @@ public class PaymentInquiryController {
     public ResponseEntity sendPaymentInquiry(@Valid @RequestBody PaymentInquiryDTO piDTO, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-        
-        return new ResponseEntity<>(paymentService.sendPaymentInquiry(piDTO, request), HttpStatus.OK);
+		PaymentInquiryInfoDTO paymentInquiryInfoDTO = paymentService.sendPaymentInquiry(piDTO, request);
+        return new ResponseEntity<>(paymentInquiryInfoDTO, HttpStatus.OK);
     }
     
     

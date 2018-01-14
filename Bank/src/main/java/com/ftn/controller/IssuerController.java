@@ -19,6 +19,7 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("/issuer")
+@CrossOrigin(origins = "*")
 public class IssuerController {
 
     @Autowired

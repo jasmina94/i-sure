@@ -35,4 +35,6 @@ public class PaymentInquiryDTO {
 
     @NotNull
     private String errorUrl;
+
+    private String paymentType;
 }

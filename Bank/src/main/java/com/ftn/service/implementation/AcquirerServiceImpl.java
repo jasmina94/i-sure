@@ -57,7 +57,7 @@ public class AcquirerServiceImpl implements AcquirerService {
         Payment payment = onlinePaymentService.create(paymentInquiryDTO);
         PaymentInquiryInfoDTO paymentInquiryInfoDTO = new PaymentInquiryInfoDTO();
         paymentInquiryInfoDTO.setPaymentUrl(payment.getUrl());
-        paymentInquiryInfoDTO.setPaymentId(payment.getId());
+        paymentInquiryInfoDTO.setPaymentId(payment.getId().toString());
         return paymentInquiryInfoDTO;
     }
 

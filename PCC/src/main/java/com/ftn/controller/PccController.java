@@ -21,6 +21,7 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("/pcc")
+@CrossOrigin(origins = "*")
 public class PccController {
 
     @Autowired

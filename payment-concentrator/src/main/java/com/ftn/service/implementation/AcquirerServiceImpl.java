@@ -1,6 +1,9 @@
 package com.ftn.service.implementation;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,17 +25,10 @@ public class AcquirerServiceImpl implements AcquirerService	{
 
 	@Override
 	public PaymentInquiryInfoDTO sendPaymentInquiry(PaymentInquiryDTO piDTO) {
-//      za sada zakomentarisano
-//      ResponseEntity<PaymentInquiryInfoDTO> response = restTemplate.postForEntity(bank_home + bank_acquierer, new HttpEntity<>(piDTO),
-//              PaymentInquiryInfoDTO.class);
-      
-//      return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
-      //privremeno
-      PaymentInquiryInfoDTO piInfoDTO = new PaymentInquiryInfoDTO();
-      piInfoDTO.setPaymentId("1");
-      piInfoDTO.setPaymentUrl("some_url");
-      
-      return piInfoDTO;
+	    String url = bank_home + bank_acquierer + "/inquiry";
+        ResponseEntity<PaymentInquiryInfoDTO> response = restTemplate.postForEntity(url, new HttpEntity<>(piDTO),
+              PaymentInquiryInfoDTO.class);
+		return response.getBody();
 	}
 
 }

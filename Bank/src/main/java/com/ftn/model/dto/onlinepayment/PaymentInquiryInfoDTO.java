@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 public class PaymentInquiryInfoDTO {
 
     @NotNull
-    private long paymentId;
+    private String paymentId;
 
     @NotNull
     private String paymentUrl;
