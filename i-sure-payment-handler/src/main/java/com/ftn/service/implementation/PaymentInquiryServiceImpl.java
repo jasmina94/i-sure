@@ -24,14 +24,15 @@ public class PaymentInquiryServiceImpl implements PaymentInquiryService{
         piDTO.setMerchantPassword(merchant_password);
         piDTO.setPaymentType(transactionDTO.getPaymentType().getLabel());
         //piDTO.setAmount(transactionDTO.getAmount());
-        
+
         piDTO.setAmount(1);
+
         //trebao bi biti Long za sada sam ga kastovao u int
         piDTO.setMerchantOrderId((int)transactionDTO.getId());
 
         piDTO.setMerchantTimestamp(transactionDTO.getTimestamp());
         //koji url da stavim? - ovo je neka stranica koja treba da se napravi na portalu
-        piDTO.setErrorUrl("tmp");
+        piDTO.setErrorUrl("neka stranica u hendleru");
 
 		return piDTO;
 	}

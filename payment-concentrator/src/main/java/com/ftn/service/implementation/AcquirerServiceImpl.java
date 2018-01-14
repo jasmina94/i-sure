@@ -29,7 +29,7 @@ public class AcquirerServiceImpl implements AcquirerService	{
 //      return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
       //privremeno
       PaymentInquiryInfoDTO piInfoDTO = new PaymentInquiryInfoDTO();
-      piInfoDTO.setPaymentId(1);
+      piInfoDTO.setPaymentId("1");
       piInfoDTO.setPaymentUrl("some_url");
       
       return piInfoDTO;

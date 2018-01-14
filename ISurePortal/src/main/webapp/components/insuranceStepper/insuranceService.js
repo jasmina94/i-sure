@@ -4,9 +4,12 @@
 (function() {
     'use strict';
     var url = "http://localhost:8090/insurance/";
+
     var urlTransactions = "http://localhost:8090/transactions/"
    // var urlInquiries = "http://localhost:9030/inquiries" 
     	
+//    var urlTransactions = "http://localhost:9030/transactions/"
+    var urlInquiries = "http://localhost:9030/inquiries/"
 
     angular.module('iSure').factory('insuranceService', function insuranceService($http) {
 
@@ -24,6 +27,7 @@
             }
         
         insuranceService.createInquiry = function(transactionDTO) {
+
             return $http.post(urlTransactions + 'inquiries',transactionDTO);
          	//return $http.get(urlTransactions + "transactions");
              }
