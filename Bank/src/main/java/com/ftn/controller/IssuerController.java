@@ -36,7 +36,7 @@ public class IssuerController {
         this.restTemplate = new RestTemplate();
     }
 
-    @Transactional
+
     @PostMapping
     public ResponseEntity receiveOrderFromPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())

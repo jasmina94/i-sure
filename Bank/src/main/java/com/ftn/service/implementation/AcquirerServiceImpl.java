@@ -123,8 +123,8 @@ public class AcquirerServiceImpl implements AcquirerService {
             } else {
                 transaction.setStatus(Transaction.Status.REVERSED);
                 paymentCheckout.setErrorUrl(errorUrl);
+                transactionService.update(transaction.getId(), transaction);
             }
-            transactionService.update(transaction.getId(), transaction);
         } else {
             paymentCheckout.setPaymentId(0);
             paymentCheckout.setMerchantOrderId(0);
@@ -132,4 +132,22 @@ public class AcquirerServiceImpl implements AcquirerService {
         }
         return paymentCheckout;
     }
+
+    @Override
+    public String getBankName() {
+        String bankName = environmentProperties.getBankName();
+        return bankName;
+    }
+
+    @Override
+    public double getAmountForPaymentId(long paymentId) {
+        double amount = 0.0;
+        Payment payment = onlinePaymentService.findByPaymentId(paymentId);
+        if(payment != null){
+            amount = payment.getAmount();
+        }
+        return amount;
+    }
+
+
 }

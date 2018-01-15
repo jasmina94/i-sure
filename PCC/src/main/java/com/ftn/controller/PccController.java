@@ -36,7 +36,7 @@ public class PccController {
         this.bankService = bankService;
     }
 
-    @Transactional
+
     @PostMapping
     public ResponseEntity receiveOrder(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO,
                                        BindingResult bindingResult, HttpServletRequest request) {
@@ -59,7 +59,7 @@ public class PccController {
         return new ResponseEntity<>(paymentOrderDTO, HttpStatus.OK);
     }
 
-    @Transactional
+
     @PostMapping(value = "/response")
     public ResponseEntity receiveResponse(@Valid @RequestBody PaymentResponseInfoDTO paymentResponseInfoDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())

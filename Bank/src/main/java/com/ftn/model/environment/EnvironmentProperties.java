@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * Created by Jasmina on 24/06/2017.
  */
 @Component
-@ConfigurationProperties(prefix="environment")
+@ConfigurationProperties(prefix = "environment")
 public class EnvironmentProperties {
 
     private String swiftCode;
@@ -20,12 +20,14 @@ public class EnvironmentProperties {
 
     private String concentratorUrl;
 
+    private String bankName;
 
-    public void setSwiftCode(String swiftCode){
+
+    public void setSwiftCode(String swiftCode) {
         this.swiftCode = swiftCode;
     }
 
-    public String getSwiftCode(){
+    public String getSwiftCode() {
         return this.swiftCode;
     }
 
@@ -59,5 +61,13 @@ public class EnvironmentProperties {
 
     public void setConcentratorUrl(String concentratorUrl) {
         this.concentratorUrl = concentratorUrl;
+    }
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
     }
 }

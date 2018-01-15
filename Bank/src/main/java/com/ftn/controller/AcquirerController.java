@@ -53,7 +53,7 @@ public class AcquirerController {
         return response;
     }
 
-    @Transactional
+
     @PostMapping(value = "/order/{paymentId}")
     public ResponseEntity processOrder(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, @PathVariable long paymentId, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
@@ -73,7 +73,7 @@ public class AcquirerController {
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
     }
 
-    @Transactional
+
     @PostMapping(value = "/checkout")
     public ResponseEntity processResponse(@Valid @RequestBody PaymentResponseInfoDTO paymentResponseInfoDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
@@ -89,5 +89,23 @@ public class AcquirerController {
         ResponseEntity<PaymentCheckoutDTO> response = restTemplate.exchange(concentratorUrl, HttpMethod.POST, entity, PaymentCheckoutDTO.class);
 
         return new ResponseEntity<>(paymentResponseInfoDTO, HttpStatus.OK);
+    }
+
+    @Transactional
+    @GetMapping(value = "/name")
+    public ResponseEntity getBankName(){
+        String bankName = acquirerService.getBankName();
+        BankNameDTO bankNameDTO = new BankNameDTO();
+        bankNameDTO.setName(bankName);
+        return new ResponseEntity(bankNameDTO, HttpStatus.OK);
+    }
+
+    @Transactional
+    @GetMapping(value = "/amount/{paymentId}")
+    public ResponseEntity getAmountForPayment(@PathVariable long paymentId){
+        double amount = acquirerService.getAmountForPaymentId(paymentId);
+        AmountDTO amountDTO = new AmountDTO();
+        amountDTO.setAmount(amount);
+        return new ResponseEntity(amountDTO, HttpStatus.OK);
     }
 }

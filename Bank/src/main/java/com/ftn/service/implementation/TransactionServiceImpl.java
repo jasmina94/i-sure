@@ -50,8 +50,8 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction update(Long id, Transaction transaction) {
-        Transaction existing = transactionRepository.findById(id).orElseThrow(NotFoundException::new);
-        try{
+        Transaction existing = transactionRepository.findById(id);
+        if(existing != null){
             existing.setTimestamp(transaction.getTimestamp());
             existing.setType(transaction.getType());
             existing.setStatus(transaction.getStatus());
@@ -59,7 +59,7 @@ public class TransactionServiceImpl implements TransactionService {
             existing.setAccount(transaction.getAccount());
             existing.setPayment(transaction.getPayment());
             existing = transactionRepository.save(existing);
-        }catch (NotFoundException exception){
+        }else{
             existing = null;
         }
         return existing;
@@ -72,11 +72,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction findById(Long id) {
-        Transaction transaction = transactionRepository.findById(id).orElseThrow(NotFoundException::new);
-        try{
-            return transaction;
-        }catch (NotFoundException exception){
-            return null;
-        }
+        Transaction transaction = transactionRepository.findById(id);
+        return transaction;
     }
 }

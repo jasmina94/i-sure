@@ -59,7 +59,7 @@ public class OnlinePaymentServiceImpl implements OnlinePaymentService {
 
     private String generatePaymentUrl(Long paymentId){
         String paymentUrl = environmentProperties.getSelfUrl();
-        paymentUrl += "acquirer/order/" + paymentId;
+        paymentUrl += "#/acquirer/order/" + paymentId;
         return paymentUrl;
     }
 }
