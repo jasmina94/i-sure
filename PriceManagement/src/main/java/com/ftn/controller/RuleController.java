@@ -2,13 +2,12 @@ package com.ftn.controller;
 
 import com.ftn.model.User;
 import com.ftn.service.implementation.RuleServiceImpl;
+import org.apache.maven.shared.invoker.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.apache.maven.shared.invoker.*;
 
 import java.io.*;
 import java.util.Arrays;
