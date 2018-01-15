@@ -24,12 +24,19 @@ public class Account {
     @Column
     private double balance = 0.0;
 
+    @Column
+    private double reserved = 0.0;
+
     @ManyToOne
     private Bank bank;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "account")
+    @OneToMany(mappedBy = "account")
     private List<DailyAccountState> dailyAccountStates;
 
-    @Column
-    private double reserved = 0.0;
+    @OneToMany(mappedBy = "account")
+    private List<Card> cards;
+
+    @OneToMany(mappedBy = "account")
+    private List<Transaction> transactions;
+
 }

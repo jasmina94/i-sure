@@ -9,3 +9,6 @@ INSERT INTO `isuredatacenter`.`risk` (`active`, `created`, `updated`, `risk_name
 INSERT INTO `isuredatacenter`.`pricelist` (`active`, `created`, `updated`, `date_from`, `date_to`) VALUES (TRUE, NOW(), null, '2017-11-1', '2018-1-1');
 
 INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'P1');
+
+INSERT INTO `isuredatacenter`.`payment_type` (`active`, `created`, `updated`, `label`) VALUES (TRUE, NOW(), null, 'acquirer');
+INSERT INTO `isuredatacenter`.`payment_type` (`active`, `created`, `updated`, `label`) VALUES (TRUE, NOW(), null, 'paypal');

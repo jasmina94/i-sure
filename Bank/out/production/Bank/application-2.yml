@@ -19,3 +19,6 @@ spring:
 environment:
     swiftCode: VBUBRS22
     nbsUrl: http://localhost:8094/ws
+    selfUrl: http://localhost:9020/
+    concentratorUrl: http://localhost:9035/
+    pccUrl: http://localhost:9025/pcc

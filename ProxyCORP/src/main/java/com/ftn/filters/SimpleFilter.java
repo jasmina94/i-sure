@@ -1,10 +1,9 @@
 package com.ftn.filters;
 
+import com.netflix.zuul.ZuulFilter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
 
 public class SimpleFilter extends ZuulFilter {
 

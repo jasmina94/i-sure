@@ -11,16 +11,17 @@ import org.springframework.web.client.RestTemplate;
  * Created by Jasmina on 16/11/2017.
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Value("${dc.adress}")
     private String URI;
 
+    private RestTemplate restTemplate = new RestTemplate();
+
     @Override
     public UserDTO getUserById(Long id) {
-        URI += "/" + id.toString();
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<UserDTO> response = restTemplate.getForEntity(URI, UserDTO.class);
+
+        ResponseEntity<UserDTO> response = restTemplate.getForEntity(URI + id.toString(), UserDTO.class);
 
         if(response == null) {
             System.out.println("Response is null.");

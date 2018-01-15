@@ -1,15 +1,22 @@
 package com.ftn.service.implementation;
 
 import com.ftn.exception.NotFoundException;
+import com.ftn.model.Risk;
 import com.ftn.model.RiskType;
+import com.ftn.model.dto.RiskDTO;
 import com.ftn.model.dto.RiskTypeDTO;
+import com.ftn.repository.InsuranceCategoryRepository;
 import com.ftn.repository.RiskRepository;
 import com.ftn.repository.RiskTypeRepository;
+import com.ftn.service.InsuranceCategoryService;
 import com.ftn.service.RiskTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -20,9 +27,12 @@ public class RiskTypeServiceImpl implements RiskTypeService{
 
     private final RiskTypeRepository riskTypeRepository;
 
+    private final InsuranceCategoryRepository insuranceCategoryRepository;
+
     @Autowired
-    public RiskTypeServiceImpl(RiskTypeRepository riskTypeRepository){
+    public RiskTypeServiceImpl(RiskTypeRepository riskTypeRepository, InsuranceCategoryRepository insuranceCategoryRepository){
         this.riskTypeRepository = riskTypeRepository;
+        this.insuranceCategoryRepository = insuranceCategoryRepository;
     }
 
     @Override
@@ -61,5 +71,18 @@ public class RiskTypeServiceImpl implements RiskTypeService{
     public RiskTypeDTO findByName(String name) {
         final RiskType riskType = riskTypeRepository.findByRiskTypeName(name).orElseThrow(NotFoundException::new);
         return new RiskTypeDTO(riskType);
+    }
+
+    @Override
+     public Map<String, List<RiskDTO>> findByCategory(String name) {
+        final List<RiskTypeDTO> riskTypes = riskTypeRepository.findByInsuranceCategory(insuranceCategoryRepository.findByCategoryName(name).get())
+                .stream().map(RiskTypeDTO::new).collect(Collectors.toList());
+        return riskTypes.stream().collect(Collectors.toMap(RiskTypeDTO::getRiskTypeName, RiskTypeDTO::getRisks));
+    }
+
+    @Override
+    public List<RiskTypeDTO> findRiskTypesByCategory(String name) {
+        return riskTypeRepository.findByInsuranceCategory(insuranceCategoryRepository.findByCategoryName(name).get())
+                .stream().map(RiskTypeDTO::new).collect(Collectors.toList());
     }
 }

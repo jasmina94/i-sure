@@ -19,9 +19,11 @@ public class RoadsideAssistanceInsuranceServiceImpl implements RoadsideAssistanc
     @Value("${dc.roadside.assistance.insurance}")
     private String URI;
 
+    RestTemplate restTemplate = new RestTemplate();
+
     @Override
     public List<RoadsideAssistanceInsuranceDTO> readAll() {
-        RestTemplate restTemplate = new RestTemplate();
+
         ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI, RoadsideAssistanceInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
@@ -29,7 +31,7 @@ public class RoadsideAssistanceInsuranceServiceImpl implements RoadsideAssistanc
 
     @Override
     public RoadsideAssistanceInsuranceDTO create(RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO) {
-        RestTemplate restTemplate = new RestTemplate();
+
         ResponseEntity<RoadsideAssistanceInsuranceDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(roadsideAssistanceInsuranceDTO), RoadsideAssistanceInsuranceDTO.class);
 
         return response.getBody();
@@ -38,83 +40,74 @@ public class RoadsideAssistanceInsuranceServiceImpl implements RoadsideAssistanc
     @Override
     public RoadsideAssistanceInsuranceDTO update(Long id,
                                                  RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
+
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
 
-        ResponseEntity<RoadsideAssistanceInsuranceDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH, new HttpEntity<>(roadsideAssistanceInsuranceDTO), RoadsideAssistanceInsuranceDTO.class);
+        ResponseEntity<RoadsideAssistanceInsuranceDTO> response = restTemplate.exchange(URI + id, HttpMethod.PATCH, new HttpEntity<>(roadsideAssistanceInsuranceDTO), RoadsideAssistanceInsuranceDTO.class);
 
         return response.getBody();
     }
 
     @Override
     public void delete(Long id) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(URI);
+
+        restTemplate.delete(URI + id);
     }
 
     @Override
     public RoadsideAssistanceInsuranceDTO findById(Long id) {
-        URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RoadsideAssistanceInsuranceDTO> response = restTemplate.getForEntity(URI, RoadsideAssistanceInsuranceDTO.class);
+
+        ResponseEntity<RoadsideAssistanceInsuranceDTO> response = restTemplate.getForEntity(URI + id, RoadsideAssistanceInsuranceDTO.class);
 
         return response.getBody();
     }
 
     @Override
     public List<RoadsideAssistanceInsuranceDTO> findByPersonalId(String personalId) {
-        URI += "/byPersonalId/" + personalId;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI, RoadsideAssistanceInsuranceDTO[].class);
+
+        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI + "byPersonalId/" + personalId, RoadsideAssistanceInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public List<RoadsideAssistanceInsuranceDTO> findByYearOfManufacture(String yearOfManufacture) {
-        URI += "/byYearOfManufacture/" + yearOfManufacture;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI, RoadsideAssistanceInsuranceDTO[].class);
+
+        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI + "byYearOfManufacture/" + yearOfManufacture, RoadsideAssistanceInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public List<RoadsideAssistanceInsuranceDTO> findByLicencePlateNumber(String licencePlateNumber) {
-        URI += "/byLicencePlateNumber/" + licencePlateNumber;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI, RoadsideAssistanceInsuranceDTO[].class);
+
+        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI + "byLicencePlateNumber/" + licencePlateNumber, RoadsideAssistanceInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public List<RoadsideAssistanceInsuranceDTO> findByUndercarriageNumber(String undercarriageNumber) {
-        URI += "/byUndercarriageNumber/" + undercarriageNumber;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI, RoadsideAssistanceInsuranceDTO[].class);
+
+        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI + "byUndercarriageNumber/" + undercarriageNumber, RoadsideAssistanceInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public List<RoadsideAssistanceInsuranceDTO> findByCarBrand(String carBrand) {
-        URI += "/byCarBrand/" + carBrand;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI, RoadsideAssistanceInsuranceDTO[].class);
+
+        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI + "byCarBrand/" + carBrand, RoadsideAssistanceInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public List<RoadsideAssistanceInsuranceDTO> findByCarType(String carType) {
-        URI += "/byCarType/" + carType;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI, RoadsideAssistanceInsuranceDTO[].class);
+
+        ResponseEntity<RoadsideAssistanceInsuranceDTO[]> response = restTemplate.getForEntity(URI + "byCarBrand/" + carType, RoadsideAssistanceInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
