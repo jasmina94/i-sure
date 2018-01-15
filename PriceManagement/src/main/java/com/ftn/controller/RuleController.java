@@ -28,13 +28,8 @@ public class RuleController {
 
     @RequestMapping(value = "/ruleTest", method = RequestMethod.GET, produces = "application/json")
     public User getQuestions(@RequestParam(required = true) String name, @RequestParam(required = true) int number) {
-        //ClassLoader classLoader = getClass().getClassLoader();
-        //File file = new File(classLoader.getResource("com/ftn/isureprices/rules/ISure.drl").getFile());
-        //System.out.println(file);
         User user = new User(name, number);
-
         System.out.println("User request received for: " + user);
-
         User user2 = ruleService.getUser(user);
 
         return user2;
@@ -42,7 +37,7 @@ public class RuleController {
 
     @RequestMapping(value = "/openFile", method = RequestMethod.GET)
     public String openFile() throws IOException {
-        File file = new File("/Users/zlatan/Documents/GIT/i-sure/drools-spring-kjar/src/main/resources/drools/spring/rules/ISure.drl");
+        File file = new File("/Users/zlatan/Documents/GIT/i-sure/drools-spring-kjar/src/main/resources/com/ftn/isureprices/rules/ISure.drl");
         return readRuleFile(file);
     }
 
@@ -50,7 +45,7 @@ public class RuleController {
     public void saveFile(String tekst) throws MavenInvocationException {
         System.out.println(tekst);
 
-        File file = new File("/Users/zlatan/Documents/GIT/i-sure/drools-spring-kjar/src/main/resources/drools/spring/rules/ISure.drl");
+        File file = new File("/Users/zlatan/Documents/GIT/i-sure/drools-spring-kjar/src/main/resources/com/ftn/isureprices/rules/ISure.drl");
         saveRuleFile(tekst, file);
 
         InvocationRequest request = new DefaultInvocationRequest();

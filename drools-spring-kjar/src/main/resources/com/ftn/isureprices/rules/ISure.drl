@@ -15,7 +15,7 @@ rule "ManjeOd10Onda15"
 lock-on-active
     no-loop
     when
-       $i: User(getNumber() < 10)
+       $i: User(getNumber() < 9)
     then
        modify ($i) {setNumber(1)}
     end
