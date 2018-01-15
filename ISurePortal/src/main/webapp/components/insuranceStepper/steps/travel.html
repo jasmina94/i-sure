@@ -1,6 +1,6 @@
 <md-step label="Traveling details" md-complete="vm.stepOne.completed">
     <md-step-body>
-        <form name="step1">
+        <form name="vm.dummy.step1">
             <md-content class="md-padding">
                 <div layout="row" layout-align="center top">
                     <div flex="nogrow" style="width: 700px;margin-left: 100px;">
@@ -99,10 +99,10 @@
                 <div flex layout="row" layout-align="end top">
                     <md-button type="button" class="md-warn" ng-click="vm.cancel()">Back to home page</md-button>
                     <div>
-                        <md-button ng-disabled="step1.$invalid" ng-click="vm.submitCurrentStep()" class="gold-btn">
+                        <md-button ng-disabled="vm.dummy.step1.$invalid" ng-click="vm.submitCurrentStep()" class="gold-btn">
                             ENTER TRAVELERS INFO
                         </md-button>
-                        <md-tooltip ng-if="step1.$invalid" md-direction="bottom">YOU NEED TO ENTER DATE OF TRAVEL</md-tooltip>
+                        <md-tooltip ng-if="vm.dummy.step1.$invalid" md-direction="bottom">YOU NEED TO ENTER DATE OF TRAVEL</md-tooltip>
                     </div>
                 </div>
             </md-step-actions>

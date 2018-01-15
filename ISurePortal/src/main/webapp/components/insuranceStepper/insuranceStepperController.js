@@ -6,6 +6,7 @@
     app.controller('insuranceStepperController', function ($scope, insuranceService, ngNotify, $state) {
 
         var vm = this;
+        vm.dummy = {};
 
         init();
 
@@ -13,6 +14,7 @@
             vm.selectedStep = 0;
             vm.maxStep = 6;
             vm.showBusyText = false;
+            vm.tabs=[];
 
             vm.stepTwo = {
                 completed: false, optional: false,
@@ -31,7 +33,7 @@
                                 selectedAmount: vm.travelRisks['Value'][0]
                             }
                         };
-                    }
+                        vm.tabs.push(""+1);                    }
                 });
 
             insuranceService.getTravelInsuranceRisks("Home").then(
@@ -40,7 +42,7 @@
                         console.log(response.data);
                         vm.homeRisks = response.data;
                         vm.stepThree = {
-                            completed: false, optional: true, isSkiped: false,
+                            completed: false, optional: true, isSkiped: true,
                             data: {
                                 selectedArea: vm.homeRisks['Surface area'][0],
                                 selectedAge: vm.homeRisks['Property age'][0],
@@ -57,7 +59,7 @@
                         console.log(response.data);
                         vm.carRisks = response.data;
                         vm.stepFour = {
-                            completed: false, optional: true, isSkiped: false,
+                            completed: false, optional: true, isSkiped: true,
                             data: {
                                 selectedAccommodation: vm.carRisks['Accommodation'][0],
                                 selectedRepair: vm.carRisks['Repair'][0],
@@ -85,8 +87,8 @@
             switch (vm.selectedStep) {
                 case 0: {vm.stepOne.completed = true; vm.addTabs();} break;
                 case 1: vm.stepTwo.completed = true; break;
-                case 2: vm.stepThree.completed = true; break;
-                case 3: vm.stepFour.completed = true; break;
+                case 2: {vm.stepThree.completed = true; vm.stepThree.isSkiped = false}; break;
+                case 3: {vm.stepFour.completed = true; vm.stepFour.isSkiped = false}; break;
             }
 
             vm.selectedStep = vm.selectedStep + 1;
@@ -128,10 +130,8 @@
         function sumNumberOfPeople(){
             var people = vm.stepOne.data.numberOfPeople;
             var totalPeople = 0;
-            var value = 0;
             for(var num in people) {
-                value = people[num];
-                totalPeople += value;
+                totalPeople += people[num];
             }
             return totalPeople;
         }
@@ -140,7 +140,6 @@
             var pattern = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
             return pattern;
         }
-
 
         vm.createInsurancePolicy = function(){
 
