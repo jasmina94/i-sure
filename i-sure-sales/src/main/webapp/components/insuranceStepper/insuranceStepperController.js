@@ -170,7 +170,9 @@
 
             var travelRisks = [];
             travelRisks.push(vm.stepOne.data.selectedRegion);
-            travelRisks.push(vm.stepOne.data.selectedSport);
+            if(vm.playSport){
+            	travelRisks.push(vm.stepOne.data.selectedSport);
+            }
             travelRisks.push(vm.stepOne.data.selectedAmount);
 
             var internationalTravelInsuranceDTO =
