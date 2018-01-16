@@ -99,8 +99,8 @@ public class AcquirerServiceImpl implements AcquirerService {
         paymentCheckout.setAcquirerTimestamp(paymentResponseInfoDTO.getAcquirerTimestamp());
 
         String selfUrl = environmentProperties.getSelfUrl();
-        String errorUrl = selfUrl + "acquirer/error";
-        String successUrl = selfUrl + "acquirer/success";
+        String errorUrl = selfUrl + "#/acquirer/error";
+        String successUrl = selfUrl + "#/acquirer/success";
 
         Transaction transaction = transactionService.findById(acquirerOrderId);
         if (transaction != null) {
