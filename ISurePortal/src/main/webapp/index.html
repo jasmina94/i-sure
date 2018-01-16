@@ -6,7 +6,7 @@
 -->
 <html ng-app="iSure" ng-controller="indexController as indexVm">
 <head>
-    <title>ISure</title>
+    <title>ISure Portal</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -36,10 +36,12 @@
     <script src="components/insuranceStepper/insuranceService.js"></script>
     <script src="bower_components/md-steppers/dist/md-steppers.js"></script>
     <script src="bower_components/ng-notify/src/scripts/ng-notify.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css"/>
+    <link rel="stylesheet" href="bower_components/toastr/toastr.min.css"/>
 </head>
 <body>
-<div id="header"
-     style="background-image:url('assets/images/1.png');width:100%;height:40px;background-repeat: round;position:fixed">
+<div id="header">
     <a class="shoppingCart" ng-click="indexVm.getInsurance()"><span class="glyphicon glyphicon-shopping-cart"></span>Get it now</a>
 </div>
  

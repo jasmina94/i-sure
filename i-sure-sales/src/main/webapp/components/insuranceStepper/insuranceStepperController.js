@@ -247,11 +247,12 @@
             }
             insuranceService.createInsurancePolicy(insurancePolicyDTO).then(
                 function (response) {
-                    if (response.status == 200) {
-                        ngNotify.set('Know you have your umbrella.' , {
-                            type : 'success'
-                        });
+                	if (response.status == 200) {
+                        toastr.success("Know you have your umbrella.",'<i>Success</i>');
                         console.log(response.data);
+                    }
+                    else{
+                    	toastr.error("Something got wrong with policy. Try again.",'<i>Error</i>');
                     }
                 })
         }
