@@ -1,5 +1,5 @@
 <md-step label="Car insurance"
-         md-complete="vm.stepFour.completed"> <md-step-body>
+         md-complete="!vm.dummy.step4.$invalid && !vm.stepFour.isSkiped"> <md-step-body>
     <form name="vm.dummy.step4">
         <md-content class="md-padding">
             <div layout="row" layout-align="center top">
@@ -119,7 +119,7 @@
                     </md-tooltip>
                 </div>
                 <div>
-                    <md-button type="submit" ng-disabled="step4.$invalid" class="gold-btn"
+                    <md-button type="submit" ng-disabled="vm.dummy.step4.$invalid" class="gold-btn"
                                ng-click="vm.submitCurrentStep()">ADD THIS CAR INSURANCE
                     </md-button>
                     <md-tooltip ng-if="vm.dummy.step4.$invalid" md-direction="bottom">YOU NEED TO ENTER DATA FOR CAR

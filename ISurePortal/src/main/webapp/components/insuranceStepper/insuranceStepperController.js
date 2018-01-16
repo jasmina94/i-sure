@@ -82,15 +82,14 @@
             var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
             return diffDays;
         };
-        vm.submitCurrentStep = function submitCurrentStep() {
-            //validation goes here , if its satisfied then it's this
-            switch (vm.selectedStep) {
-                case 0: {vm.stepOne.completed = true; vm.addTabs();} break;
-                case 1: vm.stepTwo.completed = true; break;
-                case 2: {vm.stepThree.completed = true; vm.stepThree.isSkiped = false}; break;
-                case 3: {vm.stepFour.completed = true; vm.stepFour.isSkiped = false}; break;
-            }
 
+        vm.submitCurrentStep = function submitCurrentStep() {
+            if(vm.selectedStep === 2) {
+                vm.stepThree.isSkiped = false;
+            }
+            if(vm.selectedStep === 3) {
+                vm.stepFour.isSkiped = false;
+            }
             vm.selectedStep = vm.selectedStep + 1;
         };
 
@@ -104,7 +103,7 @@
             } else {
                 vm.stepFour.isSkiped = true;
             }
-            vm.submitCurrentStep();
+            vm.selectedStep = vm.selectedStep + 1;
         };
 
         vm.todayDate = new Date();

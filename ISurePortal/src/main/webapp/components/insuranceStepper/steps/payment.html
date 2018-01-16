@@ -17,5 +17,9 @@
 
             </div>
         </md-content>
+        {{vm.dummy.step1.$invalid || vm.dummy.step2.$invalid || (vm.dummy.step3.$invalid && !vm.stepThree.isSkiped) || (vm.dummy.step4.$invalid && !vm.stepFour.isSkiped)}}
+        {{vm.dummy.step1.$invalid }}
+        {{vm.dummy.step2.$invalid}}
+        {{vm.dummy.step3.$invalid}} {{!vm.stepThree.isSkiped}} {{vm.dummy.step4.$invalid}} {{!vm.stepFour.isSkiped}}
     </form>
 </md-step-body> </md-step>
