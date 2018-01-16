@@ -6,7 +6,6 @@
     app.controller('insuranceStepperController', function ($scope, insuranceService, ngNotify, $state) {
 
         var vm = this;
-        vm.dummy = {};
 
         init();
 
@@ -15,6 +14,7 @@
             vm.maxStep = 6;
             vm.showBusyText = false;
             vm.tabs=[];
+            vm.dummy = {};
 
             vm.stepTwo = {
                 completed: false, optional: false,
@@ -70,6 +70,11 @@
                     }
                 });
         }
+        $scope.$watch('vm.tabs', vm.addTabs);
+
+        vm.checkWhatChanged = function () {
+            alert(vm.selectedStep);
+        }
 
         vm.moveToPreviousStep = function moveToPreviousStep() {
             if (vm.selectedStep > 0) {
@@ -84,11 +89,10 @@
         };
 
         vm.submitCurrentStep = function submitCurrentStep() {
-            if(vm.selectedStep === 2) {
-                vm.stepThree.isSkiped = false;
-            }
-            if(vm.selectedStep === 3) {
-                vm.stepFour.isSkiped = false;
+            switch (vm.selectedStep) {
+                case 0: {vm.addTabs();} break;
+                case 2: vm.stepThree.isSkiped = false; break;
+                case 3: vm.stepFour.isSkiped = false; break;
             }
             vm.selectedStep = vm.selectedStep + 1;
         };
