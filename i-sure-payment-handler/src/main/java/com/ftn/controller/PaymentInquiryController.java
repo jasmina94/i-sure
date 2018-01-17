@@ -76,7 +76,7 @@ public class PaymentInquiryController {
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
     }
     
-    @PostMapping(value = "success")
+    @PostMapping(value = "/success")
     public ResponseEntity successPay(HttpEntity<String> paymentId) {
     	TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId.getBody());
     	transactionDTO.setStatus(TransactionStatus.BOOKED);
@@ -85,7 +85,7 @@ public class PaymentInquiryController {
     	return new ResponseEntity<>(HttpStatus.OK);
     }
     
-    @PostMapping(value = "cancel")
+    @PostMapping(value = "/cancel")
     public ResponseEntity cancelPay(HttpEntity<String> paymentId) {
     	
     	TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId.getBody());
