@@ -1,0 +1,60 @@
+<script>
+    function loadDrl() {
+        $.ajax({
+            type: 'GET',
+            url: '/openFile',
+            success: function(data) {
+                console.log(data);
+                document.getElementById("tekstarea").value = data.toString();
+            }
+        });
+    }
+
+    function editRule() {
+        var tekst = document.getElementById("tekstarea").value;
+
+        $.ajax({
+            type: 'POST',
+            url: '/saveFile',
+            data: {'tekst' : tekst},
+            success: function(data) {
+                alert("Pravilo uspesno izmenjeno!");
+//                $.ajax({
+//                    type: 'POST',
+//                    url: '/env',
+//                    success: function(data) {
+//                        alert("Restarted!");
+//                    }
+//                });
+//                $.ajax({
+//                    type: 'POST',
+//                    url: '/refresh',
+//                    success: function(data) {
+//                        alert("Restarted!");
+//                    }
+//                });
+            }
+        });
+    }
+</script>
+	<div ng-if="indexVm.addRule" onload="loadDrl()" style="width: 50%;margin-top:20px;margin-left: auto;margin-right: auto; ">
+	  <md-toolbar style="min-height: 45px;margin-bottom: 10px;">
+			<div class="md-toolbar-tools" style="max-height: 45px;">
+				<h3>
+					<span>Add Rule</span>
+				</h3>
+			</div>
+		</md-toolbar>
+		<md-content class="md-no-momentum">
+		  <md-input-container class="md-block" style="margin-bottom: 0px;">
+	          <label>Rule</label>
+	          <textarea id="tekstarea" cols="50" rows="4">eee</textarea>
+	        </md-input-container>
+	        <div flex layout="row" layout layout-align="end top" style="width:100%;display: inline-block;">
+	             <md-button layout style="float:right;margin-right: 15px;" onclick="editRule()" class="md-raised md-primary">
+	                Submit
+	             </md-button>
+	        </div>
+	    <md-content>
+	</div>
+</html>

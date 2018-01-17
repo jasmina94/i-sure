@@ -1,8 +1,7 @@
 <md-step label="Travelers info"
-         md-complete="vm.stepTwo.completed"
-         ng-disabled="!vm.stepOne.completed">
+         md-complete="!vm.dummy.step2.$invalid" ng-click="vm.addTabs()">
     <md-step-body>
-        <form name="step2">
+        <form name="vm.dummy.step2">
             <md-content class="md-padding">
                 <div ng-if="vm.tabs.length === 0">
                     YOU NEED TO HAVE AT LEAST ONE TRAVELER, PLEASE GO BACK AND ENTER AGE GROUP.
@@ -58,14 +57,14 @@
             </md-content>
             <md-step-actions layout="row">
                 <div flex>
-                    <md-button ng-click="vm.moveToPreviousStep()">BACK TO TRAVELING DETAILS</md-button>
+                    <md-button ng-click="vm.moveToPreviousStep()">GO BACK</md-button>
                 </div>
                 <div flex layout="row" layout-align="end top">
                     <div>
-                        <md-button ng-disabled="step2.$invalid || vm.tabs.length === 0" ng-click="vm.submitCurrentStep()" class="md-raised md-primary">
-                            ADDITIONAL HOME INSURANCE
+                        <md-button ng-disabled="vm.dummy.step2.$invalid || vm.tabs.length === 0" ng-click="vm.submitCurrentStep()" class="md-raised md-primary">
+                            PROCEED
                         </md-button>
-                        <md-tooltip ng-if="step2.$invalid" md-direction="top">YOU NEED TO ENTER DATA FOR ALL
+                        <md-tooltip ng-if="vm.dummy.step2.$invalid" md-direction="top">YOU NEED TO ENTER DATA FOR ALL
                             TRAVELERS
                         </md-tooltip>
                     </div>

@@ -51,9 +51,9 @@ public class InsurancePolicy extends Base {
 	@ManyToOne
 	private RoadsideAssistanceInsurance roadsideAssistanceInsurance;
 	
-	@OneToOne(mappedBy = "insurancePolicy")
-	private Transaction transaction;
-	
+//	@OneToOne(mappedBy = "insurancePolicy")
+//	private Transaction transaction;
+//	
 	public InsurancePolicy(BaseDTO baseDTO) {
 		super(baseDTO);
 	}

@@ -11,7 +11,7 @@ public interface RiskService {
 
     List<RiskDTO> readAll();
 
-    RiskDTO create(RiskDTO riskDTO);
+    RiskDTO[] create(RiskDTO riskDTO);
 
     RiskDTO update(Long id, RiskDTO riskDTO);
 
@@ -20,4 +20,6 @@ public interface RiskService {
     RiskDTO findById(Long id);
 
     RiskDTO findByName(String name);
+
+	List<RiskDTO> findByRiskType(Long id);
 }

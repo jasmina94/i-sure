@@ -85,4 +85,6 @@ public class RiskTypeServiceImpl implements RiskTypeService{
         return riskTypeRepository.findByInsuranceCategory(insuranceCategoryRepository.findByCategoryName(name).get())
                 .stream().map(RiskTypeDTO::new).collect(Collectors.toList());
     }
+    
+    
 }

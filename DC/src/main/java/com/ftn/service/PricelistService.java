@@ -1,8 +1,8 @@
 package com.ftn.service;
 
+import java.util.Date;
 import java.util.List;
 
-import com.ftn.model.dto.CustomerDTO;
 import com.ftn.model.dto.PricelistDTO;
 
 public interface PricelistService {
@@ -15,4 +15,8 @@ public interface PricelistService {
     void delete(Long id);
 
     PricelistDTO findById(Long id);
+
+	PricelistDTO findcurrentlyActive();
+	
+	Date findMaxDateTo();
 }

@@ -38,6 +38,12 @@ public class PricelistItem extends Base{
 		super(baseDTO);
 	}
 	
+	public PricelistItem(PricelistItem item) {
+		this.setPrice(item.getPrice());
+		this.setCoefficient(item.getCoefficient());
+		this.setRisk(item.getRisk());
+	}
+	
 	public void merge(PricelistItemDTO pricelistItemDTO) {
 		this.coefficient = pricelistItemDTO.getCoefficient();
 		this.price = pricelistItemDTO.getPrice();

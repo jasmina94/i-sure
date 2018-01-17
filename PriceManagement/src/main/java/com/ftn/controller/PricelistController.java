@@ -51,4 +51,18 @@ public class PricelistController {
 		pricelistService.delete(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+	
+	
+    @GetMapping(value = "/currentlyActive")
+    public ResponseEntity findcurrentlyActive(){
+    	System.out.println("Currently active controller");
+    	//pricelistService.findcurrentlyActive();
+    	
+        return new ResponseEntity<>(pricelistService.findcurrentlyActive(), HttpStatus.OK);
+    }
+    
+    @GetMapping(value = "/maxDateTo")
+    public ResponseEntity findMaxDateTo(){
+        return new ResponseEntity<>(pricelistService.findMaxDateTo(), HttpStatus.OK);
+    }
 }
