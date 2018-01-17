@@ -25,6 +25,7 @@
       
       
       indexVm.pricelist = {
+    		id: 0,
       		dateFrom: '',
       		dateTo: '',
       		pricelistItems : indexVm.pricelistItems
@@ -55,6 +56,7 @@
                         		indexVm.pricelistItems = [];
                         	}else{
                         		indexVm.currentlyActivePricelist = response.data;
+                        		indexVm.pricelist.id = indexVm.currentlyActivePricelist.id;
                         		indexVm.pricelistItems = indexVm.currentlyActivePricelist.pricelistItems;
                         		mainService.findMaxDateTo().then(
                             			function (response) {
@@ -213,9 +215,9 @@
                 	}else{
                 		toastr.error("Something got wrong with pricelist. Try again.",'<i>Error</i>');
                 	}
-                    setTimeout(function(){
-                	    location.reload();
-                	},4000);
+                    //setTimeout(function(){
+                	//    location.reload();
+                	//},4000);
             });
         	
         }

@@ -24,7 +24,7 @@
             insuranceService.getTravelInsuranceRisks("International Travel").then(
                 function (response) {
                     if (response.status == 200) {
-                        vm.travelRisks = response.data;
+                    	vm.travelRisks = response.data;
                         vm.stepOne = {
                             completed: false, optional: false, data: {
                                 selectedRegion: vm.travelRisks['Region'][0],
@@ -172,7 +172,9 @@
 
             var travelRisks = [];
             travelRisks.push(vm.stepOne.data.selectedRegion);
-            travelRisks.push(vm.stepOne.data.selectedSport);
+            if(vm.playSport){
+            	travelRisks.push(vm.stepOne.data.selectedSport);
+            }
             travelRisks.push(vm.stepOne.data.selectedAmount);
 
             var internationalTravelInsuranceDTO =
@@ -248,10 +250,11 @@
             insuranceService.createInsurancePolicy(insurancePolicyDTO).then(
                 function (response) {
                     if (response.status == 200) {
-                        ngNotify.set('Know you have your umbrella.' , {
-                            type : 'success'
-                        });
+                        toastr.success("Know you have your umbrella.",'<i>Success</i>');
                         console.log(response.data);
+                    }
+                    else{
+                    	toastr.error("Something got wrong with policy. Try again.",'<i>Error</i>');
                     }
                 })
         }
