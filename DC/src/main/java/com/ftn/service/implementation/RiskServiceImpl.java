@@ -2,13 +2,16 @@ package com.ftn.service.implementation;
 
 import com.ftn.exception.NotFoundException;
 import com.ftn.model.Risk;
+import com.ftn.model.RiskType;
 import com.ftn.model.dto.RiskDTO;
+import com.ftn.model.dto.RiskTypeDTO;
 import com.ftn.repository.RiskRepository;
 import com.ftn.service.RiskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -60,5 +63,11 @@ public class RiskServiceImpl implements RiskService {
     public RiskDTO findByName(String name) {
         final Risk risk = riskRepository.findByRiskName(name).orElseThrow(NotFoundException::new);
         return new RiskDTO(risk);
+    }
+    
+    @Override
+    public List<RiskDTO> findByRiskType(Long id) {
+        final List<RiskDTO> risks =  riskRepository.findByRiskType(id).stream().map(RiskDTO::new).collect(Collectors.toList());;
+        return risks;
     }
 }

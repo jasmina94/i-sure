@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by zlatan on 25/11/2017.
@@ -31,10 +32,10 @@ public class RiskServiceImpl implements RiskService {
     }
 
     @Override
-    public RiskDTO create(RiskDTO riskDTO) {
+    public RiskDTO[] create(RiskDTO riskDTO) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RiskDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(riskDTO),
-                RiskDTO.class);
+        ResponseEntity<RiskDTO[]> response = restTemplate.postForEntity(URI, new HttpEntity<>(riskDTO),
+                RiskDTO[].class);
 
         return response.getBody();
     }
@@ -71,10 +72,18 @@ public class RiskServiceImpl implements RiskService {
 
     @Override
     public RiskDTO findByName(String name) {
-        URI += "/byPersonalId/" + name;
+       
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RiskDTO> response = restTemplate.getForEntity(URI, RiskDTO.class);
+        ResponseEntity<RiskDTO> response = restTemplate.getForEntity( URI + "/byPersonalId/" + name, RiskDTO.class);
 
         return response.getBody();
+    }
+    
+    @Override
+    public List<RiskDTO> findByRiskType(Long id) {
+    	RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<RiskDTO[]> response = restTemplate.getForEntity( URI + "/byRiskType/" + id, RiskDTO[].class);
+
+        return Arrays.asList(response.getBody());
     }
 }
