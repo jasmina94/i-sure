@@ -120,6 +120,11 @@
         vm.addTabs = function(){
             vm.tabs=[];
             var totalPeople = sumNumberOfPeople();
+            if(totalPeople < 1) {
+                ngNotify.set('Total number of travelers must be greater then 0.' , {
+                    type : 'info'
+                });
+            }
             for(var i=1;i<=totalPeople;i++){
                 vm.tabs.push(""+i);
             }
