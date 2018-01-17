@@ -6,7 +6,6 @@
     app.controller('insuranceStepperController', function ($scope, insuranceService, ngNotify, $state) {
 
         var vm = this;
-        vm.dummy = {};
 
         init();
 
@@ -15,6 +14,7 @@
             vm.maxStep = 6;
             vm.showBusyText = false;
             vm.tabs=[];
+            vm.dummy = {};
 
             vm.stepTwo = {
                 completed: false, optional: false,
@@ -24,7 +24,7 @@
             insuranceService.getTravelInsuranceRisks("International Travel").then(
                 function (response) {
                     if (response.status == 200) {
-                        vm.travelRisks = response.data;
+                    	vm.travelRisks = response.data;
                         vm.stepOne = {
                             completed: false, optional: false, data: {
                                 selectedRegion: vm.travelRisks['Region'][0],
@@ -84,11 +84,10 @@
         };
 
         vm.submitCurrentStep = function submitCurrentStep() {
-            if(vm.selectedStep === 2) {
-                vm.stepThree.isSkiped = false;
-            }
-            if(vm.selectedStep === 3) {
-                vm.stepFour.isSkiped = false;
+            switch (vm.selectedStep) {
+                case 0: {vm.addTabs();} break;
+                case 2: vm.stepThree.isSkiped = false; break;
+                case 3: vm.stepFour.isSkiped = false; break;
             }
             vm.selectedStep = vm.selectedStep + 1;
         };
@@ -121,6 +120,11 @@
         vm.addTabs = function(){
             vm.tabs=[];
             var totalPeople = sumNumberOfPeople();
+            if(totalPeople < 1) {
+                ngNotify.set('Total number of travelers must be greater then 0.' , {
+                    type : 'info'
+                });
+            }
             for(var i=1;i<=totalPeople;i++){
                 vm.tabs.push(""+i);
             }
@@ -168,7 +172,9 @@
 
             var travelRisks = [];
             travelRisks.push(vm.stepOne.data.selectedRegion);
-            travelRisks.push(vm.stepOne.data.selectedSport);
+            if(vm.playSport){
+            	travelRisks.push(vm.stepOne.data.selectedSport);
+            }
             travelRisks.push(vm.stepOne.data.selectedAmount);
 
             var internationalTravelInsuranceDTO =
@@ -244,10 +250,11 @@
             insuranceService.createInsurancePolicy(insurancePolicyDTO).then(
                 function (response) {
                     if (response.status == 200) {
-                        ngNotify.set('Know you have your umbrella.' , {
-                            type : 'success'
-                        });
+                        toastr.success("Know you have your umbrella.",'<i>Success</i>');
                         console.log(response.data);
+                    }
+                    else{
+                    	toastr.error("Something got wrong with policy. Try again.",'<i>Error</i>');
                     }
                 })
         }

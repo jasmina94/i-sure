@@ -1,5 +1,5 @@
 <md-step label="Travelers info"
-         md-complete="!vm.dummy.step2.$invalid">
+         md-complete="!vm.dummy.step2.$invalid" ng-click="vm.addTabs()">
     <md-step-body>
         <form name="vm.dummy.step2">
             <md-content class="md-padding">
@@ -57,13 +57,13 @@
             </md-content>
             <md-step-actions layout="row">
                 <div flex>
-                    <md-button ng-click="vm.moveToPreviousStep()">BACK TO TRAVELING DETAILS</md-button>
+                    <md-button ng-click="vm.moveToPreviousStep()">GO BACK</md-button>
                 </div>
                 <div flex layout="row" layout-align="end top">
-                    <md-button class="md-warn" ng-click="vm.cancel()">Back to home page</md-button>
+                    <md-button class="md-warn" ng-click="vm.cancel()">HOME PAGE</md-button>
                     <div>
                         <md-button ng-disabled="vm.dummy.step2.$invalid || vm.tabs.length === 0" ng-click="vm.submitCurrentStep()" class="gold-btn">
-                            ADDITIONAL HOME INSURANCE
+                            PROCEED
                         </md-button>
                         <md-tooltip ng-if="vm.dummy.step2.$invalid" md-direction="bottom">YOU NEED TO ENTER DATA FOR ALL
                             TRAVELERS

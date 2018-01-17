@@ -13,6 +13,8 @@
             vm.selectedStep = 0;
             vm.maxStep = 6;
             vm.showBusyText = false;
+            vm.tabs=[];
+            vm.dummy = {};
 
             vm.stepTwo = {
                 completed: false, optional: false,
@@ -31,6 +33,7 @@
                                 selectedAmount: vm.travelRisks['Value'][0]
                             }
                         };
+                        vm.tabs.push(""+1);
                     }
                 });
 
@@ -40,7 +43,7 @@
                         console.log(response.data);
                         vm.homeRisks = response.data;
                         vm.stepThree = {
-                            completed: false, optional: true, isSkiped: false,
+                            completed: false, optional: true, isSkiped: true,
                             data: {
                                 selectedArea: vm.homeRisks['Surface area'][0],
                                 selectedAge: vm.homeRisks['Property age'][0],
@@ -57,7 +60,7 @@
                         console.log(response.data);
                         vm.carRisks = response.data;
                         vm.stepFour = {
-                            completed: false, optional: true, isSkiped: false,
+                            completed: false, optional: true, isSkiped: true,
                             data: {
                                 selectedAccommodation: vm.carRisks['Accommodation'][0],
                                 selectedRepair: vm.carRisks['Repair'][0],
@@ -81,14 +84,11 @@
             return diffDays;
         };
         vm.submitCurrentStep = function submitCurrentStep() {
-            //validation goes here , if its satisfied then it's this
             switch (vm.selectedStep) {
-                case 0: {vm.stepOne.completed = true; vm.addTabs();} break;
-                case 1: vm.stepTwo.completed = true; break;
-                case 2: vm.stepThree.completed = true; break;
-                case 3: vm.stepFour.completed = true; break;
+                case 0: {vm.addTabs();} break;
+                case 2: vm.stepThree.isSkiped = false; break;
+                case 3: vm.stepFour.isSkiped = false; break;
             }
-
             vm.selectedStep = vm.selectedStep + 1;
         };
 
@@ -102,7 +102,7 @@
             } else {
                 vm.stepFour.isSkiped = true;
             }
-            vm.submitCurrentStep();
+            vm.selectedStep = vm.selectedStep + 1;
         };
 
         vm.todayDate = new Date();
@@ -120,6 +120,11 @@
         vm.addTabs = function(){
             vm.tabs=[];
             var totalPeople = sumNumberOfPeople();
+            if(totalPeople < 1) {
+                ngNotify.set('Total number of travelers must be greater then 0.' , {
+                    type : 'info'
+                });
+            }
             for(var i=1;i<=totalPeople;i++){
                 vm.tabs.push(""+i);
             }
@@ -128,10 +133,8 @@
         function sumNumberOfPeople(){
             var people = vm.stepOne.data.numberOfPeople;
             var totalPeople = 0;
-            var value = 0;
             for(var num in people) {
-                value = people[num];
-                totalPeople += value;
+                totalPeople += people[num];
             }
             return totalPeople;
         }
@@ -170,7 +173,9 @@
 
             var travelRisks = [];
             travelRisks.push(vm.stepOne.data.selectedRegion);
-            travelRisks.push(vm.stepOne.data.selectedSport);
+            if(vm.playSport){
+            	travelRisks.push(vm.stepOne.data.selectedSport);
+            }
             travelRisks.push(vm.stepOne.data.selectedAmount);
 
             var internationalTravelInsuranceDTO =
@@ -245,11 +250,12 @@
             }
             insuranceService.createInsurancePolicy(insurancePolicyDTO).then(
                 function (response) {
-                    if (response.status == 200) {
-                        ngNotify.set('Know you have your umbrella.' , {
-                            type : 'success'
-                        });
+                	if (response.status == 200) {
+                        toastr.success("Know you have your umbrella.",'<i>Success</i>');
                         console.log(response.data);
+                    }
+                    else{
+                    	toastr.error("Something got wrong with policy. Try again.",'<i>Error</i>');
                     }
                 })
         }
