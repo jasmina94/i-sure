@@ -29,7 +29,6 @@ public class TransactionServiceImpl implements TransactionService{
 	@Override
 	public List<TransactionDTO> readAll() {
         ResponseEntity<TransactionDTO[]> response = restTemplate.getForEntity(dc_home + dc_transactions, TransactionDTO[].class);
-
         return Arrays.asList(response.getBody());
 	}
 
@@ -37,22 +36,16 @@ public class TransactionServiceImpl implements TransactionService{
 	public TransactionDTO create(TransactionDTO transactionDTO) {
         ResponseEntity<TransactionDTO> response = restTemplate.postForEntity(dc_home + dc_transactions, new HttpEntity<>(transactionDTO),
                 TransactionDTO.class);
-        
         return response.getBody();
-		
-		//return null;
 	}
 
 	@Override
 	public TransactionDTO update(Long id, TransactionDTO transactionDTO) {
 		String URI = dc_home + dc_transactions + "/" + id;
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-
         restTemplate.setRequestFactory(requestFactory);
-
         ResponseEntity<TransactionDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
                 new HttpEntity<>(transactionDTO), TransactionDTO.class);
-
         return response.getBody();
 
 	}
@@ -67,7 +60,6 @@ public class TransactionServiceImpl implements TransactionService{
 	public TransactionDTO findById(Long id) {
         String URI = dc_home + dc_transactions + "/" + id;
         ResponseEntity<TransactionDTO> response = restTemplate.getForEntity(URI, TransactionDTO.class);
-
         return response.getBody();
 	}
 
@@ -75,7 +67,6 @@ public class TransactionServiceImpl implements TransactionService{
 	public TransactionDTO findByPaymentId(String paymentId) {
         String URI = dc_home + dc_transactions + "/payment/" + paymentId;
         ResponseEntity<TransactionDTO> response = restTemplate.getForEntity(URI, TransactionDTO.class);
-
         return response.getBody();
     }
 }

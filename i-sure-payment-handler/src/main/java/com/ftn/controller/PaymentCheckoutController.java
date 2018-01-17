@@ -54,6 +54,6 @@ public class PaymentCheckoutController {
     	transaction = transactionService.update(transaction.getId(), transaction);
     	
     	//ovde isto ne znam sta treba da vratim
-    	return new ResponseEntity<>("Ne znam sta da vratim", HttpStatus.OK);
+    	return new ResponseEntity<>(paymentCheckoutDTO, HttpStatus.OK);
     }
 }
