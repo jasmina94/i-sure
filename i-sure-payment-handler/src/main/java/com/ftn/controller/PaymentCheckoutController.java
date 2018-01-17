@@ -40,7 +40,12 @@ public class PaymentCheckoutController {
 		
     	TransactionDTO transaction = transactionService.findById(paymentCheckoutDTO.getMerchantOrderId());
     	
-    	transaction.setStatus(TransactionStatus.BOOKED);
+    	if(!paymentCheckoutDTO.getSuccessUrl().equals(null)) {
+    		transaction.setStatus(TransactionStatus.BOOKED);
+    	}else if(!paymentCheckoutDTO.getSuccessUrl().equals(null)) {
+    		transaction.setStatus(TransactionStatus.REVERSED);
+    	}
+    	
     	transaction.setAcquiererOrderId(paymentCheckoutDTO.getAcquirerOrderId());
     	transaction.setAcquiererTimestamp(paymentCheckoutDTO.getAcquirerTimestamp());
     	//ovde treba postaviti payment, treba se dogovoriti ocemo li imati citav payment ili samo id
