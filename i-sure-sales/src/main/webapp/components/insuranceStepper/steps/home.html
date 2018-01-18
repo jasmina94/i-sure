@@ -1,8 +1,7 @@
 <md-step label="Home insurance"
-         md-complete="vm.stepThree.completed"
-         ng-disabled="!vm.stepTwo.completed">
+         md-complete="!vm.dummy.step3.$invalid && !vm.stepThree.isSkiped">
     <md-step-body>
-        <form name="step3">
+        <form name="vm.dummy.step3">
             <md-content class="md-padding">
                 <div layout="row" layout-align="center top">
                     <div flex="nogrow" style="width: 700px;margin-left: 100px;">
@@ -104,21 +103,21 @@
             </md-content>
             <md-step-actions layout="row">
                 <div flex>
-                    <md-button ng-click="vm.moveToPreviousStep()">BACK TO TRAVELERS INFO</md-button>
+                    <md-button ng-click="vm.moveToPreviousStep()">GO BACK</md-button>
 
                 </div>
                 <div flex layout="row" layout-align="end top">
                     <div>
-                        <md-button type="submit" class="md-primary" ng-click="vm.skip('home')">SKIP
+                        <md-button type="submit" class="md-primary" ng-click="vm.skip('home')">DON'T WANT IT
                         </md-button>
-                        <md-tooltip md-direction="top">THIS IS OPTIONAL, SO YOU CAN SKIP IT.
+                        <md-tooltip md-direction="top">IF YOU ALREADY HAVE ADDED HOME INSURANCE, THIS WILL EXCLUDE IT.
                         </md-tooltip>
                     </div>
                     <div>
-                        <md-button type="submit" ng-disabled="step3.$invalid" class="md-raised md-primary"
-                                   ng-click="vm.submitCurrentStep()">ADDITIONAL CAR INSURANCE
+                        <md-button type="submit" ng-disabled="vm.dummy.step3.$invalid" class="md-raised md-primary"
+                                   ng-click="vm.submitCurrentStep()">ADD TO POLICY AND PROCEED
                         </md-button>
-                        <md-tooltip ng-if="step3.$invalid" md-direction="top">YOU NEED TO ENTER DATA FOR HOME OWNER
+                        <md-tooltip ng-if="vm.dummy.step3.$invalid" md-direction="top">IF YOU WANT TO ADD THIS THEN DATA MUST BE VALID
                         </md-tooltip>
                     </div>
                 </div>

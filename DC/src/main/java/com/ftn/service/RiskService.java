@@ -21,4 +21,6 @@ public interface RiskService {
     RiskDTO findById(Long id);
 
     RiskDTO findByName(String name);
+
+	List<RiskDTO> findByRiskType(Long id);
 }

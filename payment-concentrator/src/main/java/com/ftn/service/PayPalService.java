@@ -13,4 +13,8 @@ public interface PayPalService {
 	PaymentInquiryInfoDTO sendPaymentInquiry(PaymentInquiryDTO piDTO, HttpServletRequest request);
 	
 	public Payment executePayment(String paymentId, String payerId) throws PayPalRESTException;
+
+	PaymentInquiryInfoDTO successPayment(String token);
+
+	PaymentInquiryInfoDTO cancelPayment(String token);
 }

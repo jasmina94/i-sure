@@ -5,6 +5,7 @@ import javax.validation.Valid;
 
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -47,8 +48,8 @@ public class PaymentInquiryController {
     
     
     @RequestMapping(method = RequestMethod.GET, value = PAYPAL_CANCEL_URL)
-	public String cancelPay(@RequestParam("paymentId") String paymentId,@RequestParam("token") String token, @RequestParam("PayerID") String payerId){
-		System.out.println("Cancel");
+	public String cancelPay(@RequestParam("token") String token){
+    	paypalService.cancelPayment(token);
 		return "cancel";
 	}
 	
@@ -59,9 +60,17 @@ public class PaymentInquiryController {
 		try {
 			Payment payment = paypalService.executePayment(paymentId, payerId);
 			if(payment.getState().equals("approved")){
+				
+				paypalService.successPayment(token);
+				
 				return "testni";
+				
+			}else{
+				paypalService.cancelPayment(token);
+				return "cancel";
 			}
 		} catch (PayPalRESTException e) {
+			paypalService.cancelPayment(token);
 			e.printStackTrace();
 		}
 		
