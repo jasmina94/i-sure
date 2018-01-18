@@ -6,7 +6,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
@@ -30,6 +34,14 @@ public class PayPalServiceImpl implements PayPalService {
 
 	public static final String PAYPAL_SUCCESS_URL = "inquiries/testni";
 	public static final String PAYPAL_CANCEL_URL = "inquiries/cancel";
+
+	@Value("${ph.home}")
+	private String ph_home;
+
+	@Value("${ph.payment.inquiries}")
+	private String ph_inquiries;
+
+	private RestTemplate restTemplate = new RestTemplate();
 
 	@Autowired
 	private APIContext apiContext;
@@ -66,7 +78,7 @@ public class PayPalServiceImpl implements PayPalService {
 		payment.setTransactions(transactions);
 		RedirectUrls redirectUrls = new RedirectUrls();
 		redirectUrls.setCancelUrl(cancelUrl);
-		
+
 		redirectUrls.setReturnUrl(successUrl);
 		payment.setRedirectUrls(redirectUrls);
 
@@ -94,9 +106,13 @@ public class PayPalServiceImpl implements PayPalService {
 			}
 		}
 
+		String[] parts = approval_url.split("token=");
+		String token = parts[1];
+
 		// privremeno
 		PaymentInquiryInfoDTO piInfoDTO = new PaymentInquiryInfoDTO();
-		piInfoDTO.setPaymentId(p.getId());
+		// piInfoDTO.setPaymentId(p.getId());
+		piInfoDTO.setPaymentId(token);
 		piInfoDTO.setPaymentUrl(approval_url);
 
 		return piInfoDTO;
@@ -117,6 +133,22 @@ public class PayPalServiceImpl implements PayPalService {
 
 		return payment.execute(apiContext, paymentExecute);
 
+	}
+	
+	@Override
+	public PaymentInquiryInfoDTO successPayment(String token) {
+
+		ResponseEntity<PaymentInquiryInfoDTO> response = restTemplate.postForEntity(ph_home + ph_inquiries + "/success",
+				new HttpEntity<>(token), PaymentInquiryInfoDTO.class);
+		return response.getBody();
+	}
+
+	@Override
+	public PaymentInquiryInfoDTO cancelPayment(String token) {
+
+		ResponseEntity<PaymentInquiryInfoDTO> response = restTemplate.postForEntity(ph_home + ph_inquiries + "/cancel",
+				new HttpEntity<>(token), PaymentInquiryInfoDTO.class);
+		return response.getBody();
 	}
 
 }

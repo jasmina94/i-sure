@@ -27,12 +27,13 @@ public class RoleServiseImplementation implements  RoleService{
 
 	@Override
 	public Role create(Role role) {
-		
+		role.setName(role.getName().toUpperCase());
 		return roleRepository.save(role);
 	}
 
 	@Override
 	public Role update(Long id, Role role) {
+		role.setName(role.getName().toUpperCase());
 		return roleRepository.save(role);
 	}
 

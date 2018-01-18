@@ -19,7 +19,7 @@ public class EmailServiceImpl implements EmailService {
 
     final String username = "zlajox@gmail.com";
     final String password = "pass";
-
+/*
     @Override
     public void sendEmail(String to) throws MessagingException, IOException {
 
@@ -61,5 +61,5 @@ public class EmailServiceImpl implements EmailService {
 
         }
     }
-
+*/
 }

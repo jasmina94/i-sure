@@ -15,4 +15,3 @@ INSERT INTO `isuredatacenter`.`payment_type` (`active`, `created`, `updated`, `l
 INSERT INTO `isuredatacenter`.`pricelist_item` (`active`, `created`, `updated`, `coefficient`, `price`, `risk_id`, `pricelist_id`) VALUES (TRUE, NOW(), null, '1', '12', '1', '1');
 
 INSERT INTO `isuredatacenter`.`pricelist_item` (`active`, `created`, `updated`, `coefficient`, `price`, `risk_id`, `pricelist_id`) VALUES (TRUE, NOW(), null, '0.8', '13', '2', '1');
-

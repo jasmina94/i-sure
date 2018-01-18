@@ -1,5 +1,8 @@
 package com.ftn.service.implementation;
 
+import com.ftn.model.dto.HomeInsuranceDTO;
+import com.ftn.model.dto.InternationalTravelInsuranceDTO;
+import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +36,32 @@ public class RuleServiceImpl implements RuleService{
         kieSession.fireAllRules();
         kieSession.dispose();
         return u;
+    }
+
+    @Override
+    public InternationalTravelInsuranceDTO getInternationalTravelInsurance(InternationalTravelInsuranceDTO internationalTravelInsuranceDTO) {
+        KieSession kieSession = kieContainer.newKieSession();
+        kieSession.insert(internationalTravelInsuranceDTO);
+        kieSession.fireAllRules();
+        kieSession.dispose();
+        return internationalTravelInsuranceDTO;
+    }
+
+    @Override
+    public HomeInsuranceDTO getHomeInsurance(HomeInsuranceDTO homeInsuranceDTO) {
+        KieSession kieSession = kieContainer.newKieSession();
+        kieSession.insert(homeInsuranceDTO);
+        kieSession.fireAllRules();
+        kieSession.dispose();
+        return homeInsuranceDTO;
+    }
+
+    @Override
+    public RoadsideAssistanceInsuranceDTO getRoadsideAssistanceInsurance(RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO) {
+        KieSession kieSession = kieContainer.newKieSession();
+        kieSession.insert(roadsideAssistanceInsuranceDTO);
+        kieSession.fireAllRules();
+        kieSession.dispose();
+        return roadsideAssistanceInsuranceDTO;
     }
 }
