@@ -15,25 +15,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TransactionDTO extends BaseDTO{
 	
-	//@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date timestamp;
 	
-	//@NotNull
 	private TransactionStatus status;
 	
-	//@NotNull
+	@NotNull
 	private PaymentTypeDTO paymentType;
 	
-	//@NotNull
+	@NotNull
 	private Double amount;
 	
 	private PaymentDTO payment;
 	
 	@NotNull
 	private InsurancePolicyDTO insurancePolicy;
-	
-	private Long acquiererOrderId;
-	
-	private Date acquiererTimestamp;	
+
+	private Long acquirerOrderId;
+
+	private Date acquirerTimestamp;
 }

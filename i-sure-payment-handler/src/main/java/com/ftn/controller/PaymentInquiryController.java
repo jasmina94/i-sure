@@ -57,8 +57,7 @@ public class PaymentInquiryController {
     public ResponseEntity sendPaymentInquiry(@Valid @RequestBody TransactionDTO transactionDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-        
-        //transactionDTO = transactionService.findById(transactionDTO.getId());
+
         transactionDTO = transactionService.create(transactionDTO);
 
         PaymentInquiryDTO piDTO = paymentInquiryService.create(transactionDTO);
@@ -75,24 +74,5 @@ public class PaymentInquiryController {
         transactionService.update(transactionDTO.getId(), transactionDTO);
         
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
-    }
-    
-    @PostMapping(value = "success")
-    public ResponseEntity successPay(HttpEntity<String> paymentId) {
-    	TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId.getBody());
-    	transactionDTO.setStatus(TransactionStatus.BOOKED);
-    	transactionService.update(transactionDTO.getId(), transactionDTO);
-    	
-    	return new ResponseEntity<>(HttpStatus.OK);
-    }
-    
-    @PostMapping(value = "cancel")
-    public ResponseEntity cancelPay(HttpEntity<String> paymentId) {
-    	
-    	TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId.getBody());
-    	transactionDTO.setStatus(TransactionStatus.REVERSED);
-    	transactionService.update(transactionDTO.getId(), transactionDTO);
-    	
-    	return new ResponseEntity<>(HttpStatus.OK);
     }
 }

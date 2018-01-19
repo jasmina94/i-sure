@@ -18,24 +18,21 @@ public class PaymentInquiryServiceImpl implements PaymentInquiryService{
 	
 	@Override
 	public PaymentInquiryDTO create(TransactionDTO transactionDTO) {
-        //payment part
-        PaymentInquiryDTO piDTO = new PaymentInquiryDTO();
-        piDTO.setMerchantId(merchant_id);
-        piDTO.setMerchantPassword(merchant_password);
-        piDTO.setPaymentType(transactionDTO.getPaymentType().getLabel());
+        PaymentInquiryDTO paymentInquiryDTO = new PaymentInquiryDTO();
+        paymentInquiryDTO.setMerchantId(merchant_id);
+        paymentInquiryDTO.setMerchantPassword(merchant_password);
+        paymentInquiryDTO.setPaymentType(transactionDTO.getPaymentType().getLabel());
+
         //piDTO.setAmount(transactionDTO.getAmount());
-
         //piDTO.setAmount(1);
-        piDTO.setAmount(211.99);
+        paymentInquiryDTO.setAmount(211.99);
 
-        //trebao bi biti Long za sada sam ga kastovao u int
-        piDTO.setMerchantOrderId((int)transactionDTO.getId());
+        paymentInquiryDTO.setMerchantOrderId(transactionDTO.getId());
+        paymentInquiryDTO.setMerchantTimestamp(transactionDTO.getTimestamp());
 
-        piDTO.setMerchantTimestamp(transactionDTO.getTimestamp());
-        //koji url da stavim? - ovo je neka stranica koja treba da se napravi na portalu
-        piDTO.setErrorUrl("neka stranica u hendleru");
+        paymentInquiryDTO.setErrorUrl("neka stranica u hendleru");
 
-		return piDTO;
+		return paymentInquiryDTO;
 	}
 
 }

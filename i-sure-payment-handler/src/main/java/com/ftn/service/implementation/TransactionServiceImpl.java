@@ -3,6 +3,7 @@ package com.ftn.service.implementation;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ftn.model.dto.TransactionStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -11,7 +12,6 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.TransactionDTO;
 import com.ftn.service.TransactionService;
 
@@ -34,6 +34,7 @@ public class TransactionServiceImpl implements TransactionService{
 
 	@Override
 	public TransactionDTO create(TransactionDTO transactionDTO) {
+		transactionDTO.setStatus(TransactionStatus.PENDING);
         ResponseEntity<TransactionDTO> response = restTemplate.postForEntity(dc_home + dc_transactions, new HttpEntity<>(transactionDTO),
                 TransactionDTO.class);
         return response.getBody();
@@ -47,7 +48,6 @@ public class TransactionServiceImpl implements TransactionService{
         ResponseEntity<TransactionDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
                 new HttpEntity<>(transactionDTO), TransactionDTO.class);
         return response.getBody();
-
 	}
 
 	@Override

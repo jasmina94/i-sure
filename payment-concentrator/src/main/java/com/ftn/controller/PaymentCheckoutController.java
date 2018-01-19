@@ -25,6 +25,7 @@ public class PaymentCheckoutController {
 	
 	@Value("${ph.payment.checkout}")
 	private String ph_payment_checkout;
+
 	
 	private RestTemplate restTemplate = new RestTemplate();
 	
@@ -34,11 +35,17 @@ public class PaymentCheckoutController {
 		if (bindingResult.hasErrors())
             throw new BadRequestException();
 
-		ResponseEntity<String> response = restTemplate.postForEntity(ph_home + ph_payment_checkout,
-				new HttpEntity<>(paymentCheckoutDTO),
-				String.class);
+        String method = "";
+        if(!paymentCheckoutDTO.getSuccessUrl().equals(null)) {
+            method = "success";
+        }else if(!paymentCheckoutDTO.getErrorUrl().equals(null)) {
+            method = "cancel";
+        }
 
-    	return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+        ResponseEntity response = restTemplate.postForEntity(ph_home + ph_payment_checkout + "/" + method,
+                new HttpEntity<>(paymentCheckoutDTO),
+                String.class);
 
+    	return response;
     }
 }

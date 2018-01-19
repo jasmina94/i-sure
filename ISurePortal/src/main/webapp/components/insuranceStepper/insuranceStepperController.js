@@ -257,7 +257,6 @@
 
 						var transactionDTO = {
 							"timestamp" : "",
-
 							"paymentType" : paymentType,
 							"amount" : response.data.totalValue,
 							"insurancePolicy" : response.data

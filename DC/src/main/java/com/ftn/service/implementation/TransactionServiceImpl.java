@@ -45,20 +45,10 @@ public class TransactionServiceImpl implements TransactionService{
 	public TransactionDTO create(TransactionDTO transactionDTO) {
 		final Transaction transaction = transactionDTO.construct();
 		transaction.setTimestamp(new Date());
-		
-//		InsurancePolicy insurancePolicy = transaction.getInsurancePolicy();
-//		if(insurancePolicy != null) {
-//			insurancePolicy = insurancePolicyRepository.save(insurancePolicy);
-//        	transaction.setInsurancePolicy(insurancePolicy);
-//		}
-		
 		PaymentType paymentType = paymentTypeRepository.findByLabel(transactionDTO.getPaymentType().getLabel())
 				.orElseThrow(NotFoundException::new);;
-		
 		transaction.setStatus(TransactionStatus.PENDING);
-		
 		transaction.setPaymentType(paymentType);
-		
 		Transaction retVal = transactionRepository.save(transaction);
 		return new TransactionDTO(retVal);
 	}
@@ -67,7 +57,6 @@ public class TransactionServiceImpl implements TransactionService{
 	public TransactionDTO update(Long id, TransactionDTO transactionDTO) {
 		final Transaction transaction = transactionRepository.findById(id).orElseThrow(NotFoundException::new);
 		transaction.merge(transactionDTO);
-		
 		Transaction retVal = transactionRepository.save(transaction);
 		return new TransactionDTO(retVal);
 	}

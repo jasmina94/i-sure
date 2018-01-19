@@ -104,7 +104,7 @@ public class AcquirerServiceImpl implements AcquirerService {
 
         Transaction transaction = transactionService.findById(acquirerOrderId);
         if (transaction != null) {
-            long paymentId = transaction.getPayment().getId();
+            String paymentId = transaction.getPayment().getId().toString();
             paymentCheckout.setPaymentId(paymentId);
             long merchantOrderId = transaction.getPayment().getMerchantOrderId();
             paymentCheckout.setMerchantOrderId(merchantOrderId);
@@ -126,7 +126,7 @@ public class AcquirerServiceImpl implements AcquirerService {
                 transactionService.update(transaction.getId(), transaction);
             }
         } else {
-            paymentCheckout.setPaymentId(0);
+            paymentCheckout.setPaymentId("0");
             paymentCheckout.setMerchantOrderId(0);
             paymentCheckout.setErrorUrl(errorUrl);
         }

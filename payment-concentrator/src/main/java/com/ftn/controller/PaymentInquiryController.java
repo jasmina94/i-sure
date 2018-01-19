@@ -56,15 +56,11 @@ public class PaymentInquiryController {
 	
 	@RequestMapping(method = RequestMethod.GET, value = PAYPAL_SUCCESS_URL)
 	public String successPay(@RequestParam("paymentId") String paymentId,@RequestParam("token") String token, @RequestParam("PayerID") String payerId){
-			
 		try {
 			Payment payment = paypalService.executePayment(paymentId, payerId);
 			if(payment.getState().equals("approved")){
-				
 				paypalService.successPayment(token);
-				
-				return "testni";
-				
+				return "success";
 			}else{
 				paypalService.cancelPayment(token);
 				return "cancel";
@@ -73,7 +69,6 @@ public class PaymentInquiryController {
 			paypalService.cancelPayment(token);
 			e.printStackTrace();
 		}
-		
 		return "cancel";
 	}
 }

@@ -38,11 +38,7 @@ public class PaymentInquiryController {
     public ResponseEntity sendPaymentInquiry(@Valid @RequestBody TransactionDTO transactionDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-
         PaymentInquiryInfoDTO paymentInquiryInfoDTO = paymentInquiryService.send(transactionDTO);
-        
         return new ResponseEntity<>(paymentInquiryInfoDTO, HttpStatus.OK);
     }
-    
-    
 }

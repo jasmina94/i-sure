@@ -1,8 +1,13 @@
 package com.ftn.controller;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import com.ftn.model.dto.PaymentDTO;
+import com.ftn.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -10,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 import com.ftn.exception.BadRequestException;
@@ -17,7 +23,6 @@ import com.ftn.model.dto.PaymentCheckoutDTO;
 import com.ftn.model.dto.TransactionDTO;
 import com.ftn.model.dto.TransactionStatus;
 import com.ftn.service.TransactionService;
-import com.ftn.service.implementation.TransactionServiceImpl;
 
 @Controller
 @RequestMapping("/checkout")
@@ -27,33 +32,47 @@ public class PaymentCheckoutController {
 	
 	private final TransactionService transactionService;
 
-    @Autowired
-    public PaymentCheckoutController(TransactionServiceImpl transactionService){
+	private final PaymentService paymentService;
 
+    @Autowired
+    public PaymentCheckoutController(TransactionService transactionService, PaymentService paymentService){
         this.transactionService = transactionService;
+        this.paymentService = paymentService;
     }
-	
-	@PostMapping
-    public ResponseEntity recievePaymentCheckout(@Valid @RequestBody PaymentCheckoutDTO paymentCheckoutDTO, BindingResult bindingResult) {
-		if (bindingResult.hasErrors())
-            throw new BadRequestException();
-		
-    	TransactionDTO transaction = transactionService.findById(paymentCheckoutDTO.getMerchantOrderId());
-    	
-    	if(!paymentCheckoutDTO.getSuccessUrl().equals(null)) {
-    		transaction.setStatus(TransactionStatus.BOOKED);
-    	}else if(!paymentCheckoutDTO.getSuccessUrl().equals(null)) {
-    		transaction.setStatus(TransactionStatus.REVERSED);
-    	}
-    	
-    	transaction.setAcquiererOrderId(paymentCheckoutDTO.getAcquirerOrderId());
-    	transaction.setAcquiererTimestamp(paymentCheckoutDTO.getAcquirerTimestamp());
-    	//ovde treba postaviti payment, treba se dogovoriti ocemo li imati citav payment ili samo id
-    	//transaction.setPaymentId(paymentCheckoutDTO.getPaymentId());
-    	
-    	transaction = transactionService.update(transaction.getId(), transaction);
-    	
-    	//ovde isto ne znam sta treba da vratim
-    	return new ResponseEntity<>(paymentCheckoutDTO, HttpStatus.OK);
+
+    @PostMapping(value = "success")
+    public ResponseEntity successPay(@RequestBody PaymentCheckoutDTO paymentCheckoutDTO) {
+        String paymentId = paymentCheckoutDTO.getPaymentId();
+        TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
+        transactionDTO.setStatus(TransactionStatus.BOOKED);
+        if(paymentCheckoutDTO.getAcquirerOrderId() != 0 && paymentCheckoutDTO.getAcquirerTimestamp() != null){
+            transactionDTO.setAcquirerOrderId(paymentCheckoutDTO.getAcquirerOrderId());
+            transactionDTO.setAcquirerTimestamp(paymentCheckoutDTO.getAcquirerTimestamp());
+        }
+        transactionService.update(transactionDTO.getId(), transactionDTO);
+
+//        System.out.println("Usao u success");
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.add("Location", "http://stackoverflow.com");
+//
+//        return new ResponseEntity<byte []>(null,headers,HttpStatus.FOUND);
+        return new ResponseEntity(paymentCheckoutDTO, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "cancel")
+    public ResponseEntity cancelPay(@RequestBody PaymentCheckoutDTO paymentCheckoutDTO) {
+        String paymentId = paymentCheckoutDTO.getPaymentId();
+        TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
+        transactionDTO.setStatus(TransactionStatus.REVERSED);
+        transactionService.update(transactionDTO.getId(), transactionDTO);
+
+        System.out.println("Usao u cancel");
+
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.add("Location", "http://blic.rs");
+//
+//        return new ResponseEntity<byte []>(null,headers,HttpStatus.FOUND);
+        return new ResponseEntity(paymentCheckoutDTO, HttpStatus.NO_CONTENT);
     }
 }

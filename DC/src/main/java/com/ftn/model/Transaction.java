@@ -2,16 +2,11 @@ package com.ftn.model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ftn.model.dto.BaseDTO;
 import com.ftn.model.dto.TransactionDTO;
 import com.ftn.util.SqlConstants;
@@ -30,7 +25,8 @@ public class Transaction extends Base{
 	
 	@Column(nullable = false)
 	private Date timestamp;
-	
+
+	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private TransactionStatus status;
 	
@@ -49,18 +45,20 @@ public class Transaction extends Base{
 	@JoinColumn(name = "insurance_policy_id")
 	private InsurancePolicy insurancePolicy;
 	
-	private Long acquiererOrderId;
+	private Long acquirerOrderId;
 	
-	private Date acquiererTimestamp;
+	private Date acquirerTimestamp;
 	
 	public Transaction(BaseDTO baseDTO) {
 		super(baseDTO);
 	}
-	
+
 	public void merge(TransactionDTO transactionDTO){
 		this.timestamp = transactionDTO.getTimestamp();
 		this.status = transactionDTO.getStatus();
 		this.amount = transactionDTO.getAmount();
+		this.acquirerOrderId = transactionDTO.getAcquirerOrderId();
+		this.acquirerTimestamp = transactionDTO.getAcquirerTimestamp();
 		if(transactionDTO.getPaymentType() != null){
 			this.paymentType = transactionDTO.getPaymentType().construct();
 		}

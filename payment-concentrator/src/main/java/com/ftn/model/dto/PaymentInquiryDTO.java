@@ -35,5 +35,6 @@ public class PaymentInquiryDTO {
     @NotNull
     private Date merchantTimestamp;
 
+    @NotNull
     private String errorUrl;
 }

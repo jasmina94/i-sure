@@ -33,8 +33,12 @@ app.controller('CardPaymentController', function ($scope, $state, $routeParams, 
         $scope.order.amount = $scope.amount;
         console.log($scope.order);
         cardPaymentService.processOrder($scope.paymentId, $scope.order, function(response){
-            console.log(response);
-            $scope.close();
+            if(response.data = $scope.order){
+                console.log("Success");
+                console.log(window.location);
+            }else {
+                console.log("Fail");
+            }
         });
     }
 

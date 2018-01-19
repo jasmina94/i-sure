@@ -86,9 +86,10 @@ public class AcquirerController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PaymentCheckoutDTO> entity = new HttpEntity<>(paymentCheckoutDTO, headers);
-        ResponseEntity<PaymentCheckoutDTO> response = restTemplate.exchange(concentratorUrl, HttpMethod.POST, entity, PaymentCheckoutDTO.class);
 
-        return new ResponseEntity<>(paymentResponseInfoDTO, HttpStatus.OK);
+        ResponseEntity response = restTemplate.exchange(concentratorUrl, HttpMethod.POST, entity, PaymentCheckoutDTO.class);
+
+        return response;
     }
 
     @Transactional
