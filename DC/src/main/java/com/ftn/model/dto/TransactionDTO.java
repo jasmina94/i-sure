@@ -2,13 +2,11 @@ package com.ftn.model.dto;
 
 import java.util.Date;
 
+import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.ftn.model.Customer;
-import com.ftn.model.Payment;
 import com.ftn.model.TransactionStatus;
-import com.ftn.model.PaymentType;
 import com.ftn.model.Transaction;
 
 import lombok.Data;
@@ -19,29 +17,33 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 public class TransactionDTO extends BaseDTO{
-	
-	//@NotNull
+
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date timestamp;
 	
-	//@NotNull
+
 	private TransactionStatus status;
 	
-	//@NotNull
+	@NotNull
 	private PaymentTypeDTO paymentType;
 	
-	//@NotNull
+	@NotNull
 	private Double amount;
 	
 	private PaymentDTO payment;
 	
 	@NotNull
 	private InsurancePolicyDTO insurancePolicy;
-	
-	private Long acquiererOrderId;
-	
-	private Date acquiererTimestamp;
-	
+
+	private Long acquirerOrderId;
+
+	private Date acquirerTimestamp;
+
+    @PrePersist
+    public void onCreate(){
+        timestamp = new Date();
+    }
+
     public TransactionDTO(Transaction transaction){
         this(transaction, true);
     }
@@ -51,6 +53,8 @@ public class TransactionDTO extends BaseDTO{
         this.timestamp = transaction.getTimestamp();
         this.status = transaction.getStatus();
         this.amount = transaction.getAmount();
+        this.acquirerOrderId = transaction.getAcquirerOrderId();
+        this.acquirerTimestamp = transaction.getAcquirerTimestamp();
         if(cascade) {
         	if(transaction.getPaymentType() != null) {
         		this.paymentType = new PaymentTypeDTO(transaction.getPaymentType());
@@ -71,6 +75,8 @@ public class TransactionDTO extends BaseDTO{
         transaction.setTimestamp(timestamp);
         transaction.setStatus(status);
         transaction.setAmount(amount);
+        transaction.setAcquirerOrderId(acquirerOrderId);
+        transaction.setAcquirerTimestamp(acquirerTimestamp);
         if(this.paymentType != null){
             transaction.setPaymentType(paymentType.construct());
         }

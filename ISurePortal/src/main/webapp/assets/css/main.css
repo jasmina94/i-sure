@@ -85,4 +85,8 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
     color: #d4b355;
 }
 
+#bottom-div:hover {
+		transform: scale(1.05);
+		cursor: pointer;
+	}
 			

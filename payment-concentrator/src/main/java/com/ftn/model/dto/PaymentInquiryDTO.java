@@ -14,27 +14,27 @@ import java.util.Date;
 @NoArgsConstructor
 public class PaymentInquiryDTO {
 
-    //@NotNull
-    //@Size(min = 0, max = 30)
+    @NotNull
+    @Size(min = 0, max = 30)
     private String merchantId;
 
-    //@NotNull
-   // @Size(min = 0, max = 100)
+    @NotNull
+    @Size(min = 0, max = 100)
     private String merchantPassword;
     
-    //@NotNull
-    //@Size(min = 0, max = 100)
+    @NotNull
+    @Size(min = 0, max = 100)
     private String paymentType;
 
     @NotNull
     private double amount;
 
-    //@NotNull
+    @NotNull
     private int merchantOrderId;
 
-    //@NotNull
+    @NotNull
     private Date merchantTimestamp;
 
-    //@NotNull
+    @NotNull
     private String errorUrl;
 }

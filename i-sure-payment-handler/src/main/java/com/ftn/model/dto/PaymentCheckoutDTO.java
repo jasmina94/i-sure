@@ -23,5 +23,9 @@ public class PaymentCheckoutDTO {
     private Date acquirerTimestamp;
 
     @NotNull
-    private long paymentId;
+    private String paymentId;
+    
+    private String successUrl;
+
+    private String errorUrl;
 }

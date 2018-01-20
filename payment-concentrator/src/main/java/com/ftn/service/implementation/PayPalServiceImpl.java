@@ -5,8 +5,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.ftn.model.dto.PaymentCheckoutDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
@@ -28,95 +33,121 @@ import com.paypal.base.rest.PayPalRESTException;
 @Service
 public class PayPalServiceImpl implements PayPalService {
 
-	public static final String PAYPAL_SUCCESS_URL = "inquiries/testni";
-	public static final String PAYPAL_CANCEL_URL = "inquiries/cancel";
+    public static final String PAYPAL_SUCCESS_URL = "inquiries/testni";
+    public static final String PAYPAL_CANCEL_URL = "inquiries/cancel";
 
-	@Autowired
-	private APIContext apiContext;
+    @Value("${ph.home}")
+    private String ph_home;
 
-	@Override
-	public PaymentInquiryInfoDTO sendPaymentInquiry(PaymentInquiryDTO piDTO, HttpServletRequest request) {
+    @Value("${ph.payment.checkout}")
+    private String ph_checkout;
 
-		String cancelUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_CANCEL_URL;
-		String successUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_SUCCESS_URL;
+    private RestTemplate restTemplate = new RestTemplate();
 
-		System.out.println("Success url " + successUrl);
+    @Autowired
+    private APIContext apiContext;
 
-		Amount amount = new Amount();
-		amount.setCurrency("USD");
-		amount.setTotal(String.format("%.2f", piDTO.getAmount()));
+    @Override
+    public PaymentInquiryInfoDTO sendPaymentInquiry(PaymentInquiryDTO piDTO, HttpServletRequest request) {
 
-		Transaction transaction = new Transaction();
-		transaction.setDescription("Paypal payment description");
-		transaction.setAmount(amount);
+        String cancelUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_CANCEL_URL;
+        String successUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_SUCCESS_URL;
 
-		Payee payee = new Payee();
-		payee.setEmail("teauvranju-facilitator@hotmail.com");
+        System.out.println("Success url " + successUrl);
 
-		List<Transaction> transactions = new ArrayList<>();
-		transactions.add(transaction);
+        Amount amount = new Amount();
+        amount.setCurrency("USD");
+        amount.setTotal(String.format("%.2f", piDTO.getAmount()));
 
-		Payer payer = new Payer();
-		payer.setPaymentMethod(PaypalPaymentMethod.paypal.toString());
+        Transaction transaction = new Transaction();
+        transaction.setDescription("Paypal payment description");
+        transaction.setAmount(amount);
 
-		Payment payment = new Payment();
-		payment.setIntent(PaypalPaymentIntent.sale.toString());
-		payment.setPayer(payer);
+        Payee payee = new Payee();
+        payee.setEmail("teauvranju-facilitator@hotmail.com");
 
-		payment.setTransactions(transactions);
-		RedirectUrls redirectUrls = new RedirectUrls();
-		redirectUrls.setCancelUrl(cancelUrl);
-		
-		redirectUrls.setReturnUrl(successUrl);
-		payment.setRedirectUrls(redirectUrls);
+        List<Transaction> transactions = new ArrayList<>();
+        transactions.add(transaction);
 
-		Payment p;
-		try {
-			p = payment.create(apiContext);
-		} catch (PayPalRESTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			p = null;
-			return null;
-		}
+        Payer payer = new Payer();
+        payer.setPaymentMethod(PaypalPaymentMethod.paypal.toString());
 
-		List<Links> lista = p.getLinks();
+        Payment payment = new Payment();
+        payment.setIntent(PaypalPaymentIntent.sale.toString());
+        payment.setPayer(payer);
 
-		System.out.println("ID " + p.getId());
+        payment.setTransactions(transactions);
+        RedirectUrls redirectUrls = new RedirectUrls();
+        redirectUrls.setCancelUrl(cancelUrl);
 
-		String approval_url = null;
+        redirectUrls.setReturnUrl(successUrl);
+        payment.setRedirectUrls(redirectUrls);
 
-		for (Links links : lista) {
-			if (links.getRel().equals("approval_url")) {
-				// approval_url = "redirect:" + links.getHref();
-				approval_url = links.getHref();
-				break;
-			}
-		}
+        Payment p;
+        try {
+            p = payment.create(apiContext);
+        } catch (PayPalRESTException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            p = null;
+            return null;
+        }
 
-		// privremeno
-		PaymentInquiryInfoDTO piInfoDTO = new PaymentInquiryInfoDTO();
-		piInfoDTO.setPaymentId(p.getId());
-		piInfoDTO.setPaymentUrl(approval_url);
+        List<Links> lista = p.getLinks();
 
-		return piInfoDTO;
-	}
+        System.out.println("ID " + p.getId());
 
-	@Override
-	public PaymentInquiryInfoDTO sendPaymentInquiry(PaymentInquiryDTO piDTO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+        String approval_url = null;
 
-	@Override
-	public Payment executePayment(String paymentId, String payerId) throws PayPalRESTException {
-		Payment payment = new Payment();
-		payment.setId(paymentId);
-		PaymentExecution paymentExecute = new PaymentExecution();
-		paymentExecute.setPayerId(payerId);
+        for (Links links : lista) {
+            if (links.getRel().equals("approval_url")) {
+                // approval_url = "redirect:" + links.getHref();
+                approval_url = links.getHref();
+                break;
+            }
+        }
 
-		return payment.execute(apiContext, paymentExecute);
+        String[] parts = approval_url.split("token=");
+        String token = parts[1];
 
-	}
+        // privremeno
+        PaymentInquiryInfoDTO piInfoDTO = new PaymentInquiryInfoDTO();
+        // piInfoDTO.setPaymentId(p.getId());
+        piInfoDTO.setPaymentId(token);
+        piInfoDTO.setPaymentUrl(approval_url);
+
+        return piInfoDTO;
+    }
+
+    @Override
+    public PaymentInquiryInfoDTO sendPaymentInquiry(PaymentInquiryDTO piDTO) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Payment executePayment(String paymentId, String payerId) throws PayPalRESTException {
+        Payment payment = new Payment();
+        payment.setId(paymentId);
+        PaymentExecution paymentExecute = new PaymentExecution();
+        paymentExecute.setPayerId(payerId);
+        return payment.execute(apiContext, paymentExecute);
+    }
+
+    @Override
+    public void successPayment(String token) {
+        PaymentCheckoutDTO paymentCheckoutDTO = new PaymentCheckoutDTO();
+        paymentCheckoutDTO.setPaymentId(token);
+        ResponseEntity response = restTemplate.postForEntity(ph_home + ph_checkout + "/success",
+                new HttpEntity<>(paymentCheckoutDTO), PaymentCheckoutDTO.class);
+    }
+
+    @Override
+    public void cancelPayment(String token) {
+        PaymentCheckoutDTO paymentCheckoutDTO = new PaymentCheckoutDTO();
+        paymentCheckoutDTO.setPaymentId(token);
+        ResponseEntity response = restTemplate.postForEntity(ph_home + ph_checkout + "/cancel",
+                new HttpEntity<>(paymentCheckoutDTO), PaymentCheckoutDTO.class);
+    }
 
 }

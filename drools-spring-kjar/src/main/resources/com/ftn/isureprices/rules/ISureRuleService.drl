@@ -1,0 +1,30 @@
+package com.ftn.isureprices.rules
+
+import com.ftn.model.dto.*;
+
+rule "InternationalTravelInsuranceRule"
+lock-on-active
+    no-loop
+    when
+       $i: InternationalTravelInsuranceDTO(getPrice() > 500)
+    then
+       modify ($i) {setPrice(100)}
+    end
+
+rule "HomeInsuranceRule"
+lock-on-active
+    no-loop
+    when
+       $i: HomeInsuranceDTO(getPrice() > 1000)
+    then
+       modify ($i) {setPrice(500)}
+    end
+
+rule "RoadsideAssistanceInsuranceRule"
+lock-on-active
+    no-loop
+    when
+       $i: RoadsideAssistanceInsuranceDTO(getPrice() > 2000)
+    then
+       modify ($i) {setPrice(1000)}
+    end

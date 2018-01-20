@@ -2,13 +2,12 @@
 //
 //import com.ftn.model.User;
 //import com.ftn.service.implementation.RuleServiceImpl;
+//import org.apache.maven.shared.invoker.*;
 //import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.context.support.AbstractApplicationContext;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RestController;
-//import org.apache.maven.shared.invoker.*;
 //
 //import java.io.*;
 //import java.util.Arrays;
@@ -19,9 +18,6 @@
 //@RestController
 //public class RuleController {
 //
-//    @Autowired
-//    private AbstractApplicationContext context;
-//
 //    private final RuleServiceImpl ruleService;
 //
 //    @Autowired
@@ -31,23 +27,16 @@
 //
 //    @RequestMapping(value = "/ruleTest", method = RequestMethod.GET, produces = "application/json")
 //    public User getQuestions(@RequestParam(required = true) String name, @RequestParam(required = true) int number) {
-//        ClassLoader classLoader = getClass().getClassLoader();
-//        File file = new File(classLoader.getResource("com/ftn/isureprices/rules/ISure.drl").getFile());
-//        System.out.println(file);
 //        User user = new User(name, number);
-//
 //        System.out.println("User request received for: " + user);
+//        User user2 = ruleService.getUser(user);
 //
-//        User userRule = ruleService.getUser(user);
-//
-//        return userRule;
+//        return user2;
 //    }
 //
 //    @RequestMapping(value = "/openFile", method = RequestMethod.GET)
 //    public String openFile() throws IOException {
-//        ClassLoader classLoader = getClass().getClassLoader();
-//        File file = new File(classLoader.getResource("com/ftn/isureprices/rules/ISure.drl").getFile());
-//
+//        File file = new File("C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\src\\main\\resources\\com\\ftn\\isureprices\\rules\\ISure.drl");
 //        return readRuleFile(file);
 //    }
 //
@@ -55,19 +44,15 @@
 //    public void saveFile(String tekst) throws MavenInvocationException {
 //        System.out.println(tekst);
 //
-//        File fileFromContext = new File("/Users/zlatan/Documents/GIT/i-sure/PriceManagement/src/main/resources/com/ftn/isureprices/rules/ISure.drl");
-//        saveRuleFile(tekst, fileFromContext);
-//
-//        ClassLoader classLoader = getClass().getClassLoader();
-//        File fileFromProject = new File(classLoader.getResource("com/ftn/isureprices/rules/ISure.drl").getFile());
-//        saveRuleFile(tekst, fileFromProject);
+//        File file = new File("C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\src\\main\\resources\\com\\ftn\\isureprices\\rules\\ISure.drl");
+//        saveRuleFile(tekst, file);
 //
 //        InvocationRequest request = new DefaultInvocationRequest();
-//        request.setPomFile( new File( "/Users/zlatan/Documents/GIT/i-sure/PriceManagement/pom.xml" ) );
+//        request.setPomFile( new File( "C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\pom.xml" ) );
 //        request.setGoals( Arrays.asList( "clean", "install" ) );
 //
 //        Invoker invoker = new DefaultInvoker();
-//        //invoker.setMavenHome(new File(System.getenv("M2_HOME")));
+//        invoker.setMavenHome(new File(System.getenv("M2_HOME")));
 //        invoker.execute( request );
 //    }
 //

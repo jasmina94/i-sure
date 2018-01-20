@@ -12486,6 +12486,7 @@ Using default security password: 894bc55d-ed31-4e53-927d-0a1b9115f121
 [INFO ]2017-12-04 13:29:12 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 [INFO ]2017-12-04 13:29:12 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
 [INFO ]2017-12-04 13:29:12 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+<<<<<<< HEAD
 [INFO ]2017-12-11 14:51:36 korenski.MtbApplication - Starting MtbApplication on DESKTOP-O6QOD7O with PID 4324 (C:\Users\Shade\Documents\GIT\i-sure\AdminApp\target\classes started by Shade in C:\Users\Shade\Documents\GIT\i-sure\AdminApp)
 [INFO ]2017-12-11 14:51:37 korenski.MtbApplication - No active profile set, falling back to default profiles: default
 [INFO ]2017-12-11 14:51:37 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1d9b7cce: startup date [Mon Dec 11 14:51:37 CET 2017]; root of context hierarchy
@@ -13094,6 +13095,92 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
 	at korenski.service.implementation.PermissionServiceImplementation.readAll(PermissionServiceImplementation.java:27)
 	at korenski.controller.autorizacija.PermissionController.allPermissions(PermissionController.java:92)
+=======
+[INFO ]2018-01-16 22:36:14 korenski.MtbApplication - Starting MtbApplication on DESKTOP-70A4T8A with PID 5188 (started by Tea in D:\My stuff\SEP\SEP_REPOSITORY\AdminApp)
+[INFO ]2018-01-16 22:36:14 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2018-01-16 22:36:14 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:36:14 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 22:36:14 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2018-01-16 22:36:17 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$794f7e58] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-01-16 22:36:18 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8081 (http)
+[INFO ]2018-01-16 22:36:18 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2018-01-16 22:36:18 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2018-01-16 22:36:18 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-01-16 22:36:18 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3459 ms
+[INFO ]2018-01-16 22:36:18 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-01-16 22:36:18 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-01-16 22:36:18 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-01-16 22:36:18 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-01-16 22:36:18 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-01-16 22:36:18 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 22:36:18 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-01-16 22:36:19 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2018-01-16 22:36:19 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-01-16 22:36:19 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-01-16 22:36:19 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-01-16 22:36:19 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-01-16 22:36:20 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2018-01-16 22:36:20 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2018-01-16 22:36:20 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2018-01-16 22:36:20 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2018-01-16 22:36:20 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2018-01-16 22:36:20 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-16 22:36:20 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:36:14 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-01-16 22:36:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-01-16 22:36:21 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:36:21 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:36:21 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:36:21 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2018-01-16 22:36:22 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-01-16 22:36:22 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+[INFO ]2018-01-16 22:36:22 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8081]
+[INFO ]2018-01-16 22:36:22 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-01-16 22:36:22 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8081 (http)
+[INFO ]2018-01-16 22:36:22 korenski.MtbApplication - Started MtbApplication in 8.197 seconds (JVM running for 8.943)
+[INFO ]2018-01-16 22:42:06 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-01-16 22:42:06 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-01-16 22:42:06 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 36 ms
+[ERROR]2018-01-16 22:42:08 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/permissions/allPermissions": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
+	at korenski.service.implementation.PermissionServiceImplementation.readAll(PermissionServiceImplementation.java:27)
+	at korenski.controller.autorizacija.PermissionController.allPermissions(PermissionController.java:93)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -13116,6 +13203,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -13172,6 +13260,8 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+=======
+>>>>>>> development
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
@@ -13190,9 +13280,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -13202,6 +13296,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
@@ -13565,6 +13660,83 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
 	at korenski.service.implementation.PermissionServiceImplementation.readAll(PermissionServiceImplementation.java:27)
 	at korenski.controller.autorizacija.PermissionController.allPermissions(PermissionController.java:92)
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ]2018-01-16 22:44:04 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2018-01-16 22:44:04 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2018-01-16 22:44:04 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:36:14 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 22:44:04 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-01-16 22:44:04 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 22:44:04 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2018-01-16 22:44:04 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-16 22:45:31 korenski.MtbApplication - Starting MtbApplication on DESKTOP-70A4T8A with PID 10512 (started by Tea in D:\My stuff\SEP\SEP_REPOSITORY\AdminApp)
+[INFO ]2018-01-16 22:45:31 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2018-01-16 22:45:31 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:45:31 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 22:45:31 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2018-01-16 22:45:33 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$794f7e58] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-01-16 22:45:34 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8081 (http)
+[INFO ]2018-01-16 22:45:34 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2018-01-16 22:45:34 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2018-01-16 22:45:34 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-01-16 22:45:34 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2771 ms
+[INFO ]2018-01-16 22:45:34 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-01-16 22:45:34 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-01-16 22:45:34 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-01-16 22:45:34 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-01-16 22:45:34 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-01-16 22:45:35 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 22:45:35 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-01-16 22:45:35 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2018-01-16 22:45:35 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-01-16 22:45:35 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-01-16 22:45:35 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-01-16 22:45:35 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-01-16 22:45:36 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2018-01-16 22:45:36 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2018-01-16 22:45:36 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2018-01-16 22:45:36 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2018-01-16 22:45:36 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2018-01-16 22:45:36 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-16 22:45:36 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:45:31 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-01-16 22:45:37 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-01-16 22:45:37 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:45:37 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:45:37 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:45:37 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2018-01-16 22:45:38 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-01-16 22:45:38 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+[INFO ]2018-01-16 22:45:38 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8081]
+[INFO ]2018-01-16 22:45:38 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-01-16 22:45:38 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8081 (http)
+[INFO ]2018-01-16 22:45:38 korenski.MtbApplication - Started MtbApplication in 6.963 seconds (JVM running for 7.762)
+[INFO ]2018-01-16 22:45:43 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-01-16 22:45:43 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-01-16 22:45:43 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+[ERROR]2018-01-16 22:50:35 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.HttpServerErrorException: 500 null] with root cause
+org.springframework.web.client.HttpServerErrorException: 500 null
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:94)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:667)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:620)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:407)
+	at korenski.service.implementation.RoleServiseImplementation.create(RoleServiseImplementation.java:39)
+	at korenski.controller.autorizacija.RoleController.newRole(RoleController.java:42)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -13578,8 +13750,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+<<<<<<< HEAD
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+=======
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>>>>>> development
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
@@ -13587,6 +13764,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -13643,6 +13821,8 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+=======
+>>>>>>> development
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
@@ -13661,9 +13841,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -13673,6 +13857,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
@@ -14747,6 +14932,41 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
 	at korenski.controller.autorizacija.PermissionController$$EnhancerBySpringCGLIB$$b7583aa5.allPermissions(<generated>)
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:54:26 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9010/roles/newRole": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:407)
+	at korenski.service.implementation.RoleServiseImplementation.create(RoleServiseImplementation.java:39)
+	at korenski.controller.autorizacija.RoleController.newRole(RoleController.java:42)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -14760,8 +14980,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+<<<<<<< HEAD
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+=======
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>>>>>> development
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
@@ -14769,6 +14994,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -14823,6 +15049,89 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
 	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+=======
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:54:36 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9010/roles/newRole": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:407)
+	at korenski.service.implementation.RoleServiseImplementation.create(RoleServiseImplementation.java:39)
+	at korenski.controller.autorizacija.RoleController.newRole(RoleController.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:220)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+>>>>>>> development
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
@@ -14843,9 +15152,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -14855,6 +15168,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
@@ -19479,6 +19793,41 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
 	at korenski.controller.autorizacija.PermissionController$$EnhancerBySpringCGLIB$$b7583aa5.newPermission(<generated>)
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:54:44 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9010/roles/allRoles": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
+	at korenski.service.implementation.RoleServiseImplementation.readAll(RoleServiseImplementation.java:30)
+	at korenski.controller.autorizacija.RoleController.allRoles(RoleController.java:84)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -19492,8 +19841,13 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+<<<<<<< HEAD
 	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+=======
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+>>>>>>> development
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
@@ -19501,6 +19855,7 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -19552,6 +19907,89 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
 	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+=======
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:54:44 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9010/permissions/allPermissions": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
+	at korenski.service.implementation.PermissionServiceImplementation.readAll(PermissionServiceImplementation.java:27)
+	at korenski.controller.autorizacija.PermissionController.allPermissions(PermissionController.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:220)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+>>>>>>> development
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
@@ -19572,9 +20010,13 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -19582,6 +20024,7 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+<<<<<<< HEAD
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
@@ -19960,6 +20403,43 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
 	at korenski.controller.autorizacija.PermissionController$$EnhancerBySpringCGLIB$$b7583aa5.allPermissions(<generated>)
+=======
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:54:45 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9010/permissions/allPermissions": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
+	at korenski.service.implementation.PermissionServiceImplementation.readAll(PermissionServiceImplementation.java:27)
+	at korenski.controller.autorizacija.PermissionController.allPermissions(PermissionController.java:93)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -19982,6 +20462,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -20035,6 +20516,8 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+=======
+>>>>>>> development
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
@@ -20053,9 +20536,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -20065,6 +20552,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
@@ -20794,6 +21282,41 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
 	at korenski.controller.autorizacija.PermissionController$$EnhancerBySpringCGLIB$$b7583aa5.newPermission(<generated>)
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:54:46 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9010/roles/allRoles": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
+	at korenski.service.implementation.RoleServiseImplementation.readAll(RoleServiseImplementation.java:30)
+	at korenski.controller.autorizacija.RoleController.allRoles(RoleController.java:84)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -20807,8 +21330,13 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+<<<<<<< HEAD
 	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+=======
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+>>>>>>> development
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
@@ -20816,6 +21344,7 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -20869,6 +21398,8 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+=======
+>>>>>>> development
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
@@ -20887,9 +21418,13 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -20899,6 +21434,7 @@ org.springframework.web.client.HttpClientErrorException: 403
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
@@ -22000,6 +22536,13 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 [INFO ]2017-12-11 16:10:41 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
 [INFO ]2017-12-11 16:10:41 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
 [ERROR]2017-12-11 16:10:44 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8081/permissions/allPermissions": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:54:46 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9010/permissions/allPermissions": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+>>>>>>> development
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
@@ -22016,16 +22559,24 @@ java.net.ConnectException: Connection refused: connect
 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+<<<<<<< HEAD
 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+=======
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+>>>>>>> development
 	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
 	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:312)
+<<<<<<< HEAD
 	at korenski.service.implementation.PermissionServiceImplementation.readAll(PermissionServiceImplementation.java:30)
 	at korenski.controller.autorizacija.PermissionController.allPermissions(PermissionController.java:91)
 	at korenski.controller.autorizacija.PermissionController$$FastClassBySpringCGLIB$$7f4c9191.invoke(<generated>)
@@ -22036,6 +22587,10 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
 	at korenski.controller.autorizacija.PermissionController$$EnhancerBySpringCGLIB$$b7583aa5.allPermissions(<generated>)
+=======
+	at korenski.service.implementation.PermissionServiceImplementation.readAll(PermissionServiceImplementation.java:27)
+	at korenski.controller.autorizacija.PermissionController.allPermissions(PermissionController.java:93)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -22058,6 +22613,7 @@ java.net.ConnectException: Connection refused: connect
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -22111,6 +22667,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+=======
+>>>>>>> development
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
@@ -22129,9 +22687,13 @@ java.net.ConnectException: Connection refused: connect
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -22141,6 +22703,7 @@ java.net.ConnectException: Connection refused: connect
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
@@ -22163,6 +22726,41 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
 	at korenski.controller.autorizacija.PermissionController$$EnhancerBySpringCGLIB$$b7583aa5.allPermissions(<generated>)
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:54:51 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9010/roles/newRole": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:619)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:407)
+	at korenski.service.implementation.RoleServiseImplementation.create(RoleServiseImplementation.java:39)
+	at korenski.controller.autorizacija.RoleController.newRole(RoleController.java:42)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -22176,8 +22774,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+<<<<<<< HEAD
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+=======
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>>>>>> development
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
@@ -22185,6 +22788,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -22238,6 +22842,8 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+=======
+>>>>>>> development
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
@@ -22256,9 +22862,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -22268,6 +22878,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
@@ -22290,6 +22901,34 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
 	at korenski.controller.autorizacija.PermissionController$$EnhancerBySpringCGLIB$$b7583aa5.allPermissions(<generated>)
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR]2018-01-16 22:55:44 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9010/roles/newRole": Connection reset; nested exception is java.net.SocketException: Connection reset] with root cause
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:735)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:678)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1569)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at org.springframework.http.client.SimpleClientHttpResponse.getRawStatusCode(SimpleClientHttpResponse.java:52)
+	at org.springframework.http.client.AbstractClientHttpResponse.getStatusCode(AbstractClientHttpResponse.java:33)
+	at org.springframework.web.client.DefaultResponseErrorHandler.getHttpStatusCode(DefaultResponseErrorHandler.java:56)
+	at org.springframework.web.client.DefaultResponseErrorHandler.hasError(DefaultResponseErrorHandler.java:50)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:655)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:620)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:580)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:407)
+	at korenski.service.implementation.RoleServiseImplementation.create(RoleServiseImplementation.java:39)
+	at korenski.controller.autorizacija.RoleController.newRole(RoleController.java:42)
+>>>>>>> development
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -22303,8 +22942,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+<<<<<<< HEAD
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+=======
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>>>>>> development
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
@@ -22312,6 +22956,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+<<<<<<< HEAD
 	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
@@ -22365,6 +23010,8 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+=======
+>>>>>>> development
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
@@ -22383,9 +23030,13 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+<<<<<<< HEAD
 	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+=======
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+>>>>>>> development
 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
@@ -22395,6 +23046,7 @@ org.springframework.web.client.RestClientException: Could not extract response: 
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
@@ -22501,3 +23153,137 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 [INFO ]2017-12-11 16:11:38 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ]2018-01-16 22:55:47 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2018-01-16 22:55:47 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:45:31 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 22:55:47 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-01-16 22:55:47 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 22:55:47 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2018-01-16 22:55:47 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-16 22:56:47 korenski.MtbApplication - Starting MtbApplication on DESKTOP-70A4T8A with PID 3220 (started by Tea in D:\My stuff\SEP\SEP_REPOSITORY\AdminApp)
+[INFO ]2018-01-16 22:56:47 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2018-01-16 22:56:48 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:56:48 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 22:56:48 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2018-01-16 22:56:51 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$794f7e58] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-01-16 22:56:51 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8081 (http)
+[INFO ]2018-01-16 22:56:51 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2018-01-16 22:56:51 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2018-01-16 22:56:51 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-01-16 22:56:51 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3812 ms
+[INFO ]2018-01-16 22:56:52 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-01-16 22:56:52 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-01-16 22:56:52 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-01-16 22:56:52 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-01-16 22:56:52 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-01-16 22:56:52 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 22:56:52 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-01-16 22:56:52 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2018-01-16 22:56:52 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-01-16 22:56:52 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-01-16 22:56:52 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-01-16 22:56:53 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-01-16 22:56:53 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2018-01-16 22:56:53 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2018-01-16 22:56:53 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2018-01-16 22:56:53 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2018-01-16 22:56:53 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2018-01-16 22:56:54 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-16 22:56:54 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 22:56:54 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:56:48 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-01-16 22:56:55 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-01-16 22:56:55 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:56:55 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:56:55 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 22:56:55 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2018-01-16 22:56:55 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-01-16 22:56:55 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+[INFO ]2018-01-16 22:56:55 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8081]
+[INFO ]2018-01-16 22:56:55 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-01-16 22:56:55 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8081 (http)
+[INFO ]2018-01-16 22:56:55 korenski.MtbApplication - Started MtbApplication in 8.475 seconds (JVM running for 9.168)
+[INFO ]2018-01-16 22:58:29 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-01-16 22:58:29 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-01-16 22:58:29 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 43 ms
+[INFO ]2018-01-16 23:22:34 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2018-01-16 23:22:34 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 22:56:48 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 23:22:34 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-01-16 23:22:34 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 23:22:34 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2018-01-16 23:22:34 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-16 23:42:15 korenski.MtbApplication - Starting MtbApplication on DESKTOP-70A4T8A with PID 7872 (started by Tea in D:\My stuff\SEP\SEP_REPOSITORY\AdminApp)
+[INFO ]2018-01-16 23:42:15 korenski.MtbApplication - No active profile set, falling back to default profiles: default
+[INFO ]2018-01-16 23:42:15 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 23:42:15 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 23:42:15 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.2.4.Final
+[INFO ]2018-01-16 23:42:18 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$794f7e58] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-01-16 23:42:18 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8081 (http)
+[INFO ]2018-01-16 23:42:18 o.a.catalina.core.StandardService - Starting service Tomcat
+[INFO ]2018-01-16 23:42:18 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.6
+[INFO ]2018-01-16 23:42:19 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-01-16 23:42:19 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3328 ms
+[INFO ]2018-01-16 23:42:19 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-01-16 23:42:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-01-16 23:42:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-01-16 23:42:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-01-16 23:42:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-01-16 23:42:19 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 23:42:19 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-01-16 23:42:19 org.hibernate.Version - HHH000412: Hibernate Core {5.0.11.Final}
+[INFO ]2018-01-16 23:42:19 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-01-16 23:42:19 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-01-16 23:42:19 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-01-16 23:42:20 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-01-16 23:42:21 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[ERROR]2018-01-16 23:42:21 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKclluu29apreb6osx6ogt4qe16
+[ERROR]2018-01-16 23:42:21 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[ERROR]2018-01-16 23:42:21 o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table role_permissions drop foreign key FKlodb7xh4a2xjv39gc3lsop95n
+[ERROR]2018-01-16 23:42:21 o.h.tool.hbm2ddl.SchemaExport - Table 'finalni.role_permissions' doesn't exist
+[INFO ]2018-01-16 23:42:21 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+[INFO ]2018-01-16 23:42:21 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 23:42:15 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deletePermission/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.deletePermission(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newPermission],methods=[POST]}" onto public org.springframework.http.ResponseEntity korenski.controller.autorizacija.PermissionController.newPermission(korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updatePermission/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Permission> korenski.controller.autorizacija.PermissionController.updatePermission(java.lang.Long,korenski.model.autorizacija.Permission,org.springframework.validation.BindingResult)
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allPermissions],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Permission>> korenski.controller.autorizacija.PermissionController.allPermissions() throws java.lang.Exception
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/deleteRole/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.deleteRole(java.lang.Long) throws java.lang.Exception
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/newRole],methods=[POST]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.newRole(korenski.model.autorizacija.Role,org.springframework.validation.BindingResult) throws java.lang.Exception
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/updateRole/{id}],methods=[PATCH]}" onto public org.springframework.http.ResponseEntity<korenski.model.autorizacija.Role> korenski.controller.autorizacija.RoleController.updateRole(java.lang.Long,korenski.model.autorizacija.Role,org.springframework.validation.BindingResult)
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/allRoles],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<korenski.model.autorizacija.Role>> korenski.controller.autorizacija.RoleController.allRoles() throws java.lang.Exception
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-01-16 23:42:22 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-01-16 23:42:22 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 23:42:22 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 23:42:22 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-01-16 23:42:22 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ]2018-01-16 23:42:22 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-01-16 23:42:23 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+[INFO ]2018-01-16 23:42:23 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8081]
+[INFO ]2018-01-16 23:42:23 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-01-16 23:42:23 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8081 (http)
+[INFO ]2018-01-16 23:42:23 korenski.MtbApplication - Started MtbApplication in 8.151 seconds (JVM running for 9.071)
+[INFO ]2018-01-16 23:43:26 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-01-16 23:43:26 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-01-16 23:43:26 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+[INFO ]2018-01-16 23:47:10 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ]2018-01-16 23:47:10 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@291caca8: startup date [Tue Jan 16 23:42:15 CET 2018]; root of context hierarchy
+[INFO ]2018-01-16 23:47:10 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-01-16 23:47:10 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-01-16 23:47:10 o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+[INFO ]2018-01-16 23:47:10 o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+>>>>>>> development

@@ -1,7 +1,8 @@
 package com.ftn;
 
-import org.kie.api.KieServices;
-import org.kie.api.runtime.KieContainer;
+//import org.kie.api.KieServices;
+//import org.kie.api.builder.KieScanner;
+//import org.kie.api.runtime.KieContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -40,6 +41,10 @@ public class ISurePriceManagementApplication {
      */
 //    @Bean
 //    public KieContainer kieContainer() {
-//        return KieServices.Factory.get().getKieClasspathContainer();
+//        KieServices ks = KieServices.Factory.get();
+//        KieContainer kContainer = ks.newKieContainer(ks.newReleaseId("com.ftn","drools-spring-kjar", "0.0.1-SNAPSHOT"));
+//        KieScanner kScanner = ks.newKieScanner(kContainer);
+//        kScanner.start(1_000);
+//        return kContainer;
 //    }
 }

@@ -99,12 +99,12 @@ public class AcquirerServiceImpl implements AcquirerService {
         paymentCheckout.setAcquirerTimestamp(paymentResponseInfoDTO.getAcquirerTimestamp());
 
         String selfUrl = environmentProperties.getSelfUrl();
-        String errorUrl = selfUrl + "acquirer/error";
-        String successUrl = selfUrl + "acquirer/success";
+        String errorUrl = selfUrl + "#/acquirer/error";
+        String successUrl = selfUrl + "#/acquirer/success";
 
         Transaction transaction = transactionService.findById(acquirerOrderId);
         if (transaction != null) {
-            long paymentId = transaction.getPayment().getId();
+            String paymentId = transaction.getPayment().getId().toString();
             paymentCheckout.setPaymentId(paymentId);
             long merchantOrderId = transaction.getPayment().getMerchantOrderId();
             paymentCheckout.setMerchantOrderId(merchantOrderId);
@@ -123,13 +123,31 @@ public class AcquirerServiceImpl implements AcquirerService {
             } else {
                 transaction.setStatus(Transaction.Status.REVERSED);
                 paymentCheckout.setErrorUrl(errorUrl);
+                transactionService.update(transaction.getId(), transaction);
             }
-            transactionService.update(transaction.getId(), transaction);
         } else {
-            paymentCheckout.setPaymentId(0);
+            paymentCheckout.setPaymentId("0");
             paymentCheckout.setMerchantOrderId(0);
             paymentCheckout.setErrorUrl(errorUrl);
         }
         return paymentCheckout;
     }
+
+    @Override
+    public String getBankName() {
+        String bankName = environmentProperties.getBankName();
+        return bankName;
+    }
+
+    @Override
+    public double getAmountForPaymentId(long paymentId) {
+        double amount = 0.0;
+        Payment payment = onlinePaymentService.findByPaymentId(paymentId);
+        if(payment != null){
+            amount = payment.getAmount();
+        }
+        return amount;
+    }
+
+
 }

@@ -17,4 +17,8 @@ public interface AcquirerService {
     Account getMerchantAccount(PaymentInquiryDTO paymentInquiryDTO);
 
     PaymentCheckoutDTO generateCheckout(PaymentResponseInfoDTO paymentResponseInfoDTO);
+
+    String getBankName();
+
+    double getAmountForPaymentId(long paymentId);
 }

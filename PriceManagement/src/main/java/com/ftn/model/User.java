@@ -4,6 +4,8 @@ package com.ftn.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 /**
  * Created by zlatan on 11/25/17.
  */
@@ -12,9 +14,7 @@ import lombok.NoArgsConstructor;
 public class User {
 
     private String name;
-
     private int number;
-
 
     public User(String name, int number){
         this.name = name;
@@ -27,17 +27,28 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) { return true; }
-        if (o == null || getClass() != o.getClass()) { return false; }
-        User that = (User) o;
-        return this.number == that.number && this.name.equals(that.name);
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + Objects.hashCode(this.number);
+        return hash;
     }
 
     @Override
-    public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + number;
-        return result;
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final User other = (User) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.number, other.number)) {
+            return false;
+        }
+        return true;
     }
 }

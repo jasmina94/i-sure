@@ -1,29 +1,27 @@
 //package com.ftn.service.implementation;
 //
-//import com.ftn.model.User;
-//import com.ftn.service.RuleService;
+//import com.ftn.model.dto.HomeInsuranceDTO;
+//import com.ftn.model.dto.InternationalTravelInsuranceDTO;
+//import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
 //import org.kie.api.runtime.KieContainer;
 //import org.kie.api.runtime.KieSession;
-//import org.kie.api.runtime.ObjectFilter;
-//import org.kie.api.runtime.rule.FactHandle;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 //
-//import java.util.ArrayList;
-//import java.util.Collection;
-//import java.util.List;
+//import com.ftn.model.User;
+//import com.ftn.service.RuleService;
 //
 ///**
 // * Created by zlatan on 11/25/17.
 // */
 //@Service
 //public class RuleServiceImpl implements RuleService{
-//
+//	
 //    private final KieContainer kieContainer;
 //
 //    @Autowired
 //    public RuleServiceImpl(KieContainer kieContainer) {
-//        System.out.println("Initialising a new bus pass session.");
+//        System.out.println("Initialising a new session.");
 //        this.kieContainer = kieContainer;
 //    }
 //
@@ -33,55 +31,38 @@
 //     */
 //    @Override
 //    public User getUser(User u) {
-//        KieSession kieSession = kieContainer.newKieSession("testUserSesion");
+//        KieSession kieSession = kieContainer.newKieSession();
 //        kieSession.insert(u);
 //        kieSession.fireAllRules();
-//        User user = findUser(kieSession);
 //        kieSession.dispose();
-//        System.out.println(user);
-//        return user;
+//        return u;
 //    }
 //
-//    /**
-//     * Search the {@link KieSession} for bus passes.
-//     */
 //    @Override
-//    public User findUser(KieSession kieSession) {
-//
-//        // Find all BusPass facts and 1st generation child classes of BusPass.
-//        ObjectFilter busPassFilter = new ObjectFilter() {
-//            public boolean accept(Object object) {
-//                if (User.class.equals(object.getClass())) return true;
-//                if (User.class.equals(object.getClass().getSuperclass())) return true;
-//                return false;
-//            }
-//        };
-//
-//        //printFactsMessage(kieSession);
-//
-//        List<User> facts = new ArrayList<User>();
-//        for (FactHandle handle : kieSession.getFactHandles(busPassFilter)) {
-//            facts.add((User) kieSession.getObject(handle));
-//        }
-//        if (facts.size() == 0) {
-//            return null;
-//        }
-//        // Assumes that the rules will always be generating a single bus pass.
-//        return facts.get(0);
+//    public InternationalTravelInsuranceDTO getInternationalTravelInsurance(InternationalTravelInsuranceDTO internationalTravelInsuranceDTO) {
+//        KieSession kieSession = kieContainer.newKieSession();
+//        kieSession.insert(internationalTravelInsuranceDTO);
+//        kieSession.fireAllRules();
+//        kieSession.dispose();
+//        return internationalTravelInsuranceDTO;
 //    }
 //
-//    /**
-//     * Print out details of all facts in working memory.
-//     * Handy for debugging.
-//     */
-//    @SuppressWarnings("unused")
-//    private void printFactsMessage(KieSession kieSession) {
-//        Collection<FactHandle> allHandles = kieSession.getFactHandles();
+//    @Override
+//    public HomeInsuranceDTO getHomeInsurance(HomeInsuranceDTO homeInsuranceDTO) {
+//        KieSession kieSession = kieContainer.newKieSession();
+//        kieSession.insert(homeInsuranceDTO);
+//        kieSession.fireAllRules();
+//        kieSession.dispose();
+//        return homeInsuranceDTO;
+//    }
 //
-//        String msg = "\nAll facts:\n";
-//        for (FactHandle handle : allHandles) {
-//            msg += "    " + kieSession.getObject(handle) + "\n";
-//        }
-//        System.out.println(msg);
+//    @Override
+//    public RoadsideAssistanceInsuranceDTO getRoadsideAssistanceInsurance(RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO) {
+//        KieSession kieSession = kieContainer.newKieSession();
+//        kieSession.insert(roadsideAssistanceInsuranceDTO);
+//        kieSession.fireAllRules();
+//        kieSession.dispose();
+//        return roadsideAssistanceInsuranceDTO;
 //    }
 //}
+//>>>>>>> development

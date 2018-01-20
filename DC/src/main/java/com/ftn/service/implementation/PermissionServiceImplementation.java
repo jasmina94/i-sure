@@ -28,7 +28,7 @@ public class PermissionServiceImplementation implements PermissionService{
 
 	@Override
 	public Permission create(Permission permission) {
-		
+		permission.setName(permission.getName().toUpperCase());
 		return permissionRepository.save(permission);
 	}
 
@@ -37,9 +37,9 @@ public class PermissionServiceImplementation implements PermissionService{
 		
 		Permission permissionModified = permissionRepository.findById(id).orElseThrow(NotFoundException::new);
 		
-		permissionModified.setName(permission.getName());
+		permissionModified.setName(permission.getName().toUpperCase());
 		
-		return permissionRepository.save(permission);
+		return permissionRepository.save(permissionModified);
 	}
 
 	@Override
