@@ -3,7 +3,7 @@ Implementation-Title: payment-concentrator
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Tea
 Implementation-Vendor-Id: com.example
-Build-Jdk: 1.8.0_111
+Build-Jdk: 1.8.0_131
 Implementation-URL: http://projects.spring.io/spring-boot/payment-conc
  entrator/
 Created-By: Maven Integration for Eclipse

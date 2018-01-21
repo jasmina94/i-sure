@@ -1,8 +1,0 @@
-@CHARSET "ISO-8859-1";
-.ng-invalid.ng-dirty {
-	border-color: red;
-}
-
-.ng-valid.ng-dirty {
-	border-color: green;
-}
