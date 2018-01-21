@@ -12,7 +12,7 @@ import com.ftn.model.dto.InsurancePolicyDTO;
 import com.ftn.service.PriceService;
 
 /**
- * Created by zlatan on 1/17/18.
+ * Created by desanka on 1/19/18.
  */
 @Controller
 @RequestMapping("/price")
@@ -25,6 +25,7 @@ public class PriceController {
         this.priceService = priceService;
     }
 
+    //vraca listu cijena [cijenaMedjunarodnog, cijenaKuce, cijenaPomocNaPutu]
     @PostMapping
     public ResponseEntity getPrice(@RequestBody InsurancePolicyDTO insurancePolicyDTO) {
         return new ResponseEntity<>(priceService.getPrice(insurancePolicyDTO), HttpStatus.OK);
