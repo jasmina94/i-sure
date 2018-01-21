@@ -396,7 +396,6 @@
                 homeInsuranceDTO = createHomeInsuranceDTO();
                 homeInsuranceDTO.price = vm.prices[1];
             }
-
             console.log(homeInsuranceDTO);
 
             var roadsideAssistanceInsuranceDTO = null;
@@ -404,7 +403,6 @@
                 roadsideAssistanceInsuranceDTO = createRoadsideAssistanceInsuranceDTO();
                 roadsideAssistanceInsuranceDTO.price = vm.prices[2];
             }
-
             console.log(roadsideAssistanceInsuranceDTO);
 
             var insurancePolicyDTO =
