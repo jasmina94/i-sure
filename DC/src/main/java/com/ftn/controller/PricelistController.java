@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ftn.exception.BadRequestException;
+import com.ftn.intercepting.CustomAnnotation;
 import com.ftn.model.Pricelist;
 import com.ftn.model.dto.PricelistDTO;
 import com.ftn.repository.PricelistRepository;
@@ -35,13 +36,15 @@ public class PricelistController {
     public PricelistController(PricelistService pricelistService){
         this.pricelistService = pricelistService;
     }
-
+    
+    @CustomAnnotation(value = "READ_ALL_PRICELISTS")
     @Transactional
     @GetMapping
     public ResponseEntity read() {
         return new ResponseEntity<>(pricelistService.readAll(), HttpStatus.OK);
     }
-
+    
+    @CustomAnnotation(value = "CREATE_PRICELIST")
 	@Transactional
     @PostMapping
     public ResponseEntity create(@Valid @RequestBody PricelistDTO pricelistDTO, BindingResult bindingResult) {
@@ -57,7 +60,8 @@ public class PricelistController {
         
         
     }
-
+    
+    @CustomAnnotation(value = "UPDATE_PRICELIST")
     @Transactional
     @PatchMapping(value = "/{id}")
     public ResponseEntity update(@PathVariable Long id, @Valid @RequestBody PricelistDTO pricelistDTO, BindingResult bindingResult) {
@@ -66,7 +70,8 @@ public class PricelistController {
         }
         return new ResponseEntity<>(pricelistService.update(id, pricelistDTO), HttpStatus.OK);
     }
-
+    
+    @CustomAnnotation(value = "DELETE_PRICELIST")
     @Transactional
     @DeleteMapping(value = "/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
@@ -74,13 +79,14 @@ public class PricelistController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @CustomAnnotation(value = "FIND_PRICELIST_BY_ID")
     @Transactional
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id){
         return new ResponseEntity<>(pricelistService.findById(id), HttpStatus.OK);
     }
     
-    
+    @CustomAnnotation(value = "FIND_CURRENTLY_ACTIVE_PRICELIST")
     @Transactional
     @GetMapping(value = "/currentlyActive")
     public ResponseEntity findcurrentlyActive(){
@@ -98,6 +104,7 @@ public class PricelistController {
        
     }
     
+    @CustomAnnotation(value = "FIND_MAX_DATE_TO_PRICELIST")
     @Transactional
     @GetMapping(value = "/maxDateTo")
     public ResponseEntity findMaxDateTo(){

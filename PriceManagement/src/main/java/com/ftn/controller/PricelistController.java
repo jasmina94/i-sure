@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -30,6 +31,7 @@ public class PricelistController {
 	
 	@GetMapping
 	public ResponseEntity read() {
+
 		return new ResponseEntity<>(pricelistService.findAll(), HttpStatus.OK);
 	}
 	
@@ -40,6 +42,8 @@ public class PricelistController {
 	
 	@PostMapping
 	public ResponseEntity create(@RequestBody PricelistDTO pricelistDTO) {
+
+		System.out.println(SecurityContextHolder.getContext().getAuthentication().getName());
 		return new ResponseEntity<>(pricelistService.create(pricelistDTO), HttpStatus.CREATED);
 	}
 	

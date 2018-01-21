@@ -1,21 +1,17 @@
 package com.ftn.intercepting;
 
-import java.lang.reflect.Method;
 import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-
-import com.ftn.model.authorisation.Permission;
-import com.ftn.model.authorisation.Role;
 import com.ftn.repository.UserRepository;
 import com.ftn.repository.authorisation.RoleRepository;
 
@@ -33,6 +29,11 @@ public class AuthorizationInterceptor implements HandlerInterceptor  {
 			throws Exception {
 		
 		System.out.println("========================Regular interceptor=================================");
+		Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>)    SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+
+		for(SimpleGrantedAuthority auth : authorities) {
+			System.out.println(auth.getAuthority());
+		}
 		
 		return true;
 	}

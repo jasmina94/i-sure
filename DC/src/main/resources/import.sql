@@ -9,14 +9,17 @@ INSERT INTO `isuredatacenter`.`risk` (`active`, `created`, `updated`, `risk_name
 INSERT INTO `isuredatacenter`.`pricelist` (`active`, `created`, `updated`, `date_from`, `date_to`) VALUES (TRUE, NOW(), null, '2017-11-1', '2018-1-1');
 INSERT INTO `isuredatacenter`.`pricelist` (`active`, `created`, `updated`, `date_from`, `date_to`) VALUES (TRUE, NOW(), null, '2017-10-1', '2017-10-15');
 
-INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'P1');
-
 INSERT INTO `isuredatacenter`.`payment_type` (`active`, `created`, `updated`, `label`) VALUES (TRUE, NOW(), null, 'acquirer');
 INSERT INTO `isuredatacenter`.`payment_type` (`active`, `created`, `updated`, `label`) VALUES (TRUE, NOW(), null, 'paypal');
-<<<<<<< HEAD
-=======
 
 INSERT INTO `isuredatacenter`.`pricelist_item` (`active`, `created`, `updated`, `coefficient`, `price`, `risk_id`, `pricelist_id`) VALUES (TRUE, NOW(), null, '1', '12', '1', '1');
 
 INSERT INTO `isuredatacenter`.`pricelist_item` (`active`, `created`, `updated`, `coefficient`, `price`, `risk_id`, `pricelist_id`) VALUES (TRUE, NOW(), null, '0.8', '13', '2', '1');
->>>>>>> development
+
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'READ_ALL_PRICELISTS');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'CREATE_PRICELIST');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'UPDATE_PRICELIST');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'DELETE_PRICELIST');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_PRICELIST_BY_ID');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_CURRENTLY_ACTIVE_PRICELIST');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_MAX_DATE_TO_PRICELIST');

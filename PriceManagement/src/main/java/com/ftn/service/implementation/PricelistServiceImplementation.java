@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -17,7 +19,9 @@ import com.ftn.service.PricelistService;
 
 @Service
 public class PricelistServiceImplementation implements PricelistService{
-
+	
+	KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
+	
     @Value("${dc.pricelist}")
     private String URI;
 
@@ -40,7 +44,7 @@ public class PricelistServiceImplementation implements PricelistService{
 
 	@Override
 	public PricelistDTO create(PricelistDTO pricelistDTO) {
-        RestTemplate restTemplate = new RestTemplate();
+        //RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<PricelistDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(pricelistDTO), PricelistDTO.class);
 
         return response.getBody();
