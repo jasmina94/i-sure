@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ftn.exception.BadRequestException;
+import com.ftn.intercepting.CustomAnnotation;
 import com.ftn.model.dto.RiskDTO;
 import com.ftn.service.RiskService;
 
@@ -37,12 +38,14 @@ public class RiskController {
         this.riskService = riskService;
     }
 
+    @CustomAnnotation(value = "READ_ALL_RISKS")
     @Transactional
     @GetMapping
     public ResponseEntity read() {
         return new ResponseEntity<>(riskService.readAll(), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "CREATE_RISK")
     @Transactional
     @PostMapping
     public ResponseEntity create(@Valid @RequestBody RiskDTO riskDTO, BindingResult bindingResult) {
@@ -62,6 +65,7 @@ public class RiskController {
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "UPDATE_RISK")
     @Transactional
     @PatchMapping(value = "/{id}")
     public ResponseEntity update(@PathVariable Long id, @Valid @RequestBody RiskDTO riskDTO, BindingResult bindingResult) {
@@ -71,6 +75,7 @@ public class RiskController {
         return new ResponseEntity<>(riskService.update(id, riskDTO), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "DELETE_RISK")
     @Transactional
     @DeleteMapping(value = "/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
@@ -78,18 +83,21 @@ public class RiskController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @CustomAnnotation(value = "FIND_RISK_BY_ID")
     @Transactional
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id){
         return new ResponseEntity<>(riskService.findById(id), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "FIND_RISK_BY_NAME")
     @Transactional
     @GetMapping(value = "/name/{name}")
     public ResponseEntity findByName(@PathVariable String name){
         return new ResponseEntity<>(riskService.findByName(name), HttpStatus.OK);
     }
     
+    @CustomAnnotation(value = "FIND_RISK_BY_RISK_TYPE")
     @Transactional
     @GetMapping(value = "/byRiskType/{id}")
     public ResponseEntity findByRiskType(@PathVariable Long id){

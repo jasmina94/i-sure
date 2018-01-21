@@ -10,12 +10,12 @@ import com.ftn.model.authorisation.Role;
 import com.ftn.repository.authorisation.RoleRepository;
 import com.ftn.service.RoleService;
 @Service
-public class RoleServiseImplementation implements  RoleService{
+public class RoleServiceImpl implements  RoleService{
 
 	private final RoleRepository roleRepository;
 
     @Autowired
-    public RoleServiseImplementation(RoleRepository roleRepository){
+    public RoleServiceImpl(RoleRepository roleRepository){
         this.roleRepository = roleRepository;
     }
 
@@ -27,13 +27,13 @@ public class RoleServiseImplementation implements  RoleService{
 
 	@Override
 	public Role create(Role role) {
-		role.setName(role.getName().toUpperCase());
+		role.setName("ROLE_" + role.getName().toLowerCase());
 		return roleRepository.save(role);
 	}
 
 	@Override
 	public Role update(Long id, Role role) {
-		role.setName(role.getName().toUpperCase());
+		role.setName("ROLE_" + role.getName().toLowerCase());
 		return roleRepository.save(role);
 	}
 

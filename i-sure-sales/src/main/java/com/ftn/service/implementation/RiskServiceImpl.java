@@ -2,6 +2,9 @@ package com.ftn.service.implementation;
 
 import com.ftn.model.dto.RiskDTO;
 import com.ftn.service.RiskService;
+
+import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -22,7 +25,7 @@ public class RiskServiceImpl implements RiskService {
     @Value("${dc.risk}")
     private String URI;
 
-    RestTemplate restTemplate = new RestTemplate();
+    KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
 
     @Override
     public List<RiskDTO> readAll() {

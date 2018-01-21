@@ -1,6 +1,7 @@
 package com.ftn.controller;
 
 import com.ftn.exception.BadRequestException;
+import com.ftn.intercepting.CustomAnnotation;
 import com.ftn.model.dto.RiskTypeDTO;
 import com.ftn.service.RiskTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ import javax.validation.Valid;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/riskTypes")
-//@PreAuthorize("hasRole('salesman')")
 public class RiskTypeController {
 
     private final RiskTypeService riskTypeService;
@@ -29,12 +29,14 @@ public class RiskTypeController {
         this.riskTypeService = riskTypeService;
     }
 
+    @CustomAnnotation(value = "READ_ALL_RISK_TYPES")
     @Transactional
     @GetMapping
     public ResponseEntity read() {
         return new ResponseEntity<>(riskTypeService.readAll(), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "CREATE_RISK_TYPE")
     @Transactional
     @PostMapping
     public ResponseEntity create(@Valid @RequestBody RiskTypeDTO riskTypeDTO, BindingResult bindingResult) {
@@ -43,6 +45,7 @@ public class RiskTypeController {
         return new ResponseEntity<>(riskTypeService.create(riskTypeDTO), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "UPDATE_RISK_TYPE")
     @Transactional
     @PatchMapping(value = "/{id}")
     public ResponseEntity update(@PathVariable Long id, @Valid @RequestBody RiskTypeDTO riskTypeDTO, BindingResult bindingResult) {
@@ -52,6 +55,7 @@ public class RiskTypeController {
         return new ResponseEntity<>(riskTypeService.update(id, riskTypeDTO), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "DELETE_RISK_TYPE")
     @Transactional
     @DeleteMapping(value = "/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
@@ -59,24 +63,28 @@ public class RiskTypeController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @CustomAnnotation(value = "FIND_RISK_TYPE_BY_ID")
     @Transactional
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id){
         return new ResponseEntity<>(riskTypeService.findById(id), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "FIND_RISK_TYPE_BY_NAME")
     @Transactional
     @GetMapping(value = "/name/{name}")
     public ResponseEntity findByName(@PathVariable String name){
         return new ResponseEntity<>(riskTypeService.findByName(name), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "FIND_RISK_TYPE_BY_CATEGORY")
     @Transactional
     @GetMapping(value = "/insuranceCategory/{name}")
     public ResponseEntity findRisksByCategory(@PathVariable String name){
         return new ResponseEntity<>(riskTypeService.findByCategory(name), HttpStatus.OK);
     }
 
+    @CustomAnnotation(value = "FIND_RISK_TYPE_BY_CATEGORY")
     @Transactional
     @GetMapping(value = "/insuranceCategoryRiskTypes/{name}")
     public ResponseEntity findRiskTypesByCategory(@PathVariable String name){

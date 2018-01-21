@@ -16,6 +16,9 @@ INSERT INTO `isuredatacenter`.`pricelist_item` (`active`, `created`, `updated`, 
 
 INSERT INTO `isuredatacenter`.`pricelist_item` (`active`, `created`, `updated`, `coefficient`, `price`, `risk_id`, `pricelist_id`) VALUES (TRUE, NOW(), null, '0.8', '13', '2', '1');
 
+insert into  `isuredatacenter`.`role` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'ROLE_analyst');
+insert into  `isuredatacenter`.`role` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'ROLE_salesman');
+
 INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'READ_ALL_PRICELISTS');
 INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'CREATE_PRICELIST');
 INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'UPDATE_PRICELIST');
@@ -23,3 +26,65 @@ INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `nam
 INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_PRICELIST_BY_ID');
 INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_CURRENTLY_ACTIVE_PRICELIST');
 INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_MAX_DATE_TO_PRICELIST');
+
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'READ_ALL_RISK_TYPES');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'CREATE_RISK_TYPE');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'UPDATE_RISK_TYPE');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'DELETE_RISK_TYPE');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_RISK_TYPE_BY_ID');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_RISK_TYPE_BY_NAME');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_RISK_TYPE_BY_CATEGORY');
+
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'READ_ALL_RISKS');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'CREATE_RISK');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'UPDATE_RISK');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'DELETE_RISK');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_RISK_BY_ID');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_RISK_BY_NAME');
+INSERT INTO `isuredatacenter`.`permission` (`active`, `created`, `updated`, `name`) VALUES (TRUE, NOW(), null, 'FIND_RISK_BY_RISK_TYPE');
+
+
+insert into `isuredatacenter`.`role_permissions` values (1, 1);
+insert into `isuredatacenter`.`role_permissions` values (1, 2);
+insert into `isuredatacenter`.`role_permissions` values (1, 3);
+insert into `isuredatacenter`.`role_permissions` values (1, 4);
+insert into `isuredatacenter`.`role_permissions` values (1, 5);
+insert into `isuredatacenter`.`role_permissions` values (1, 6);
+insert into `isuredatacenter`.`role_permissions` values (1, 7);
+insert into `isuredatacenter`.`role_permissions` values (1, 8);
+insert into `isuredatacenter`.`role_permissions` values (1, 9);
+insert into `isuredatacenter`.`role_permissions` values (1, 10);
+insert into `isuredatacenter`.`role_permissions` values (1, 11);
+insert into `isuredatacenter`.`role_permissions` values (1, 12);
+insert into `isuredatacenter`.`role_permissions` values (1, 13);
+insert into `isuredatacenter`.`role_permissions` values (1, 14);
+insert into `isuredatacenter`.`role_permissions` values (1, 15);
+insert into `isuredatacenter`.`role_permissions` values (1, 16);
+insert into `isuredatacenter`.`role_permissions` values (1, 17);
+insert into `isuredatacenter`.`role_permissions` values (1, 18);
+insert into `isuredatacenter`.`role_permissions` values (1, 19);
+insert into `isuredatacenter`.`role_permissions` values (1, 20);
+insert into `isuredatacenter`.`role_permissions` values (1, 21);
+insert into `isuredatacenter`.`role_permissions` values (2, 1);
+insert into `isuredatacenter`.`role_permissions` values (2, 2);
+insert into `isuredatacenter`.`role_permissions` values (2, 3);
+insert into `isuredatacenter`.`role_permissions` values (2, 4);
+insert into `isuredatacenter`.`role_permissions` values (2, 5);
+insert into `isuredatacenter`.`role_permissions` values (2, 6);
+insert into `isuredatacenter`.`role_permissions` values (2, 7);
+insert into `isuredatacenter`.`role_permissions` values (2, 8);
+insert into `isuredatacenter`.`role_permissions` values (2, 9);
+insert into `isuredatacenter`.`role_permissions` values (2, 10);
+insert into `isuredatacenter`.`role_permissions` values (2, 11);
+insert into `isuredatacenter`.`role_permissions` values (2, 12);
+insert into `isuredatacenter`.`role_permissions` values (2, 13);
+insert into `isuredatacenter`.`role_permissions` values (2, 14);
+insert into `isuredatacenter`.`role_permissions` values (2, 15);
+insert into `isuredatacenter`.`role_permissions` values (2, 16);
+insert into `isuredatacenter`.`role_permissions` values (2, 17);
+insert into `isuredatacenter`.`role_permissions` values (2, 18);
+insert into `isuredatacenter`.`role_permissions` values (2, 19);
+insert into `isuredatacenter`.`role_permissions` values (2, 20);
+insert into `isuredatacenter`.`role_permissions` values (2, 21);
+
+

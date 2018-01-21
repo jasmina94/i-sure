@@ -2,6 +2,9 @@ package com.ftn.service.implementation;
 
 import com.ftn.model.dto.RiskDTO;
 import com.ftn.service.RiskService;
+
+import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -22,10 +25,11 @@ public class RiskServiceImpl implements RiskService {
 
     @Value("${dc.risk}")
     private String URI;
-
+    
+    private KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
+    
     @Override
     public List<RiskDTO> readAll() {
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<RiskDTO[]> response = restTemplate.getForEntity(URI, RiskDTO[].class);
 
         return Arrays.asList(response.getBody());
@@ -33,7 +37,6 @@ public class RiskServiceImpl implements RiskService {
 
     @Override
     public RiskDTO[] create(RiskDTO riskDTO) {
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<RiskDTO[]> response = restTemplate.postForEntity(URI, new HttpEntity<>(riskDTO),
                 RiskDTO[].class);
 
@@ -43,7 +46,6 @@ public class RiskServiceImpl implements RiskService {
     @Override
     public RiskDTO update(Long id, RiskDTO riskDTO) {
         URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
@@ -57,14 +59,12 @@ public class RiskServiceImpl implements RiskService {
     @Override
     public void delete(Long id) {
         URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
         restTemplate.delete(URI);
     }
 
     @Override
     public RiskDTO findById(Long id) {
         URI += "/" + id;
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<RiskDTO> response = restTemplate.getForEntity(URI, RiskDTO.class);
 
         return response.getBody();
@@ -73,7 +73,6 @@ public class RiskServiceImpl implements RiskService {
     @Override
     public RiskDTO findByName(String name) {
        
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<RiskDTO> response = restTemplate.getForEntity( URI + "/byPersonalId/" + name, RiskDTO.class);
 
         return response.getBody();
@@ -81,7 +80,6 @@ public class RiskServiceImpl implements RiskService {
     
     @Override
     public List<RiskDTO> findByRiskType(Long id) {
-    	RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<RiskDTO[]> response = restTemplate.getForEntity( URI + "/byRiskType/" + id, RiskDTO[].class);
 
         return Arrays.asList(response.getBody());

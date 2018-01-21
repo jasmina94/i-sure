@@ -2,6 +2,9 @@ package com.ftn.service.implementation;
 
 import com.ftn.model.dto.PricelistDTO;
 import com.ftn.service.PricelistService;
+
+import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -19,7 +22,7 @@ public class PricelistServiceImplementation implements PricelistService{
     @Value("${dc.pricelist}")
     private String URI;
 
-    RestTemplate restTemplate = new RestTemplate();
+    KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
 
 	@Override
 	public List<PricelistDTO> findAll() {
