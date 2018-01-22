@@ -26,8 +26,8 @@ public class PriceController {
     }
 
     @PostMapping
-    public ResponseEntity getPrice() {
-        return new ResponseEntity<>(priceService.getPrice(), HttpStatus.OK);
+    public ResponseEntity getPrice(@RequestBody InsurancePolicyDTO insurancePolicyDTO) {
+        return new ResponseEntity<>(priceService.getPrice(insurancePolicyDTO), HttpStatus.OK);
     }
 
 }

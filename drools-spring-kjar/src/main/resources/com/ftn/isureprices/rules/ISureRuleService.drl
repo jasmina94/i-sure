@@ -8,7 +8,16 @@ lock-on-active
     when
        $i: InternationalTravelInsuranceDTO($price: getPrice(), $price > 500)
     then
-       modify ($i) {setPrice($price - 50)}
+       modify ($i) {setPrice($price - 100)}
+    end
+
+rule "InternationalTravelInsurance Rule - If price is higher than 1000"
+lock-on-active
+    no-loop
+    when
+       $i: InternationalTravelInsuranceDTO($price: getPrice(), $price > 1000)
+    then
+       modify ($i) {setPrice($price - 200)}
     end
 
 rule "InternationalTravelInsurance Rule - Duration higher than 3 days - 10% "
