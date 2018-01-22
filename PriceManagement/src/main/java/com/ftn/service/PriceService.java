@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface PriceService {
 
-    List<Double> getPrice(InsurancePolicyDTO insurancePolicyDTO);
+    List<Double> getPrice();
 
 }
