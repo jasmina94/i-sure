@@ -36,7 +36,7 @@ public class RuleController {
 
     @RequestMapping(value = "/openFile", method = RequestMethod.GET)
     public String openFile() throws IOException {
-        File file = new File("C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\src\\main\\resources\\com\\ftn\\isureprices\\rules\\ISure.drl");
+        File file = new File("C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\src\\main\\resources\\com\\ftn\\isureprices\\rules\\ISureRuleService.drl");
         return readRuleFile(file);
     }
 
@@ -44,7 +44,7 @@ public class RuleController {
     public void saveFile(String tekst) throws MavenInvocationException {
         System.out.println(tekst);
 
-        File file = new File("C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\src\\main\\resources\\com\\ftn\\isureprices\\rules\\ISure.drl");
+        File file = new File("C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\src\\main\\resources\\com\\ftn\\isureprices\\rules\\ISureRuleService.drl");
         saveRuleFile(tekst, file);
 
         InvocationRequest request = new DefaultInvocationRequest();

@@ -215,9 +215,9 @@
                 	}else{
                 		toastr.error("Something got wrong with pricelist. Try again.",'<i>Error</i>');
                 	}
-                    //setTimeout(function(){
-                	//    location.reload();
-                	//},4000);
+                    setTimeout(function(){
+                	    location.reload();
+                	},5000);
             });
         	
         }

@@ -16,6 +16,11 @@
     insuranceService.createInquiry = function (transactionDTO) {
         return $http.post("/inquiries", transactionDTO);
     }
+    
+    insuranceService.getPrice = function (insurancePolicyDTO) {
+        return $http.post("/price", insurancePolicyDTO);
+    }
+
 
     return insuranceService;
 

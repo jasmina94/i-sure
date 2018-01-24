@@ -14,6 +14,10 @@
         insuranceService.createInsurancePolicy = function(insurancePolicyDTO) {
             return $http.post(url + "insurancePolicies",insurancePolicyDTO);
             }
+        
+        insuranceService.getPrice = function (insurancePolicyDTO) {
+            return $http.post("/price", insurancePolicyDTO);
+        }
         return insuranceService;
 
     });

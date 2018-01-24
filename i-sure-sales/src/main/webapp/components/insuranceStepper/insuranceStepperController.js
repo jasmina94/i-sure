@@ -15,6 +15,9 @@
             vm.showBusyText = false;
             vm.tabs=[];
             vm.dummy = {};
+            vm.prices = [];
+            vm.totalPrice = 0;
+            vm.pay = 'paypal';
 
             vm.stepTwo = {
                 completed: false, optional: false,
@@ -90,7 +93,110 @@
                 case 3: vm.stepFour.isSkiped = false; break;
             }
             vm.selectedStep = vm.selectedStep + 1;
+            if(vm.selectedStep == 4){//if click proceed on car insurance
+            	vm.getPrice();
+            }
         };
+        
+        vm.getPrice = function(){
+         	var internationalTravelInsuranceDTO = createInternationalTravelInsuranceDTO();
+             console.log(internationalTravelInsuranceDTO);
+
+             var homeInsuranceDTO = null;
+             if(!vm.stepThree.isSkiped) {
+                 homeInsuranceDTO = createHomeInsuranceDTO();
+             }
+
+             console.log(homeInsuranceDTO);
+
+             var roadsideAssistanceInsuranceDTO = null;
+             if(!vm.stepFour.isSkiped) {
+                 roadsideAssistanceInsuranceDTO = createRoadsideAssistanceInsuranceDTO();
+             }
+
+             console.log(roadsideAssistanceInsuranceDTO);
+             var insurancePolicyDTO =
+             {
+                 "totalValue": 1,
+                 "dateOfIssue": vm.todayDate,
+                 "dateBecomeEffective": vm.stepOne.data.fromDate,
+                 "customers": null,
+                 "internationalTravelInsurance": internationalTravelInsuranceDTO,
+                 "homeInsurance": homeInsuranceDTO,
+                 "roadsideAssistanceInsurance": roadsideAssistanceInsuranceDTO
+             }
+             console.log(insurancePolicyDTO);
+         	insuranceService.getPrice(insurancePolicyDTO).then(
+                     function (response) {
+                         if (response.status == 200) {
+                             console.log(response.data);
+                             vm.prices = response.data;
+                             vm.totalPrice = vm.prices[0]+vm.prices[1]+vm.prices[2];
+                         }
+                     });
+         
+    }
+        function createInternationalTravelInsuranceDTO(){
+        	var travelRisks = [];
+            travelRisks.push(vm.stepOne.data.selectedRegion);
+            if(vm.playSport){
+            	travelRisks.push(vm.stepOne.data.selectedSport);
+            }
+            travelRisks.push(vm.stepOne.data.selectedAmount);
+
+            var internationalTravelInsuranceDTO =
+            {
+                "issueDate": createPatternOfDate(vm.stepOne.data.fromDate),
+                "durationInDays": vm.calculateDays(vm.stepOne.data.fromDate, vm.stepOne.data.toDate),
+                "numberOfPersons": sumNumberOfPeople(),
+                "price": 0,
+                "risks": travelRisks
+            }
+            
+            return internationalTravelInsuranceDTO;
+        }
+        
+        function createHomeInsuranceDTO(){
+            var homeRisks = [];
+            homeRisks.push(vm.stepThree.data.selectedArea);
+            homeRisks.push(vm.stepThree.data.selectedAge);
+            homeRisks.push(vm.stepThree.data.selectedRisk);
+            homeRisks.push(vm.stepThree.data.selectedValue);
+
+            var homeInsuranceDTO =
+            {
+                "ownerFirstName": vm.stepThree.data.firstname,
+                "ownerLastName": vm.stepThree.data.lastname,
+                "address": vm.stepThree.data.address,
+                "personalId": vm.stepThree.data.personalId,
+                "price": 0,
+                "risks": homeRisks
+            }
+        	return homeInsuranceDTO;
+        }
+        
+        function createRoadsideAssistanceInsuranceDTO(){
+            var roadsideRisks = [];
+            roadsideRisks.push(vm.stepFour.data.selectedAccommodation);
+            roadsideRisks.push(vm.stepFour.data.selectedRepair);
+            roadsideRisks.push(vm.stepFour.data.selectedTowing);
+            roadsideRisks.push(vm.stepFour.data.selectedTransport);
+
+            var roadsideAssistanceInsuranceDTO =
+            {
+                "ownerFirstName": vm.stepFour.data.ownerFirstname,
+                "ownerLastName": vm.stepFour.data.ownerLastname,
+                "personalId": vm.stepFour.data.personalId,
+                "carBrand": vm.stepFour.data.carBrand,
+                "carType": vm.stepFour.data.carType,
+                "yearOfManufacture": vm.stepFour.data.yearOfManufacture,
+                "licencePlateNumber": vm.stepFour.data.licencePlateNumber,
+                "undercarriageNumber": vm.stepFour.data.undercarriageNumber,
+                "price": 0,
+                "risks": roadsideRisks
+            }
+        	return roadsideAssistanceInsuranceDTO;
+        }
 
         vm.cancel = function cancel() {
             $state.go('homePage');
@@ -114,8 +220,6 @@
             d.setHours(0, 0, 0, 0);
             return d >= today;
         };
-
-        vm.pay = 'Pay1';
 
         vm.addTabs = function(){
             vm.tabs=[];
@@ -171,76 +275,27 @@
             }
             console.log(customers);
 
-            var travelRisks = [];
-            travelRisks.push(vm.stepOne.data.selectedRegion);
-            if(vm.playSport){
-            	travelRisks.push(vm.stepOne.data.selectedSport);
-            }
-            travelRisks.push(vm.stepOne.data.selectedAmount);
-
-            var internationalTravelInsuranceDTO =
-            {
-                "issueDate": createPatternOfDate(vm.stepOne.data.fromDate),
-                "durationInDays": vm.calculateDays(vm.stepOne.data.fromDate, vm.stepOne.data.toDate),
-                "numberOfPersons": sumNumberOfPeople(),
-                "price": 12000,
-                "risks": travelRisks
-                //"insurancePolicies": null
-
-            }
+            var internationalTravelInsuranceDTO = createInternationalTravelInsuranceDTO();
+            internationalTravelInsuranceDTO.price = vm.prices[0];
             console.log(internationalTravelInsuranceDTO);
 
+            var homeInsuranceDTO = null;
             if(!vm.stepThree.isSkiped) {
-                var homeRisks = [];
-                homeRisks.push(vm.stepThree.data.selectedArea);
-                homeRisks.push(vm.stepThree.data.selectedAge);
-                homeRisks.push(vm.stepThree.data.selectedRisk);
-                homeRisks.push(vm.stepThree.data.selectedValue);
-
-                var homeInsuranceDTO =
-                {
-                    "ownerFirstName": vm.stepThree.data.firstname,
-                    "ownerLastName": vm.stepThree.data.lastname,
-                    "address": vm.stepThree.data.address,
-                    "personalId": vm.stepThree.data.personalId,
-                    "price": 10000,
-                    "risks": homeRisks
-                }
-            } else {
-                var homeInsuranceDTO = null;
+                homeInsuranceDTO = createHomeInsuranceDTO();
+                homeInsuranceDTO.price = vm.prices[1];
             }
-
             console.log(homeInsuranceDTO);
 
+            var roadsideAssistanceInsuranceDTO = null;
             if(!vm.stepFour.isSkiped) {
-                var roadsideRisks = [];
-                roadsideRisks.push(vm.stepFour.data.selectedAccommodation);
-                roadsideRisks.push(vm.stepFour.data.selectedRepair);
-                roadsideRisks.push(vm.stepFour.data.selectedTowing);
-                roadsideRisks.push(vm.stepFour.data.selectedTransport);
-
-                var roadsideAssistanceInsuranceDTO =
-                {
-                    "ownerFirstName": vm.stepFour.data.ownerFirstname,
-                    "ownerLastName": vm.stepFour.data.ownerLastname,
-                    "personalId": vm.stepFour.data.personalId,
-                    "carBrand": vm.stepFour.data.carBrand,
-                    "carType": vm.stepFour.data.carType,
-                    "yearOfManufacture": vm.stepFour.data.yearOfManufacture,
-                    "licencePlateNumber": vm.stepFour.data.licencePlateNumber,
-                    "undercarriageNumber": vm.stepFour.data.undercarriageNumber,
-                    "price": 20000,
-                    "risks": roadsideRisks
-                }
-            } else {
-                var roadsideAssistanceInsuranceDTO = null;
+                roadsideAssistanceInsuranceDTO = createRoadsideAssistanceInsuranceDTO();
+                roadsideAssistanceInsuranceDTO.price = vm.prices[2];
             }
-
             console.log(roadsideAssistanceInsuranceDTO);
 
             var insurancePolicyDTO =
             {
-                "totalValue": 50000,
+                "totalValue": vm.totalPrice,
                 "dateOfIssue": vm.todayDate,
                 "dateBecomeEffective": vm.stepOne.data.fromDate,
                 "customers": customers,

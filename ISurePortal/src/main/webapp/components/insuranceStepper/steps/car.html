@@ -119,6 +119,12 @@
                     </md-tooltip>
                 </div>
                 <div>
+                    <md-button ng-disabled="vm.dummy.step4.$invalid" ng-click="vm.showPriceForCar($event)" class="gold-btn">
+                        CURRENT PRICE
+                    </md-button>
+                    <md-tooltip ng-if="vm.dummy.step4.$invalid" md-direction="bottom">IF YOU WANT TO ADD THIS THEN DATA MUST BE VALID</md-tooltip>
+                </div>
+                <div>
                     <md-button type="submit" ng-disabled="vm.dummy.step4.$invalid" class="gold-btn"
                                ng-click="vm.submitCurrentStep()">ADD TO POLICY AND PROCEED
                     </md-button>

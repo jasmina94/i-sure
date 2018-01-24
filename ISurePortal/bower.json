@@ -15,7 +15,8 @@
     "bootstrap": "3.3.7",
     "jquery": "3.2.1",
     "md-steppers": "",
-    "ng-notify":""
+    "ng-notify":"",
+    "angular-sanitize":""
   },
   "description": "",
   "main": "",
