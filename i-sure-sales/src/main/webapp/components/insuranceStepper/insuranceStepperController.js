@@ -117,7 +117,7 @@
              console.log(roadsideAssistanceInsuranceDTO);
              var insurancePolicyDTO =
              {
-                 "totalValue": 1,
+                 "totalPrice": 1,
                  "dateOfIssue": vm.todayDate,
                  "dateBecomeEffective": vm.stepOne.data.fromDate,
                  "customers": null,
@@ -146,7 +146,8 @@
 
             var internationalTravelInsuranceDTO =
             {
-                "issueDate": createPatternOfDate(vm.stepOne.data.fromDate),
+                "startDate": createPatternOfDate(vm.stepOne.data.fromDate),
+                "endDate": vm.calculateDays(vm.stepOne.data.fromDate, vm.stepOne.data.toDate),
                 "durationInDays": vm.calculateDays(vm.stepOne.data.fromDate, vm.stepOne.data.toDate),
                 "numberOfPersons": sumNumberOfPeople(),
                 "price": 0,
@@ -207,6 +208,7 @@
                 vm.stepThree.isSkiped = true;
             } else {
                 vm.stepFour.isSkiped = true;
+                vm.getPrice();//if click skip on car insurance, show bill
             }
             vm.selectedStep = vm.selectedStep + 1;
         };
@@ -295,7 +297,7 @@
 
             var insurancePolicyDTO =
             {
-                "totalValue": vm.totalPrice,
+                "totalPrice": vm.totalPrice,
                 "dateOfIssue": vm.todayDate,
                 "dateBecomeEffective": vm.stepOne.data.fromDate,
                 "customers": customers,

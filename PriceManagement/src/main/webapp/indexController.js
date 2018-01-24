@@ -37,6 +37,25 @@
       indexVm.addRisk = false;
       indexVm.addPricelist = false;
       indexVm.addRule = false;
+      
+      indexVm.ruleTextarea = "";
+      
+      indexVm.loadDrl = function(){
+    	  mainService.openFile().then(
+    		  function (response) {
+    			  indexVm.ruleTextarea = response.data.content;
+    	  });
+      }
+      
+      indexVm.editRule = function(){
+    	  var file = {"content": indexVm.ruleTextarea};
+    	  
+    	  mainService.saveFile(file).then(
+        		  function (response) {
+        			  toastr.success("Rule is added.",'<i>Success</i>');
+        	  });
+      }
+      
         
         init();
 
@@ -109,6 +128,7 @@
         	indexVm.addPricelist = false;
         	indexVm.addRisk = false;
         	indexVm.showTable = false;
+        	indexVm.loadDrl();
         }
         
         indexVm.submitAddingRisk = function(){

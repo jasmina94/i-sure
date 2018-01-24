@@ -17,8 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class InsurancePolicyDTO extends BaseDTO{
 
-	@NotNull
-	private double totalValue;
+	private double totalPrice;
 
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
@@ -36,7 +35,5 @@ public class InsurancePolicyDTO extends BaseDTO{
 	private HomeInsuranceDTO homeInsurance;
 
 	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
-
-	private double totalPrice;
 
 }

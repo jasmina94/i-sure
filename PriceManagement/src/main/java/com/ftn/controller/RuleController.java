@@ -1,16 +1,26 @@
 package com.ftn.controller;
 
-import com.ftn.model.User;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import com.ftn.service.implementation.RuleServiceImpl;
-import org.apache.maven.shared.invoker.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.maven.shared.invoker.DefaultInvocationRequest;
+import org.apache.maven.shared.invoker.DefaultInvoker;
+import org.apache.maven.shared.invoker.InvocationRequest;
+import org.apache.maven.shared.invoker.Invoker;
+import org.apache.maven.shared.invoker.MavenInvocationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.*;
-import java.util.Arrays;
+import com.ftn.model.dto.FileDTO;
 
 /**
  * Created by zlatan on 11/25/17.
@@ -35,15 +45,17 @@ public class RuleController {
     }
 
     @RequestMapping(value = "/openFile", method = RequestMethod.GET)
-    public String openFile() throws IOException {
+    public ResponseEntity<FileDTO> openFile() throws IOException {
         File file = new File("C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\src\\main\\resources\\com\\ftn\\isureprices\\rules\\ISureRuleService.drl");
-        return readRuleFile(file);
+        String content = readRuleFile(file);
+        FileDTO fileDTO = new FileDTO(content);
+        return new ResponseEntity(fileDTO, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/saveFile", method = RequestMethod.POST)
-    public void saveFile(String tekst) throws MavenInvocationException {
+    public void saveFile(@RequestBody FileDTO fileDTO) throws MavenInvocationException {
+    	String tekst = fileDTO.getContent();
         System.out.println(tekst);
-
         File file = new File("C:\\Users\\Jasmina\\Documents\\hg.repositories\\sep\\drools-spring-kjar\\src\\main\\resources\\com\\ftn\\isureprices\\rules\\ISureRuleService.drl");
         saveRuleFile(tekst, file);
 

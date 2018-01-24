@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class InsurancePolicyDTO extends BaseDTO{
 
 	@NotNull
-	private double totalValue;
+	private double totalPrice;
 
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
