@@ -27,7 +27,7 @@ public class InsurancePolicyDTO extends BaseDTO{
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateBecomeEffective;
-	
+
 	private List<CustomerDTO> customers = new ArrayList<>();
 
 	@NotNull

@@ -179,7 +179,8 @@
 
             var internationalTravelInsuranceDTO =
             {
-                "issueDate": createPatternOfDate(vm.stepOne.data.fromDate),
+                "startDate": createPatternOfDate(vm.stepOne.data.fromDate),
+                "endDate": createPatternOfDate(vm.stepOne.data.toDate),
                 "durationInDays": vm.calculateDays(vm.stepOne.data.fromDate, vm.stepOne.data.toDate),
                 "numberOfPersons": sumNumberOfPeople(),
                 "price": 12000,

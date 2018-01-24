@@ -2,8 +2,13 @@ package com.ftn.controller;
 
 import javax.validation.Valid;
 
+import com.ftn.model.dto.InsurancePolicyDTO;
+import com.ftn.model.dto.report.PolicyReportParamsDTO;
+import com.ftn.model.dto.report.ReportCustomerTableDTO;
+import com.ftn.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -20,14 +25,17 @@ import com.ftn.model.dto.PaymentDTO;
 import com.ftn.service.PaymentService;
 import com.ftn.service.implementation.PaymentServiceImpl;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/payments")
 public class PaymentController {
 	private final PaymentService paymentService;
+    private final ReportService reportService;
 
     @Autowired
-    public PaymentController(PaymentServiceImpl paymentService){
-
+    public PaymentController(PaymentServiceImpl paymentService, ReportService reportService){
+        this.reportService = reportService;
         this.paymentService = paymentService;
     }
     
@@ -86,4 +94,11 @@ public class PaymentController {
     	
         return new ResponseEntity<>(paymentDTO, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/report", produces = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity generateReport(){
+        InsurancePolicyDTO insurancePolicyDTO = reportService.getInsurancePolicyForTransaction(1L);
+        return new ResponseEntity<>(reportService.generatePolicyReport(insurancePolicyDTO), HttpStatus.OK);
+    }
+
 }

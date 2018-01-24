@@ -30,44 +30,45 @@ import lombok.NoArgsConstructor;
 @Where(clause = SqlConstants.ACTIVE)
 public class InsurancePolicy extends Base {
 
-	@Column(nullable = false)
-	private double totalValue;
+    @Column(nullable = false)
+    private double totalValue;
 
-	@Column(nullable = false)
-	private Date dateOfIssue;
+    @Column(nullable = false)
+    private Date dateOfIssue;
 
-	@Column(nullable = false)
-	private Date dateBecomeEffective;
+    @Column(nullable = false)
+    private Date dateBecomeEffective;
 
-	@ManyToMany
+    @ManyToMany
     private List<Customer> customers = new ArrayList<>();
 
-	@ManyToOne(optional = false)
-	private InternationalTravelInsurance internationalTravelInsurance;
+    @ManyToOne(optional = false)
+    private InternationalTravelInsurance internationalTravelInsurance;
 
-	@ManyToOne
-	private HomeInsurance homeInsurance;
+    @ManyToOne
+    private HomeInsurance homeInsurance;
 
-	@ManyToOne
-	private RoadsideAssistanceInsurance roadsideAssistanceInsurance;
-	
-//	@OneToOne(mappedBy = "insurancePolicy")
-//	private Transaction transaction;
-//	
-	public InsurancePolicy(BaseDTO baseDTO) {
-		super(baseDTO);
-	}
+    @ManyToOne
+    private RoadsideAssistanceInsurance roadsideAssistanceInsurance;
 
-	public void merge(InsurancePolicyDTO insurancePolicyDTO) {
-		this.totalValue = insurancePolicyDTO.getTotalValue();
-		this.dateOfIssue = insurancePolicyDTO.getDateOfIssue();
-		this.dateBecomeEffective = insurancePolicyDTO.getDateBecomeEffective();
-		this.internationalTravelInsurance = insurancePolicyDTO.getInternationalTravelInsurance().construct();
-		if(insurancePolicyDTO.getHomeInsurance() != null){
-			this.homeInsurance = insurancePolicyDTO.getHomeInsurance().construct();
-		}
-		if(insurancePolicyDTO.getRoadsideAssistanceInsurance() != null){
-			this.roadsideAssistanceInsurance = insurancePolicyDTO.getRoadsideAssistanceInsurance().construct();
-		}
-	}
+    @Column
+    private double totalPrice;
+
+    public InsurancePolicy(BaseDTO baseDTO) {
+        super(baseDTO);
+    }
+
+    public void merge(InsurancePolicyDTO insurancePolicyDTO) {
+        this.totalValue = insurancePolicyDTO.getTotalValue();
+        this.dateOfIssue = insurancePolicyDTO.getDateOfIssue();
+        this.dateBecomeEffective = insurancePolicyDTO.getDateBecomeEffective();
+        this.internationalTravelInsurance = insurancePolicyDTO.getInternationalTravelInsurance().construct();
+        if (insurancePolicyDTO.getHomeInsurance() != null) {
+            this.homeInsurance = insurancePolicyDTO.getHomeInsurance().construct();
+        }
+        if (insurancePolicyDTO.getRoadsideAssistanceInsurance() != null) {
+            this.roadsideAssistanceInsurance = insurancePolicyDTO.getRoadsideAssistanceInsurance().construct();
+        }
+        this.totalPrice = insurancePolicyDTO.getTotalPrice();
+    }
 }

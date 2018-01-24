@@ -21,10 +21,14 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date issueDate;
+	private Date startDate;
 
 	@NotNull
 	private int durationInDays;
+
+	@NotNull
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date endDate;
 
 	@NotNull
 	private int numberOfPersons;
@@ -42,7 +46,8 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 
 	public InternationalTravelInsuranceDTO(InternationalTravelInsurance internationalTravelInsurance, boolean cascade){
 		super(internationalTravelInsurance);
-		this.issueDate = internationalTravelInsurance.getIssueDate();
+		this.startDate = internationalTravelInsurance.getStartDate();
+		this.endDate = internationalTravelInsurance.getEndDate();
 		this.durationInDays = internationalTravelInsurance.getDurationInDays();
 		this.numberOfPersons = internationalTravelInsurance.getNumberOfPersons();
 		this.price = internationalTravelInsurance.getPrice();
@@ -54,7 +59,8 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 	
 	public InternationalTravelInsurance construct(){
 		InternationalTravelInsurance internationalTravelInsurance = new InternationalTravelInsurance(this);
-		internationalTravelInsurance.setIssueDate(this.issueDate);
+		internationalTravelInsurance.setStartDate(this.startDate);
+		internationalTravelInsurance.setEndDate(this.endDate);
 		internationalTravelInsurance.setDurationInDays(this.durationInDays);
 		internationalTravelInsurance.setNumberOfPersons(this.numberOfPersons);
 		internationalTravelInsurance.setPrice(this.price);

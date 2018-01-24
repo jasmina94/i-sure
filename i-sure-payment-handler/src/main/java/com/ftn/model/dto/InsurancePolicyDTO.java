@@ -37,4 +37,5 @@ public class InsurancePolicyDTO extends BaseDTO{
 
 	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
+	private double totalPrice;
 }

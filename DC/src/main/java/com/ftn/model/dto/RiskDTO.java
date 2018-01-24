@@ -23,7 +23,7 @@ public class RiskDTO extends BaseDTO {
 
     private RiskTypeDTO riskType;
 
-    private List<PricelistItemDTO> pricelistItems = new ArrayList<>();
+    private List<PricelistItemDTO> pricelistItem;
 
     public RiskDTO(Risk risk){
         this(risk, true);
@@ -34,7 +34,7 @@ public class RiskDTO extends BaseDTO {
         this.riskName = risk.getRiskName();
         if(cascade){
             this.riskType = new RiskTypeDTO(risk.getRiskType(), false);
-            this.pricelistItems = risk.getPricelistItem().stream().map(pricelistItem -> new PricelistItemDTO(pricelistItem, false)).collect(Collectors.toList());
+            this.pricelistItem = risk.getPricelistItem().stream().map(pricelistItem -> new PricelistItemDTO(pricelistItem, false)).collect(Collectors.toList());
         }
     }
 
@@ -44,8 +44,8 @@ public class RiskDTO extends BaseDTO {
         if(riskType != null){
             risk.setRiskType(riskType.construct());
         }
-        if(pricelistItems != null && pricelistItems.size() != 0){
-            pricelistItems.forEach(pricelistItemDTO -> risk.getPricelistItem().add(pricelistItemDTO.construct()));
+        if(pricelistItem != null && pricelistItem.size() != 0){
+            pricelistItem.forEach(pricelistItemDTO -> risk.getPricelistItem().add(pricelistItemDTO.construct()));
         }
         return risk;
     }
