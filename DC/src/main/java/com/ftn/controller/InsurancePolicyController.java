@@ -7,6 +7,9 @@ import java.util.Date;
 
 import javax.validation.Valid;
 
+import com.ftn.model.Transaction;
+import com.ftn.model.dto.TransactionDTO;
+import com.ftn.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,9 +35,12 @@ public class InsurancePolicyController {
 
     private final InsurancePolicyService insurancePolicyService;
 
-    @Autowired
-    public InsurancePolicyController(InsurancePolicyServiceImpl insurancePolicyService){
+    private final TransactionService transactionService;
 
+    @Autowired
+    public InsurancePolicyController(InsurancePolicyServiceImpl insurancePolicyService,
+                                     TransactionService transactionService) {
+        this.transactionService = transactionService;
         this.insurancePolicyService = insurancePolicyService;
     }
 
@@ -60,13 +66,13 @@ public class InsurancePolicyController {
         }
 
         try {
-        	
-			insurancePolicyDTO = insurancePolicyService.update(id, insurancePolicyDTO);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-        
+
+            insurancePolicyDTO = insurancePolicyService.update(id, insurancePolicyDTO);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity<>(insurancePolicyDTO, HttpStatus.OK);
 
     }
@@ -76,47 +82,56 @@ public class InsurancePolicyController {
     public ResponseEntity delete(@PathVariable Long id) {
 
         try {
-			insurancePolicyService.delete(id);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+            insurancePolicyService.delete(id);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @Transactional
     @GetMapping(value = "/{id}")
-    public ResponseEntity findById(@PathVariable Long id){
+    public ResponseEntity findById(@PathVariable Long id) {
 
-    	
-    	InsurancePolicyDTO insurancePolicyDTO;
-    	
-    	try {
-			insurancePolicyDTO = insurancePolicyService.findById(id);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-    	
+
+        InsurancePolicyDTO insurancePolicyDTO;
+
+        try {
+            insurancePolicyDTO = insurancePolicyService.findById(id);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity<>(insurancePolicyDTO, HttpStatus.OK);
     }
 
     @Transactional
     @GetMapping(value = "/byDateOfIssue/{date}")
-    public ResponseEntity findByDateOfIssue(@PathVariable String date){
-    	
-    	SimpleDateFormat sm = new SimpleDateFormat("yyyy-mm-dd");
+    public ResponseEntity findByDateOfIssue(@PathVariable String date) {
+
+        SimpleDateFormat sm = new SimpleDateFormat("yyyy-mm-dd");
 
         Date dt;
-		try {
-			dt = sm.parse(date);
-			return new ResponseEntity<>(insurancePolicyService.findByDateOfIssue(dt), HttpStatus.OK);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	
-    	return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-			
+        try {
+            dt = sm.parse(date);
+            return new ResponseEntity<>(insurancePolicyService.findByDateOfIssue(dt), HttpStatus.OK);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
 
     }
+
+    @Transactional
+    @GetMapping(value = "/transaction/{id}")
+    public ResponseEntity findByTransactionId(@PathVariable long id) {
+        TransactionDTO transactionDTO = transactionService.findById(id);
+        InsurancePolicyDTO insurancePolicyDTO = transactionDTO.getInsurancePolicy();
+        return new ResponseEntity<>(insurancePolicyDTO, HttpStatus.OK);
+    }
+
 }

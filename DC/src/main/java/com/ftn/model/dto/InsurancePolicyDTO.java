@@ -46,6 +46,8 @@ public class InsurancePolicyDTO extends BaseDTO {
 
 	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
+	private double totalPrice;
+
 	public InsurancePolicyDTO(InsurancePolicy insurancePolicy) {
 		this(insurancePolicy, true);
 	}
@@ -55,6 +57,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 		this.totalValue = insurancePolicy.getTotalValue();
 		this.dateOfIssue = insurancePolicy.getDateOfIssue();
 		this.dateBecomeEffective = insurancePolicy.getDateBecomeEffective();
+		this.totalPrice = insurancePolicy.getTotalPrice();
 		if (cascade) {
 			this.customers = insurancePolicy.getCustomers().stream().map(customer -> new CustomerDTO(customer, false)).collect(Collectors.toList());
 		    this.internationalTravelInsurance = new InternationalTravelInsuranceDTO(insurancePolicy.getInternationalTravelInsurance(), false);
@@ -72,6 +75,7 @@ public class InsurancePolicyDTO extends BaseDTO {
 		insurancePolicy.setTotalValue(totalValue);
 		insurancePolicy.setDateOfIssue(dateOfIssue);
 		insurancePolicy.setDateBecomeEffective(dateBecomeEffective);
+		insurancePolicy.setTotalPrice(totalPrice);
         if(this.customers != null && this.customers.size() > 0){
             this.customers.forEach(customerDTO -> insurancePolicy.getCustomers().add(customerDTO.construct()));
         }

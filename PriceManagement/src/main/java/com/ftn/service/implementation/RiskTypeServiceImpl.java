@@ -1,7 +1,7 @@
 package com.ftn.service.implementation;
 
-import com.ftn.model.dto.RiskTypeDTO;
-import com.ftn.service.RiskTypeService;
+import java.util.Arrays;
+import java.util.List;
 
 import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
 import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
@@ -11,10 +11,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.List;
+import com.ftn.model.dto.RiskTypeDTO;
+import com.ftn.service.RiskTypeService;
 
 /**
  * Created by zlatan on 25/11/2017.

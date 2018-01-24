@@ -10,18 +10,18 @@ import com.ftn.model.InternationalTravelInsurance;
 
 public interface InternationalTravelInsuranceRepository extends JpaRepository<InternationalTravelInsurance, Long> {
 
-	public Optional<InternationalTravelInsurance> findById(Long id);
+	Optional<InternationalTravelInsurance> findById(Long id);
 
-	public List<InternationalTravelInsurance> findAll();
+	List<InternationalTravelInsurance> findAll();
 
-	public InternationalTravelInsurance save(InternationalTravelInsurance internationalTravelInsurance);
+	InternationalTravelInsurance save(InternationalTravelInsurance internationalTravelInsurance);
 
-	public void delete(Long id);
+	void delete(Long id);
 
-	public List<InternationalTravelInsurance> findByIssueDate(Date issueOfDate);
+	List<InternationalTravelInsurance> findByStartDate(Date startDate);
 
-	public List<InternationalTravelInsurance> findByDurationInDays(int durationInDays);
+	List<InternationalTravelInsurance> findByDurationInDays(int durationInDays);
 
-	public List<InternationalTravelInsurance> findByNumberOfPersons(int numberOfPerson);
+	List<InternationalTravelInsurance> findByNumberOfPersons(int numberOfPerson);
 
 }

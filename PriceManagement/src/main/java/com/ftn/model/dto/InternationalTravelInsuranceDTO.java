@@ -7,10 +7,6 @@ import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
-import com.ftn.model.User;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;

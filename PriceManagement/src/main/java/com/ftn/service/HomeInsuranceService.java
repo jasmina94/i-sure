@@ -1,8 +1,8 @@
 package com.ftn.service;
 
-import com.ftn.model.dto.HomeInsuranceDTO;
-
 import java.util.List;
+
+import com.ftn.model.dto.HomeInsuranceDTO;
 
 public interface HomeInsuranceService {
 

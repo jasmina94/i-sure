@@ -1,5 +1,9 @@
 package com.ftn.model.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -7,10 +11,6 @@ import javax.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

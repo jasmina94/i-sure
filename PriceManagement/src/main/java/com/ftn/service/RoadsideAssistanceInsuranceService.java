@@ -1,8 +1,8 @@
 package com.ftn.service;
 
-import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
-
 import java.util.List;
+
+import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
 
 public interface RoadsideAssistanceInsuranceService {
 

@@ -15,7 +15,7 @@
                             </div>
                             <div flex-gt-xs style="width: 200px; float: right;">
                                 <md-datepicker ng-model="vm.stepOne.data.toDate" md-placeholder="Enter date"
-                                               md-min-date="vm.stepOne.data.fromDate"
+                                               md-min-date="vm.stepOne.data.fromDate" 
                                                required></md-datepicker>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                         <div layout="row" ng-repeat="age in vm.travelRisks['Age']"
                              style="padding-top: 0px; width:100%;">
                             <div style="width: 20%; float: left; padding-top: 25px;">
-                                <label>{{age.riskName}}:</label>
+                                <label style="font-weight: 100;">{{age.riskName}}:</label>
                             </div>
                             <div style="width: 40%;height:50px;">
                                 <md-input-container class="md-block"><label>Number of people</label> <input min="0"
@@ -104,6 +104,12 @@
             <md-step-actions layout="row">
                 <div flex layout="row" layout-align="end top">
                     <md-button type="button" class="md-warn" ng-click="vm.cancel()">HOME PAGE</md-button>
+                    <div>
+                        <md-button ng-disabled="vm.dummy.step1.$invalid" ng-click="vm.showPriceForInternational($event)" class="gold-btn">
+                            CURRENT PRICE
+                        </md-button>
+                        <md-tooltip ng-if="vm.dummy.step1.$invalid" md-direction="bottom">YOU NEED TO ENTER DATE OF TRAVEL</md-tooltip>
+                    </div>
                     <div>
                         <md-button ng-disabled="vm.dummy.step1.$invalid" ng-click="vm.submitCurrentStep()" class="gold-btn">
                             PROCEED

@@ -1,11 +1,12 @@
 package com.ftn.service.implementation;
 
-import com.ftn.model.dto.UserDTO;
-import com.ftn.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.ftn.model.dto.UserDTO;
+import com.ftn.service.UserService;
 
 /**
  * Created by Jasmina on 16/11/2017.

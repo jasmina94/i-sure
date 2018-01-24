@@ -1,7 +1,7 @@
 /**
  * Created by Jasmina on 15/01/2018.
  */
-app.controller('CardPaymentController', function ($scope, $state, $routeParams, cardPaymentService){
+app.controller('CardPaymentController', function ($scope, $state, $routeParams, $location, cardPaymentService){
 
     var months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     var years = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028];
@@ -9,6 +9,7 @@ app.controller('CardPaymentController', function ($scope, $state, $routeParams, 
     $scope.months = months;
     $scope.years = years;
     $scope.paymentId = $routeParams.paymentId;
+    $scope.showProgress = false;
 
     var loadName = function () {
         cardPaymentService.getBankName(function(response){
@@ -30,14 +31,17 @@ app.controller('CardPaymentController', function ($scope, $state, $routeParams, 
 
 
     $scope.pay = function () {
+        $scope.showProgress = true;
         $scope.order.amount = $scope.amount;
         console.log($scope.order);
         cardPaymentService.processOrder($scope.paymentId, $scope.order, function(response){
             if(response.data = $scope.order){
                 console.log("Success");
-                console.log(window.location);
+                console.log($location.url());
+                $location.path("/acquirer/success");
             }else {
-                console.log("Fail");
+                console.log("Error");
+                $location.path("/acquirer/error");
             }
         });
     }

@@ -9,7 +9,8 @@
         'ngAria',
         'ngMaterial',
         'md-steppers',
-        'ngNotify'
+        'ngNotify',
+        'ngSanitize'
     ]);
 
 }());

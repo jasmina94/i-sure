@@ -1,8 +1,8 @@
 package com.ftn.service;
 
-import com.ftn.model.dto.InsurancePolicyDTO;
-
 import java.util.List;
+
+import com.ftn.model.dto.InsurancePolicyDTO;
 
 /**
  * Created by zlatan on 1/17/18.

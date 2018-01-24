@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.ftn.exception.NotFoundException;
 import com.ftn.model.InternationalTravelInsurance;
-import com.ftn.model.dto.InsurancePolicyDTO;
 import com.ftn.model.dto.InternationalTravelInsuranceDTO;
 import com.ftn.repository.InternationalTravelInsuranceRepository;
 import com.ftn.service.InternationalTravelInsuranceService;
@@ -59,7 +58,7 @@ public class InternationalTravelInsuranceServiceImpl implements InternationalTra
 	
 	@Override
 	public List<InternationalTravelInsuranceDTO> findByIssueDate(Date date) {
-		 final List<InternationalTravelInsurance> internationalTravelInsurance = internationalTravelInsuranceRepository.findByIssueDate(date);
+		 final List<InternationalTravelInsurance> internationalTravelInsurance = internationalTravelInsuranceRepository.findByStartDate(date);
 	        return internationalTravelInsurance.stream().map(InternationalTravelInsuranceDTO::new).collect(Collectors.toList());
 	}
 

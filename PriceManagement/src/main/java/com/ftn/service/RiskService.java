@@ -1,8 +1,8 @@
 package com.ftn.service;
 
-import com.ftn.model.dto.RiskDTO;
-
 import java.util.List;
+
+import com.ftn.model.dto.RiskDTO;
 
 /**
  * Created by zlatan on 25/11/2017.

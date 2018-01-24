@@ -1,10 +1,10 @@
 package com.ftn.model;
 
 
+import java.util.Objects;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Objects;
 
 /**
  * Created by zlatan on 11/25/17.

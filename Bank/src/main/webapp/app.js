@@ -18,6 +18,10 @@ var app = angular.module('app', ['ui.router', 'ngMessages', 'ngMaterial', 'ngRou
             templateUrl: 'template/error.html',
             controller: 'ErrorController'
         });
+        $routeProvider.when('/acquirer/fail', {
+            templateUrl: 'template/fail.html',
+            controller: 'FailController'
+        });
         $routeProvider.when('/acquirer/order/:paymentId', {
             templateUrl: 'template/cardPayment.html',
             controller: 'CardPaymentController'

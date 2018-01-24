@@ -25,10 +25,13 @@ import lombok.NoArgsConstructor;
 public class InternationalTravelInsurance extends Base{
 	
 	@Column
-	private Date issueDate;
+	private Date startDate;
 
 	@Column
 	private int durationInDays;
+
+	@Column
+	private Date endDate;
 
 	@Column
 	private int numberOfPersons;
@@ -47,7 +50,8 @@ public class InternationalTravelInsurance extends Base{
 	}
 	
 	public void merge(InternationalTravelInsuranceDTO internationalTravelInsuranceDTO){
-		this.issueDate = internationalTravelInsuranceDTO.getIssueDate();
+		this.startDate = internationalTravelInsuranceDTO.getStartDate();
+		this.endDate = internationalTravelInsuranceDTO.getEndDate();
 		this.durationInDays = internationalTravelInsuranceDTO.getDurationInDays();
 		this.numberOfPersons = internationalTravelInsuranceDTO.getNumberOfPersons();
 		this.price = internationalTravelInsuranceDTO.getPrice();

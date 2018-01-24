@@ -1,7 +1,8 @@
 package com.ftn.service.implementation;
 
-import com.ftn.model.dto.HomeInsuranceDTO;
-import com.ftn.service.HomeInsuranceService;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -10,8 +11,8 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.List;
+import com.ftn.model.dto.HomeInsuranceDTO;
+import com.ftn.service.HomeInsuranceService;
 
 @Service
 public class HomeInsuranceServiceImpl implements HomeInsuranceService {
