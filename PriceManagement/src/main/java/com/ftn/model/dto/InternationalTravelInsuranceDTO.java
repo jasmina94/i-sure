@@ -7,10 +7,6 @@ import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
-import com.ftn.model.User;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
@@ -24,7 +20,11 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date issueDate;
+	private Date startDate;
+
+	@NotNull
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date endDate;
 
 	@NotNull
 	private int durationInDays;
@@ -39,13 +39,13 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 
 	@Override
 	public String toString() {
-		return "InternationalTravelInsurance: { issueDate=\"" + issueDate + "\"" + ", durationInDays=" + durationInDays + ", numberOfPersons=" + numberOfPersons + ", price=" + price + " }";
+		return "InternationalTravelInsurance: { startDate=\"" + startDate + "\"" + ", durationInDays=" + durationInDays + ", numberOfPersons=" + numberOfPersons + ", price=" + price + " }";
 	}
 
 	@Override
 	public int hashCode() {
 		int hash = 3;
-		hash = 59 * hash + Objects.hashCode(this.issueDate);
+		hash = 59 * hash + Objects.hashCode(this.startDate);
 		hash = 59 * hash + Objects.hashCode(this.durationInDays);
 		hash = 59 * hash + Objects.hashCode(this.numberOfPersons);
 		hash = 59 * hash + Objects.hashCode(this.price);
@@ -61,7 +61,7 @@ public class InternationalTravelInsuranceDTO extends BaseDTO{
 			return false;
 		}
 		final InternationalTravelInsuranceDTO other = (InternationalTravelInsuranceDTO) obj;
-		if (!Objects.equals(this.issueDate, other.issueDate)) {
+		if (!Objects.equals(this.startDate, other.startDate)) {
 			return false;
 		}
 		if (!Objects.equals(this.durationInDays, other.durationInDays)) {
