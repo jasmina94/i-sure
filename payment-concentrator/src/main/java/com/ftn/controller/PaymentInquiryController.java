@@ -74,8 +74,6 @@ public class PaymentInquiryController {
 	
 	@RequestMapping(method = RequestMethod.GET, value = "tt")
 	public String tt(){
-		
 		return "success";
-		
 	}
 }

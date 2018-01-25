@@ -27,15 +27,15 @@ import com.ftn.service.TransactionService;
 @Controller
 @RequestMapping("/checkout")
 public class PaymentCheckoutController {
-	
-	private RestTemplate restTemplate = new RestTemplate();
-	
-	private final TransactionService transactionService;
 
-	private final PaymentService paymentService;
+    private RestTemplate restTemplate = new RestTemplate();
+
+    private final TransactionService transactionService;
+
+    private final PaymentService paymentService;
 
     @Autowired
-    public PaymentCheckoutController(TransactionService transactionService, PaymentService paymentService){
+    public PaymentCheckoutController(TransactionService transactionService, PaymentService paymentService) {
         this.transactionService = transactionService;
         this.paymentService = paymentService;
     }
@@ -45,18 +45,12 @@ public class PaymentCheckoutController {
         String paymentId = paymentCheckoutDTO.getPaymentId();
         TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
         transactionDTO.setStatus(TransactionStatus.BOOKED);
-        if(paymentCheckoutDTO.getAcquirerOrderId() != 0 && paymentCheckoutDTO.getAcquirerTimestamp() != null){
+        if (paymentCheckoutDTO.getAcquirerOrderId() != 0 && paymentCheckoutDTO.getAcquirerTimestamp() != null) {
             transactionDTO.setAcquirerOrderId(paymentCheckoutDTO.getAcquirerOrderId());
             transactionDTO.setAcquirerTimestamp(paymentCheckoutDTO.getAcquirerTimestamp());
         }
         transactionService.update(transactionDTO.getId(), transactionDTO);
-
-//        System.out.println("Usao u success");
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.add("Location", "http://stackoverflow.com");
-//
-//        return new ResponseEntity<byte []>(null,headers,HttpStatus.FOUND);
+        System.out.println("Usao u success");
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.OK);
     }
 
@@ -69,10 +63,6 @@ public class PaymentCheckoutController {
 
         System.out.println("Usao u cancel");
 
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.add("Location", "http://blic.rs");
-//
-//        return new ResponseEntity<byte []>(null,headers,HttpStatus.FOUND);
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.NO_CONTENT);
     }
 }

@@ -41,11 +41,9 @@ public class PaymentCheckoutController {
         }else if(!paymentCheckoutDTO.getErrorUrl().equals(null)) {
             method = "cancel";
         }
-
         ResponseEntity response = restTemplate.postForEntity(ph_home + ph_payment_checkout + "/" + method,
                 new HttpEntity<>(paymentCheckoutDTO),
                 String.class);
-
     	return response;
     }
 }

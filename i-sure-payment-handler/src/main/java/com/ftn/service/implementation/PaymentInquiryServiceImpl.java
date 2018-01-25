@@ -23,13 +23,13 @@ public class PaymentInquiryServiceImpl implements PaymentInquiryService{
         paymentInquiryDTO.setMerchantPassword(merchant_password);
         paymentInquiryDTO.setPaymentType(transactionDTO.getPaymentType().getLabel());
 
-        //piDTO.setAmount(transactionDTO.getAmount());
-        //piDTO.setAmount(1);
-        paymentInquiryDTO.setAmount(211.99);
+        //TODO: Uncomment and delete
+        //paymentInquiryDTO.setAmount(transactionDTO.getInsurancePolicy().getTotalPrice());
+        //paymentInquiryDTO.setAmount(211.99);
+        paymentInquiryDTO.setAmount(1);
 
         paymentInquiryDTO.setMerchantOrderId(transactionDTO.getId());
         paymentInquiryDTO.setMerchantTimestamp(transactionDTO.getTimestamp());
-
         paymentInquiryDTO.setErrorUrl("neka stranica u hendleru");
 
 		return paymentInquiryDTO;

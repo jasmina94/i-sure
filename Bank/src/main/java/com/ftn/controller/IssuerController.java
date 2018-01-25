@@ -49,6 +49,7 @@ public class IssuerController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PaymentResponseInfoDTO> entity = new HttpEntity<>(paymentResponseInfoDTO, headers);
         String responseUrl = environmentProperties.getPccUrl() + "/response";
+
         ResponseEntity<PaymentResponseInfoDTO> response = restTemplate.exchange(responseUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
 
         return response;
