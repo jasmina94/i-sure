@@ -77,14 +77,14 @@ public class RiskTypeController {
         return new ResponseEntity<>(riskTypeService.findByName(name), HttpStatus.OK);
     }
 
-    @CustomAnnotation(value = "FIND_RISK_TYPE_BY_CATEGORY")
+    //@CustomAnnotation(value = "FIND_RISK_TYPE_BY_CATEGORY")
     @Transactional
     @GetMapping(value = "/insuranceCategory/{name}")
     public ResponseEntity findRisksByCategory(@PathVariable String name){
         return new ResponseEntity<>(riskTypeService.findByCategory(name), HttpStatus.OK);
     }
 
-    @CustomAnnotation(value = "FIND_RISK_TYPE_BY_CATEGORY")
+    //@CustomAnnotation(value = "FIND_RISK_TYPE_BY_CATEGORY")
     @Transactional
     @GetMapping(value = "/insuranceCategoryRiskTypes/{name}")
     public ResponseEntity findRiskTypesByCategory(@PathVariable String name){
