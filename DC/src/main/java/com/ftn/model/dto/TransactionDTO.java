@@ -32,6 +32,8 @@ public class TransactionDTO extends BaseDTO{
 	
 	private PaymentDTO payment;
 	
+	private String paymentId;
+	
 	@NotNull
 	private InsurancePolicyDTO insurancePolicy;
 
@@ -55,6 +57,7 @@ public class TransactionDTO extends BaseDTO{
         this.amount = transaction.getAmount();
         this.acquirerOrderId = transaction.getAcquirerOrderId();
         this.acquirerTimestamp = transaction.getAcquirerTimestamp();
+		this.paymentId = transaction.getPaymentServiceId();
         if(cascade) {
         	if(transaction.getPaymentType() != null) {
         		this.paymentType = new PaymentTypeDTO(transaction.getPaymentType());
@@ -77,6 +80,7 @@ public class TransactionDTO extends BaseDTO{
         transaction.setAmount(amount);
         transaction.setAcquirerOrderId(acquirerOrderId);
         transaction.setAcquirerTimestamp(acquirerTimestamp);
+		transaction.setPaymentServiceId(paymentId);
         if(this.paymentType != null){
             transaction.setPaymentType(paymentType.construct());
         }
