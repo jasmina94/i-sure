@@ -1,19 +1,37 @@
 package com.ftn.controller;
 
-import com.ftn.exception.BadRequestException;
-import com.ftn.model.dto.onlinepayment.*;
-import com.ftn.model.environment.EnvironmentProperties;
-import com.ftn.service.AcquirerService;
-import com.ftn.service.OnlinePaymentService;
-import com.ftn.service.TransactionService;
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import javax.validation.Valid;
+import com.ftn.exception.BadRequestException;
+import com.ftn.model.dto.onlinepayment.AmountDTO;
+import com.ftn.model.dto.onlinepayment.BankNameDTO;
+import com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO;
+import com.ftn.model.dto.onlinepayment.PaymentInquiryDTO;
+import com.ftn.model.dto.onlinepayment.PaymentInquiryInfoDTO;
+import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
+import com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO;
+import com.ftn.model.environment.EnvironmentProperties;
+import com.ftn.service.AcquirerService;
 
 /**
  * Created by Jasmina on 04/12/2017.
@@ -29,11 +47,14 @@ public class AcquirerController {
     private final AcquirerService acquirerService;
 
     private final RestTemplate restTemplate;
-
+    
+    private Logger logger;
+    
     @Autowired
     public AcquirerController(AcquirerService acquirerService) {
         this.acquirerService = acquirerService;
         this.restTemplate = new RestTemplate();
+        logger = LoggerFactory.getLogger(AcquirerService.class);
     }
 
     @Transactional

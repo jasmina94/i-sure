@@ -98,4 +98,8 @@ dependencies {
 
     // Lombok
     compileOnly('org.projectlombok:lombok')
+    
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+	testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+    
 }

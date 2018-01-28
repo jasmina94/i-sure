@@ -6,6 +6,9 @@ import com.ftn.model.dto.PaymentOrderDTO;
 import com.ftn.model.dto.PaymentResponseInfoDTO;
 import com.ftn.model.environment.EnvironmentProperties;
 import com.ftn.service.BankService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,10 +33,13 @@ public class PccController {
     private final RestTemplate restTemplate;
 
     private final BankService bankService;
+    Logger logger;
 
     public PccController(BankService bankService) {
         this.restTemplate = new RestTemplate();
         this.bankService = bankService;
+        logger = LoggerFactory.getLogger(PccController.class);
+        
     }
 
 
@@ -54,7 +60,7 @@ public class PccController {
         // Pass to issuer PaymentOrder and get back PaymentResponse
         ResponseEntity<PaymentResponseInfoDTO> response = restTemplate
                 .exchange(issuerUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
-
+        logger.info("Payment order sent");
         // Respond to acquirer
         return new ResponseEntity<>(paymentOrderDTO, HttpStatus.OK);
     }
@@ -74,7 +80,7 @@ public class PccController {
         //Response from acquirer is same
         ResponseEntity<PaymentResponseInfoDTO> response = restTemplate
                 .exchange(acquirerUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
-
+        logger.info("Send response to issuer");
         // Respond to issuer
         return new ResponseEntity(paymentResponseInfoDTO, HttpStatus.OK);
     }

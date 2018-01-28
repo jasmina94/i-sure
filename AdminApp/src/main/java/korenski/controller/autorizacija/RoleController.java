@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,10 +28,12 @@ import korenski.service.RoleService;
 public class RoleController {
 
 	private final RoleService roleService;
+	private Logger logger;
 
     @Autowired
     public RoleController(RoleService roleService){
         this.roleService = roleService;
+        logger = LoggerFactory.getLogger(RoleController.class);
     }
 
 
@@ -39,6 +43,7 @@ public class RoleController {
 
 		if (bindingResult.hasErrors())
 			throw new BadRequestException();
+		logger.info("Role create");
 		return new ResponseEntity<>(roleService.create(role), HttpStatus.OK);
 		
 	}
@@ -68,7 +73,9 @@ public class RoleController {
 		
 		try {
 			roleToModify = roleService.update(id, role);
+			logger.info("Role update");
 		} catch (Exception e) {
+			logger.error("Error:role create");
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<>(roleToModify, HttpStatus.OK);

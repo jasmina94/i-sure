@@ -6,6 +6,8 @@ import java.util.Date;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,12 +32,15 @@ import com.ftn.service.implementation.TransactionServiceImpl;
 @CrossOrigin(origins = "*")
 @RequestMapping("/transactions")
 public class TransactionController {
+	
 	private final TransactionService transactionService;
-
+	private Logger logger;
+	
     @Autowired
     public TransactionController(TransactionServiceImpl transactionService){
 
         this.transactionService = transactionService;
+        logger=LoggerFactory.getLogger(TransactionController.class);
     }
     
     @Transactional
@@ -49,6 +54,7 @@ public class TransactionController {
     public ResponseEntity create(@Valid @RequestBody TransactionDTO transactionDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
+        logger.info("Transaction create");
         return new ResponseEntity<>(transactionService.create(transactionDTO), HttpStatus.OK);
     }
 
@@ -60,10 +66,11 @@ public class TransactionController {
         }
 
         try {
-        	
+        	logger.info("Transaction update");
 			transactionDTO = transactionService.update(id, transactionDTO);
 		} catch (Exception e) {
 			e.printStackTrace();
+			logger.error("Error:transaction update");
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
         
@@ -108,6 +115,7 @@ public class TransactionController {
     	TransactionDTO transactionDTO;
     	
     	try {
+    		
 			transactionDTO = transactionService.findByPaymentId(paymentId);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

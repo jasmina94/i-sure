@@ -30,4 +30,7 @@ dependencies {
 	runtime('mysql:mysql-connector-java')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+	testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+    
 }

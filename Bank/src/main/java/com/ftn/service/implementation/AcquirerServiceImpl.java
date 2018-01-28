@@ -1,24 +1,24 @@
 package com.ftn.service.implementation;
 
-import com.ftn.exception.NotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ftn.model.database.Account;
 import com.ftn.model.database.Merchant;
 import com.ftn.model.database.Payment;
 import com.ftn.model.database.Transaction;
-import com.ftn.model.dto.onlinepayment.*;
+import com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO;
+import com.ftn.model.dto.onlinepayment.PaymentInquiryDTO;
+import com.ftn.model.dto.onlinepayment.PaymentInquiryInfoDTO;
+import com.ftn.model.dto.onlinepayment.PaymentOrderDTO;
+import com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO;
 import com.ftn.model.environment.EnvironmentProperties;
 import com.ftn.repository.MerchantRepository;
-import com.ftn.repository.PaymentRepository;
-import com.ftn.repository.TransactionRepository;
 import com.ftn.service.AcquirerService;
 import com.ftn.service.OnlinePaymentService;
-import com.ftn.service.PaymentService;
 import com.ftn.service.TransactionService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.io.NotActiveException;
-import java.util.Date;
 
 /**
  * Created by Jasmina on 04/12/2017.
@@ -44,17 +44,23 @@ public class AcquirerServiceImpl implements AcquirerService {
         String merchantId = paymentInquiryDTO.getMerchantId();
         String merchantPassword = paymentInquiryDTO.getMerchantPassword();
         Merchant merchant = merchantRepository.findByMerchantIdAndPassword(merchantId, merchantPassword);
+        
+        Logger logger = LoggerFactory.getLogger(AcquirerServiceImpl.class);
         if (merchant != null) {
             found = true;
+            logger.info("Merchant found");
         } else {
             found = false;
+            logger.info("Merchant not found");
         }
         return found;
     }
 
     @Override
     public PaymentInquiryInfoDTO generateInquiryInfo(PaymentInquiryDTO paymentInquiryDTO) {
+    	Logger logger = LoggerFactory.getLogger(AcquirerServiceImpl.class);
         Payment payment = onlinePaymentService.create(paymentInquiryDTO);
+        logger.info("Payment created");
         PaymentInquiryInfoDTO paymentInquiryInfoDTO = new PaymentInquiryInfoDTO();
         paymentInquiryInfoDTO.setPaymentUrl(payment.getUrl());
         paymentInquiryInfoDTO.setPaymentId(payment.getId().toString());
@@ -71,6 +77,9 @@ public class AcquirerServiceImpl implements AcquirerService {
             transaction.setPayment(payment);
             transaction.setType(Transaction.TransactionType.INCOME);
             transaction = transactionService.update(transaction.getId(), transaction);
+            
+            Logger logger = LoggerFactory.getLogger(AcquirerServiceImpl.class);
+            logger.info("Income transaction created");
         }
         paymentOrderDTO.setAcquirerOrderId(transaction.getId());
         paymentOrderDTO.setAcquirerTimestamp(transaction.getTimestamp());
@@ -120,15 +129,21 @@ public class AcquirerServiceImpl implements AcquirerService {
                 merchantAccount.setBalance(merchantAccount.getBalance() + amount);
                 transaction.setAccount(merchantAccount);
                 transactionService.update(transaction.getId(), transaction);
+                Logger logger = LoggerFactory.getLogger(AcquirerServiceImpl.class);
+                logger.info("Successful transaction");
             } else {
                 transaction.setStatus(Transaction.Status.REVERSED);
                 paymentCheckout.setErrorUrl(errorUrl);
                 transactionService.update(transaction.getId(), transaction);
+                Logger logger = LoggerFactory.getLogger(AcquirerServiceImpl.class);
+                logger.info("Reversed transaction");
             }
         } else {
             paymentCheckout.setPaymentId("0");
             paymentCheckout.setMerchantOrderId(0);
             paymentCheckout.setErrorUrl(errorUrl);
+            Logger logger = LoggerFactory.getLogger(AcquirerServiceImpl.class);
+            logger.info("Transaction not found");
         }
         return paymentCheckout;
     }
