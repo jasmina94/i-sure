@@ -1,9 +1,5 @@
 package com.ftn.controller;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,15 +54,15 @@ public class TransactionController {
         if (bindingResult.hasErrors()) {
             throw new BadRequestException();
         }
-
+        System.out.println("DC: " + id);
         try {
-        	
 			transactionDTO = transactionService.update(id, transactionDTO);
-		} catch (Exception e) {
+            System.out.println(transactionDTO.getId());
+            System.out.println(transactionDTO.getPaymentId());
+        } catch (Exception e) {
 			e.printStackTrace();
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-        
         return new ResponseEntity<>(transactionDTO, HttpStatus.OK);
 
     }
@@ -74,7 +70,6 @@ public class TransactionController {
     @Transactional
     @DeleteMapping(value = "/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
-
         try {
 			transactionService.delete(id);
 		} catch (Exception e) {
@@ -87,10 +82,7 @@ public class TransactionController {
     @Transactional
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id){
-
-    	
     	TransactionDTO transactionDTO;
-    	
     	try {
 			transactionDTO = transactionService.findById(id);
 		} catch (Exception e) {
@@ -103,16 +95,12 @@ public class TransactionController {
     @Transactional
     @GetMapping(value = "/payment/{paymentId}")
     public ResponseEntity findByPaymentId(@PathVariable String paymentId){
-
-    	
     	TransactionDTO transactionDTO;
-    	
     	try {
-			transactionDTO = transactionService.findByPaymentId(paymentId);
+			transactionDTO = transactionService.findByPaymentServiceId(paymentId);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-    	
         return new ResponseEntity<>(transactionDTO, HttpStatus.OK);
     }
 }

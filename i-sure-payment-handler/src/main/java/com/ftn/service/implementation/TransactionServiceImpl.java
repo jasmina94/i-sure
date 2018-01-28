@@ -45,9 +45,12 @@ public class TransactionServiceImpl implements TransactionService{
 		String URI = dc_home + dc_transactions + "/" + id;
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
         restTemplate.setRequestFactory(requestFactory);
-        ResponseEntity<TransactionDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
+		System.out.println("Hocu da promenim transakciju sa id-jem: " + id);
+		ResponseEntity<TransactionDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
                 new HttpEntity<>(transactionDTO), TransactionDTO.class);
-        return response.getBody();
+		System.out.println("Vratio sam se iz data centra id: " + response.getBody().getId());
+		System.out.println("Vratio sam se iz data centra payment id: " + response.getBody().getPaymentId());
+		return response.getBody();
 	}
 
 	@Override

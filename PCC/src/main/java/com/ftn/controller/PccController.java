@@ -55,8 +55,10 @@ public class PccController {
         ResponseEntity<PaymentResponseInfoDTO> response = restTemplate
                 .exchange(issuerUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
 
+        PaymentResponseInfoDTO paymentResponseInfoDTO = response.getBody();
+
         // Respond to acquirer
-        return new ResponseEntity<>(paymentOrderDTO, HttpStatus.OK);
+        return new ResponseEntity<>(paymentResponseInfoDTO, HttpStatus.OK);
     }
 
 
@@ -64,7 +66,7 @@ public class PccController {
     public ResponseEntity receiveResponse(@Valid @RequestBody PaymentResponseInfoDTO paymentResponseInfoDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-
+        System.out.println("Ovde usao a suvisno je");
         // Forward response to acquirer
         String acquirerUrl = environmentProperties.getAcquirerUrl() + "acquirer/checkout";
         HttpHeaders headers = new HttpHeaders();

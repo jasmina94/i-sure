@@ -13,6 +13,7 @@ import org.apache.maven.shared.invoker.DefaultInvoker;
 import org.apache.maven.shared.invoker.InvocationRequest;
 import org.apache.maven.shared.invoker.Invoker;
 import org.apache.maven.shared.invoker.MavenInvocationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,14 +36,14 @@ public class RuleController {
         this.ruleService = ruleService;
     }
 
-    @RequestMapping(value = "/ruleTest", method = RequestMethod.GET, produces = "application/json")
-    public User getQuestions(@RequestParam(required = true) String name, @RequestParam(required = true) int number) {
-        User user = new User(name, number);
-        System.out.println("User request received for: " + user);
-        User user2 = ruleService.getUser(user);
-
-        return user2;
-    }
+//    @RequestMapping(value = "/ruleTest", method = RequestMethod.GET, produces = "application/json")
+//    public User getQuestions(@RequestParam(required = true) String name, @RequestParam(required = true) int number) {
+//        User user = new User(name, number);
+//        System.out.println("User request received for: " + user);
+//        User user2 = ruleService.getUser(user);
+//
+//        return user2;
+//    }
 
     @RequestMapping(value = "/openFile", method = RequestMethod.GET)
     public ResponseEntity<FileDTO> openFile() throws IOException {

@@ -19,31 +19,29 @@ import com.ftn.model.dto.PaymentCheckoutDTO;
 @Controller
 @RequestMapping("/checkout")
 public class PaymentCheckoutController {
-	
-	@Value("${ph.home}")
+
+    @Value("${ph.home}")
     private String ph_home;
-	
-	@Value("${ph.payment.checkout}")
-	private String ph_payment_checkout;
 
-	
-	private RestTemplate restTemplate = new RestTemplate();
-	
-	@PostMapping
-    public ResponseEntity receivePaymentCheckout(@Valid @RequestBody PaymentCheckoutDTO paymentCheckoutDTO,
-												 BindingResult bindingResult) {
-		if (bindingResult.hasErrors())
+    @Value("${ph.payment.checkout}")
+    private String ph_payment_checkout;
+
+
+    private RestTemplate restTemplate = new RestTemplate();
+
+    @PostMapping
+    public ResponseEntity receivePaymentCheckout(@Valid @RequestBody PaymentCheckoutDTO paymentCheckoutDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors())
             throw new BadRequestException();
-
         String method = "";
-        if(!paymentCheckoutDTO.getSuccessUrl().equals(null)) {
+        if (!paymentCheckoutDTO.getSuccessUrl().equals(null)) {
             method = "success";
-        }else if(!paymentCheckoutDTO.getErrorUrl().equals(null)) {
+        } else if (!paymentCheckoutDTO.getErrorUrl().equals(null)) {
             method = "cancel";
         }
-        ResponseEntity response = restTemplate.postForEntity(ph_home + ph_payment_checkout + "/" + method,
-                new HttpEntity<>(paymentCheckoutDTO),
-                String.class);
-    	return response;
+        String url = ph_home + ph_payment_checkout + "/" + method;
+        ResponseEntity<PaymentCheckoutDTO> response = restTemplate.postForEntity(url, new HttpEntity<>(paymentCheckoutDTO), PaymentCheckoutDTO.class);
+
+        return new ResponseEntity(paymentCheckoutDTO, HttpStatus.OK);
     }
 }

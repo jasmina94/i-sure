@@ -43,6 +43,7 @@ public class TransactionServiceImpl implements TransactionService {
             Card card = cardService.findCard(paymentOrderDTO);
             transaction.setAccount(card.getAccount());
             transaction.setType(Transaction.TransactionType.CHARGE);
+            transaction.setStatus(Transaction.Status.BOOKED);
         }
         transaction =  transactionRepository.save(transaction);
         return transaction;
@@ -59,6 +60,7 @@ public class TransactionServiceImpl implements TransactionService {
             existing.setAccount(transaction.getAccount());
             existing.setPayment(transaction.getPayment());
             existing = transactionRepository.save(existing);
+            System.out.println("ex " + existing.getStatus());
         }else{
             existing = null;
         }

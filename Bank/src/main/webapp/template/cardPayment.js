@@ -35,10 +35,14 @@ app.controller('CardPaymentController', function ($scope, $state, $routeParams, 
         $scope.order.amount = $scope.amount;
         console.log($scope.order);
         cardPaymentService.processOrder($scope.paymentId, $scope.order, function(response){
-            if(response.data = $scope.order){
-                console.log("Success");
+            var paymentResponse = response.data;
+            console.log(paymentResponse);
+            if(paymentResponse.transactionStatus === "SUCCESSFUL"){
                 console.log($location.url());
                 $location.path("/acquirer/success");
+                cardPaymentService.sendResponse(paymentResponse, function (response) {
+                    console.log(response.data);
+                });
             }else {
                 console.log("Error");
                 $location.path("/acquirer/error");

@@ -78,20 +78,6 @@ public class AcquirerServiceImpl implements AcquirerService {
     }
 
     @Override
-    public Account getMerchantAccount(PaymentInquiryDTO paymentInquiryDTO) {
-        String merchantId = paymentInquiryDTO.getMerchantId();
-        String merchantPassword = paymentInquiryDTO.getMerchantPassword();
-        Account account;
-        Merchant merchant = merchantRepository.findByMerchantIdAndPassword(merchantId, merchantPassword);
-        if (merchant != null) {
-            account = merchant.getAccount();
-        } else {
-            account = null;
-        }
-        return account;
-    }
-
-    @Override
     public PaymentCheckoutDTO generateCheckout(PaymentResponseInfoDTO paymentResponseInfoDTO) {
         PaymentCheckoutDTO paymentCheckout = new PaymentCheckoutDTO();
         long acquirerOrderId = paymentResponseInfoDTO.getAcquirerOrderId();
@@ -119,6 +105,7 @@ public class AcquirerServiceImpl implements AcquirerService {
                 Account merchantAccount = transaction.getAccount();
                 merchantAccount.setBalance(merchantAccount.getBalance() + amount);
                 transaction.setAccount(merchantAccount);
+                System.out.println(transaction.getStatus());
                 transactionService.update(transaction.getId(), transaction);
             } else {
                 transaction.setStatus(Transaction.Status.REVERSED);
@@ -148,6 +135,4 @@ public class AcquirerServiceImpl implements AcquirerService {
         }
         return amount;
     }
-
-
 }

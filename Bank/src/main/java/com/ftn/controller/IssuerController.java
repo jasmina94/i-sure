@@ -36,22 +36,12 @@ public class IssuerController {
         this.restTemplate = new RestTemplate();
     }
 
-
+    @Transactional
     @PostMapping
     public ResponseEntity receiveOrderFromPCC(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-
         PaymentResponseInfoDTO paymentResponseInfoDTO = issuerService.generateResponse(paymentOrderDTO);
-
-        // Forward to PCC
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<PaymentResponseInfoDTO> entity = new HttpEntity<>(paymentResponseInfoDTO, headers);
-        String responseUrl = environmentProperties.getPccUrl() + "/response";
-
-        ResponseEntity<PaymentResponseInfoDTO> response = restTemplate.exchange(responseUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
-
-        return response;
+        return new ResponseEntity(paymentResponseInfoDTO, HttpStatus.OK);
     }
 }

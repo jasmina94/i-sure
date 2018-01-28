@@ -20,7 +20,6 @@ public class TransactionDTO extends BaseDTO{
 
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date timestamp;
-	
 
 	private TransactionStatus status;
 	
@@ -62,9 +61,9 @@ public class TransactionDTO extends BaseDTO{
         	if(transaction.getPaymentType() != null) {
         		this.paymentType = new PaymentTypeDTO(transaction.getPaymentType());
         	}
-        	if(transaction.getPayment() != null) {
-        		this.payment = new PaymentDTO(transaction.getPayment());
-        	}
+//        	if(transaction.getPayment() != null) {
+//        		this.payment = new PaymentDTO(transaction.getPayment());
+//        	}
         	if(transaction.getInsurancePolicy() != null) {
     			this.insurancePolicy = new InsurancePolicyDTO(transaction.getInsurancePolicy());
     		}
@@ -84,9 +83,9 @@ public class TransactionDTO extends BaseDTO{
         if(this.paymentType != null){
             transaction.setPaymentType(paymentType.construct());
         }
-        if(this.payment != null){
-            transaction.setPayment(payment.construct());
-        }
+//        if(this.payment != null){
+//            transaction.setPayment(payment.construct());
+//        }
         if(insurancePolicy != null) {
 			transaction.setInsurancePolicy(insurancePolicy.construct());
 		}

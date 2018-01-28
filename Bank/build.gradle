@@ -98,4 +98,8 @@ dependencies {
 
     // Lombok
     compileOnly('org.projectlombok:lombok')
+
+    // Httpclient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+
 }

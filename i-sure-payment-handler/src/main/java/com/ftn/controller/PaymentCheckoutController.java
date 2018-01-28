@@ -43,6 +43,7 @@ public class PaymentCheckoutController {
     @PostMapping(value = "success")
     public ResponseEntity successPay(@RequestBody PaymentCheckoutDTO paymentCheckoutDTO) {
         String paymentId = paymentCheckoutDTO.getPaymentId();
+        System.out.println("Success za payment id:" + paymentId);
         TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
         transactionDTO.setStatus(TransactionStatus.BOOKED);
         if (paymentCheckoutDTO.getAcquirerOrderId() != 0 && paymentCheckoutDTO.getAcquirerTimestamp() != null) {
@@ -50,7 +51,7 @@ public class PaymentCheckoutController {
             transactionDTO.setAcquirerTimestamp(paymentCheckoutDTO.getAcquirerTimestamp());
         }
         transactionService.update(transactionDTO.getId(), transactionDTO);
-        System.out.println("Usao u success");
+        System.out.println("Success kraj");
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.OK);
     }
 
@@ -60,9 +61,7 @@ public class PaymentCheckoutController {
         TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
         transactionDTO.setStatus(TransactionStatus.REVERSED);
         transactionService.update(transactionDTO.getId(), transactionDTO);
-
-        System.out.println("Usao u cancel");
-
+        System.out.println("Cancel kraj");
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.NO_CONTENT);
     }
 }
