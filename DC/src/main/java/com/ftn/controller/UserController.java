@@ -1,17 +1,30 @@
 package com.ftn.controller;
 
-import com.ftn.exception.BadRequestException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
-import com.ftn.model.dto.UserDTO;
-import com.ftn.service.UserService;
+import javax.transaction.Transactional;
+import javax.validation.Valid;
+
+import org.keycloak.admin.client.Keycloak;
+import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.transaction.Transactional;
-import javax.validation.Valid;
+import com.ftn.exception.BadRequestException;
+import com.ftn.model.dto.UserDTO;
+import com.ftn.service.UserService;
 
 /**
  * Created by Jasmina on 16/11/2017.
@@ -19,7 +32,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-
+	
     private final UserService userService;
 
     @Autowired
@@ -30,7 +43,7 @@ public class UserController {
     @Transactional
     @GetMapping
     public ResponseEntity read() {
-        return new ResponseEntity<>(userService.readAll(), HttpStatus.OK);
+    	return new ResponseEntity<>(userService.readAll(), HttpStatus.OK);
     }
 
     @Transactional
