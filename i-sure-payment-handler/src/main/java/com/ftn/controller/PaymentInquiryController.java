@@ -66,11 +66,11 @@ public class PaymentInquiryController {
                 PaymentInquiryInfoDTO.class);
         
         PaymentDTO payment = new PaymentDTO();
-        payment.setPaymentId(response.getBody().getPaymentId());
         payment.setPaymentUrl(response.getBody().getPaymentUrl());
         payment = paymentService.create(payment);
         
         transactionDTO.setPayment(payment);
+        transactionDTO.setPaymentId(response.getBody().getPaymentId());
         transactionService.update(transactionDTO.getId(), transactionDTO);
         
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
