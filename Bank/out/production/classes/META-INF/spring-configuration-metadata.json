@@ -1,0 +1,42 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.ftn.model.environment.EnvironmentProperties",
+      "name": "environment",
+      "type": "com.ftn.model.environment.EnvironmentProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.ftn.model.environment.EnvironmentProperties",
+      "name": "environment.bank-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.ftn.model.environment.EnvironmentProperties",
+      "name": "environment.concentrator-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.ftn.model.environment.EnvironmentProperties",
+      "name": "environment.nbs-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.ftn.model.environment.EnvironmentProperties",
+      "name": "environment.pcc-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.ftn.model.environment.EnvironmentProperties",
+      "name": "environment.self-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.ftn.model.environment.EnvironmentProperties",
+      "name": "environment.swift-code",
+      "type": "java.lang.String"
+    }
+  ]
+}

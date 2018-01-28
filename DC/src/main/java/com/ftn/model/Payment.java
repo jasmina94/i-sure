@@ -27,9 +27,6 @@ public class Payment extends Base{
 	@Column(nullable = false)
 	private String paymentUrl;
 	
-//	@OneToOne(mappedBy = "payment")
-//	private Transaction transaction;
-	
 	public Payment(BaseDTO baseDTO) {
 		super(baseDTO);
 	}

@@ -6,6 +6,9 @@ import com.ftn.model.dto.PaymentOrderDTO;
 import com.ftn.model.dto.PaymentResponseInfoDTO;
 import com.ftn.model.environment.EnvironmentProperties;
 import com.ftn.service.BankService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,12 +33,14 @@ public class PccController {
     private final RestTemplate restTemplate;
 
     private final BankService bankService;
+    Logger logger;
 
     public PccController(BankService bankService) {
         this.restTemplate = new RestTemplate();
         this.bankService = bankService;
+        logger = LoggerFactory.getLogger(PccController.class);
+        
     }
-
 
     @PostMapping
     public ResponseEntity receiveOrder(@Valid @RequestBody PaymentOrderDTO paymentOrderDTO,
@@ -57,6 +62,8 @@ public class PccController {
 
         PaymentResponseInfoDTO paymentResponseInfoDTO = response.getBody();
 
+        logger.info("Payment order sent to issuer");
+
         // Respond to acquirer
         return new ResponseEntity<>(paymentResponseInfoDTO, HttpStatus.OK);
     }
@@ -66,7 +73,7 @@ public class PccController {
     public ResponseEntity receiveResponse(@Valid @RequestBody PaymentResponseInfoDTO paymentResponseInfoDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-        System.out.println("Ovde usao a suvisno je");
+
         // Forward response to acquirer
         String acquirerUrl = environmentProperties.getAcquirerUrl() + "acquirer/checkout";
         HttpHeaders headers = new HttpHeaders();
@@ -76,6 +83,8 @@ public class PccController {
         //Response from acquirer is same
         ResponseEntity<PaymentResponseInfoDTO> response = restTemplate
                 .exchange(acquirerUrl, HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
+
+        logger.info("Send response to issuer");
 
         // Respond to issuer
         return new ResponseEntity(paymentResponseInfoDTO, HttpStatus.OK);

@@ -1,9 +1,9 @@
 package com.ftn.controller;
 
-import java.util.Date;
-
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ftn.exception.BadRequestException;
-import com.ftn.model.Pricelist;
 import com.ftn.model.dto.PricelistDTO;
-import com.ftn.repository.PricelistRepository;
 import com.ftn.service.PricelistService;
 
 @RestController
@@ -29,10 +27,12 @@ import com.ftn.service.PricelistService;
 public class PricelistController {
 	
     private final PricelistService pricelistService;
-
+    private Logger logger;
+    
     @Autowired
     public PricelistController(PricelistService pricelistService){
         this.pricelistService = pricelistService;
+        logger = LoggerFactory.getLogger(PricelistController.class);
     }
 
     @Transactional
@@ -48,9 +48,12 @@ public class PricelistController {
             throw new BadRequestException();
         
         try {
+        	
 			PricelistDTO pricelist = pricelistService.create(pricelistDTO);
+			logger.info("Pricelist created");
 			return new ResponseEntity<>(pricelist, HttpStatus.OK);
 		} catch (Exception e) {
+			logger.info("Error:pricelist create");
 			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		}
         
