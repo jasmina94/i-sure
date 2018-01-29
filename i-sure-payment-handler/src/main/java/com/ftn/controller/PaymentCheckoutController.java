@@ -1,27 +1,20 @@
 package com.ftn.controller;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-
-import com.ftn.model.dto.PaymentDTO;
-import com.ftn.service.PaymentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import com.ftn.exception.BadRequestException;
 import com.ftn.model.dto.PaymentCheckoutDTO;
 import com.ftn.model.dto.TransactionDTO;
 import com.ftn.model.dto.TransactionStatus;
+import com.ftn.service.PaymentService;
 import com.ftn.service.TransactionService;
 
 @Controller
@@ -33,11 +26,14 @@ public class PaymentCheckoutController {
     private final TransactionService transactionService;
 
     private final PaymentService paymentService;
+    
+    Logger logger ;
 
     @Autowired
     public PaymentCheckoutController(TransactionService transactionService, PaymentService paymentService) {
         this.transactionService = transactionService;
         this.paymentService = paymentService;
+        this.logger = LoggerFactory.getLogger(PaymentCheckoutController.class);
     }
 
     @PostMapping(value = "success")
@@ -51,6 +47,7 @@ public class PaymentCheckoutController {
         }
         transactionService.update(transactionDTO.getId(), transactionDTO);
         System.out.println("Usao u success");
+        logger.info("Checkout success");
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.OK);
     }
 
@@ -62,7 +59,7 @@ public class PaymentCheckoutController {
         transactionService.update(transactionDTO.getId(), transactionDTO);
 
         System.out.println("Usao u cancel");
-
+        logger.info("Checkout cancel");
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.NO_CONTENT);
     }
 }

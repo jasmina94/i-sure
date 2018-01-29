@@ -2,6 +2,8 @@ package com.ftn.controller;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -26,6 +28,7 @@ public class PaymentCheckoutController {
 	@Value("${ph.payment.checkout}")
 	private String ph_payment_checkout;
 
+	Logger logger = LoggerFactory.getLogger(PaymentInquiryController.class);
 	
 	private RestTemplate restTemplate = new RestTemplate();
 	
@@ -37,8 +40,10 @@ public class PaymentCheckoutController {
 
         String method = "";
         if(!paymentCheckoutDTO.getSuccessUrl().equals(null)) {
+        	logger.info("Payment checkout success");
             method = "success";
         }else if(!paymentCheckoutDTO.getErrorUrl().equals(null)) {
+        	logger.info("Payment checkout cancel");
             method = "cancel";
         }
         ResponseEntity response = restTemplate.postForEntity(ph_home + ph_payment_checkout + "/" + method,
