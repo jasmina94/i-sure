@@ -108,7 +108,6 @@ public class ReportServiceImpl implements ReportService {
         data.put("hasCar", params.isHasCar());
         data.put("hasHome", params.isHasHome());
         data.put("totalPrice", params.getTotalPrice());
-        data.put("totalValue", params.getTotalValue());
         data.put("policyNumber", params.getPolicyNumber());
         data.put("issueDate", params.getIssueDate());
         data.put("effectiveDate", params.getEffectiveDate());
@@ -134,7 +133,6 @@ public class ReportServiceImpl implements ReportService {
         PolicyReportParamsDTO policyReportParamsDTO = new PolicyReportParamsDTO();
         policyReportParamsDTO.setEffectiveDate(insurancePolicyDTO.getDateBecomeEffective());
         policyReportParamsDTO.setPolicyNumber(insurancePolicyDTO.getId());
-        policyReportParamsDTO.setTotalValue(insurancePolicyDTO.getTotalValue());
         RoadsideAssistanceInsuranceDTO roadsideAssistanceInsuranceDTO = insurancePolicyDTO.getRoadsideAssistanceInsurance();
         if (roadsideAssistanceInsuranceDTO == null) {
             policyReportParamsDTO.setHasCar(false);

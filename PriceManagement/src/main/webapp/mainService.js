@@ -32,6 +32,14 @@
     	mainService.findMaxDateTo = function() {
             return $http.get("pricelists/maxDateTo");
             }
+    	
+    	mainService.openFile = function(){
+    		return $http.get("/openFile");
+    	}
+    	
+    	mainService.saveFile = function(content){
+    		return $http.post("/saveFile", content);
+    	}
         return mainService;
 
     });

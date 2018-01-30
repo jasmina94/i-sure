@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 public class InsurancePolicyDTO extends BaseDTO {
 
 	@NotNull
-	private double totalValue;
+	private double totalPrice;
 
 	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
@@ -46,18 +46,15 @@ public class InsurancePolicyDTO extends BaseDTO {
 
 	private RoadsideAssistanceInsuranceDTO roadsideAssistanceInsurance;
 
-	private double totalPrice;
-
 	public InsurancePolicyDTO(InsurancePolicy insurancePolicy) {
 		this(insurancePolicy, true);
 	}
 
 	public InsurancePolicyDTO(InsurancePolicy insurancePolicy, boolean cascade) {
 		super(insurancePolicy);
-		this.totalValue = insurancePolicy.getTotalValue();
+		this.totalPrice = insurancePolicy.getTotalPrice();
 		this.dateOfIssue = insurancePolicy.getDateOfIssue();
 		this.dateBecomeEffective = insurancePolicy.getDateBecomeEffective();
-		this.totalPrice = insurancePolicy.getTotalPrice();
 		if (cascade) {
 			this.customers = insurancePolicy.getCustomers().stream().map(customer -> new CustomerDTO(customer, false)).collect(Collectors.toList());
 		    this.internationalTravelInsurance = new InternationalTravelInsuranceDTO(insurancePolicy.getInternationalTravelInsurance(), false);
@@ -72,10 +69,9 @@ public class InsurancePolicyDTO extends BaseDTO {
 
 	public InsurancePolicy construct() {
 		final InsurancePolicy insurancePolicy = new InsurancePolicy(this);
-		insurancePolicy.setTotalValue(totalValue);
+		insurancePolicy.setTotalPrice(totalPrice);
 		insurancePolicy.setDateOfIssue(dateOfIssue);
 		insurancePolicy.setDateBecomeEffective(dateBecomeEffective);
-		insurancePolicy.setTotalPrice(totalPrice);
         if(this.customers != null && this.customers.size() > 0){
             this.customers.forEach(customerDTO -> insurancePolicy.getCustomers().add(customerDTO.construct()));
         }

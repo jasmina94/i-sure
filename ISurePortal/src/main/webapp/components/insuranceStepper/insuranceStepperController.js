@@ -127,7 +127,7 @@
             console.log(roadsideAssistanceInsuranceDTO);
             var insurancePolicyDTO =
                 {
-                    "totalValue": 1,
+                    "totalPrice": 1,
                     "dateOfIssue": vm.todayDate,
                     "dateBecomeEffective": vm.stepOne.data.fromDate,
                     "customers": null,
@@ -214,7 +214,7 @@
             console.log(internationalTravelInsuranceDTO);
             var insurancePolicyDTO =
                 {
-                    "totalValue": 1,
+                    "totalPrice": 1,
                     "dateOfIssue": vm.todayDate,
                     "dateBecomeEffective": vm.stepOne.data.fromDate,
                     "customers": null,
@@ -249,7 +249,7 @@
             console.log(homeInsuranceDTO);
             var insurancePolicyDTO =
                 {
-                    "totalValue": 1,
+                    "totalPrice": 1,
                     "dateOfIssue": vm.todayDate,
                     "dateBecomeEffective": vm.stepOne.data.fromDate,
                     "customers": null,
@@ -287,7 +287,7 @@
             console.log(roadsideAssistanceInsuranceDTO);
             var insurancePolicyDTO =
                 {
-                    "totalValue": 1,
+                    "totalPrice": 1,
                     "dateOfIssue": vm.todayDate,
                     "dateBecomeEffective": vm.stepOne.data.fromDate,
                     "customers": null,
@@ -414,7 +414,7 @@
 
             var insurancePolicyDTO =
                 {
-                    "totalValue": vm.totalPrice,
+                    "totalPrice": vm.totalPrice,
                     "dateOfIssue": vm.todayDate,
                     "dateBecomeEffective": vm.stepOne.data.fromDate,
                     "customers": customers,
@@ -434,7 +434,7 @@
                             "timestamp": "",
 
                             "paymentType": paymentType,
-                            "amount": response.data.totalValue,
+                            "amount": response.data.totalPrice,
                             "insurancePolicy": response.data
                         };
 
@@ -468,7 +468,7 @@
 //							"timestamp" : "",
 //
 //							"paymentType" : paymentType,
-//							"amount" : response.data.totalValue,
+//							"amount" : response.data.totalPrice,
 //							"insurancePolicy" : response.data
 //						};
 //

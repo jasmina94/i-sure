@@ -47,7 +47,7 @@ public class PriceServiceImpl implements PriceService {
 }
 
 //    InternationalTravelInsuranceDTO iti = new InternationalTravelInsuranceDTO();
-//    iti.setIssueDate(new Date());
+//    iti.setStartDate(new Date());
 //    iti.setDurationInDays(7);
 //    iti.setNumberOfPersons(3);
 //    iti.setPrice(1200);

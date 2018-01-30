@@ -1,6 +1,7 @@
 package com.ftn.exception.resolver;
 
 import com.ftn.exception.BadRequestException;
+import com.ftn.exception.ForbiddenException;
 import com.ftn.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,5 +22,10 @@ public class ExceptionResolver {
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity notFoundException(HttpServletRequest request, NotFoundException exception) {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+    }
+    
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity forbiddenException(HttpServletRequest request, ForbiddenException exception) {
+        return new ResponseEntity<>("{\"message\": \"" + exception.getMessage() + "\"}", HttpStatus.FORBIDDEN);
     }
 }

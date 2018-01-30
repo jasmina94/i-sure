@@ -54,5 +54,4 @@ public class PolicyReportParamsDTO {
 
     private long policyNumber;
 
-    private double totalValue;
 }

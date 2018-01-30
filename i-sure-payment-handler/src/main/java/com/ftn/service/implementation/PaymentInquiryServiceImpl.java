@@ -23,8 +23,6 @@ public class PaymentInquiryServiceImpl implements PaymentInquiryService{
         paymentInquiryDTO.setMerchantPassword(merchant_password);
         paymentInquiryDTO.setPaymentType(transactionDTO.getPaymentType().getLabel());
 
-        //piDTO.setAmount(transactionDTO.getAmount());
-        //piDTO.setAmount(1);
         paymentInquiryDTO.setAmount(211.99);
 
         paymentInquiryDTO.setMerchantOrderId(transactionDTO.getId());

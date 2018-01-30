@@ -41,8 +41,12 @@ public class PaymentCheckoutController {
     }
 
     @PostMapping(value = "success")
-    public ResponseEntity successPay(@RequestBody PaymentCheckoutDTO paymentCheckoutDTO) {
-        String paymentId = paymentCheckoutDTO.getPaymentId();
+    public ResponseEntity successPay(@Valid @RequestBody PaymentCheckoutDTO paymentCheckoutDTO, BindingResult bindingResult) {
+    	if (bindingResult.hasErrors()){
+			throw new BadRequestException();
+		}
+    	
+    	String paymentId = paymentCheckoutDTO.getPaymentId();
         TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
         transactionDTO.setStatus(TransactionStatus.BOOKED);
         if(paymentCheckoutDTO.getAcquirerOrderId() != 0 && paymentCheckoutDTO.getAcquirerTimestamp() != null){
@@ -51,28 +55,20 @@ public class PaymentCheckoutController {
         }
         transactionService.update(transactionDTO.getId(), transactionDTO);
 
-//        System.out.println("Usao u success");
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.add("Location", "http://stackoverflow.com");
-//
-//        return new ResponseEntity<byte []>(null,headers,HttpStatus.FOUND);
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.OK);
     }
 
     @PostMapping(value = "cancel")
-    public ResponseEntity cancelPay(@RequestBody PaymentCheckoutDTO paymentCheckoutDTO) {
-        String paymentId = paymentCheckoutDTO.getPaymentId();
+    public ResponseEntity cancelPay(@Valid @RequestBody PaymentCheckoutDTO paymentCheckoutDTO, BindingResult bindingResult) {
+    	if (bindingResult.hasErrors()){
+			throw new BadRequestException();
+		}
+    	
+    	String paymentId = paymentCheckoutDTO.getPaymentId();
         TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
         transactionDTO.setStatus(TransactionStatus.REVERSED);
         transactionService.update(transactionDTO.getId(), transactionDTO);
 
-        System.out.println("Usao u cancel");
-
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.add("Location", "http://blic.rs");
-//
-//        return new ResponseEntity<byte []>(null,headers,HttpStatus.FOUND);
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.NO_CONTENT);
     }
 }

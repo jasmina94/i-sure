@@ -30,8 +30,8 @@ import lombok.NoArgsConstructor;
 @Where(clause = SqlConstants.ACTIVE)
 public class InsurancePolicy extends Base {
 
-    @Column(nullable = false)
-    private double totalValue;
+    @Column
+    private double totalPrice;
 
     @Column(nullable = false)
     private Date dateOfIssue;
@@ -51,15 +51,11 @@ public class InsurancePolicy extends Base {
     @ManyToOne
     private RoadsideAssistanceInsurance roadsideAssistanceInsurance;
 
-    @Column
-    private double totalPrice;
-
     public InsurancePolicy(BaseDTO baseDTO) {
         super(baseDTO);
     }
 
     public void merge(InsurancePolicyDTO insurancePolicyDTO) {
-        this.totalValue = insurancePolicyDTO.getTotalValue();
         this.dateOfIssue = insurancePolicyDTO.getDateOfIssue();
         this.dateBecomeEffective = insurancePolicyDTO.getDateBecomeEffective();
         this.internationalTravelInsurance = insurancePolicyDTO.getInternationalTravelInsurance().construct();
