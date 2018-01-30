@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.ftn.exception.BadRequestException;
+import com.ftn.exception.resolver.ResponseHandler;
 import com.ftn.model.dto.PaymentCheckoutDTO;
 
 @Controller
@@ -45,7 +46,7 @@ public class PaymentCheckoutController {
         ResponseEntity response = restTemplate.postForEntity(ph_home + ph_payment_checkout + "/" + method,
                 new HttpEntity<>(paymentCheckoutDTO),
                 String.class);
-
+        ResponseHandler.checkResponseStatus(response.getStatusCode());
     	return response;
     }
 }

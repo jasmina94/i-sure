@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.ftn.exception.BadRequestException;
+import com.ftn.exception.resolver.ResponseHandler;
 import com.ftn.model.dto.PaymentDTO;
 import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
@@ -58,13 +59,13 @@ public class PaymentInquiryController {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
 
-        transactionDTO = transactionService.create(transactionDTO);
+        transactionDTO = (TransactionDTO)transactionService.create(transactionDTO).getBody();
 
         PaymentInquiryDTO piDTO = paymentInquiryService.create(transactionDTO);
         
         ResponseEntity<PaymentInquiryInfoDTO> response = restTemplate.postForEntity(pc_home + pc_inquiries, new HttpEntity<>(piDTO),
                 PaymentInquiryInfoDTO.class);
-        
+        ResponseHandler.checkResponseStatus(response.getStatusCode());
         PaymentDTO payment = new PaymentDTO();
         payment.setPaymentId(response.getBody().getPaymentId());
         payment.setPaymentUrl(response.getBody().getPaymentUrl());

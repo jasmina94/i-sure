@@ -46,7 +46,7 @@ public class TransactionController {
     public ResponseEntity create(@Valid @RequestBody TransactionDTO transactionDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
-        return new ResponseEntity<>(transactionService.create(transactionDTO), HttpStatus.OK);
+        return transactionService.create(transactionDTO);
     }
 
     @PatchMapping(value = "/{id}")
@@ -56,8 +56,7 @@ public class TransactionController {
         }
 
         try {
-        	
-			transactionDTO = transactionService.update(id, transactionDTO);
+			transactionDTO = (TransactionDTO)transactionService.update(id, transactionDTO).getBody();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -86,7 +85,7 @@ public class TransactionController {
     	TransactionDTO transactionDTO;
     	
     	try {
-			transactionDTO = transactionService.findById(id);
+			transactionDTO = (TransactionDTO)transactionService.findById(id).getBody();
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}

@@ -47,7 +47,7 @@ public class PaymentCheckoutController {
 		}
     	
     	String paymentId = paymentCheckoutDTO.getPaymentId();
-        TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
+        TransactionDTO transactionDTO = (TransactionDTO)transactionService.findByPaymentId(paymentId).getBody();
         transactionDTO.setStatus(TransactionStatus.BOOKED);
         if(paymentCheckoutDTO.getAcquirerOrderId() != 0 && paymentCheckoutDTO.getAcquirerTimestamp() != null){
             transactionDTO.setAcquirerOrderId(paymentCheckoutDTO.getAcquirerOrderId());
@@ -65,7 +65,7 @@ public class PaymentCheckoutController {
 		}
     	
     	String paymentId = paymentCheckoutDTO.getPaymentId();
-        TransactionDTO transactionDTO = transactionService.findByPaymentId(paymentId);
+        TransactionDTO transactionDTO = (TransactionDTO)transactionService.findByPaymentId(paymentId).getBody();
         transactionDTO.setStatus(TransactionStatus.REVERSED);
         transactionService.update(transactionDTO.getId(), transactionDTO);
 

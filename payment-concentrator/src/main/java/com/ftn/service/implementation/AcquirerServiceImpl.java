@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.ftn.exception.resolver.ResponseHandler;
 import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
 import com.ftn.service.AcquirerService;

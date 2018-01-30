@@ -1,20 +1,19 @@
 package com.ftn.service;
 
-import java.util.List;
+import org.springframework.http.ResponseEntity;
 
-import com.ftn.model.dto.CustomerDTO;
 import com.ftn.model.dto.TransactionDTO;
 
 public interface TransactionService {
-    List<TransactionDTO> readAll();
+    ResponseEntity readAll();
 
-    TransactionDTO create(TransactionDTO transactionDTO);
+    ResponseEntity create(TransactionDTO transactionDTO);
 
-    TransactionDTO update(Long id, TransactionDTO transactionDTO);
+    ResponseEntity update(Long id, TransactionDTO transactionDTO);
 
     void delete(Long id);
 
-    TransactionDTO findById(Long id);
+    ResponseEntity findById(Long id);
     
-    TransactionDTO findByPaymentId(String paymentId);
+    ResponseEntity findByPaymentId(String paymentId);
 }
