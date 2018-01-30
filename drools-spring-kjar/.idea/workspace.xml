@@ -16,8 +16,8 @@
       <file leaf-file-name="ISureRuleService.drl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com/ftn/isureprices/rules/ISureRuleService.drl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="74" column="7" lean-forward="false" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+            <state relative-caret-position="514">
+              <caret line="98" column="135" lean-forward="false" selection-start-line="98" selection-start-column="135" selection-end-line="98" selection-end-column="135" />
               <folding>
                 <element signature="e#64#308#0" expanded="false" />
                 <element signature="e#310#556#0" expanded="false" />
@@ -746,12 +746,12 @@
       <workItem from="1516094200022" duration="195000" />
       <workItem from="1516650408431" duration="3012000" />
       <workItem from="1516815462668" duration="603000" />
-      <workItem from="1517346142068" duration="1528000" />
+      <workItem from="1517346142068" duration="1973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6665000" />
+    <option name="totallyTimeSpent" value="7110000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -867,8 +867,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/ftn/isureprices/rules/ISureRuleService.drl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="74" column="7" lean-forward="false" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+        <state relative-caret-position="514">
+          <caret line="98" column="135" lean-forward="false" selection-start-line="98" selection-start-column="135" selection-end-line="98" selection-end-column="135" />
           <folding>
             <element signature="e#64#308#0" expanded="false" />
             <element signature="e#310#556#0" expanded="false" />
