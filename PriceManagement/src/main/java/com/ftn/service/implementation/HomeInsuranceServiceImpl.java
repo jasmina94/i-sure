@@ -16,14 +16,17 @@ import java.util.List;
 @Service
 public class HomeInsuranceServiceImpl implements HomeInsuranceService {
 
+	@Value("${dc.home}")
+	private String dc_home;
+
 	@Value("${dc.home.insurance}")
-	private String URI;
+	private String dc_home_insurance;
 
 	@Override
 	public List<HomeInsuranceDTO> readAll() {
 
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<HomeInsuranceDTO[]> response = restTemplate.getForEntity(URI, HomeInsuranceDTO[].class);
+		ResponseEntity<HomeInsuranceDTO[]> response = restTemplate.getForEntity(dc_home + dc_home_insurance, HomeInsuranceDTO[].class);
 
 		return Arrays.asList(response.getBody());
 	}
@@ -32,7 +35,7 @@ public class HomeInsuranceServiceImpl implements HomeInsuranceService {
 	public HomeInsuranceDTO create(HomeInsuranceDTO homeInsuranceDTO) {
 
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<HomeInsuranceDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(homeInsuranceDTO),
+		ResponseEntity<HomeInsuranceDTO> response = restTemplate.postForEntity(dc_home + dc_home_insurance, new HttpEntity<>(homeInsuranceDTO),
 				HomeInsuranceDTO.class);
 
 		return response.getBody();
@@ -41,13 +44,13 @@ public class HomeInsuranceServiceImpl implements HomeInsuranceService {
 	@Override
 	public HomeInsuranceDTO update(Long id, HomeInsuranceDTO homeInsuranceDTO) {
 
-		URI += "/" + id;
+		dc_home_insurance += "/" + id;
 		RestTemplate restTemplate = new RestTemplate();
 		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
 		restTemplate.setRequestFactory(requestFactory);
 
-		ResponseEntity<HomeInsuranceDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
+		ResponseEntity<HomeInsuranceDTO> response = restTemplate.exchange(dc_home + dc_home_insurance, HttpMethod.PATCH,
 				new HttpEntity<>(homeInsuranceDTO), HomeInsuranceDTO.class);
 
 		return response.getBody();
@@ -55,17 +58,17 @@ public class HomeInsuranceServiceImpl implements HomeInsuranceService {
 
 	@Override
 	public void delete(Long id) {
-		URI += "/" + id;
+		dc_home_insurance += "/" + id;
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.delete(URI);
+		restTemplate.delete(dc_home + dc_home_insurance);
 	}
 
 	@Override
 	public HomeInsuranceDTO findById(Long id) {
 
-		URI += "/" + id;
+		dc_home_insurance += "/" + id;
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<HomeInsuranceDTO> response = restTemplate.getForEntity(URI, HomeInsuranceDTO.class);
+		ResponseEntity<HomeInsuranceDTO> response = restTemplate.getForEntity(dc_home + dc_home_insurance, HomeInsuranceDTO.class);
 
 		return response.getBody();
 	}
@@ -73,9 +76,9 @@ public class HomeInsuranceServiceImpl implements HomeInsuranceService {
 	@Override
 	public List<HomeInsuranceDTO> findByPersonalId(String personalId) {
 
-		URI += "/byPersonalId/" + personalId;
+		dc_home_insurance += "/byPersonalId/" + personalId;
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<HomeInsuranceDTO[]> response = restTemplate.getForEntity(URI, HomeInsuranceDTO[].class);
+		ResponseEntity<HomeInsuranceDTO[]> response = restTemplate.getForEntity(dc_home + dc_home_insurance, HomeInsuranceDTO[].class);
 
 		return Arrays.asList(response.getBody());
 	}

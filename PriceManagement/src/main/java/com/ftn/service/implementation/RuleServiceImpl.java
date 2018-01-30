@@ -1,6 +1,7 @@
 package com.ftn.service.implementation;
 
 import com.ftn.model.dto.HomeInsuranceDTO;
+import com.ftn.model.dto.InsurancePolicyDTO;
 import com.ftn.model.dto.InternationalTravelInsuranceDTO;
 import com.ftn.model.dto.RoadsideAssistanceInsuranceDTO;
 import org.kie.api.runtime.KieContainer;
@@ -63,5 +64,14 @@ public class RuleServiceImpl implements RuleService{
         kieSession.fireAllRules();
         kieSession.dispose();
         return roadsideAssistanceInsuranceDTO;
+    }
+
+    @Override
+    public InsurancePolicyDTO getInsurancePolicy(InsurancePolicyDTO insurancePolicyDTO) {
+        KieSession kieSession = kieContainer.newKieSession();
+        kieSession.insert(insurancePolicyDTO);
+        kieSession.fireAllRules();
+        kieSession.dispose();
+        return insurancePolicyDTO;
     }
 }

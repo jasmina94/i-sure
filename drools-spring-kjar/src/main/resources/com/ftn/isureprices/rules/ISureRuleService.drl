@@ -64,3 +64,12 @@ lock-on-active
     then
        modify ($i) {setPrice($price * 0.8)}
     end
+
+rule "InsurancePolicyDTO"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $price > 100)
+    then
+       modify ($i) {setTotalPrice($price * 0.5)}
+    end

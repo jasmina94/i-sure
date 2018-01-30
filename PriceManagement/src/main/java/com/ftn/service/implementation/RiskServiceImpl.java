@@ -20,13 +20,16 @@ import java.util.stream.Collectors;
 @Service
 public class RiskServiceImpl implements RiskService {
 
+    @Value("${dc.home}")
+    private String dc_home;
+
     @Value("${dc.risk}")
-    private String URI;
+    private String dc_risk;
 
     @Override
     public List<RiskDTO> readAll() {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RiskDTO[]> response = restTemplate.getForEntity(URI, RiskDTO[].class);
+        ResponseEntity<RiskDTO[]> response = restTemplate.getForEntity(dc_home + dc_risk, RiskDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
@@ -34,7 +37,7 @@ public class RiskServiceImpl implements RiskService {
     @Override
     public RiskDTO[] create(RiskDTO riskDTO) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RiskDTO[]> response = restTemplate.postForEntity(URI, new HttpEntity<>(riskDTO),
+        ResponseEntity<RiskDTO[]> response = restTemplate.postForEntity(dc_home + dc_risk, new HttpEntity<>(riskDTO),
                 RiskDTO[].class);
 
         return response.getBody();
@@ -42,13 +45,13 @@ public class RiskServiceImpl implements RiskService {
 
     @Override
     public RiskDTO update(Long id, RiskDTO riskDTO) {
-        URI += "/" + id;
+        dc_risk += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
 
-        ResponseEntity<RiskDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
+        ResponseEntity<RiskDTO> response = restTemplate.exchange(dc_home + dc_risk, HttpMethod.PATCH,
                 new HttpEntity<>(riskDTO), RiskDTO.class);
 
         return response.getBody();
@@ -56,16 +59,16 @@ public class RiskServiceImpl implements RiskService {
 
     @Override
     public void delete(Long id) {
-        URI += "/" + id;
+        dc_risk += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(URI);
+        restTemplate.delete(dc_home + dc_risk);
     }
 
     @Override
     public RiskDTO findById(Long id) {
-        URI += "/" + id;
+        dc_risk += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RiskDTO> response = restTemplate.getForEntity(URI, RiskDTO.class);
+        ResponseEntity<RiskDTO> response = restTemplate.getForEntity(dc_home + dc_risk, RiskDTO.class);
 
         return response.getBody();
     }
@@ -74,7 +77,7 @@ public class RiskServiceImpl implements RiskService {
     public RiskDTO findByName(String name) {
        
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RiskDTO> response = restTemplate.getForEntity( URI + "/byPersonalId/" + name, RiskDTO.class);
+        ResponseEntity<RiskDTO> response = restTemplate.getForEntity( dc_home + dc_risk + "/byPersonalId/" + name, RiskDTO.class);
 
         return response.getBody();
     }
@@ -82,7 +85,7 @@ public class RiskServiceImpl implements RiskService {
     @Override
     public List<RiskDTO> findByRiskType(Long id) {
     	RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<RiskDTO[]> response = restTemplate.getForEntity( URI + "/byRiskType/" + id, RiskDTO[].class);
+        ResponseEntity<RiskDTO[]> response = restTemplate.getForEntity( dc_home + dc_risk + "/byRiskType/" + id, RiskDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
