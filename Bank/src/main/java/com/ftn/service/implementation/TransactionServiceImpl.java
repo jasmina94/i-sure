@@ -39,6 +39,7 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setStatus(Transaction.Status.PENDING);
         transaction.setType(type);  // in Acquirer bank this is INCOME in Issuer this is CHARGE
         transaction.setAmount(paymentOrderDTO.getAmount());
+
         if(type.equals(Transaction.TransactionType.CHARGE)){
             Card card = cardService.findCard(paymentOrderDTO);
             transaction.setAccount(card.getAccount());
@@ -60,7 +61,6 @@ public class TransactionServiceImpl implements TransactionService {
             existing.setAccount(transaction.getAccount());
             existing.setPayment(transaction.getPayment());
             existing = transactionRepository.save(existing);
-            System.out.println("ex " + existing.getStatus());
         }else{
             existing = null;
         }

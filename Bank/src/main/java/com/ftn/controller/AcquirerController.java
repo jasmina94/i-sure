@@ -95,11 +95,23 @@ public class AcquirerController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PaymentOrderDTO> entity = new HttpEntity<>(paymentOrderDTO, headers);
 
-        ResponseEntity<PaymentResponseInfoDTO> response = restTemplate
-                .exchange(environmentProperties.getPccUrl(), HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
+        ResponseEntity responseToClient;
+        try {
 
-        PaymentResponseInfoDTO paymentResult = response.getBody();
-        return new ResponseEntity<>(paymentResult, HttpStatus.OK);
+            ResponseEntity<PaymentResponseInfoDTO> response = restTemplate
+                    .exchange(environmentProperties.getPccUrl(), HttpMethod.POST, entity, PaymentResponseInfoDTO.class);
+
+            if(response.getStatusCode().is5xxServerError()) {
+                responseToClient = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }else {
+                PaymentResponseInfoDTO paymentResult = response.getBody();
+                responseToClient = new ResponseEntity(paymentResult, HttpStatus.OK);
+            }
+
+        }catch (Exception exception){
+            responseToClient = new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return responseToClient;
     }
 
     @Transactional

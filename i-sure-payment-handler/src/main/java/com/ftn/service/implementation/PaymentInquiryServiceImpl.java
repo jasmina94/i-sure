@@ -26,7 +26,7 @@ public class PaymentInquiryServiceImpl implements PaymentInquiryService{
         //TODO: Uncomment and delete
         //paymentInquiryDTO.setAmount(transactionDTO.getInsurancePolicy().getTotalPrice());
         //paymentInquiryDTO.setAmount(211.99);
-        paymentInquiryDTO.setAmount(1);
+        paymentInquiryDTO.setAmount(1.0);
 
         paymentInquiryDTO.setMerchantOrderId(transactionDTO.getId());
         paymentInquiryDTO.setMerchantTimestamp(transactionDTO.getTimestamp());

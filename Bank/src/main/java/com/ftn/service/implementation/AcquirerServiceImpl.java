@@ -60,7 +60,9 @@ public class AcquirerServiceImpl implements AcquirerService {
     public PaymentInquiryInfoDTO generateInquiryInfo(PaymentInquiryDTO paymentInquiryDTO) {
     	Logger logger = LoggerFactory.getLogger(AcquirerServiceImpl.class);
         Payment payment = onlinePaymentService.create(paymentInquiryDTO);
+
         logger.info("Payment created");
+
         PaymentInquiryInfoDTO paymentInquiryInfoDTO = new PaymentInquiryInfoDTO();
         paymentInquiryInfoDTO.setPaymentUrl(payment.getUrl());
         paymentInquiryInfoDTO.setPaymentId(payment.getId().toString());
@@ -114,7 +116,6 @@ public class AcquirerServiceImpl implements AcquirerService {
                 Account merchantAccount = transaction.getAccount();
                 merchantAccount.setBalance(merchantAccount.getBalance() + amount);
                 transaction.setAccount(merchantAccount);
-                System.out.println(transaction.getStatus());
                 transactionService.update(transaction.getId(), transaction);
 
                 Logger logger = LoggerFactory.getLogger(AcquirerServiceImpl.class);

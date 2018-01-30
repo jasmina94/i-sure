@@ -33,8 +33,4 @@ public abstract class BaseDTO {
 		this.updated = baseDTO.getUpdated();
 		this.active = baseDTO.isActive();
 	}
-    
-    
-
-
 }

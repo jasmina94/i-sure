@@ -44,7 +44,7 @@ public class PaymentCheckoutController {
         	logger.info("Payment checkout cancel");
             method = "cancel";
         }
-        
+
         String url = ph_home + ph_payment_checkout + "/" + method;
         ResponseEntity<PaymentCheckoutDTO> response = restTemplate.postForEntity(url, new HttpEntity<>(paymentCheckoutDTO), PaymentCheckoutDTO.class);
 

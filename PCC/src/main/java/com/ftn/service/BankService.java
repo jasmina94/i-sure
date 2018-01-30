@@ -8,6 +8,4 @@ import javax.servlet.http.HttpServletRequest;
 public interface BankService {
 
     String getIssuerUrl(String BIN);
-
-    void setAcquirerUrl(HttpServletRequest request);
 }

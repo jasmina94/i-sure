@@ -48,7 +48,6 @@ public class PccController {
         if (bindingResult.hasErrors())
             throw new BadRequestException();
 
-        //bankService.setAcquirerUrl(request);
         String BIN = paymentOrderDTO.getPAN().substring(1, 6);
         String issuerUrl = bankService.getIssuerUrl(BIN);
 

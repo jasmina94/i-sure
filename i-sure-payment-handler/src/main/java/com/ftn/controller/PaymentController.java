@@ -97,11 +97,4 @@ public class PaymentController {
     	
         return new ResponseEntity<>(paymentDTO, HttpStatus.OK);
     }
-
-    @GetMapping(value = "/report", produces = MediaType.TEXT_PLAIN_VALUE)
-    public ResponseEntity generateReport(){
-        InsurancePolicyDTO insurancePolicyDTO = reportService.getInsurancePolicyForTransaction(1L);
-        return new ResponseEntity<>(reportService.generatePolicyReport(insurancePolicyDTO), HttpStatus.OK);
-    }
-
 }
