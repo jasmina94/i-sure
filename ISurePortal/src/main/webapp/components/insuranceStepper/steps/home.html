@@ -77,9 +77,9 @@
                                             ng-model="vm.stepThree.data.selectedRisk"
                                             md-selected-text="vm.stepThree.data.selectedRisk.riskName">
                                         <md-optgroup
-                                                label="risks">
+                                                label="Ensured from">
                                             <md-option ng-value="risk"
-                                                       ng-repeat="risk in vm.homeRisks['Property risks']">
+                                                       ng-repeat="risk in vm.homeRisks['Ensured from']">
                                                 {{risk.riskName}}
                                             </md-option>
                                         </md-optgroup>

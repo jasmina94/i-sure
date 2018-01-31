@@ -13,9 +13,9 @@
                                             ng-model="vm.stepFour.data.selectedTowing"
                                             md-selected-text="vm.stepFour.data.selectedTowing.riskName">
                                         <md-optgroup
-                                                label="Towing">
+                                                label="Towing (to km)">
                                             <md-option ng-value="towing"
-                                                       ng-repeat="towing in vm.carRisks['Towing']">{{towing.riskName}}
+                                                       ng-repeat="towing in vm.carRisks['Towing (to km)']">{{towing.riskName}}
                                             </md-option>
                                         </md-optgroup>
                                     </md-select></md-input-container>
@@ -31,9 +31,9 @@
                                             ng-model="vm.stepFour.data.selectedRepair"
                                             md-selected-text="vm.stepFour.data.selectedRepair.riskName">
                                         <md-optgroup
-                                                label="Repair">
+                                                label="Repair (to price $)">
                                             <md-option ng-value="repair"
-                                                       ng-repeat="repair in vm.carRisks['Repair']">{{repair.riskName}}
+                                                       ng-repeat="repair in vm.carRisks['Repair (to price $)']">{{repair.riskName}}
                                             </md-option>
                                         </md-optgroup>
                                     </md-select></md-input-container>
@@ -49,9 +49,9 @@
                                          ng-model="vm.stepFour.data.selectedAccommodation"
                                          md-selected-text="vm.stepFour.data.selectedAccommodation.riskName">
                                      <md-optgroup
-                                             label="Accommodation">
+                                             label="Accommodation (in days)">
                                          <md-option ng-value="accommodation"
-                                                    ng-repeat="accommodation in vm.carRisks['Accommodation']">{{accommodation.riskName}}
+                                                    ng-repeat="accommodation in vm.carRisks['Accommodation (in days)']">{{accommodation.riskName}}
                                          </md-option>
                                      </md-optgroup>
                                  </md-select></md-input-container>
@@ -67,9 +67,9 @@
                                          ng-model="vm.stepFour.data.selectedTransport"
                                          md-selected-text="vm.stepFour.data.selectedTransport.riskName">
                                      <md-optgroup
-                                             label="Transport">
+                                             label="Alternative ride">
                                          <md-option ng-value="transport"
-                                                    ng-repeat="transport in vm.carRisks['Transport']">{{transport.riskName}}
+                                                    ng-repeat="transport in vm.carRisks['Alternative ride']">{{transport.riskName}}
                                          </md-option>
                                      </md-optgroup>
                                  </md-select></md-input-container>

@@ -33,7 +33,7 @@
                                 selectedRegion: vm.travelRisks['Region'][0],
                                 numberOfPeople: {},
                                 selectedSport: vm.travelRisks['Sport'][0],
-                                selectedAmount: vm.travelRisks['Value'][0]
+                                selectedAmount: vm.travelRisks['Max insurance cover (to price)'][0]
                             }
                         };
                         vm.tabs.push(""+1);
@@ -51,7 +51,7 @@
                                 selectedArea: vm.homeRisks['Surface area'][0],
                                 selectedAge: vm.homeRisks['Property age'][0],
                                 selectedValue: vm.homeRisks['Estimated value of property'][0],
-                                selectedRisk: vm.homeRisks['Property risks'][0]
+                                selectedRisk: vm.homeRisks['Ensured from'][0]
                             }
                         };
                     }
@@ -65,10 +65,10 @@
                         vm.stepFour = {
                             completed: false, optional: true, isSkiped: true,
                             data: {
-                                selectedAccommodation: vm.carRisks['Accommodation'][0],
-                                selectedRepair: vm.carRisks['Repair'][0],
-                                selectedTowing: vm.carRisks['Towing'][0],
-                                selectedTransport: vm.carRisks['Transport'][0]
+                                selectedAccommodation: vm.carRisks['Accommodation (in days)'][0],
+                                selectedRepair: vm.carRisks['Repair (to price $)'][0],
+                                selectedTowing: vm.carRisks['Towing (to km)'][0],
+                                selectedTransport: vm.carRisks['Alternative ride'][0]
                             }
                         };
                     }
