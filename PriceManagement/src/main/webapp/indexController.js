@@ -44,6 +44,7 @@
     	  mainService.logout().then(
           		  function (response) {
           			  console.log("logout");
+					  $window.location.href = "/index.html";
           	  });
       }
       

@@ -45,16 +45,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.kie</groupId>
-            <artifactId>kie-ci</artifactId>
-            <version>${kie.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.kie</groupId>
-            <artifactId>kie-spring</artifactId>
-            <version>${kie.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.kie</groupId>-->
+            <!--<artifactId>kie-ci</artifactId>-->
+            <!--<version>${kie.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.kie</groupId>-->
+            <!--<artifactId>kie-spring</artifactId>-->
+            <!--<version>${kie.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.ftn</groupId>
             <artifactId>drools-spring-kjar</artifactId>

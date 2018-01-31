@@ -6,7 +6,7 @@
     'use strict';
     var app = angular.module('iSure');
 
-    app.controller('indexController', function ($scope, ngNotify, $state, $http, insuranceService) {
+    app.controller('indexController', function ($scope, ngNotify, $state, $http, insuranceService, $window) {
         var indexVm = this;
 
         indexVm.getInsurance = function() {
@@ -19,6 +19,7 @@
         	insuranceService.logout().then(
           		  function (response) {
           			  console.log("logout");
+                      $window.location.href = "/index.html";
           	  });
         }
 

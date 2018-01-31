@@ -2,235 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feff9eb7-4349-449a-95a7-67c9b07b1a38" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/exception/BadRequestException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/model/database/Bank.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/repository/BankRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/service/BankService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/service/implementation/BankServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/model/environment/EnvironmentProperties.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/exception/resolver/ExceptionResolver.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/exception/NotFoundException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/model/dto/PaymentCheckoutDTO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/model/dto/PaymentOrderDTO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/model/dto/PaymentResponseInfoDTO$CardAuthStatus.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/model/dto/PaymentResponseInfoDTO$TransactionStatus.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/model/dto/PaymentResponseInfoDTO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/PccApplication.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/classes/com/ftn/controller/PccController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/src/main/java/com/ftn/util/PccApplicationStartup.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/out/production/resources/insert.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Bank/src/main/resources/logback.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCC/src/main/resources/logback.xml" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\application-1.yml" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\init2.sql" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\mt102.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\mt102_body.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\mt102_header.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\mt103.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\mt900.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\mt910.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\section.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\section_header.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\section_item.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\statement_account_inquiry.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\types_schema.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\warrant.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\endpoint\InquiryEndpoint.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\endpoint\Mt102Endpoint.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\endpoint\Mt103Endpoint.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\endpoint\Mt900Endpoint.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\endpoint\Mt910Endpoint.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\endpoint\SectionEndpoint.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\endpoint\WarrantEndpoint.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\endpoint\WebServiceConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\database\AccountAnalytics.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\database\DailyAccountState.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\database\Mt102Model.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\database\Mt103Model.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\database\SingleWarrant.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102\GetMt102Request.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102\GetMt102Response.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102\Mt102.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102body\Mt102Body.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102body\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102body\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102header\Mt102Header.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102header\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt102header\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt103\GetMt103Request.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt103\GetMt103Response.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt103\Mt103.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt103\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt103\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt900\GetMt900Request.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt900\GetMt900Response.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt900\Mt900.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt900\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt900\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt910\GetMt910Request.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt910\GetMt910Response.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt910\Mt910.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt910\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\mt910\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\section\GetSectionRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\section\GetSectionResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\section\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\section\Section.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\section\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\sectionheader\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\sectionheader\SectionHeader.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\sectionheader\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\sectionitem\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\sectionitem\SectionItem.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\sectionitem\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\statementaccountinquiry\GetStatementAccountInquiryRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\statementaccountinquiry\GetStatementAccountInquiryResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\statementaccountinquiry\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\statementaccountinquiry\StatementAccountInquiry.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\statementaccountinquiry\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TBankData.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TChanges.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TCorporateBody.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TCurrencyLabel.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TDataTransfer.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TItemInvoice.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TPaymentData.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TSubjectData.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TTransferParticipiant.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\TWarrantData.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\types\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\warrant\GetWarrantRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\warrant\GetWarrantResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\warrant\ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\warrant\Warrant.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\model\dto\warrant\package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\repository\AccountAnalyticsRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\repository\DailyAccountStateRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\repository\Mt102Repository.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\repository\Mt103Repository.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\repository\SingleWarrantRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\ClearingService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\InquiryService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\PaymentService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\RTGSService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\SectionService.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\implementation\ClearingServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\implementation\InquiryServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\implementation\PaymentServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\implementation\RTGSServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\service\implementation\SectionServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\java\com\ftn\validation\ValidationInterceptor.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\mt102.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\mt102_body.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\mt102_header.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\mt103.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\mt900.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\mt910.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\section.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\section_header.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\section_item.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\statement_account_inquiry.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\types_schema.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\Bank\src\main\resources\warrant.xsd" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\DC\files\Logger\info.log" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\DC\files\Logger\warn.log" afterPath="" />
-      <change type="DELETED" beforePath="D:\projects\i-sure\i-sure-payment-handler\src\main\resources\policy\policy0.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/bin/com/ftn/controller/AcquirerController.class" afterPath="$PROJECT_DIR$/../Bank/bin/com/ftn/controller/AcquirerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/bin/com/ftn/service/implementation/AcquirerServiceImpl.class" afterPath="$PROJECT_DIR$/../Bank/bin/com/ftn/service/implementation/AcquirerServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/resources/jasper/InsurancePolicy.jasper" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/resources/jasper/InsurancePolicy.jasper" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/bin/com/ftn/controller/IssuerController.class" afterPath="$PROJECT_DIR$/../Bank/bin/com/ftn/controller/IssuerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminApp/target/classes/korenski/controller/autorizacija/RoleController.class" afterPath="$PROJECT_DIR$/../AdminApp/target/classes/korenski/controller/autorizacija/RoleController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/drools-spring-kjar-0.0.1-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/drools-spring-kjar-0.0.1-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/bin/.gitignore" afterPath="$PROJECT_DIR$/../Bank/bin/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCC/.gitignore" afterPath="$PROJECT_DIR$/../PCC/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/model/database/Account.java" afterPath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/model/database/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/controller/AcquirerController.java" afterPath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/controller/AcquirerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/service/AcquirerService.java" afterPath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/service/AcquirerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/service/implementation/AcquirerServiceImpl.java" afterPath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/service/implementation/AcquirerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCC/src/main/java/com/ftn/service/BankService.java" afterPath="$PROJECT_DIR$/../PCC/src/main/java/com/ftn/service/BankService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCC/src/main/java/com/ftn/service/implementation/BankServiceImpl.java" afterPath="$PROJECT_DIR$/../PCC/src/main/java/com/ftn/service/implementation/BankServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/model/dto/BaseDTO.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/model/dto/BaseDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/EmailService.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/EmailService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/implementation/EmailServiceImpl.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/implementation/EmailServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/HomeInsuranceServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/HomeInsuranceServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/ftn/isureprices/rules/ISureRuleService.drl" afterPath="$PROJECT_DIR$/src/main/resources/com/ftn/isureprices/rules/ISureRuleService.drl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/InsuranceCategoryServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/InsuranceCategoryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/InsurancePolicyController.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/InsurancePolicyController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/InsurancePolicyServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/InsurancePolicyServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/InternationalTravelInsuranceServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/InternationalTravelInsuranceServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/controller/IssuerController.java" afterPath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/controller/IssuerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/service/implementation/IssuerServiceImpl.java" afterPath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/service/implementation/IssuerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../payment-concentrator/src/main/java/com/ftn/service/implementation/PayPalServiceImpl.java" afterPath="$PROJECT_DIR$/../payment-concentrator/src/main/java/com/ftn/service/implementation/PayPalServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/model/Payment.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/model/Payment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/controller/PaymentCheckoutController.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/controller/PaymentCheckoutController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../payment-concentrator/src/main/java/com/ftn/controller/PaymentCheckoutController.java" afterPath="$PROJECT_DIR$/../payment-concentrator/src/main/java/com/ftn/controller/PaymentCheckoutController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/controller/PaymentController.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/controller/PaymentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/model/dto/PaymentDTO.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/model/dto/PaymentDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/model/dto/PaymentDTO.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/model/dto/PaymentDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/controller/PaymentInquiryController.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/controller/PaymentInquiryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../payment-concentrator/src/main/java/com/ftn/controller/PaymentInquiryController.java" afterPath="$PROJECT_DIR$/../payment-concentrator/src/main/java/com/ftn/controller/PaymentInquiryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/implementation/PaymentInquiryServiceImpl.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/implementation/PaymentInquiryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCC/src/main/java/com/ftn/controller/PccController.java" afterPath="$PROJECT_DIR$/../PCC/src/main/java/com/ftn/controller/PccController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/PriceServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/PriceServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/PricelistController.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/PricelistController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/PricelistServiceImplementation.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/PricelistServiceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/implementation/ReportServiceImpl.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/implementation/ReportServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/RiskController.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/RiskController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/RiskServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/RiskServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/RiskTypeServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/RiskTypeServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/RoadsideAssistanceInsuranceServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/RoadsideAssistanceInsuranceServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminApp/src/main/java/korenski/controller/autorizacija/RoleController.java" afterPath="$PROJECT_DIR$/../AdminApp/src/main/java/korenski/controller/autorizacija/RoleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/controller/RuleController.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/controller/RuleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/RuleService.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/RuleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/RuleServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/RuleServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/model/Transaction.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/model/Transaction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/TransactionController.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/TransactionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/model/dto/TransactionDTO.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/model/dto/TransactionDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/model/dto/TransactionDTO.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/model/dto/TransactionDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/repository/TransactionRepository.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/repository/TransactionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/service/TransactionService.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/service/TransactionService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/service/implementation/TransactionServiceImpl.java" afterPath="$PROJECT_DIR$/../Bank/src/main/java/com/ftn/service/implementation/TransactionServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/service/implementation/TransactionServiceImpl.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/service/implementation/TransactionServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/implementation/TransactionServiceImpl.java" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/java/com/ftn/service/implementation/TransactionServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../payment-concentrator/src/main/java/com/ftn/paypal/util/URLUtils.java" afterPath="$PROJECT_DIR$/../payment-concentrator/src/main/java/com/ftn/paypal/util/URLUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/UserController.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/UserServiceImpl.java" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/service/implementation/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/bin/application-1.yml" afterPath="$PROJECT_DIR$/../Bank/bin/application-1.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/bin/application-2.yml" afterPath="$PROJECT_DIR$/../Bank/bin/application-2.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProxyCORP/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../ProxyCORP/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../payment-concentrator/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../payment-concentrator/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/build.gradle" afterPath="$PROJECT_DIR$/../Bank/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCC/build.gradle" afterPath="$PROJECT_DIR$/../PCC/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/webapp/template/cardPayment.js" afterPath="$PROJECT_DIR$/../Bank/src/main/webapp/template/cardPayment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/src/main/webapp/service/cardPaymentService.js" afterPath="$PROJECT_DIR$/../Bank/src/main/webapp/service/cardPaymentService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/drools-spring-kjar.iml" afterPath="$PROJECT_DIR$/drools-spring-kjar.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/webapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/java/com/ftn/controller/KeyClockLogoutController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/files/Logger/all.log" afterPath="$PROJECT_DIR$/../DC/files/Logger/all.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../DC/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-sales/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../i-sure-sales/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/webapp/indexController.js" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/webapp/indexController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/indexController.js" afterPath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/indexController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bank/bin/init2.sql" afterPath="$PROJECT_DIR$/../Bank/bin/init2.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/insuranceService.js" afterPath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/insuranceService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/../DC/src/main/resources/logback.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/src/main/webapp/mainService.js" afterPath="$PROJECT_DIR$/../PriceManagement/src/main/webapp/mainService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/steps/payment.html" afterPath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/steps/payment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminApp/target/classes/META-INF/maven/korenski/mtb/pom.properties" afterPath="$PROJECT_DIR$/../AdminApp/target/classes/META-INF/maven/korenski/mtb/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/pom.xml" afterPath="$PROJECT_DIR$/../DC/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PriceManagement/pom.xml" afterPath="$PROJECT_DIR$/../PriceManagement/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-payment-handler/pom.xml" afterPath="$PROJECT_DIR$/../i-sure-payment-handler/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../payment-concentrator/pom.xml" afterPath="$PROJECT_DIR$/../payment-concentrator/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\application-2.yml" afterPath="$PROJECT_DIR$/../PCC/out/production/resources/application.yml" />
-      <change type="MOVED" beforePath="D:\projects\i-sure\Bank\out\production\Bank\init1.sql" afterPath="$PROJECT_DIR$/../Bank/bin/init1.sql" />
-      <change type="MOVED" beforePath="D:\projects\i-sure\payment-concentrator\src\main\resources\templates\testni.html" afterPath="$PROJECT_DIR$/../payment-concentrator/src/main/resources/templates/success.html" />
     </list>
     <ignored path="drools-spring-kjar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -256,8 +36,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.14788732">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -517,18 +297,21 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="feff9eb7-4349-449a-95a7-67c9b07b1a38" name="Default" comment="" />
       <created>1517424486740</created>
       <option name="number" value="Default" />
       <updated>1517424486740</updated>
-      <workItem from="1517424489277" duration="131000" />
+      <workItem from="1517424489277" duration="657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131000" />
+    <option name="totallyTimeSpent" value="657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
@@ -540,10 +323,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -569,8 +352,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.14788732">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>

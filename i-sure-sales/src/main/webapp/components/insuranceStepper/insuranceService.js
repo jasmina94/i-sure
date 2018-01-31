@@ -3,16 +3,14 @@
  */
 (function() {
     'use strict';
-    var url = "http://localhost:8092/";
-
     angular.module('iSure').factory('insuranceService', function insuranceService($http) {
 
         insuranceService.getTravelInsuranceRisks = function(insuranceType) {
-            return $http.get(url + "riskTypes/insuranceCategory/" + insuranceType);
+            return $http.get("/riskTypes/insuranceCategory/" + insuranceType);
             }
         
         insuranceService.createInsurancePolicy = function(insurancePolicyDTO) {
-            return $http.post(url + "insurancePolicies",insurancePolicyDTO);
+            return $http.post("/insurancePolicies",insurancePolicyDTO);
             }
         
         insuranceService.getPrice = function (insurancePolicyDTO) {
