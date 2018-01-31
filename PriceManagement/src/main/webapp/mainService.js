@@ -40,6 +40,10 @@
     	mainService.saveFile = function(content){
     		return $http.post("/saveFile", content);
     	}
+    	
+    	mainService.logout = function () {
+            return $http.get("/logout");
+        }
         return mainService;
 
     });

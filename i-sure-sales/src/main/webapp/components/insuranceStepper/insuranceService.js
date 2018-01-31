@@ -18,6 +18,10 @@
         insuranceService.getPrice = function (insurancePolicyDTO) {
             return $http.post("/price", insurancePolicyDTO);
         }
+        
+        insuranceService.logout = function () {
+            return $http.get("/logout");
+        }
         return insuranceService;
 
     });

@@ -6,7 +6,7 @@
     'use strict';
     var app = angular.module('iSure');
 
-    app.controller('indexController', function ($scope, ngNotify, $state, $http) {
+    app.controller('indexController', function ($scope, ngNotify, $state, $http, insuranceService) {
         var indexVm = this;
 
         indexVm.getInsurance = function() {
@@ -14,6 +14,13 @@
         }
         
         indexVm.email = "http://localhost:80/squirrelmail/src/login.php";
+        
+        indexVm.logout = function(){
+        	insuranceService.logout().then(
+          		  function (response) {
+          			  console.log("logout");
+          	  });
+        }
 
     });
 
