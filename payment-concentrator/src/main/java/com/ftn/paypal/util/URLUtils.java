@@ -4,9 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 
 public class URLUtils {
 
-	public static String getBaseURl(HttpServletRequest request) {
+	public static String getBaseURl(HttpServletRequest request, String ip) {
 	    String scheme = request.getScheme();
-	    String serverName = request.getServerName();
+	    String serverName = ip;//request.getServerName();
 	    int serverPort = request.getServerPort();
 	    String contextPath = request.getContextPath();
 	    StringBuffer url =  new StringBuffer();

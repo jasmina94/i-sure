@@ -35,13 +35,21 @@ app.controller('CardPaymentController', function ($scope, $state, $routeParams, 
         $scope.order.amount = $scope.amount;
         console.log($scope.order);
         cardPaymentService.processOrder($scope.paymentId, $scope.order, function(response){
-            if(response.data = $scope.order){
-                console.log("Success");
-                console.log($location.url());
+            var paymentData = response.data;
+            var paymentResponse = response;
+            console.log(paymentResponse);
+            if(paymentData.transactionStatus === "SUCCESSFUL" && paymentResponse.status == 200){
                 $location.path("/acquirer/success");
-            }else {
+                cardPaymentService.sendResponse(paymentData, function (response) {
+                    console.log(response.data);
+                });
+            }else if((paymentData.transactionStatus === "FAILED"
+                || paymentData.transactionStatus === "CARD_AUTH_FAILURE") && paymentResponse.status == 200) {
                 console.log("Error");
                 $location.path("/acquirer/error");
+            }else {
+                console.log("Fail communication");
+                $location.path("/acquirer/fail");
             }
         });
     }

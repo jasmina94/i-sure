@@ -41,6 +41,9 @@ public class PayPalServiceImpl implements PayPalService {
 
     @Value("${ph.payment.checkout}")
     private String ph_checkout;
+    
+    @Value("${ph.self.ip}")
+    private String ph_self_ip;
 
     private RestTemplate restTemplate = new RestTemplate();
 
@@ -50,8 +53,8 @@ public class PayPalServiceImpl implements PayPalService {
     @Override
     public PaymentInquiryInfoDTO sendPaymentInquiry(PaymentInquiryDTO piDTO, HttpServletRequest request) {
 
-        String cancelUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_CANCEL_URL;
-        String successUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_SUCCESS_URL;
+        String cancelUrl = URLUtils.getBaseURl(request, ph_self_ip) + "/" + PAYPAL_CANCEL_URL;
+        String successUrl = URLUtils.getBaseURl(request, ph_self_ip) + "/" + PAYPAL_SUCCESS_URL;
 
         System.out.println("Success url " + successUrl);
 

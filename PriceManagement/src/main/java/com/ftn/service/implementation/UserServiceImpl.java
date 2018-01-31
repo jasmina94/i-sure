@@ -14,14 +14,17 @@ import com.ftn.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 
+    @Value("${dc.home}")
+    private String dc_home;
+
     @Value("${dc.adress}")
-    private String URI;
+    private String dc_adress;
 
     @Override
     public UserDTO getUserById(Long id) {
-        URI += "/" + id.toString();
+        dc_adress += "/" + id.toString();
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<UserDTO> response = restTemplate.getForEntity(URI, UserDTO.class);
+        ResponseEntity<UserDTO> response = restTemplate.getForEntity(dc_home + dc_adress, UserDTO.class);
 
         if(response == null) {
             System.out.println("Response is null.");

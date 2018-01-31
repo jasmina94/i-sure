@@ -20,7 +20,6 @@ public class TransactionDTO extends BaseDTO{
 
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date timestamp;
-	
 
 	private TransactionStatus status;
 	
@@ -31,6 +30,8 @@ public class TransactionDTO extends BaseDTO{
 	private Double amount;
 	
 	private PaymentDTO payment;
+	
+	private String paymentId;
 	
 	@NotNull
 	private InsurancePolicyDTO insurancePolicy;
@@ -55,13 +56,14 @@ public class TransactionDTO extends BaseDTO{
         this.amount = transaction.getAmount();
         this.acquirerOrderId = transaction.getAcquirerOrderId();
         this.acquirerTimestamp = transaction.getAcquirerTimestamp();
+		this.paymentId = transaction.getPaymentServiceId();
         if(cascade) {
         	if(transaction.getPaymentType() != null) {
         		this.paymentType = new PaymentTypeDTO(transaction.getPaymentType());
         	}
-        	if(transaction.getPayment() != null) {
-        		this.payment = new PaymentDTO(transaction.getPayment());
-        	}
+//        	if(transaction.getPayment() != null) {
+//        		this.payment = new PaymentDTO(transaction.getPayment());
+//        	}
         	if(transaction.getInsurancePolicy() != null) {
     			this.insurancePolicy = new InsurancePolicyDTO(transaction.getInsurancePolicy());
     		}
@@ -77,12 +79,13 @@ public class TransactionDTO extends BaseDTO{
         transaction.setAmount(amount);
         transaction.setAcquirerOrderId(acquirerOrderId);
         transaction.setAcquirerTimestamp(acquirerTimestamp);
+		transaction.setPaymentServiceId(paymentId);
         if(this.paymentType != null){
             transaction.setPaymentType(paymentType.construct());
         }
-        if(this.payment != null){
-            transaction.setPayment(payment.construct());
-        }
+//        if(this.payment != null){
+//            transaction.setPayment(payment.construct());
+//        }
         if(insurancePolicy != null) {
 			transaction.setInsurancePolicy(insurancePolicy.construct());
 		}

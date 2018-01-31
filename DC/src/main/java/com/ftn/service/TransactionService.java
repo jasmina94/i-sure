@@ -16,5 +16,5 @@ public interface TransactionService {
 
     TransactionDTO findById(Long id);
     
-    TransactionDTO findByPaymentId(String paymentId);
+    TransactionDTO findByPaymentServiceId(String paymentId);
 }

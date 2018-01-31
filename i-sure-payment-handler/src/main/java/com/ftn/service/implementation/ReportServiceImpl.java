@@ -86,21 +86,18 @@ public class ReportServiceImpl implements ReportService {
         data.put("CarRisks",  new JRBeanCollectionDataSource(carTable));
 
         try {
-            String filePath = "src/main/resources/policy/policy" + getNextFileCounter("policy") + ".pdf";
+            String fileName = "policy" + insurancePolicyDTO.getId() + ".pdf";
+            String filePath = "src/main/resources/policy/" + fileName;
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperFilePath, data, new JREmptyDataSource());
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "src/main/resources/policy/policy" + getNextFileCounter("policy") + ".pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "src/main/resources/policy/policy" + insurancePolicyDTO.getId() + ".pdf");
 
             File file = new File("C:\\Users\\Jasmina\\policy.pdf");
             OutputStream outputStream = new FileOutputStream(file);
             JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
-
-            Path path = Paths.get("C:\\Users\\Jasmina\\policy.pdf");
-            byte[] dataPDF = Files.readAllBytes(path);
-            byte[] encodedBytes = Base64.getEncoder().encode(dataPDF);
-            return new String(encodedBytes);
+            return fileName;
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -246,22 +243,4 @@ public class ReportServiceImpl implements ReportService {
 
         return riskList;
     }
-
-    private static int getNextFileCounter(String folderName) {
-        int counter = 0;
-        File folder = new File("src/main/resources/" + folderName);
-        for (File f : folder.listFiles()) {
-            if (f.isFile()) {
-                String name = f.getName();
-                try {
-                    counter = Integer.parseInt(name.substring(name.lastIndexOf('a') + 1, name.indexOf('.')));
-                    counter++;
-                } catch (Exception e) {
-                    continue;
-                }
-            }
-        }
-        return counter;
-    }
-
 }

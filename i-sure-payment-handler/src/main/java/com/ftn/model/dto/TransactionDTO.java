@@ -28,6 +28,8 @@ public class TransactionDTO extends BaseDTO{
 	
 	private PaymentDTO payment;
 	
+	private String paymentId;
+	
 	@NotNull
 	private InsurancePolicyDTO insurancePolicy;
 

@@ -64,3 +64,40 @@ lock-on-active
     then
        modify ($i) {setPrice($price * 0.8)}
     end
+
+rule "InsurancePolicyDTO total price above 100 get 10%"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $price > 100)
+    then
+       modify ($i) {setTotalPrice($price * 0.9)}
+    end
+
+rule "InsurancePolicyDTO more than 3 people get 25%"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $numberOfPeople: getInternationalTravelInsurance().getNumberOfPersons(), $numberOfPeople > 3)
+    then
+       modify ($i) {setTotalPrice($price * 0.75)}
+    end
+
+rule "InsurancePolicyDTO more than 15 days get 10%"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $duration: getInternationalTravelInsurance().getDurationInDays(), $duration > 15)
+    then
+       modify ($i) {setTotalPrice($price * 0.9)}
+    end
+
+rule "InsurancePolicyDTO more than 30 days get 40%"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $duration: getInternationalTravelInsurance().getDurationInDays(), $duration > 30)
+    then
+       modify ($i) {setTotalPrice($price * 0.6)}
+    end
+

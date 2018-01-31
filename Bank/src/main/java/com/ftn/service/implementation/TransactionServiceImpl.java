@@ -39,10 +39,12 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setStatus(Transaction.Status.PENDING);
         transaction.setType(type);  // in Acquirer bank this is INCOME in Issuer this is CHARGE
         transaction.setAmount(paymentOrderDTO.getAmount());
+
         if(type.equals(Transaction.TransactionType.CHARGE)){
             Card card = cardService.findCard(paymentOrderDTO);
             transaction.setAccount(card.getAccount());
             transaction.setType(Transaction.TransactionType.CHARGE);
+            transaction.setStatus(Transaction.Status.BOOKED);
         }
         transaction =  transactionRepository.save(transaction);
         return transaction;

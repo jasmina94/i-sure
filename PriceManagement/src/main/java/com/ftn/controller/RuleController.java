@@ -39,14 +39,14 @@ public class RuleController {
         this.ruleService = ruleService;
     }
 
-    @RequestMapping(value = "/ruleTest", method = RequestMethod.GET, produces = "application/json")
-    public User getQuestions(@RequestParam(required = true) String name, @RequestParam(required = true) int number) {
-        User user = new User(name, number);
-        System.out.println("User request received for: " + user);
-        User user2 = ruleService.getUser(user);
-
-        return user2;
-    }
+//    @RequestMapping(value = "/ruleTest", method = RequestMethod.GET, produces = "application/json")
+//    public User getQuestions(@RequestParam(required = true) String name, @RequestParam(required = true) int number) {
+//        User user = new User(name, number);
+//        System.out.println("User request received for: " + user);
+//        User user2 = ruleService.getUser(user);
+//
+//        return user2;
+//    }
 
     @RequestMapping(value = "/openFile", method = RequestMethod.GET)
     public ResponseEntity<FileDTO> openFile() throws IOException {

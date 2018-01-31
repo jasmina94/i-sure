@@ -1,6 +1,5 @@
 package com.ftn.service;
 
-import com.ftn.model.database.Account;
 import com.ftn.model.dto.onlinepayment.*;
 
 /**
@@ -13,8 +12,6 @@ public interface AcquirerService {
     PaymentInquiryInfoDTO generateInquiryInfo(PaymentInquiryDTO paymentInquiryDTO);
 
     PaymentOrderDTO generateOrder(PaymentOrderDTO paymentOrderDTO, long paymentId);
-
-    Account getMerchantAccount(PaymentInquiryDTO paymentInquiryDTO);
 
     PaymentCheckoutDTO generateCheckout(PaymentResponseInfoDTO paymentResponseInfoDTO);
 

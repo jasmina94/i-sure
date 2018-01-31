@@ -19,9 +19,9 @@ public class EmailServiceImpl implements EmailService {
 
     final String username = "zlajox@gmail.com";
     final String password = "pass";
-/*
+
     @Override
-    public void sendEmail(String to) throws MessagingException, IOException {
+    public void sendEmail(String to, String attachmentName) throws MessagingException, IOException {
 
         Properties props = new Properties();
         props.put("mail.smtp.user", username);
@@ -33,6 +33,7 @@ public class EmailServiceImpl implements EmailService {
         props.put("mail.smtp.EnableSSL.enable", "true");
         props.setProperty("mail.smtp.port", "587");
         props.setProperty("mail.smtp.socketFactory.port", "587");
+
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
@@ -43,23 +44,26 @@ public class EmailServiceImpl implements EmailService {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            message.setSubject("bla");
-            message.setText("bodi");
+            message.setSubject("ISure- Your insurance policy");
+            message.setText("Pdf");
+
             BodyPart messageBodyPart = new MimeBodyPart();
             Multipart multipart = new MimeMultipart();
             BodyPart htmlPart = new MimeBodyPart();
-            htmlPart.setContent("<html>Pdf test :)</html>", "text/html");
-            DataSource source = new FileDataSource("/Users/zlatan/Downloads/Predlogprojekta.pdf");
+            htmlPart.setContent("<html><p><font size='4'><b>Dear customer</b>,<br/><br/> In attachment is your policy. This is confirmation of your purchase. <br/> Thank you for your trust, <br/><br/> Sincerely ISure team.</font></p></html>", "text/html");
+
+            String path = "src/main/resources/policy/" + attachmentName;
+            DataSource source = new FileDataSource(path);
+
             messageBodyPart.setDataHandler(new DataHandler(source));
-            messageBodyPart.setFileName("UmbreloPDF.pdf");
+            messageBodyPart.setFileName(attachmentName);
             multipart.addBodyPart(messageBodyPart);
             multipart.addBodyPart(htmlPart);
             message.setContent(multipart);
             Transport.send(message);
 
         } catch (Exception e) {
-
+            return;
         }
     }
-*/
 }

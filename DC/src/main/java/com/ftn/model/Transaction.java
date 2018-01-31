@@ -37,9 +37,7 @@ public class Transaction extends Base{
 	@Column(nullable = false)
 	private Double amount;
 	
-	@OneToOne
-	@JoinColumn(name = "payment_id")
-	private Payment payment;
+	private String paymentServiceId;
 	
 	@OneToOne
 	@JoinColumn(name = "insurance_policy_id")
@@ -59,11 +57,10 @@ public class Transaction extends Base{
 		this.amount = transactionDTO.getAmount();
 		this.acquirerOrderId = transactionDTO.getAcquirerOrderId();
 		this.acquirerTimestamp = transactionDTO.getAcquirerTimestamp();
+		this.paymentServiceId = transactionDTO.getPaymentId();
+
 		if(transactionDTO.getPaymentType() != null){
 			this.paymentType = transactionDTO.getPaymentType().construct();
-		}
-		if(transactionDTO.getPayment() != null){
-			this.payment = transactionDTO.getPayment().construct();
 		}
 		if(transactionDTO.getInsurancePolicy() != null) {
 			this.insurancePolicy = transactionDTO.getInsurancePolicy().construct();

@@ -1,9 +1,13 @@
 package com.ftn.controller;
 
+import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -26,6 +30,7 @@ import com.ftn.exception.BadRequestException;
 import com.ftn.model.dto.UserDTO;
 import com.ftn.service.UserService;
 
+
 /**
  * Created by Jasmina on 16/11/2017.
  */
@@ -34,10 +39,12 @@ import com.ftn.service.UserService;
 public class UserController {
 	
     private final UserService userService;
+    private Logger logger;
 
     @Autowired
     public UserController(UserService userService){
         this.userService = userService;
+        logger=LoggerFactory.getLogger(UserController.class);
     }
 
     @Transactional

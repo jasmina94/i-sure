@@ -21,21 +21,24 @@ import com.ftn.service.RiskTypeService;
 @Service
 public class RiskTypeServiceImpl implements RiskTypeService {
 
+    @Value("${dc.home}")
+    private String dc_home;
+
     @Value("${dc.risk.type}")
-    private String URI;
+    private String dc_risk_type;
     
     private KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
     
     @Override
     public List<RiskTypeDTO> readAll() {
-        ResponseEntity<RiskTypeDTO[]> response = restTemplate.getForEntity(URI, RiskTypeDTO[].class);
+        ResponseEntity<RiskTypeDTO[]> response = restTemplate.getForEntity(dc_home + dc_risk_type, RiskTypeDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public RiskTypeDTO create(RiskTypeDTO riskTypeDTO) {
-        ResponseEntity<RiskTypeDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(riskTypeDTO),
+        ResponseEntity<RiskTypeDTO> response = restTemplate.postForEntity(dc_home + dc_risk_type, new HttpEntity<>(riskTypeDTO),
                 RiskTypeDTO.class);
 
         return response.getBody();
@@ -43,12 +46,11 @@ public class RiskTypeServiceImpl implements RiskTypeService {
 
     @Override
     public RiskTypeDTO update(Long id, RiskTypeDTO riskTypeDTO) {
-        URI += "/" + id;
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
 
-        ResponseEntity<RiskTypeDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH,
+        ResponseEntity<RiskTypeDTO> response = restTemplate.exchange(dc_home + dc_risk_type + "/" + id, HttpMethod.PATCH,
                 new HttpEntity<>(riskTypeDTO), RiskTypeDTO.class);
 
         return response.getBody();
@@ -56,22 +58,19 @@ public class RiskTypeServiceImpl implements RiskTypeService {
 
     @Override
     public void delete(Long id) {
-        URI += "/" + id;
-        restTemplate.delete(URI);
+        restTemplate.delete(dc_home + dc_risk_type + "/" + id);
     }
 
     @Override
     public RiskTypeDTO findById(Long id) {
-        URI += "/" + id;
-        ResponseEntity<RiskTypeDTO> response = restTemplate.getForEntity(URI, RiskTypeDTO.class);
+        ResponseEntity<RiskTypeDTO> response = restTemplate.getForEntity(dc_home + dc_risk_type + "/" + id, RiskTypeDTO.class);
 
         return response.getBody();
     }
 
     @Override
     public RiskTypeDTO findByName(String name) {
-        URI += "/byPersonalId/" + name;
-        ResponseEntity<RiskTypeDTO> response = restTemplate.getForEntity(URI, RiskTypeDTO.class);
+        ResponseEntity<RiskTypeDTO> response = restTemplate.getForEntity(dc_home + dc_risk_type + "/byPersonalId/" + name, RiskTypeDTO.class);
 
         return response.getBody();
     }

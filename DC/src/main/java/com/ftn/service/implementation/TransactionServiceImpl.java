@@ -76,8 +76,8 @@ public class TransactionServiceImpl implements TransactionService{
 	}
 
 	@Override
-	public TransactionDTO findByPaymentId(String paymentId) {
-		final Transaction transaction = transactionRepository.findByPaymentId(paymentId).orElseThrow(NotFoundException::new);
+	public TransactionDTO findByPaymentServiceId(String paymentId) {
+		final Transaction transaction = transactionRepository.findByPaymentServiceId(paymentId).orElseThrow(NotFoundException::new);
 		return new TransactionDTO(transaction);
 	}
 

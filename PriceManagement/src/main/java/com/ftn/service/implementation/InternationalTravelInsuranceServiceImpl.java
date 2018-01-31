@@ -18,13 +18,16 @@ import com.ftn.service.InternationalTravelInsuranceService;
 @Service
 public class InternationalTravelInsuranceServiceImpl implements InternationalTravelInsuranceService {
 
+    @Value("${dc.home}")
+    private String dc_home;
+
     @Value("${dc.international.travel.insurance}")
-    private String URI;
+    private String dc_international_travel_insurance;
 
     @Override
     public List<InternationalTravelInsuranceDTO> readAll() {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InternationalTravelInsuranceDTO[]> response = restTemplate.getForEntity(URI, InternationalTravelInsuranceDTO[].class);
+        ResponseEntity<InternationalTravelInsuranceDTO[]> response = restTemplate.getForEntity(dc_home + dc_international_travel_insurance, InternationalTravelInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
@@ -32,7 +35,7 @@ public class InternationalTravelInsuranceServiceImpl implements InternationalTra
     @Override
     public InternationalTravelInsuranceDTO create(InternationalTravelInsuranceDTO internationalTravelInsuranceDTO) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InternationalTravelInsuranceDTO> response = restTemplate.postForEntity(URI, new HttpEntity<>(internationalTravelInsuranceDTO), InternationalTravelInsuranceDTO.class);
+        ResponseEntity<InternationalTravelInsuranceDTO> response = restTemplate.postForEntity(dc_home + dc_international_travel_insurance, new HttpEntity<>(internationalTravelInsuranceDTO), InternationalTravelInsuranceDTO.class);
 
         return response.getBody();
     }
@@ -40,56 +43,56 @@ public class InternationalTravelInsuranceServiceImpl implements InternationalTra
     @Override
     public InternationalTravelInsuranceDTO update(Long id,
                                                   InternationalTravelInsuranceDTO internationalTravelInsuranceDTO) {
-        URI += "/" + id;
+        dc_international_travel_insurance += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 
         restTemplate.setRequestFactory(requestFactory);
 
-        ResponseEntity<InternationalTravelInsuranceDTO> response = restTemplate.exchange(URI, HttpMethod.PATCH, new HttpEntity<>(internationalTravelInsuranceDTO), InternationalTravelInsuranceDTO.class);
+        ResponseEntity<InternationalTravelInsuranceDTO> response = restTemplate.exchange(dc_home + dc_international_travel_insurance, HttpMethod.PATCH, new HttpEntity<>(internationalTravelInsuranceDTO), InternationalTravelInsuranceDTO.class);
 
         return response.getBody();
     }
 
     @Override
     public void delete(Long id) {
-        URI += "/" + id;
+        dc_international_travel_insurance += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(URI);
+        restTemplate.delete(dc_home + dc_international_travel_insurance);
     }
 
     @Override
     public InternationalTravelInsuranceDTO findById(Long id) {
-        URI += "/" + id;
+        dc_international_travel_insurance += "/" + id;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InternationalTravelInsuranceDTO> response = restTemplate.getForEntity(URI, InternationalTravelInsuranceDTO.class);
+        ResponseEntity<InternationalTravelInsuranceDTO> response = restTemplate.getForEntity(dc_home + dc_international_travel_insurance, InternationalTravelInsuranceDTO.class);
 
         return response.getBody();
     }
 
     @Override
     public List<InternationalTravelInsuranceDTO> findByIssueDate(Date date) {
-        URI += "/byIssueDate/" + date;
+        dc_international_travel_insurance += "/byIssueDate/" + date;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InternationalTravelInsuranceDTO[]> response = restTemplate.getForEntity(URI, InternationalTravelInsuranceDTO[].class);
+        ResponseEntity<InternationalTravelInsuranceDTO[]> response = restTemplate.getForEntity(dc_home + dc_international_travel_insurance, InternationalTravelInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public List<InternationalTravelInsuranceDTO> findByNumberOfPersons(int numberOfPersons) {
-        URI += "/byNumberOfPersons/" + numberOfPersons;
+        dc_international_travel_insurance += "/byNumberOfPersons/" + numberOfPersons;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InternationalTravelInsuranceDTO[]> response = restTemplate.getForEntity(URI, InternationalTravelInsuranceDTO[].class);
+        ResponseEntity<InternationalTravelInsuranceDTO[]> response = restTemplate.getForEntity(dc_home + dc_international_travel_insurance, InternationalTravelInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }
 
     @Override
     public List<InternationalTravelInsuranceDTO> findByDurationInDays(int durationInDays) {
-        URI += "/byDurationsInDays/" + durationInDays;
+        dc_international_travel_insurance += "/byDurationsInDays/" + durationInDays;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<InternationalTravelInsuranceDTO[]> response = restTemplate.getForEntity(URI, InternationalTravelInsuranceDTO[].class);
+        ResponseEntity<InternationalTravelInsuranceDTO[]> response = restTemplate.getForEntity(dc_home + dc_international_travel_insurance, InternationalTravelInsuranceDTO[].class);
 
         return Arrays.asList(response.getBody());
     }

@@ -40,6 +40,13 @@
       
       indexVm.ruleTextarea = "";
       
+      indexVm.logout = function(){
+    	  mainService.logout().then(
+          		  function (response) {
+          			  console.log("logout");
+          	  });
+      }
+      
       indexVm.loadDrl = function(){
     	  mainService.openFile().then(
     		  function (response) {

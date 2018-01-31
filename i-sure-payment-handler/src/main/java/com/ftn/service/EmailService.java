@@ -1,6 +1,6 @@
 package com.ftn.service;
 
-//import javax.mail.MessagingException;
+import javax.mail.MessagingException;
 import java.io.IOException;
 
 /**
@@ -8,5 +8,5 @@ import java.io.IOException;
  */
 public interface EmailService {
 
-   // void sendEmail(String to) throws MessagingException, IOException;
+   void sendEmail(String to, String attachmentName) throws MessagingException, IOException;
 }

@@ -2,6 +2,8 @@ package com.ftn.controller;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -20,7 +22,6 @@ import com.ftn.model.dto.PaymentDTO;
 import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
 import com.ftn.model.dto.TransactionDTO;
-import com.ftn.model.dto.TransactionStatus;
 import com.ftn.service.PaymentInquiryService;
 import com.ftn.service.PaymentService;
 import com.ftn.service.TransactionService;
@@ -43,6 +44,7 @@ public class PaymentInquiryController {
 	private final TransactionService transactionService;
 	private final PaymentService paymentService;
 	private final PaymentInquiryService paymentInquiryService;
+	Logger logger;
 
     @Autowired
     public PaymentInquiryController(TransactionServiceImpl transactionService,
@@ -51,6 +53,7 @@ public class PaymentInquiryController {
         this.transactionService = transactionService;
         this.paymentInquiryService = paymentInquiryService;
         this.paymentService = paymentService;
+        this.logger = LoggerFactory.getLogger(PaymentInquiryController.class);
     }
     
     @PostMapping
@@ -66,13 +69,13 @@ public class PaymentInquiryController {
                 PaymentInquiryInfoDTO.class);
         
         PaymentDTO payment = new PaymentDTO();
-        payment.setPaymentId(response.getBody().getPaymentId());
         payment.setPaymentUrl(response.getBody().getPaymentUrl());
         payment = paymentService.create(payment);
         
         transactionDTO.setPayment(payment);
+        transactionDTO.setPaymentId(response.getBody().getPaymentId());
         transactionService.update(transactionDTO.getId(), transactionDTO);
-        
+        logger.info("Payment inquiry sent");
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
     }
 }

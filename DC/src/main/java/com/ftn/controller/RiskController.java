@@ -1,10 +1,11 @@
 package com.ftn.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,10 +33,11 @@ import com.ftn.service.RiskService;
 public class RiskController {
 
     private final RiskService riskService;
-
+    private Logger logger;
     @Autowired
     public RiskController(RiskService riskService){
         this.riskService = riskService;
+        logger=LoggerFactory.getLogger(RiskController.class);
     }
 
     @CustomAnnotation(value = "READ_ALL_RISKS")
@@ -55,8 +57,10 @@ public class RiskController {
         
         try {
 			riskService.create(riskDTO);
+			logger.info("Risk created");
 		} catch (Exception e) {
 			System.out.println("Pukao create");
+			logger.error("Error:create risk");
 			e.printStackTrace();
 		}
         List<RiskDTO> lista = riskService.findByRiskType(riskDTO.getRiskType().getId());

@@ -11,6 +11,9 @@ app.service('cardPaymentService', function($http){
         },
         processOrder: function (paymentId, order, onSuccess, onError) {
             $http.post('/acquirer/order/' + paymentId, order).then(onSuccess, onError);
+        },
+        sendResponse: function (paymentResponseInfo, onSuccess, onError) {
+            $http.post('/acquirer/checkout', paymentResponseInfo).then(onSuccess, onError);
         }
     }
 });

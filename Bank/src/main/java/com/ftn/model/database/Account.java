@@ -31,9 +31,6 @@ public class Account {
     private Bank bank;
 
     @OneToMany(mappedBy = "account")
-    private List<DailyAccountState> dailyAccountStates;
-
-    @OneToMany(mappedBy = "account")
     private List<Card> cards;
 
     @OneToMany(mappedBy = "account")
