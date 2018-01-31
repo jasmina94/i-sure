@@ -38,6 +38,9 @@
                         };
                         vm.tabs.push(""+1);
                     }
+                }).catch(function() {
+                    toastr.error("Service is not available.Try later.", '<i>Error</i>');
+
                 });
 
             insuranceService.getTravelInsuranceRisks("Home").then(
@@ -55,6 +58,9 @@
                             }
                         };
                     }
+                }).catch(function() {
+                    toastr.error("Service is not available.Try later.", '<i>Error</i>');
+
                 });
 
             insuranceService.getTravelInsuranceRisks("Roadside").then(
@@ -72,6 +78,9 @@
                             }
                         };
                     }
+                }).catch(function() {
+                    toastr.error("Service is not available.Try later.", '<i>Error</i>');
+
                 });
         }
 
@@ -133,7 +142,10 @@
                              vm.prices = response.data;
                              vm.totalPrice = vm.prices[0]+vm.prices[1]+vm.prices[2];
                          }
-                     });
+                     }).catch(function() {
+                    toastr.error("Service is not available.Try later.", '<i>Error</i>');
+
+                });
          
     }
         function createInternationalTravelInsuranceDTO(){
@@ -314,7 +326,10 @@
                     else{
                     	toastr.error("Something got wrong with policy. Try again.",'<i>Error</i>');
                     }
-                })
+                }).catch(function() {
+                    toastr.error("Service is not available.Try later.", '<i>Error</i>');
+
+                });
         }
     });
 }());

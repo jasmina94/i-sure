@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feff9eb7-4349-449a-95a7-67c9b07b1a38" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/RiskTypeController.java" afterPath="$PROJECT_DIR$/../DC/src/main/java/com/ftn/controller/RiskTypeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/files/Logger/all.log" afterPath="$PROJECT_DIR$/../DC/files/Logger/all.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/steps/car.html" afterPath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/steps/car.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/steps/car.html" afterPath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/steps/car.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/steps/home.html" afterPath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/steps/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/steps/home.html" afterPath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/steps/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DC/src/main/resources/import.sql" afterPath="$PROJECT_DIR$/../DC/src/main/resources/import.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/insuranceStepperController.js" afterPath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/insuranceStepperController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/insuranceStepperController.js" afterPath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/insuranceStepperController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/steps/travel.html" afterPath="$PROJECT_DIR$/../ISurePortal/src/main/webapp/components/insuranceStepper/steps/travel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/steps/travel.html" afterPath="$PROJECT_DIR$/../i-sure-sales/src/main/webapp/components/insuranceStepper/steps/travel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="drools-spring-kjar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -317,7 +310,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
