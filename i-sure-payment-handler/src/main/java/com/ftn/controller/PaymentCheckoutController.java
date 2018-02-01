@@ -21,6 +21,7 @@ import com.ftn.service.TransactionService;
 import javax.mail.MessagingException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/checkout")
@@ -61,12 +62,18 @@ public class PaymentCheckoutController {
 
         logger.info("Checkout success");
 
-        //Email and pdf part
+        // Email and pdf part
+        // To carrier
         InsurancePolicyDTO insurancePolicyDTO = transactionDTO.getInsurancePolicy();
         String policyName = reportService.generatePolicyReport(insurancePolicyDTO);
         CustomerDTO carrier = insurancePolicyDTO.getCustomers().stream().filter(customerDTO -> customerDTO.isCarrier()).findFirst().orElse(null);
         String carrierMail = carrier.getEmail();
         emailService.sendEmail(carrierMail, policyName);
+
+        // To salesman
+        List<String> sendTo = emailService.getSalesmanEmail();
+        emailService.sendEmails(sendTo, policyName);
+
         return new ResponseEntity(paymentCheckoutDTO, HttpStatus.OK);
     }
 

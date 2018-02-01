@@ -1,7 +1,10 @@
 package com.ftn.controller;
 
+import javax.mail.MessagingException;
 import javax.validation.Valid;
 
+import com.ftn.service.EmailService;
+import org.hibernate.validator.constraints.Email;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,17 +28,23 @@ import com.ftn.service.PaymentService;
 import com.ftn.service.ReportService;
 import com.ftn.service.implementation.PaymentServiceImpl;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @RequestMapping("/payments")
 public class PaymentController {
 	private final PaymentService paymentService;
     private final ReportService reportService;
+    private final EmailService emailService;
     Logger logger;
 
     @Autowired
-    public PaymentController(PaymentServiceImpl paymentService, ReportService reportService){
+    public PaymentController(PaymentServiceImpl paymentService, ReportService reportService, EmailService emailService){
         this.reportService = reportService;
         this.paymentService = paymentService;
+        this.emailService = emailService;
         this.logger = LoggerFactory.getLogger(PaymentController.class);
     }
     
@@ -96,5 +105,16 @@ public class PaymentController {
 		}
     	
         return new ResponseEntity<>(paymentDTO, HttpStatus.OK);
+    }
+
+    @GetMapping(value="/emails")
+    public ResponseEntity getSalesmanEmails() throws IOException, MessagingException {
+        List<String> emails = new ArrayList<>();
+        emails.add("jasmina.eminovski@isure.com");
+        emails.add("desanka.todic@isure.com");
+
+        emailService.sendEmails(emails, "policy4.pdf");
+
+        return new ResponseEntity(emails, HttpStatus.OK);
     }
 }
