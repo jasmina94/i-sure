@@ -3,8 +3,8 @@ package com.ftn.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ftn.model.dto.PricelistDTO;
 import com.ftn.service.PricelistService;
+import org.springframework.web.client.HttpClientErrorException;
 
 @RestController
 @RequestMapping("/pricelists")
-@PreAuthorize("authenticated")
+//@PreAuthorize("authenticated")
 public class PricelistController {
 	
 	private final PricelistService pricelistService;
@@ -43,8 +44,18 @@ public class PricelistController {
 	@PostMapping
 	public ResponseEntity create(@RequestBody PricelistDTO pricelistDTO) {
 
-		System.out.println(SecurityContextHolder.getContext().getAuthentication().getName());
-		return new ResponseEntity<>(pricelistService.create(pricelistDTO), HttpStatus.CREATED);
+		//System.out.println(SecurityContextHolder.getContext().getAuthentication().getName());
+		try {
+			return new ResponseEntity<>(pricelistService.create(pricelistDTO), HttpStatus.CREATED);
+
+		} catch (HttpClientErrorException exception) {
+			if (exception.getMessage().equals("403"))
+				return new ResponseEntity<>("{\"message\": \"" + exception.getMessage() + "\"}", HttpStatus.FORBIDDEN);
+			else
+				return new ResponseEntity<>("{\"message\": \"" + exception.getMessage() + "\"}", HttpStatus.INTERNAL_SERVER_ERROR);
+
+		}
+		//return new ResponseEntity<>(pricelistService.create(pricelistDTO), HttpStatus.CREATED);
 	}
 	
 	@PatchMapping(value = "/{id}")

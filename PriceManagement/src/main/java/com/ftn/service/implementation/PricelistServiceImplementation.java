@@ -21,7 +21,7 @@ import com.ftn.service.PricelistService;
 public class PricelistServiceImplementation implements PricelistService{
 	
 	KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
-	
+	//RestTemplate restTemplate = new RestTemplate();
 
 	@Value("${dc.home}")
 	private String dc_home;
@@ -46,8 +46,8 @@ public class PricelistServiceImplementation implements PricelistService{
 	@Override
 	public PricelistDTO create(PricelistDTO pricelistDTO) {
         ResponseEntity<PricelistDTO> response = restTemplate.postForEntity(dc_home + dc_pricelist, new HttpEntity<>(pricelistDTO), PricelistDTO.class);
-
-        return response.getBody();
+		System.out.println("Status "+ response.getStatusCode());
+		return response.getBody();
 	}
 
 	@Override

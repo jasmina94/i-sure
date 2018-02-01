@@ -26,7 +26,7 @@ import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 @EnableGlobalMethodSecurity(prePostEnabled=true)
 class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
 {
-   
+
    @Autowired
    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
       KeycloakAuthenticationProvider keycloakAuthenticationProvider = keycloakAuthenticationProvider();
@@ -54,7 +54,7 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
             //.csrf().csrfTokenRepository(csrfTokenRepository());
             .csrf().disable();
    }
-   
+
    private CsrfTokenRepository csrfTokenRepository() {
 	   HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository();
 	   repository.setHeaderName("X-XSRF-TOKEN");

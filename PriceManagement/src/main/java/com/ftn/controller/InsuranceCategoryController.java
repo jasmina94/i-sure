@@ -5,7 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +25,8 @@ import com.ftn.service.InsuranceCategoryService;
  */
 @RestController
 @RequestMapping("/insuranceCategories")
-@PreAuthorize("authenticated")
+
+//@PreAuthorize("authenticated")
 public class InsuranceCategoryController {
 
     private final InsuranceCategoryService insuranceCategoryService;

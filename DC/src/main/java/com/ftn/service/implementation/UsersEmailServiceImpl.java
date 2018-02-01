@@ -21,10 +21,10 @@ public class UsersEmailServiceImpl implements UsersEmailService{
     		    "admin",
     		    "admin",
     		    "admin-cli");
-    	
+
     	Set<UserRepresentation> users = keycloak.realms().realm("ISure").roles().get("salesman").getRoleUserMembers();
-    	
-    	List<String> emails = new ArrayList<String>();
+
+	   	List<String> emails = new ArrayList<>();
     	for(UserRepresentation user : users) {
     			emails.add(user.getEmail());
     	}

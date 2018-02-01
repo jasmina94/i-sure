@@ -19,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -43,6 +44,9 @@ public class PriceServiceImpl implements PriceService {
 
     @Value("${dc.risk}")
     private String dc_risk;
+
+    @Value("${dc.pricelist}")
+    private String dc_pricelist;
 
     private final RuleService ruleService;
 
@@ -121,47 +125,25 @@ public class PriceServiceImpl implements PriceService {
 
         for (RiskDTO risk: riskDTOS) {
             long riskId = risk.getId();
-            String URI = dc_home + dc_risk + "/" + riskId;
-            ResponseEntity<RiskDTO> riskDTOResponseEntity = restTemplate.getForEntity(URI, RiskDTO.class);
+            String URIPriceList = dc_home + dc_pricelist + "/currentlyActive";
+            String URIRisks = dc_home + dc_risk + "/" + riskId;
+            ResponseEntity<RiskDTO> riskDTOResponseEntity = restTemplate.getForEntity(URIRisks, RiskDTO.class);
+            ResponseEntity<PricelistDTO> activePriceListResponse = restTemplate.getForEntity(URIPriceList, PricelistDTO.class);
             RiskDTO riskDTOFull = riskDTOResponseEntity.getBody();
-            if(riskDTOFull != null && riskDTOFull.getPricelistItem().size() >0){
-                PricelistItemDTO price = riskDTOFull.getPricelistItem().stream().filter(pricelistItemDTO -> pricelistItemDTO.isActive()).findFirst().orElse(null);
-                totalPrice += price.getPrice();
+            PricelistDTO activePriceList = activePriceListResponse.getBody();
+
+            if(riskDTOFull != null && activePriceList != null){
+                for (PricelistItemDTO riskPrice : riskDTOFull.getPricelistItem()) {
+                   List<PricelistItemDTO> activePrices = activePriceList.getPricelistItems();
+                    for (PricelistItemDTO activePrice : activePrices) {
+                        if(activePrice.getId() == riskPrice.getId()){
+                            totalPrice += riskPrice.getPrice()* riskPrice.getCoefficient();
+                            break;
+                        }
+                    }
+                }
             }
          }
         return totalPrice;
     }
 }
-
-//    InternationalTravelInsuranceDTO iti = new InternationalTravelInsuranceDTO();
-//    iti.setStartDate(new Date());
-//    iti.setDurationInDays(7);
-//    iti.setNumberOfPersons(3);
-//    iti.setPrice(1200);
-//    System.out.println(iti);
-//    InternationalTravelInsuranceDTO iti2 = ruleService.getInternationalTravelInsurance(iti);
-//    System.out.println(iti2);
-//
-//    HomeInsuranceDTO hi = new HomeInsuranceDTO();
-//    hi.setOwnerFirstName("Zl");
-//    hi.setOwnerLastName("Pr");
-//    hi.setAddress("Cmelik");
-//    hi.setPersonalId("1111111111111");
-//    hi.setPrice(1200);
-//    System.out.println(hi);
-//    HomeInsuranceDTO hi2 = ruleService.getHomeInsurance(hi);
-//    System.out.println(hi2);
-//
-//    RoadsideAssistanceInsuranceDTO rai = new RoadsideAssistanceInsuranceDTO();
-//    rai.setOwnerFirstName("Zl");
-//    rai.setOwnerLastName("Pr");
-//    rai.setPersonalId("2222222222222");
-//    rai.setCarBrand("Yugo");
-//    rai.setCarType("Limuzina");
-//    rai.setYearOfManufacture("1999");
-//    rai.setLicencePlateNumber("11111111");
-//    rai.setUndercarriageNumber("22");
-//    rai.setPrice(101);
-//    System.out.println(rai);
-//    RoadsideAssistanceInsuranceDTO rai2 = ruleService.getRoadsideAssistanceInsurance(rai);
-//    System.out.println(rai2);

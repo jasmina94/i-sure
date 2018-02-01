@@ -2,14 +2,15 @@ package com.ftn;
 
 import java.util.Arrays;
 
-//import org.kie.api.KieServices;
-//import org.kie.api.builder.KieScanner;
-//import org.kie.api.runtime.KieContainer;
+import org.kie.api.KieServices;
+import org.kie.api.builder.KieScanner;
+import org.kie.api.runtime.KieContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class ISurePriceManagementApplication {
@@ -38,12 +39,12 @@ public class ISurePriceManagementApplication {
      *
      * @return The {@link KieContainer}.
      */
-//    @Bean
-//    public KieContainer kieContainer() {
-//        KieServices ks = KieServices.Factory.get();
-//        KieContainer kContainer = ks.newKieContainer(ks.newReleaseId("com.ftn","drools-spring-kjar", "0.0.1-SNAPSHOT"));
-//        KieScanner kScanner = ks.newKieScanner(kContainer);
-//        kScanner.start(1_000);
-//        return kContainer;
-//    }
+    @Bean
+    public KieContainer kieContainer() {
+        KieServices ks = KieServices.Factory.get();
+        KieContainer kContainer = ks.newKieContainer(ks.newReleaseId("com.ftn","drools-spring-kjar", "0.0.1-SNAPSHOT"));
+        KieScanner kScanner = ks.newKieScanner(kContainer);
+        kScanner.start(1_000);
+        return kContainer;
+    }
 }

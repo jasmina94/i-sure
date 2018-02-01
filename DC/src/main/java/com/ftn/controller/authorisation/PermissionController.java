@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.validation.Valid;
 
+import com.ftn.intercepting.CustomAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class PermissionController {
         this.permissionService = permissionService;
     }
 	
-	//@CustomAnnotation(value = "INSERT_PERMISSION")
+	@CustomAnnotation(value = "INSERT_PERMISSION")
 	@PostMapping(value = "/newPermission")
 	public ResponseEntity newPermission(@Valid @RequestBody Permission permission, BindingResult bindingResult) throws Exception {
 		System.out.println("radi");
@@ -53,7 +54,7 @@ public class PermissionController {
 		
 	}
 	
-	//@CustomAnnotation(value = "DELETE_PERMISSION")
+	@CustomAnnotation(value = "DELETE_PERMISSION")
 	@DeleteMapping(value = "/deletePermission/{id}")
 	public ResponseEntity<Permission> deletePermission(@PathVariable("id") Long id) throws Exception {
 
@@ -66,7 +67,7 @@ public class PermissionController {
 	}
 
 	
-	//@CustomAnnotation(value = "UPDATE_PERMISSION")
+	@CustomAnnotation(value = "UPDATE_PERMISSION")
 	@PatchMapping(value = "/updatePermission/{id}")
 	public ResponseEntity<Permission> updatePermission(@PathVariable Long id, @Valid @RequestBody Permission permission, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
@@ -85,7 +86,7 @@ public class PermissionController {
 			return new ResponseEntity<>(permissionModified, HttpStatus.OK);
 	}
 	
-	//@CustomAnnotation(value = "FIND_ALL_PERMISSION")
+	@CustomAnnotation(value = "FIND_ALL_PERMISSION")
 	@PreAuthorize("hasRole('admin')")
 	@GetMapping(value = "/allPermissions")
 	public ResponseEntity<Collection<Permission>> allPermissions() throws Exception {

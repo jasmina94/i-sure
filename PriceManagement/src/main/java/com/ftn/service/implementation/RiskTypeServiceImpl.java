@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.ftn.model.dto.RiskTypeDTO;
 import com.ftn.service.RiskTypeService;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by zlatan on 25/11/2017.
@@ -28,7 +29,9 @@ public class RiskTypeServiceImpl implements RiskTypeService {
     private String dc_risk_type;
     
     private KeycloakRestTemplate restTemplate = new KeycloakRestTemplate(new KeycloakClientRequestFactory());
-    
+
+    //RestTemplate restTemplate = new RestTemplate();
+
     @Override
     public List<RiskTypeDTO> readAll() {
         ResponseEntity<RiskTypeDTO[]> response = restTemplate.getForEntity(dc_home + dc_risk_type, RiskTypeDTO[].class);

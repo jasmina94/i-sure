@@ -115,6 +115,4 @@ public class PricelistController {
     	System.out.println("findMaxDateTo");
     	return new ResponseEntity<>(pricelistService.findMaxDateTo(), HttpStatus.OK);
     }
-    
-	
 }

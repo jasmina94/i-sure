@@ -55,7 +55,6 @@ insert into `isuredatacenter`.`role_permissions` values (1, 19);
 insert into `isuredatacenter`.`role_permissions` values (1, 20);
 insert into `isuredatacenter`.`role_permissions` values (1, 21);
 insert into `isuredatacenter`.`role_permissions` values (2, 1);
-insert into `isuredatacenter`.`role_permissions` values (2, 2);
 insert into `isuredatacenter`.`role_permissions` values (2, 3);
 insert into `isuredatacenter`.`role_permissions` values (2, 4);
 insert into `isuredatacenter`.`role_permissions` values (2, 5);

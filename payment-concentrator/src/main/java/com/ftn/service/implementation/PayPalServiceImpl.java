@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.ftn.model.dto.PaymentCheckoutDTO;
+import com.ftn.paypal.util.URLUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -17,7 +18,6 @@ import com.ftn.model.dto.PaymentInquiryDTO;
 import com.ftn.model.dto.PaymentInquiryInfoDTO;
 import com.ftn.paypal.config.PaypalPaymentIntent;
 import com.ftn.paypal.config.PaypalPaymentMethod;
-import com.ftn.paypal.util.URLUtils;
 import com.ftn.service.PayPalService;
 import com.paypal.api.payments.Amount;
 import com.paypal.api.payments.Links;
@@ -113,9 +113,7 @@ public class PayPalServiceImpl implements PayPalService {
         String[] parts = approval_url.split("token=");
         String token = parts[1];
 
-        // privremeno
         PaymentInquiryInfoDTO piInfoDTO = new PaymentInquiryInfoDTO();
-        // piInfoDTO.setPaymentId(p.getId());
         piInfoDTO.setPaymentId(token);
         piInfoDTO.setPaymentUrl(approval_url);
 

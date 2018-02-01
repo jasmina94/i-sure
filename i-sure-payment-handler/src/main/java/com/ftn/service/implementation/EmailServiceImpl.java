@@ -17,8 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailServiceImpl implements EmailService {
 
-    final String username = "zlajox@gmail.com";
-    final String password = "pass";
+    final String username = "bsepprojectimpl@gmail.com";
+    final String password = "MasterDigree";
 
     @Override
     public void sendEmail(String to, String attachmentName) throws MessagingException, IOException {

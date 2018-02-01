@@ -75,13 +75,9 @@ public class PricelistServiceImpl implements PricelistService{
 				
 				List<PricelistItem> items = new ArrayList();
 				PricelistItem temp = null;
-				for (PricelistItem pricelistItem : itemsOld) {
+				for (PricelistItem pricelistItem : pricelist.getPricelistItems()) {
 					temp = new PricelistItem(pricelistItem);
-					temp.setActive(true);
-					temp.setCreated(null);
 					temp.setId(0L);
-					temp.setUpdated(null);
-					
 					items.add(temp);
 				}
 				
