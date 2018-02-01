@@ -7,7 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,7 +28,7 @@ import com.ftn.service.implementation.InsurancePolicyServiceImpl;
  */
 @Controller
 @RequestMapping("/insurancePolicies")
-@PreAuthorize("authenticated")
+//@PreAuthorize("authenticated")
 public class InsurancePolicyController {
 
     private final InsurancePolicyService insurancePolicyService;

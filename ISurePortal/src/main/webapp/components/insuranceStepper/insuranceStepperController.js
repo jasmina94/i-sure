@@ -325,8 +325,9 @@
                                 .parent(angular.element(document.body))
                                 .clickOutsideToClose(true)
                                 .title('Current Price: ' + totalPrice + '$')
-                                .htmlContent("<p>*International Travel Insurance: " + prices[0] + "$<p>" +
-                                    "<p>*Roadside Assistance Insurance: " + prices[2] + "$<p>")
+                                .htmlContent("<p>* International Travel Insurance: " + prices[0] + "$<p>" +
+                                    "<p>* Home Insurance: " + prices[1] + "$<p>" +
+                                    "<p>* Roadside Assistance Insurance: " + prices[2] + "$<p>")
                                 .ariaLabel('Alert Dialog Demo')
                                 .ok('OK')
                                 .targetEvent(ev)
@@ -435,7 +436,7 @@
 
             var insurancePolicyDTO =
                 {
-                    "totalPrice": vm.totalPrice,
+                    "totalPrice": vm.prices[3],
                     "dateOfIssue": vm.todayDate,
                     "dateBecomeEffective": vm.stepOne.data.fromDate,
                     "customers": customers,
@@ -447,6 +448,7 @@
                 function (response) {
                     if (response.status == 200) {
                         toastr.success("Know you have your umbrella.", '<i>Success</i>');
+                        console.log("Ovo je polisa iz beekenda");
                         console.log(response.data);
                         var paymentType = {};
                         paymentType.label = vm.pay;

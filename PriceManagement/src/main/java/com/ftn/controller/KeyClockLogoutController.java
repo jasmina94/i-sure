@@ -1,6 +1,6 @@
 package com.ftn.controller;
 
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import java.io.IOException;
  * Created by milca on 1/31/2018.
  */
 @Controller
-@PreAuthorize("authenticated")
+//@PreAuthorize("authenticated")
 @CrossOrigin(origins = "*")
 public class KeyClockLogoutController {
 

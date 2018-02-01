@@ -63,19 +63,27 @@ public class PaymentInquiryController {
 
         transactionDTO = transactionService.create(transactionDTO);
 
-        PaymentInquiryDTO piDTO = paymentInquiryService.create(transactionDTO);
+        PaymentInquiryDTO paymentInquiryDTO = paymentInquiryService.create(transactionDTO);
         
-        ResponseEntity<PaymentInquiryInfoDTO> response = restTemplate.postForEntity(pc_home + pc_inquiries, new HttpEntity<>(piDTO),
+        ResponseEntity<PaymentInquiryInfoDTO> response = restTemplate.postForEntity(pc_home + pc_inquiries, new HttpEntity<>(paymentInquiryDTO),
                 PaymentInquiryInfoDTO.class);
-        
-        PaymentDTO payment = new PaymentDTO();
-        payment.setPaymentUrl(response.getBody().getPaymentUrl());
-        payment = paymentService.create(payment);
-        
-        transactionDTO.setPayment(payment);
-        transactionDTO.setPaymentId(response.getBody().getPaymentId());
-        transactionService.update(transactionDTO.getId(), transactionDTO);
+
+        PaymentInquiryInfoDTO paymentInquiryInfoDTO = response.getBody();
+        if(paymentInquiryInfoDTO != null){
+
+            PaymentDTO payment = new PaymentDTO();
+            payment.setPaymentUrl(paymentInquiryInfoDTO.getPaymentUrl());
+            payment = paymentService.create(payment);
+            String paymentServiceId = paymentInquiryInfoDTO.getPaymentId();
+
+            transactionDTO.setPayment(payment);
+            transactionDTO.setPaymentId(paymentServiceId);
+
+            transactionService.update(transactionDTO.getId(), transactionDTO);
+        }
+
         logger.info("Payment inquiry sent");
+
         return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
     }
 }

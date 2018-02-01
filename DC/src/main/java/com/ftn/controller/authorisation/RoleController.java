@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.validation.Valid;
 
+import com.ftn.intercepting.CustomAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -34,7 +35,7 @@ public class RoleController {
     }
 
 
-	//@CustomAnnotation(value = "INSERT_ROLE")
+	@CustomAnnotation(value = "INSERT_ROLE")
 	@PostMapping(value = "/newRole")
 	public ResponseEntity<Role> newRole(@Valid @RequestBody Role role , BindingResult bindingResult) throws Exception {
 
@@ -44,7 +45,7 @@ public class RoleController {
 		
 	}
 	
-	//@CustomAnnotation(value = "DELETE_ROLE")
+	@CustomAnnotation(value = "DELETE_ROLE")
 	@DeleteMapping(value = "/deleteRole/{id}") //String id_string
 	public ResponseEntity<Role> deleteRole(@PathVariable("id") Long id ) throws Exception {
 		
@@ -57,7 +58,7 @@ public class RoleController {
 	}
 
 	
-	//@CustomAnnotation(value = "UPDATE_ROLE")
+	@CustomAnnotation(value = "UPDATE_ROLE")
 	@PatchMapping(value = "/updateRole/{id}")
 	public ResponseEntity<Role> updateRole(@PathVariable Long id, @Valid @RequestBody Role role ,
 			BindingResult bindingResult) {
@@ -75,7 +76,7 @@ public class RoleController {
 		return new ResponseEntity<>(roleToModify, HttpStatus.OK);
 	}
 	
-	//@CustomAnnotation(value = "FIND_ALL_ROLE")
+	@CustomAnnotation(value = "FIND_ALL_ROLE")
 	@RequestMapping(
 			value = "/allRoles",
 			method = RequestMethod.GET,
@@ -85,6 +86,4 @@ public class RoleController {
 		return new ResponseEntity<>(roleService.readAll(), HttpStatus.OK);
 		
 	}
-	
-	
 }

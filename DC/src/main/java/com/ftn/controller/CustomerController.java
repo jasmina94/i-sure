@@ -1,7 +1,6 @@
 package com.ftn.controller;
 
 import com.ftn.exception.BadRequestException;
-import com.ftn.model.Customer;
 import com.ftn.model.dto.CustomerDTO;
 import com.ftn.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;

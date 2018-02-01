@@ -246,6 +246,9 @@
                     setTimeout(function(){
                 	    location.reload();
                 	},5000);
+            }).catch(function() {
+                toastr.error("Unauthorized", '<i>Error</i>');
+
             });
         	
         }

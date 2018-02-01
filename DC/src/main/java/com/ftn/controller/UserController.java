@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
-import org.keycloak.admin.client.Keycloak;
-import org.keycloak.representations.idm.UserRepresentation;
+//import org.keycloak.admin.client.Keycloak;
+//import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

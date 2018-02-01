@@ -4073,6 +4073,7 @@ Caused by: javax.transaction.RollbackException: ARJUNA016053: Could not commit t
 2018-01-28 20:22:37,887 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.4.1.Final (WildFly Core 3.0.8.Final) started in 172076ms - Started 545 of 881 services (604 services are lazy, passive or on-demand)
 2018-01-28 21:34:41,339 WARN  [org.keycloak.models.sessions.infinispan.changes.InfinispanChangelogBasedTransaction] (default task-62) Not present cache item for key LoginFailureKey [ realmId=ISure. userId=256659ca-df16-4038-8910-36d6153eecf6 ]
 2018-01-28 22:10:23,805 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+<<<<<<< HEAD
 2018-01-31 22:36:35,442 INFO  [org.jboss.modules] (main) JBoss Modules version 1.6.1.Final
 2018-01-31 22:36:45,916 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.7.SP1
 2018-01-31 22:36:48,081 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: Keycloak 3.4.1.Final (WildFly Core 3.0.8.Final) starting
@@ -4250,3 +4251,5 @@ Caused by: javax.transaction.RollbackException: ARJUNA016053: Could not commit t
 2018-01-31 22:37:57,658 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
 2018-01-31 22:37:57,658 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
 2018-01-31 22:37:57,658 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.4.1.Final (WildFly Core 3.0.8.Final) started in 84263ms - Started 545 of 881 services (604 services are lazy, passive or on-demand)
+=======
+>>>>>>> 9c2ddc79e70e44bafa6b4023000b41a9a213fb58

@@ -53,6 +53,9 @@ public class ReportServiceImpl implements ReportService {
     @Value("${dc.risk}")
     private String dc_risk;
 
+    @Value("${dc.pricelist}")
+    private String dc_pricelist;
+
     private RestTemplate restTemplate = new RestTemplate();
 
     @Override
@@ -190,18 +193,27 @@ public class ReportServiceImpl implements ReportService {
         List<RiskDTO> risks = getInsuranceRisksByType(insurancePolicyDTO, insuranceType);
         for (RiskDTO risk : risks) {
             long riskId = risk.getId();
+            String URIPriceList = dc_home + dc_pricelist + "/currentlyActive";
             String riskUri = dc_home + dc_risk + "/" + riskId;
+
             ResponseEntity<RiskDTO> riskDTOResponseEntity = restTemplate.getForEntity(riskUri, RiskDTO.class);
+            ResponseEntity<PricelistDTO> activePriceListResponse = restTemplate.getForEntity(URIPriceList, PricelistDTO.class);
+
             RiskDTO riskFull = riskDTOResponseEntity.getBody();
-            if (riskFull != null) {
+            PricelistDTO activePriceList = activePriceListResponse.getBody();
+
+            if (riskFull != null && activePriceList != null) {
                 ReportTableDTO reportTableDTO = new ReportTableDTO();
                 reportTableDTO.setRiskName(riskFull.getRiskName());
                 reportTableDTO.setRiskType(riskFull.getRiskType().getRiskTypeName());
+
                 List<PricelistItemDTO> prices = riskFull.getPricelistItem();
                 for (PricelistItemDTO priceListItemDTO : prices) {
-                    if (priceListItemDTO.isActive()) {
-                        reportTableDTO.setRiskPrice(priceListItemDTO.getPrice());
-                        break;
+                    for (PricelistItemDTO activePrice : activePriceList.getPricelistItems()) {
+                        if (activePrice.getId() == priceListItemDTO.getId()) {
+                            reportTableDTO.setRiskPrice(priceListItemDTO.getPrice() * priceListItemDTO.getCoefficient());
+                            break;
+                        }
                     }
                 }
                 reportTableTravelRisk.add(reportTableDTO);
