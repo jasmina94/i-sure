@@ -90,7 +90,6 @@ public class PricelistController {
         return new ResponseEntity<>(pricelistService.findById(id), HttpStatus.OK);
     }
     
-    @CustomAnnotation(value = "FIND_CURRENTLY_ACTIVE_PRICELIST")
     @Transactional
     @GetMapping(value = "/currentlyActive")
     public ResponseEntity findcurrentlyActive(){

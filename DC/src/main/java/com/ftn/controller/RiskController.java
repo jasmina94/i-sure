@@ -40,7 +40,6 @@ public class RiskController {
         logger=LoggerFactory.getLogger(RiskController.class);
     }
 
-    @CustomAnnotation(value = "READ_ALL_RISKS")
     @Transactional
     @GetMapping
     public ResponseEntity read() {
@@ -87,21 +86,18 @@ public class RiskController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @CustomAnnotation(value = "FIND_RISK_BY_ID")
     @Transactional
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id){
         return new ResponseEntity<>(riskService.findById(id), HttpStatus.OK);
     }
 
-    @CustomAnnotation(value = "FIND_RISK_BY_NAME")
     @Transactional
     @GetMapping(value = "/name/{name}")
     public ResponseEntity findByName(@PathVariable String name){
         return new ResponseEntity<>(riskService.findByName(name), HttpStatus.OK);
     }
     
-    @CustomAnnotation(value = "FIND_RISK_BY_RISK_TYPE")
     @Transactional
     @GetMapping(value = "/byRiskType/{id}")
     public ResponseEntity findByRiskType(@PathVariable Long id){
