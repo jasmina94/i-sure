@@ -19,7 +19,7 @@ spring:
 environment:
     swiftCode: CONARS22
     nbsUrl: http://localhost:8094/ws
-    selfUrl: http://localhost:9015/
-    concentratorUrl: http://localhost:9035/
+    selfUrl: http://192.168.0.12:9015/
+    concentratorUrl: http://192.168.0.14:9035/
     pccUrl: http://localhost:9025/pcc
     bankName: Continental bank

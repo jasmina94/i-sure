@@ -558,3 +558,528 @@ org.springframework.web.client.HttpServerErrorException: 500
 [INFO ]2018-02-01 14:41:41 c.f.s.i.AcquirerServiceImpl - Successful founds transfer
 [INFO ]2018-02-01 14:41:41 c.f.s.i.AcquirerServiceImpl - Issuer response generated
 [INFO ]2018-02-01 14:41:41 c.f.s.i.AcquirerServiceImpl - Successful transaction
+[INFO ]2018-02-01 17:33:27 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 26745 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 17:33:27 com.ftn.ISureBankApplication - The following profiles are active: 1
+[INFO ]2018-02-01 17:33:27 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 26747 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 17:33:27 com.ftn.ISureBankApplication - The following profiles are active: 2
+[INFO ]2018-02-01 17:33:27 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4eb59c0: startup date [Thu Feb 01 17:33:27 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:33:27 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7663e8c8: startup date [Thu Feb 01 17:33:27 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:33:28 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c64362e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 17:33:28 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 17:33:28 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$4436cbee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 17:33:28 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 17:33:28 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9020 (http)
+[INFO ]2018-02-01 17:33:28 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9015 (http)
+[INFO ]2018-02-01 17:33:28 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 17:33:28 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 17:33:28 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 17:33:28 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 17:33:28 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 17:33:28 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 17:33:28 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1601 ms
+[INFO ]2018-02-01 17:33:28 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1594 ms
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 17:33:28 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 17:33:29 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:33:29 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 17:33:29 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:33:29 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 17:33:29 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 17:33:29 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 17:33:29 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 17:33:29 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 17:33:29 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:33:29 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4eb59c0: startup date [Thu Feb 01 17:33:27 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7663e8c8: startup date [Thu Feb 01 17:33:27 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:33:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 17:33:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:33:30 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[INFO ]2018-02-01 17:33:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:33:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:33:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:33:30 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[INFO ]2018-02-01 17:33:30 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[WARN ]2018-02-01 17:33:30 o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+[INFO ]2018-02-01 17:33:30 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 17:33:30 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 17:33:30 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 17:33:30 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 17:33:30 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9015 (http)
+[INFO ]2018-02-01 17:33:30 com.ftn.ISureBankApplication - Started ISureBankApplication in 3.556 seconds (JVM running for 23036.138)
+[INFO ]2018-02-01 17:33:30 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 17:33:30 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 17:33:30 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 17:33:30 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 17:33:30 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9020 (http)
+[INFO ]2018-02-01 17:33:30 com.ftn.ISureBankApplication - Started ISureBankApplication in 3.533 seconds (JVM running for 23026.643)
+[INFO ]2018-02-01 17:38:17 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7663e8c8: startup date [Thu Feb 01 17:33:27 CET 2018]; root of context hierarchy
+[WARN ]2018-02-01 17:38:17 o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+[INFO ]2018-02-01 17:38:17 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 17:38:17 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:17 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4eb59c0: startup date [Thu Feb 01 17:33:27 CET 2018]; root of context hierarchy
+[WARN ]2018-02-01 17:38:17 o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+[INFO ]2018-02-01 17:38:17 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 17:38:17 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:17 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 26747 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 17:38:17 com.ftn.ISureBankApplication - The following profiles are active: 2
+[INFO ]2018-02-01 17:38:17 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 26745 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 17:38:17 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e1731f0: startup date [Thu Feb 01 17:38:17 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:17 com.ftn.ISureBankApplication - The following profiles are active: 1
+[INFO ]2018-02-01 17:38:17 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5de7c9ab: startup date [Thu Feb 01 17:38:17 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:19 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$4436cbee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 17:38:19 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 17:38:19 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c64362e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 17:38:19 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 17:38:19 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9020 (http)
+[INFO ]2018-02-01 17:38:19 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 17:38:19 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 17:38:19 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 17:38:19 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1629 ms
+[INFO ]2018-02-01 17:38:19 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9015 (http)
+[INFO ]2018-02-01 17:38:19 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 17:38:19 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 17:38:19 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 17:38:19 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1690 ms
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 17:38:19 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 17:38:19 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:19 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 17:38:19 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 17:38:19 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:19 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 17:38:19 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 17:38:20 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 17:38:20 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 17:38:20 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:20 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e1731f0: startup date [Thu Feb 01 17:38:17 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 17:38:20 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 17:38:20 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:20 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5de7c9ab: startup date [Thu Feb 01 17:38:17 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:21 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 17:38:21 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 17:38:21 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[INFO ]2018-02-01 17:38:21 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:21 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:21 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:21 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[WARN ]2018-02-01 17:38:21 o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+[INFO ]2018-02-01 17:38:21 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ]2018-02-01 17:38:21 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 17:38:21 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 17:38:21 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 17:38:21 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 17:38:21 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9020 (http)
+[INFO ]2018-02-01 17:38:21 com.ftn.ISureBankApplication - Started ISureBankApplication in 3.981 seconds (JVM running for 23317.665)
+[INFO ]2018-02-01 17:38:21 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 17:38:21 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 17:38:21 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 17:38:21 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 17:38:21 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9015 (http)
+[INFO ]2018-02-01 17:38:21 com.ftn.ISureBankApplication - Started ISureBankApplication in 3.9 seconds (JVM running for 23327.216)
+[INFO ]2018-02-01 17:38:23 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e1731f0: startup date [Thu Feb 01 17:38:17 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:23 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 17:38:23 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:24 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5de7c9ab: startup date [Thu Feb 01 17:38:17 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:24 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 17:38:24 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:36 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 28297 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 17:38:36 com.ftn.ISureBankApplication - The following profiles are active: 2
+[INFO ]2018-02-01 17:38:36 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2c98dd75: startup date [Thu Feb 01 17:38:36 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:37 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+[INFO ]2018-02-01 17:38:39 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6ccfee1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 17:38:39 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 17:38:40 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9020 (http)
+[INFO ]2018-02-01 17:38:40 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 17:38:40 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 17:38:40 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 17:38:40 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3265 ms
+[INFO ]2018-02-01 17:38:40 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 17:38:40 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 17:38:40 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 17:38:40 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 17:38:40 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 17:38:40 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 17:38:41 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:41 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 17:38:41 org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+[INFO ]2018-02-01 17:38:41 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-02-01 17:38:41 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-02-01 17:38:41 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-02-01 17:38:41 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 17:38:42 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 17:38:43 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:45 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 28299 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 17:38:45 com.ftn.ISureBankApplication - The following profiles are active: 1
+[INFO ]2018-02-01 17:38:45 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5095b559: startup date [Thu Feb 01 17:38:45 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:45 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2c98dd75: startup date [Thu Feb 01 17:38:36 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:45 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+[INFO ]2018-02-01 17:38:46 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:46 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:46 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:46 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 17:38:46 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 17:38:46 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:46 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 17:38:46 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 17:38:46 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:46 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:46 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:46 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[INFO ]2018-02-01 17:38:48 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ]2018-02-01 17:38:48 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 17:38:48 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 17:38:48 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 17:38:48 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 17:38:48 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9020 (http)
+[INFO ]2018-02-01 17:38:48 com.ftn.ISureBankApplication - Started ISureBankApplication in 12.246 seconds (JVM running for 13.81)
+[INFO ]2018-02-01 17:38:49 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b74caa20] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 17:38:49 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 17:38:49 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9015 (http)
+[INFO ]2018-02-01 17:38:49 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 17:38:49 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 17:38:49 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 17:38:49 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4439 ms
+[INFO ]2018-02-01 17:38:50 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 17:38:50 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 17:38:50 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 17:38:50 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 17:38:50 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 17:38:50 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 17:38:50 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:50 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 17:38:50 org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+[INFO ]2018-02-01 17:38:50 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-02-01 17:38:50 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-02-01 17:38:50 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-02-01 17:38:51 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 17:38:51 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 17:38:51 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5095b559: startup date [Thu Feb 01 17:38:45 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 17:38:52 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 17:38:52 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:52 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:52 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 17:38:52 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[WARN ]2018-02-01 17:38:53 o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+[INFO ]2018-02-01 17:38:53 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 17:38:53 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 17:38:53 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 17:38:53 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 17:38:53 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9015 (http)
+[INFO ]2018-02-01 17:38:53 com.ftn.ISureBankApplication - Started ISureBankApplication in 9.038 seconds (JVM running for 10.966)
+[INFO ]2018-02-01 18:03:40 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-02-01 18:03:40 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-02-01 18:03:40 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 33 ms
+[INFO ]2018-02-01 18:03:41 o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ]2018-02-01 18:03:41 c.f.s.i.AcquirerServiceImpl - Merchant found
+[INFO ]2018-02-01 18:03:41 c.f.s.i.AcquirerServiceImpl - Payment created
+[INFO ]2018-02-01 18:06:02 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5095b559: startup date [Thu Feb 01 17:38:45 CET 2018]; root of context hierarchy
+[WARN ]2018-02-01 18:06:02 o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+[INFO ]2018-02-01 18:06:02 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 18:06:02 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:06:02 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2c98dd75: startup date [Thu Feb 01 17:38:36 CET 2018]; root of context hierarchy
+[WARN ]2018-02-01 18:06:02 o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+[INFO ]2018-02-01 18:06:02 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 18:06:02 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:06:03 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 28299 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 18:06:03 com.ftn.ISureBankApplication - The following profiles are active: 1
+[INFO ]2018-02-01 18:06:03 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@17588907: startup date [Thu Feb 01 18:06:03 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:06:18 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 29028 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 18:06:18 com.ftn.ISureBankApplication - The following profiles are active: 1
+[INFO ]2018-02-01 18:06:18 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6aef8323: startup date [Thu Feb 01 18:06:18 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:06:19 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+[INFO ]2018-02-01 18:06:22 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$1d3ba7f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 18:06:22 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 18:06:23 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 29031 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 18:06:23 com.ftn.ISureBankApplication - The following profiles are active: 2
+[INFO ]2018-02-01 18:06:23 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5095b559: startup date [Thu Feb 01 18:06:23 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:06:23 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+[INFO ]2018-02-01 18:06:24 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9015 (http)
+[INFO ]2018-02-01 18:06:24 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 18:06:24 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 18:06:24 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 18:06:24 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6052 ms
+[INFO ]2018-02-01 18:06:25 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 18:06:25 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 18:06:25 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 18:06:25 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 18:06:25 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 18:06:25 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 18:06:26 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$44ddd735] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 18:06:26 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:06:26 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 18:06:26 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 18:06:26 org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+[INFO ]2018-02-01 18:06:26 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-02-01 18:06:26 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-02-01 18:06:26 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-02-01 18:06:26 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 18:06:26 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9020 (http)
+[INFO ]2018-02-01 18:06:27 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 18:06:27 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 18:06:27 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 18:06:27 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4107 ms
+[INFO ]2018-02-01 18:06:27 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 18:06:27 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 18:06:27 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 18:06:27 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 18:06:27 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 18:06:27 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 18:06:27 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 18:06:28 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:06:28 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:06:28 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 18:06:28 org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+[INFO ]2018-02-01 18:06:28 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-02-01 18:06:28 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-02-01 18:06:29 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-02-01 18:06:29 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6aef8323: startup date [Thu Feb 01 18:06:18 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 18:06:30 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 18:06:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:06:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:06:30 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:06:30 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[INFO ]2018-02-01 18:06:30 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 18:06:31 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ]2018-02-01 18:06:31 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:06:31 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 18:06:31 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 18:06:31 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 18:06:31 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 18:06:31 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9015 (http)
+[INFO ]2018-02-01 18:06:31 com.ftn.ISureBankApplication - Started ISureBankApplication in 13.354 seconds (JVM running for 14.648)
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5095b559: startup date [Thu Feb 01 18:06:23 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 18:06:32 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 18:06:32 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:06:32 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:06:32 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:06:32 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[WARN ]2018-02-01 18:06:32 o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+[INFO ]2018-02-01 18:06:32 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 18:06:32 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 18:06:32 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 18:06:32 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 18:06:32 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9020 (http)
+[INFO ]2018-02-01 18:06:32 com.ftn.ISureBankApplication - Started ISureBankApplication in 10.436 seconds (JVM running for 11.905)
+[INFO ]2018-02-01 18:18:43 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-02-01 18:18:43 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-02-01 18:18:43 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+[INFO ]2018-02-01 18:18:43 o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ]2018-02-01 18:18:43 c.f.s.i.AcquirerServiceImpl - Merchant found
+[INFO ]2018-02-01 18:18:43 c.f.s.i.AcquirerServiceImpl - Payment created
+[INFO ]2018-02-01 18:20:08 c.f.s.i.AcquirerServiceImpl - Income transaction created
+[INFO ]2018-02-01 18:21:40 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6aef8323: startup date [Thu Feb 01 18:06:18 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:21:40 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 18:21:40 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:21:40 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5095b559: startup date [Thu Feb 01 18:06:23 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:21:40 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 18:21:40 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:27:25 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 29202 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 18:27:25 com.ftn.ISureBankApplication - The following profiles are active: 1
+[INFO ]2018-02-01 18:27:25 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a857fdf: startup date [Thu Feb 01 18:27:25 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:27:25 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+[INFO ]2018-02-01 18:27:29 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5d52d44a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 18:27:29 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 18:27:29 com.ftn.ISureBankApplication - Starting ISureBankApplication on Zlatans-MacBook-Pro.local with PID 29204 (/Users/zlatan/Documents/GIT/i-sure/Bank/build/classes/main started by zlatan in /Users/zlatan/Documents/GIT/i-sure/Bank)
+[INFO ]2018-02-01 18:27:29 com.ftn.ISureBankApplication - The following profiles are active: 2
+[INFO ]2018-02-01 18:27:29 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@ef7b3df: startup date [Thu Feb 01 18:27:29 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:27:30 o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+[INFO ]2018-02-01 18:27:31 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9015 (http)
+[INFO ]2018-02-01 18:27:31 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 18:27:31 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 18:27:31 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 18:27:31 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6060 ms
+[INFO ]2018-02-01 18:27:31 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 18:27:31 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 18:27:31 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 18:27:31 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 18:27:31 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 18:27:31 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 18:27:32 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:27:33 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 18:27:33 org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+[INFO ]2018-02-01 18:27:33 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-02-01 18:27:33 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-02-01 18:27:33 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-02-01 18:27:33 o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$87c40883] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO ]2018-02-01 18:27:33 o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO ]2018-02-01 18:27:33 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 18:27:34 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9020 (http)
+[INFO ]2018-02-01 18:27:34 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ]2018-02-01 18:27:34 o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+[INFO ]2018-02-01 18:27:34 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ]2018-02-01 18:27:34 o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4616 ms
+[INFO ]2018-02-01 18:27:34 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 18:27:34 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+[INFO ]2018-02-01 18:27:34 o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+[INFO ]2018-02-01 18:27:34 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ]2018-02-01 18:27:34 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ]2018-02-01 18:27:34 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ]2018-02-01 18:27:34 o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ]2018-02-01 18:27:34 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:27:35 o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:27:35 o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO ]2018-02-01 18:27:35 org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+[INFO ]2018-02-01 18:27:35 org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+[INFO ]2018-02-01 18:27:35 org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+[INFO ]2018-02-01 18:27:35 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a857fdf: startup date [Thu Feb 01 18:27:25 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:27:36 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 18:27:36 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 18:27:36 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:27:36 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:27:36 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:27:36 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[INFO ]2018-02-01 18:27:37 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ]2018-02-01 18:27:37 o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+[INFO ]2018-02-01 18:27:37 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 18:27:37 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 18:27:37 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9015"]
+[INFO ]2018-02-01 18:27:37 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 18:27:37 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9015 (http)
+[INFO ]2018-02-01 18:27:37 com.ftn.ISureBankApplication - Started ISureBankApplication in 12.866 seconds (JVM running for 14.284)
+[INFO ]2018-02-01 18:27:37 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@ef7b3df: startup date [Thu Feb 01 18:27:29 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/inquiry],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processInquiry(com.ftn.model.dto.onlinepayment.PaymentInquiryDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/order/{paymentId}],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.processOrder(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,long,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/checkout],methods=[POST]}" onto public com.ftn.model.dto.onlinepayment.PaymentCheckoutDTO com.ftn.controller.AcquirerController.processResponse(com.ftn.model.dto.onlinepayment.PaymentResponseInfoDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/name],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getBankName()
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/acquirer/amount/{paymentId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.AcquirerController.getAmountForPayment(long)
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/issuer],methods=[POST]}" onto public org.springframework.http.ResponseEntity com.ftn.controller.IssuerController.receiveOrderFromPCC(com.ftn.model.dto.onlinepayment.PaymentOrderDTO,org.springframework.validation.BindingResult)
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ]2018-02-01 18:27:38 o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ]2018-02-01 18:27:38 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:27:38 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:27:38 o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ]2018-02-01 18:27:38 o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+[WARN ]2018-02-01 18:27:38 o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+[INFO ]2018-02-01 18:27:39 o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ]2018-02-01 18:27:39 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 18:27:39 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9020"]
+[INFO ]2018-02-01 18:27:39 o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ]2018-02-01 18:27:39 o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9020 (http)
+[INFO ]2018-02-01 18:27:39 com.ftn.ISureBankApplication - Started ISureBankApplication in 10.31 seconds (JVM running for 11.789)
+[INFO ]2018-02-01 18:27:49 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-02-01 18:27:49 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-02-01 18:27:49 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
+[INFO ]2018-02-01 18:27:49 o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ]2018-02-01 18:28:12 c.f.s.i.AcquirerServiceImpl - Income transaction created
+[INFO ]2018-02-01 18:28:13 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[INFO ]2018-02-01 18:28:13 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+[INFO ]2018-02-01 18:28:13 o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 36 ms
+[INFO ]2018-02-01 18:28:13 com.ftn.controller.IssuerController - Received order from PCC
+[INFO ]2018-02-01 18:28:13 o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ]2018-02-01 18:28:14 c.f.s.i.AcquirerServiceImpl - Card authentication ok
+[INFO ]2018-02-01 18:28:14 c.f.s.i.AcquirerServiceImpl - Transaction authorization ok
+[INFO ]2018-02-01 18:28:14 c.f.s.i.AcquirerServiceImpl - Successful founds transfer
+[INFO ]2018-02-01 18:28:14 c.f.s.i.AcquirerServiceImpl - Issuer response generated
+[INFO ]2018-02-01 18:28:14 c.f.s.i.AcquirerServiceImpl - Successful transaction
+[INFO ]2018-02-01 19:41:23 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@ef7b3df: startup date [Thu Feb 01 18:27:29 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 19:41:23 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 19:41:23 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ]2018-02-01 19:41:24 o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a857fdf: startup date [Thu Feb 01 18:27:25 CET 2018]; root of context hierarchy
+[INFO ]2018-02-01 19:41:24 o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO ]2018-02-01 19:41:24 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

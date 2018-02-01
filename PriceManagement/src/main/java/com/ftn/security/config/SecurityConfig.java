@@ -47,6 +47,7 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
       super.configure(http);
       http
             .authorizeRequests()
+            .antMatchers("/price").permitAll()
             .antMatchers("/", "/**").authenticated().anyRequest().permitAll().and()
             .httpBasic().and()
             //.addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class)
